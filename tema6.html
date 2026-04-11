@@ -1,0 +1,496 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Tema 06 - Teorema de Torricelli | Mod 08</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+
+    <nav class="topic-nav">
+        <a href="index.html" class="back-link">&#9664; Volver al indice</a>
+        <span class="topic-nav-title">Tema 06 &mdash; Teorema de Torricelli</span>
+    </nav>
+
+    <a href="#top" class="back-to-top" id="backToTop">&#9650;</a>
+
+    <section class="tema tema-page" id="top">
+        <div class="container">
+            <div class="tema-header fade-in">
+                <div class="tema-number even">Tema 06 &mdash; Mecanica de Fluidos</div>
+                <h2>Teorema de Torricelli</h2>
+                <p class="intro">El Teorema de Torricelli describe la velocidad con la que un liquido sale por un orificio en un recipiente. Fue formulado por Evangelista Torricelli en 1643 y es esencial para entender el vaciado de tanques, represas y sistemas hidraulicos.</p>
+            </div>
+
+            <!-- ===== TEORIA ===== -->
+            <div class="content-block fade-in">
+                <h3><span class="icon" style="background:rgba(108,99,255,0.15);color:var(--primary-light);">&#128218;</span> Que dice el Teorema de Torricelli?</h3>
+                <div class="info-box theory">
+                    <div class="box-title">Enunciado</div>
+                    <p><em>"La velocidad de salida de un liquido por un orificio situado a cierta profundidad es igual a la velocidad que tendria un objeto en caida libre desde esa misma altura."</em></p>
+                </div>
+                <p><strong>En palabras simples:</strong> Si tienes un tanque de agua con un agujero en la parte baja, el agua saldra disparada con una velocidad que depende de que tan alto este el nivel del agua por encima del agujero. Mientras mas alta este la columna de agua, mas rapido sale el chorro.</p>
+                <h4>La formula</h4>
+                <div class="formula">
+                    v = &radic;(2 &times; g &times; h)
+                </div>
+                <p>Donde:</p>
+                <ul>
+                    <li><strong>v</strong> = Velocidad de salida del liquido (m/s)</li>
+                    <li><strong>g</strong> = Aceleracion de la gravedad = 9.8 m/s&sup2;</li>
+                    <li><strong>h</strong> = Altura del liquido por encima del orificio (m)</li>
+                </ul>
+                <div class="info-box warning">
+                    <div class="box-title">Condiciones de la formula</div>
+                    <ul>
+                        <li>El orificio debe ser <strong>pequeno</strong> comparado con el tanque.</li>
+                        <li>Se asume que la superficie del liquido baja muy lentamente.</li>
+                        <li>Se desprecia la friccion del fluido (fluido ideal).</li>
+                        <li>El recipiente esta abierto a la atmosfera.</li>
+                    </ul>
+                </div>
+            </div>
+
+            <!-- ===== DEDUCCION INTUITIVA ===== -->
+            <div class="content-block fade-in">
+                <h3><span class="icon" style="background:rgba(0,201,167,0.15);color:var(--accent);">&#128161;</span> De donde sale la formula?</h3>
+                <p>El teorema viene directamente de la <strong>ecuacion de Bernoulli</strong> (conservacion de energia en fluidos). La idea es sencilla:</p>
+                <ol>
+                    <li>El agua en la superficie del tanque tiene <strong>energia potencial</strong> (por estar a altura h).</li>
+                    <li>Cuando el agua sale por el agujero, esa energia potencial se convierte en <strong>energia cinetica</strong> (movimiento).</li>
+                    <li>Como en caida libre: la energia potencial mgh se transforma en energia cinetica &frac12;mv&sup2;.</li>
+                </ol>
+                <div class="info-box theory">
+                    <div class="box-title">Deduccion simplificada</div>
+                    <p>mgh = &frac12;mv&sup2; &nbsp;&rarr;&nbsp; gh = &frac12;v&sup2; &nbsp;&rarr;&nbsp; v&sup2; = 2gh &nbsp;&rarr;&nbsp; <strong>v = &radic;(2gh)</strong></p>
+                </div>
+                <p>Es la <strong>misma formula</strong> que la velocidad de un objeto en caida libre! Por eso Torricelli dijo que el agua sale como si "cayera" desde la superficie.</p>
+            </div>
+
+            <!-- ===== EJEMPLO RESUELTO ===== -->
+            <div class="content-block fade-in">
+                <h3><span class="icon" style="background:rgba(255,101,132,0.15);color:var(--secondary);">&#128270;</span> Ejemplos resueltos</h3>
+                <div class="info-box example">
+                    <div class="box-title">Ejemplo 1: Tanque de agua</div>
+                    <p><strong>Un tanque de agua tiene un orificio a 3 metros por debajo de la superficie del agua. Con que velocidad sale el agua?</strong></p>
+                    <div class="steps">
+                        <div class="step">
+                            <div class="step-num">1</div>
+                            <div class="step-content"><p>Datos: h = 3 m, g = 9.8 m/s&sup2;</p></div>
+                        </div>
+                        <div class="step">
+                            <div class="step-num">2</div>
+                            <div class="step-content">
+                                <p>Aplicamos la formula:</p>
+                                <p class="math">v = &radic;(2 &times; 9.8 &times; 3)</p>
+                            </div>
+                        </div>
+                        <div class="step">
+                            <div class="step-num">3</div>
+                            <div class="step-content">
+                                <p>Calculamos:</p>
+                                <p class="math">v = &radic;(58.8) = <strong>7.67 m/s</strong></p>
+                            </div>
+                        </div>
+                    </div>
+                    <p>El agua sale a <strong>7.67 m/s</strong>, que equivale a unos 27.6 km/h. Bastante rapido!</p>
+                </div>
+
+                <div class="info-box example" style="margin-top:1.5rem;">
+                    <div class="box-title">Ejemplo 2: Represa</div>
+                    <p><strong>Una compuerta en una represa esta a 15 metros por debajo de la superficie del agua. A que velocidad saldria el agua si se abriera la compuerta?</strong></p>
+                    <div class="steps">
+                        <div class="step">
+                            <div class="step-num">1</div>
+                            <div class="step-content"><p>Datos: h = 15 m, g = 9.8 m/s&sup2;</p></div>
+                        </div>
+                        <div class="step">
+                            <div class="step-num">2</div>
+                            <div class="step-content">
+                                <p class="math">v = &radic;(2 &times; 9.8 &times; 15) = &radic;(294) = <strong>17.15 m/s</strong></p>
+                            </div>
+                        </div>
+                    </div>
+                    <p>Eso es <strong>61.7 km/h</strong>! Por eso las represas son tan peligrosas: la enorme columna de agua genera velocidades altisimas.</p>
+                </div>
+            </div>
+
+            <!-- ===== VIDA REAL ===== -->
+            <div class="content-block fade-in">
+                <h3><span class="icon" style="background:rgba(255,214,0,0.15);color:var(--warning);">&#127758;</span> Aplicaciones en la vida real</h3>
+                <ul>
+                    <li><strong>Tanques de agua elevados:</strong> Se colocan en lo alto para que la presion y velocidad del agua sean mayores al llegar a las llaves de tu casa.</li>
+                    <li><strong>Represas hidroelectricas:</strong> El agua cae desde gran altura para mover turbinas. A mayor altura, mayor velocidad y mas energia generada.</li>
+                    <li><strong>Sistemas de riego:</strong> El diseno de aspersores y mangueras usa este principio para calcular el alcance del chorro.</li>
+                    <li><strong>Fugas en tuberias:</strong> Los ingenieros calculan el flujo de agua que se pierde en una fuga usando Torricelli.</li>
+                    <li><strong>Dispensadores de bebidas:</strong> El liquido sale mas rapido cuando el recipiente esta lleno que cuando esta casi vacio.</li>
+                </ul>
+            </div>
+
+            <!-- ===== SIMULADOR CANVAS ===== -->
+            <div class="content-block fade-in">
+                <h3><span class="icon" style="background:rgba(108,99,255,0.15);color:var(--primary-light);">&#127918;</span> Simulador interactivo</h3>
+                <p>Ajusta la altura del agua en el tanque y observa como cambia la velocidad y el alcance del chorro que sale por el orificio.</p>
+                <div class="sim-wrapper">
+                    <div class="sim-controls">
+                        <label>
+                            Altura del agua (h):
+                            <input type="range" id="simHeight" min="0.5" max="10" step="0.5" value="5">
+                            <span id="simHeightVal">5.0 m</span>
+                        </label>
+                        <button id="btnIniciar" style="margin-top:0.75rem;padding:0.6rem 2rem;border:none;border-radius:10px;background:var(--primary);color:#fff;font-size:1rem;font-weight:600;cursor:pointer;transition:background 0.2s;" onmouseover="this.style.background='#5a52e0'" onmouseout="this.style.background='var(--primary)'">&#9654; Iniciar</button>
+                    </div>
+                    <div class="sim-canvas-wrap">
+                        <canvas id="torricelliCanvas" width="720" height="440" style="width:100%;border-radius:12px;background:#0F0E17;"></canvas>
+                    </div>
+                    <div class="sim-result" id="simResult">
+                        v = &radic;(2 &times; 9.8 &times; 5.0) = <strong>9.90 m/s</strong>
+                    </div>
+                </div>
+            </div>
+
+            <!-- ===== VIDEO ===== -->
+            <!-- <div class="content-block fade-in">
+                <h3><span class="icon" style="background:rgba(255,101,132,0.15);color:var(--secondary);">&#127909;</span> Video explicativo</h3>
+                <p>Este video te explica el Teorema de Torricelli con animaciones y ejemplos claros:</p>
+                <div class="video-section">
+                    <div class="video-wrapper">
+                        <iframe src="https://www.youtube.com/embed/RnZ4sGm3ySg" title="Teorema de Torricelli - Explicacion" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen loading="lazy"></iframe>
+                    </div>
+                </div>
+            </div> -->
+
+            <!-- ===== EJERCICIOS ===== -->
+            <div class="exercises-section fade-in">
+                <h3><span class="icon" style="background:rgba(255,101,132,0.15);color:var(--secondary);">&#9998;</span> Ejercicios - Teorema de Torricelli</h3>
+
+                <div class="exercise-item">
+                    <div class="exercise-header">
+                        <span class="exercise-label">Ejercicio 1</span>
+                        <span class="difficulty easy">Facil</span>
+                    </div>
+                    <p>Un tanque tiene un orificio a 2 metros por debajo de la superficie del agua. Calcula la velocidad de salida.</p>
+                    <button class="solution-toggle" onclick="toggleSolution(this)">Ver solucion &#9660;</button>
+                    <div class="solution">
+                        <p><span class="step-math">v = &radic;(2 &times; 9.8 &times; 2) = &radic;(39.2) = <strong>6.26 m/s</strong></span></p>
+                    </div>
+                </div>
+
+                <div class="exercise-item">
+                    <div class="exercise-header">
+                        <span class="exercise-label">Ejercicio 2</span>
+                        <span class="difficulty medium">Medio</span>
+                    </div>
+                    <p>El agua sale de un tanque a 12 m/s. A que altura esta la superficie del agua respecto al orificio? (Despeja h de la formula.)</p>
+                    <button class="solution-toggle" onclick="toggleSolution(this)">Ver solucion &#9660;</button>
+                    <div class="solution">
+                        <p>Despejamos h: v&sup2; = 2gh &nbsp;&rarr;&nbsp; h = v&sup2; / (2g)</p>
+                        <p><span class="step-math">h = (12)&sup2; / (2 &times; 9.8) = 144 / 19.6 = <strong>7.35 m</strong></span></p>
+                    </div>
+                </div>
+
+                <div class="exercise-item">
+                    <div class="exercise-header">
+                        <span class="exercise-label">Ejercicio 3</span>
+                        <span class="difficulty hard">Dificil</span>
+                    </div>
+                    <p>Un tanque cilindrico tiene un orificio circular de 2 cm de diametro a 4 metros bajo la superficie. Calcula: a) la velocidad de salida, b) el caudal (volumen por segundo) que sale por el orificio. (Caudal Q = A &times; v, donde A es el area del orificio.)</p>
+                    <button class="solution-toggle" onclick="toggleSolution(this)">Ver solucion &#9660;</button>
+                    <div class="solution">
+                        <p><strong>a) Velocidad:</strong></p>
+                        <p><span class="step-math">v = &radic;(2 &times; 9.8 &times; 4) = &radic;(78.4) = <strong>8.85 m/s</strong></span></p>
+                        <p><strong>b) Caudal:</strong></p>
+                        <p>Area del orificio (r = 0.01 m):</p>
+                        <p><span class="step-math">A = &pi; &times; (0.01)&sup2; = 3.1416 &times; 0.0001 = 0.0003142 m&sup2;</span></p>
+                        <p><span class="step-math">Q = A &times; v = 0.0003142 &times; 8.85 = <strong>0.00278 m&sup3;/s</strong></span></p>
+                        <p>Eso equivale a aproximadamente <strong>2.78 litros por segundo</strong>.</p>
+                    </div>
+                </div>
+            </div>
+
+        </div>
+    </section>
+
+    <footer>
+        <div class="container">
+            <p style="margin-bottom:0.5rem; font-size:1rem; color:var(--text-muted);">Mod 08 &mdash; Matematicas y Representaciones del Sistema Natural!</p>
+            <p>Contenido educativo &middot; 16 temas &middot; Preparatoria</p>
+        </div>
+    </footer>
+
+    <script>
+        /* === Utilidades compartidas === */
+        function toggleSolution(btn) {
+            const solution = btn.nextElementSibling;
+            solution.classList.toggle('visible');
+            btn.textContent = solution.classList.contains('visible') ? 'Ocultar solucion \u25B2' : 'Ver solucion \u25BC';
+        }
+        const observer = new IntersectionObserver((entries) => {
+            entries.forEach(entry => { if (entry.isIntersecting) entry.target.classList.add('visible'); });
+        }, { threshold: 0.1 });
+        document.querySelectorAll('.fade-in').forEach(el => observer.observe(el));
+        const backBtn = document.getElementById('backToTop');
+        window.addEventListener('scroll', () => { backBtn.classList.toggle('show', window.scrollY > 400); });
+
+        /* === Simulador Canvas de Torricelli === */
+        const canvas = document.getElementById('torricelliCanvas');
+        const ctx = canvas.getContext('2d');
+        const CW = 720, CH = 440;
+
+        /* Layout */
+        const TANK_X = 80, TANK_Y = 50, TANK_W = 160, TANK_H = 300;
+        const HOLE_Y = TANK_Y + TANK_H - 28;
+        const HOLE_R = 7;
+        const GROUND_Y = TANK_Y + TANK_H + 12;
+        const G = 9.8;
+        const MAX_H = 10;
+
+        let waterH = 5;
+        let particles = [];
+        let time = 0;
+        let started = false;
+
+        const slider   = document.getElementById('simHeight');
+        const valSpan  = document.getElementById('simHeightVal');
+        const resultDiv = document.getElementById('simResult');
+        const btnIniciar = document.getElementById('btnIniciar');
+
+        btnIniciar.addEventListener('click', () => {
+            if (!started) {
+                started = true;
+                btnIniciar.textContent = '\u21BB Reiniciar';
+            } else {
+                resetSim();
+            }
+        });
+
+        slider.addEventListener('input', () => {
+            waterH = parseFloat(slider.value);
+            valSpan.textContent = waterH.toFixed(1) + ' m';
+            const v = Math.sqrt(2 * G * waterH).toFixed(2);
+            resultDiv.innerHTML = 'v = &radic;(2 &times; 9.8 &times; ' + waterH.toFixed(1) + ') = <strong>' + v + ' m/s</strong>';
+            resetSim();
+        });
+
+        function resetSim() {
+            started = false;
+            particles = [];
+            btnIniciar.textContent = '\u25B6 Iniciar';
+        }
+
+        function draw() {
+            time += 0.016;
+            ctx.clearRect(0, 0, CW, CH);
+
+            const frac = waterH / MAX_H;
+            const waterPxH = frac * (TANK_H - 6);
+            const waterTop = TANK_Y + TANK_H - 3 - waterPxH;
+            const vel = Math.sqrt(2 * G * waterH);
+
+            /* === Ground === */
+            ctx.fillStyle = '#2a2a4a';
+            ctx.fillRect(0, GROUND_Y, CW, CH - GROUND_Y);
+
+            /* Ground line */
+            ctx.strokeStyle = '#4a4a6a';
+            ctx.lineWidth = 1;
+            ctx.beginPath();
+            ctx.moveTo(0, GROUND_Y);
+            ctx.lineTo(CW, GROUND_Y);
+            ctx.stroke();
+
+            /* === Tank body === */
+            ctx.fillStyle = '#111128';
+            ctx.fillRect(TANK_X, TANK_Y, TANK_W, TANK_H);
+
+            /* === Water inside tank === */
+            const wGrad = ctx.createLinearGradient(0, waterTop, 0, TANK_Y + TANK_H);
+            wGrad.addColorStop(0, 'rgba(68,160,255,0.35)');
+            wGrad.addColorStop(1, 'rgba(30,80,200,0.50)');
+            ctx.fillStyle = wGrad;
+            ctx.fillRect(TANK_X + 2, waterTop, TANK_W - 4, waterPxH);
+
+            /* Water surface wave */
+            ctx.strokeStyle = 'rgba(100,180,255,0.6)';
+            ctx.lineWidth = 2;
+            ctx.beginPath();
+            for (let x = TANK_X + 3; x < TANK_X + TANK_W - 3; x += 2) {
+                const wave = Math.sin(x * 0.05 + time * 2.5) * 2;
+                if (x === TANK_X + 3) ctx.moveTo(x, waterTop + wave);
+                else ctx.lineTo(x, waterTop + wave);
+            }
+            ctx.stroke();
+
+            /* === Tank walls (outline on top of water) === */
+            ctx.strokeStyle = '#8888aa';
+            ctx.lineWidth = 3;
+            ctx.strokeRect(TANK_X, TANK_Y, TANK_W, TANK_H);
+
+            /* === Hole === */
+            ctx.fillStyle = started ? '#44aaff' : '#333355';
+            ctx.beginPath();
+            ctx.arc(TANK_X + TANK_W + 1, HOLE_Y, HOLE_R, 0, Math.PI * 2);
+            ctx.fill();
+            ctx.strokeStyle = '#6666aa';
+            ctx.lineWidth = 1.5;
+            ctx.stroke();
+
+            /* === Height arrow (h) === */
+            if (waterPxH > 20) {
+                const arrowX = TANK_X - 16;
+                const hTop = waterTop + 4;
+                const hBot = HOLE_Y;
+                /* Vertical line */
+                ctx.strokeStyle = '#00C9A7';
+                ctx.lineWidth = 2;
+                ctx.beginPath();
+                ctx.moveTo(arrowX, hTop);
+                ctx.lineTo(arrowX, hBot);
+                ctx.stroke();
+                /* Top arrowhead */
+                drawArrowhead(ctx, arrowX, hTop, -Math.PI / 2, '#00C9A7');
+                /* Bottom arrowhead */
+                drawArrowhead(ctx, arrowX, hBot, Math.PI / 2, '#00C9A7');
+                /* Label */
+                ctx.fillStyle = '#00C9A7';
+                ctx.font = 'bold 13px Inter, sans-serif';
+                ctx.textAlign = 'center';
+                ctx.save();
+                ctx.translate(arrowX - 14, (hTop + hBot) / 2);
+                ctx.rotate(-Math.PI / 2);
+                ctx.fillText('h = ' + waterH.toFixed(1) + ' m', 0, 0);
+                ctx.restore();
+            }
+
+            /* === Particles (water jet) === */
+            if (started && waterH > 0) {
+                for (let i = 0; i < 3; i++) {
+                    particles.push({
+                        x: TANK_X + TANK_W + HOLE_R + 2,
+                        y: HOLE_Y + (Math.random() - 0.5) * HOLE_R * 0.8,
+                        vx: vel * 14 + Math.random() * 10,
+                        vy: -5 + Math.random() * 10,
+                        life: 140,
+                        size: 1.5 + Math.random() * 2
+                    });
+                }
+            }
+
+            const dt = 1 / 60;
+            const alive = [];
+            for (const p of particles) {
+                p.vy += 380 * dt;     // gravity
+                p.x += p.vx * dt;
+                p.y += p.vy * dt;
+                p.life--;
+
+                /* Splash on ground */
+                if (p.y >= GROUND_Y - 2) {
+                    p.y = GROUND_Y - 2;
+                    p.vy *= -0.2;
+                    p.vx *= 0.5;
+                    p.life -= 5;
+                }
+
+                if (p.life > 0 && p.x < CW + 10) {
+                    const alpha = Math.min(1, p.life / 50) * 0.75;
+                    ctx.fillStyle = 'rgba(68,170,255,' + alpha + ')';
+                    ctx.beginPath();
+                    ctx.arc(p.x, p.y, p.size, 0, Math.PI * 2);
+                    ctx.fill();
+                    alive.push(p);
+                }
+            }
+            particles = alive;
+            if (particles.length > 800) particles.splice(0, 150);
+
+            /* === Splash pool on ground === */
+            if (started && waterH > 0) {
+                const landX = TANK_X + TANK_W + HOLE_R + vel * 14 * Math.sqrt(2 * (GROUND_Y - HOLE_Y) / 380) * 0.45;
+                const poolW = Math.min(200, vel * 12);
+                const poolGrad = ctx.createRadialGradient(landX, GROUND_Y, 0, landX, GROUND_Y, poolW / 2);
+                poolGrad.addColorStop(0, 'rgba(40,120,255,0.25)');
+                poolGrad.addColorStop(1, 'rgba(40,120,255,0)');
+                ctx.fillStyle = poolGrad;
+                ctx.fillRect(landX - poolW / 2, GROUND_Y - 3, poolW, 14);
+            }
+
+            /* === Velocity label near hole === */
+            ctx.fillStyle = '#FF6584';
+            ctx.font = 'bold 14px Inter, sans-serif';
+            ctx.textAlign = 'left';
+            if (started) {
+                ctx.fillText('v = ' + vel.toFixed(2) + ' m/s', TANK_X + TANK_W + 20, HOLE_Y - 18);
+            }
+
+            /* Velocity arrow */
+            if (started && waterH > 0) {
+                const arrLen = Math.min(100, vel * 8);
+                ctx.strokeStyle = '#FF6584';
+                ctx.lineWidth = 2.5;
+                ctx.beginPath();
+                ctx.moveTo(TANK_X + TANK_W + HOLE_R + 4, HOLE_Y);
+                ctx.lineTo(TANK_X + TANK_W + HOLE_R + 4 + arrLen, HOLE_Y);
+                ctx.stroke();
+                drawArrowhead(ctx, TANK_X + TANK_W + HOLE_R + 4 + arrLen, HOLE_Y, 0, '#FF6584');
+            }
+
+            /* === Tank label === */
+            ctx.fillStyle = '#aaaacc';
+            ctx.font = '13px Inter, sans-serif';
+            ctx.textAlign = 'center';
+            ctx.fillText('Tanque', TANK_X + TANK_W / 2, TANK_Y - 10);
+
+            /* === Status message === */
+            ctx.font = 'bold 14px Inter, sans-serif';
+            ctx.textAlign = 'center';
+            if (!started) {
+                ctx.fillStyle = '#8888aa';
+                ctx.fillText('Presiona "Iniciar" para abrir el orificio', CW / 2, 28);
+            } else {
+                ctx.fillStyle = '#44aaff';
+                ctx.fillText('v = \u221A(2 \u00D7 9.8 \u00D7 ' + waterH.toFixed(1) + ') = ' + vel.toFixed(2) + ' m/s', CW / 2, 28);
+            }
+
+            /* === Distance marker on ground === */
+            if (started && waterH > 0) {
+                const holeToGround = GROUND_Y - HOLE_Y;
+                const tFall = Math.sqrt(2 * holeToGround / 380);
+                const dist = vel * 14 * tFall;
+                const distMeters = (vel * Math.sqrt(2 * (GROUND_Y - HOLE_Y) / 380 * (1 / 14))).toFixed(1);
+
+                if (dist > 30) {
+                    ctx.strokeStyle = 'rgba(255,214,0,0.5)';
+                    ctx.lineWidth = 1;
+                    ctx.setLineDash([4, 4]);
+                    ctx.beginPath();
+                    ctx.moveTo(TANK_X + TANK_W + HOLE_R, GROUND_Y + 18);
+                    ctx.lineTo(TANK_X + TANK_W + HOLE_R + dist * 0.45, GROUND_Y + 18);
+                    ctx.stroke();
+                    ctx.setLineDash([]);
+                    ctx.fillStyle = '#FFD600';
+                    ctx.font = '11px Inter, sans-serif';
+                    ctx.textAlign = 'center';
+                    ctx.fillText('Alcance del chorro', TANK_X + TANK_W + HOLE_R + dist * 0.225, GROUND_Y + 32);
+                }
+            }
+
+            requestAnimationFrame(draw);
+        }
+
+        function drawArrowhead(c, x, y, angle, color) {
+            const hl = 8;
+            c.fillStyle = color;
+            c.beginPath();
+            c.moveTo(x + hl * Math.cos(angle), y + hl * Math.sin(angle));
+            c.lineTo(x - hl * Math.cos(angle - 0.5), y - hl * Math.sin(angle - 0.5));
+            c.lineTo(x - hl * Math.cos(angle + 0.5), y - hl * Math.sin(angle + 0.5));
+            c.closePath();
+            c.fill();
+        }
+
+        draw();
+    </script>
+</body>
+</html>

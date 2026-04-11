@@ -1,0 +1,555 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Tema 07 - Presion | Mod 08</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+
+    <nav class="topic-nav">
+        <a href="index.html" class="back-link">&#9664; Volver al indice</a>
+        <span class="topic-nav-title">Tema 07 &mdash; Presion</span>
+    </nav>
+
+    <a href="#top" class="back-to-top" id="backToTop">&#9650;</a>
+
+    <section class="tema tema-page" id="top">
+        <div class="container">
+            <div class="tema-header fade-in">
+                <div class="tema-number odd">Tema 07 &mdash; Mecanica de Fluidos</div>
+                <h2>Presion</h2>
+                <p class="intro">La presion es uno de los conceptos mas importantes de la fisica. Explica por que un cuchillo afilado corta mejor que uno sin filo, por que los clavos tienen punta, y como funcionan las llantas, los aviones y hasta nuestro propio cuerpo.</p>
+            </div>
+
+            <!-- ===== CONCEPTO ===== -->
+            <div class="content-block fade-in">
+                <h3><span class="icon" style="background:rgba(108,99,255,0.15);color:var(--primary-light);">&#128218;</span> Que es la presion?</h3>
+                <div class="info-box theory">
+                    <div class="box-title">Definicion</div>
+                    <p><em>La presion es la cantidad de fuerza que se aplica sobre una unidad de area.</em> Dicho de otro modo: es que tan "concentrada" esta una fuerza sobre una superficie.</p>
+                </div>
+                <h4>La formula</h4>
+                <div class="formula">
+                    P = F / A
+                </div>
+                <p>Donde:</p>
+                <ul>
+                    <li><strong>P</strong> = Presion (Pascal, Pa)</li>
+                    <li><strong>F</strong> = Fuerza aplicada (Newton, N)</li>
+                    <li><strong>A</strong> = Area sobre la que se aplica la fuerza (m&sup2;)</li>
+                </ul>
+                <div class="info-box warning">
+                    <div class="box-title">La unidad: Pascal (Pa)</div>
+                    <p><strong>1 Pa = 1 N/m&sup2;</strong>. Es una unidad muy pequena. Otras unidades comunes:</p>
+                    <ul>
+                        <li><strong>1 atm</strong> (atmosfera) = 101,325 Pa &asymp; La presion del aire al nivel del mar</li>
+                        <li><strong>1 bar</strong> = 100,000 Pa</li>
+                        <li><strong>1 psi</strong> = 6,895 Pa (muy usada en llantas)</li>
+                    </ul>
+                </div>
+            </div>
+
+            <!-- ===== IDEA CLAVE ===== -->
+            <div class="content-block fade-in">
+                <h3><span class="icon" style="background:rgba(0,201,167,0.15);color:var(--accent);">&#128161;</span> La idea clave: Fuerza vs Area</h3>
+                <p>La presion depende de dos cosas: <strong>la fuerza</strong> y <strong>el area</strong>. Esto tiene consecuencias muy interesantes:</p>
+                <div class="info-box theory">
+                    <div class="box-title">Relaciones importantes</div>
+                    <ul>
+                        <li><strong>Misma fuerza, menor area &rarr; MAYOR presion.</strong> Por eso un cuchillo afilado (area pequena) corta mejor que uno sin filo (area grande).</li>
+                        <li><strong>Misma fuerza, mayor area &rarr; MENOR presion.</strong> Por eso las raquetas de nieve son anchas: distribuyen tu peso en mas area para no hundirte.</li>
+                        <li><strong>Mayor fuerza, misma area &rarr; MAYOR presion.</strong> Si empujas mas fuerte, generas mas presion.</li>
+                    </ul>
+                </div>
+                <h4>Ejemplos cotidianos</h4>
+                <ul>
+                    <li><strong>Clavos:</strong> La punta concentra toda la fuerza del martillo en un area minima = presion altisima = penetra la madera.</li>
+                    <li><strong>Tacones vs tenis:</strong> Una persona con tacones de aguja ejerce mas presion en el suelo que un elefante! El area del tacon es muchisimo menor.</li>
+                    <li><strong>Tractores:</strong> Usan orugas anchas para distribuir su peso y no hundirse en el lodo.</li>
+                    <li><strong>Camas de clavos:</strong> Al acostarse sobre muchos clavos, el peso se reparte entre todos, y la presion por clavo es baja. No lastima!</li>
+                </ul>
+            </div>
+
+            <!-- ===== TIPOS DE PRESION ===== -->
+            <div class="content-block fade-in">
+                <h3><span class="icon" style="background:rgba(255,214,0,0.15);color:var(--warning);">&#9878;</span> Tipos de presion</h3>
+
+                <h4>1. Presion atmosferica</h4>
+                <p>Es la presion que ejerce el aire de la atmosfera sobre todo lo que esta en la superficie terrestre. Al nivel del mar es de aproximadamente <strong>101,325 Pa (1 atm)</strong>.</p>
+                <div class="info-box example">
+                    <div class="box-title">Dato interesante</div>
+                    <p>Sobre cada metro cuadrado de tu cuerpo, la atmosfera empuja con una fuerza de mas de 100,000 N (unas 10 toneladas). No lo sientes porque la presion es igual en todas las direcciones y tu cuerpo empuja de vuelta.</p>
+                </div>
+
+                <h4>2. Presion hidrostatica</h4>
+                <p>Es la presion que ejerce un liquido en reposo debido a su propio peso. Aumenta con la profundidad:</p>
+                <div class="formula">
+                    P = &rho; &times; g &times; h
+                </div>
+                <ul>
+                    <li><strong>&rho;</strong> = Densidad del liquido (kg/m&sup3;)</li>
+                    <li><strong>g</strong> = Gravedad (9.8 m/s&sup2;)</li>
+                    <li><strong>h</strong> = Profundidad (m)</li>
+                </ul>
+                <p>Por eso los buzos sienten mas presion a mayor profundidad y las represas son mas gruesas en la base.</p>
+
+                <h4>3. Presion manometrica</h4>
+                <p>Es la diferencia entre la presion dentro de un recipiente y la presion atmosferica. Es lo que mide el manometro de las llantas de un auto.</p>
+                <div class="formula">
+                    P<sub>manometrica</sub> = P<sub>absoluta</sub> - P<sub>atmosferica</sub>
+                </div>
+            </div>
+
+            <!-- ===== EJEMPLOS RESUELTOS ===== -->
+            <div class="content-block fade-in">
+                <h3><span class="icon" style="background:rgba(255,101,132,0.15);color:var(--secondary);">&#128270;</span> Ejemplos resueltos</h3>
+
+                <div class="info-box example">
+                    <div class="box-title">Ejemplo 1: Presion basica</div>
+                    <p><strong>Una caja de 200 N descansa sobre una mesa. La base de la caja mide 0.5 m &times; 0.4 m. Cual es la presion que ejerce sobre la mesa?</strong></p>
+                    <div class="steps">
+                        <div class="step">
+                            <div class="step-num">1</div>
+                            <div class="step-content"><p>Datos: F = 200 N, A = 0.5 &times; 0.4 = 0.2 m&sup2;</p></div>
+                        </div>
+                        <div class="step">
+                            <div class="step-num">2</div>
+                            <div class="step-content">
+                                <p class="math">P = F / A = 200 / 0.2 = <strong>1,000 Pa</strong></p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="info-box example" style="margin-top:1.5rem;">
+                    <div class="box-title">Ejemplo 2: Presion hidrostatica</div>
+                    <p><strong>Un buzo se sumerge a 30 metros de profundidad en el mar (densidad del agua de mar = 1,025 kg/m&sup3;). Cual es la presion hidrostatica a esa profundidad?</strong></p>
+                    <div class="steps">
+                        <div class="step">
+                            <div class="step-num">1</div>
+                            <div class="step-content"><p>Datos: &rho; = 1025 kg/m&sup3;, g = 9.8 m/s&sup2;, h = 30 m</p></div>
+                        </div>
+                        <div class="step">
+                            <div class="step-num">2</div>
+                            <div class="step-content">
+                                <p class="math">P = &rho; &times; g &times; h = 1025 &times; 9.8 &times; 30</p>
+                                <p class="math">P = <strong>301,350 Pa</strong> &asymp; 2.97 atm</p>
+                            </div>
+                        </div>
+                    </div>
+                    <p>La presion total seria esa mas la atmosferica: 301,350 + 101,325 = <strong>402,675 Pa &asymp; 3.97 atm</strong>. Casi 4 veces la presion en la superficie!</p>
+                </div>
+
+                <div class="info-box example" style="margin-top:1.5rem;">
+                    <div class="box-title">Ejemplo 3: Tacones vs tenis</div>
+                    <p><strong>Una persona de 60 kg camina con tenis (area total de contacto = 0.04 m&sup2;) y luego con tacones de aguja (area total = 0.0002 m&sup2;). Compara las presiones.</strong></p>
+                    <div class="steps">
+                        <div class="step">
+                            <div class="step-num">1</div>
+                            <div class="step-content"><p>Peso: F = 60 &times; 9.8 = 588 N</p></div>
+                        </div>
+                        <div class="step">
+                            <div class="step-num">2</div>
+                            <div class="step-content">
+                                <p>Con tenis: P = 588 / 0.04 = <strong>14,700 Pa</strong></p>
+                                <p>Con tacones: P = 588 / 0.0002 = <strong>2,940,000 Pa</strong></p>
+                            </div>
+                        </div>
+                    </div>
+                    <p>Los tacones ejercen <strong>200 veces mas presion</strong> que los tenis! Por eso los tacones pueden danar pisos de madera.</p>
+                </div>
+            </div>
+
+            <!-- ===== SIMULADOR CANVAS ===== -->
+            <div class="content-block fade-in">
+                <h3><span class="icon" style="background:rgba(108,99,255,0.15);color:var(--primary-light);">&#127918;</span> Simulador interactivo</h3>
+                <p>Ajusta la fuerza y el area para ver como cambia la presion. Observa como el objeto se hunde mas en la superficie cuando la presion aumenta.</p>
+                <div class="sim-wrapper">
+                    <div class="sim-controls">
+                        <label>
+                            Fuerza (F):
+                            <input type="range" id="simForce" min="50" max="2000" step="50" value="500">
+                            <span id="simForceVal">500 N</span>
+                        </label>
+                        <label style="margin-top:0.5rem;">
+                            Area (A):
+                            <input type="range" id="simArea" min="0.01" max="1" step="0.01" value="0.25">
+                            <span id="simAreaVal">0.25 m&sup2;</span>
+                        </label>
+                    </div>
+                    <div class="sim-canvas-wrap">
+                        <canvas id="pressureCanvas" width="720" height="440" style="width:100%;border-radius:12px;background:#0F0E17;"></canvas>
+                    </div>
+                    <div class="sim-result" id="simResult">
+                        P = 500 / 0.25 = <strong>2,000 Pa</strong>
+                    </div>
+                </div>
+            </div>
+
+            <!-- ===== VIDEO ===== -->
+            <!-- <div class="content-block fade-in">
+                <h3><span class="icon" style="background:rgba(255,101,132,0.15);color:var(--secondary);">&#127909;</span> Video explicativo</h3>
+                <p>Este video explica el concepto de presion de manera clara con ejemplos visuales:</p>
+                <div class="video-section">
+                    <div class="video-wrapper">
+                        <iframe src="https://www.youtube.com/embed/VvGz6LKnZ_Y" title="Presion - Explicacion" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen loading="lazy"></iframe>
+                    </div>
+                </div>
+            </div> -->
+
+            <!-- ===== EJERCICIOS ===== -->
+            <div class="exercises-section fade-in">
+                <h3><span class="icon" style="background:rgba(255,101,132,0.15);color:var(--secondary);">&#9998;</span> Ejercicios - Presion</h3>
+
+                <div class="exercise-item">
+                    <div class="exercise-header">
+                        <span class="exercise-label">Ejercicio 1</span>
+                        <span class="difficulty easy">Facil</span>
+                    </div>
+                    <p>Un libro de 15 N descansa sobre una mesa. Su base mide 0.20 m &times; 0.30 m. Calcula la presion sobre la mesa.</p>
+                    <button class="solution-toggle" onclick="toggleSolution(this)">Ver solucion &#9660;</button>
+                    <div class="solution">
+                        <p>A = 0.20 &times; 0.30 = 0.06 m&sup2;</p>
+                        <p><span class="step-math">P = F/A = 15 / 0.06 = <strong>250 Pa</strong></span></p>
+                    </div>
+                </div>
+
+                <div class="exercise-item">
+                    <div class="exercise-header">
+                        <span class="exercise-label">Ejercicio 2</span>
+                        <span class="difficulty medium">Medio</span>
+                    </div>
+                    <p>Calcula la presion hidrostatica en el fondo de una piscina de 2.5 metros de profundidad. (Densidad del agua = 1,000 kg/m&sup3;)</p>
+                    <button class="solution-toggle" onclick="toggleSolution(this)">Ver solucion &#9660;</button>
+                    <div class="solution">
+                        <p><span class="step-math">P = &rho; &times; g &times; h = 1000 &times; 9.8 &times; 2.5 = <strong>24,500 Pa</strong></span></p>
+                        <p>Eso es 24,500 Pa o aproximadamente 0.24 atm solo por el agua (sin contar la presion atmosferica).</p>
+                    </div>
+                </div>
+
+                <div class="exercise-item">
+                    <div class="exercise-header">
+                        <span class="exercise-label">Ejercicio 3</span>
+                        <span class="difficulty medium">Medio</span>
+                    </div>
+                    <p>Un clavo tiene una punta con area de 0.000001 m&sup2; (1 mm&sup2;). Si le pegas con un martillo aplicando 80 N, que presion genera la punta del clavo?</p>
+                    <button class="solution-toggle" onclick="toggleSolution(this)">Ver solucion &#9660;</button>
+                    <div class="solution">
+                        <p><span class="step-math">P = F/A = 80 / 0.000001 = <strong>80,000,000 Pa = 80 MPa</strong></span></p>
+                        <p>80 millones de Pascales! Esa concentracion de presion es lo que permite que el clavo penetre la madera.</p>
+                    </div>
+                </div>
+
+                <div class="exercise-item">
+                    <div class="exercise-header">
+                        <span class="exercise-label">Ejercicio 4</span>
+                        <span class="difficulty hard">Dificil</span>
+                    </div>
+                    <p>Un submarino se encuentra a 200 metros de profundidad en el oceano (&rho; = 1,025 kg/m&sup3;). Calcula: a) la presion hidrostatica, b) la presion absoluta (sumando la atmosferica), c) la fuerza sobre una ventana circular de 30 cm de diametro.</p>
+                    <button class="solution-toggle" onclick="toggleSolution(this)">Ver solucion &#9660;</button>
+                    <div class="solution">
+                        <p><strong>a) Presion hidrostatica:</strong></p>
+                        <p><span class="step-math">P = 1025 &times; 9.8 &times; 200 = <strong>2,009,000 Pa &asymp; 20.09 atm</strong></span></p>
+                        <p><strong>b) Presion absoluta:</strong></p>
+                        <p><span class="step-math">P<sub>abs</sub> = 2,009,000 + 101,325 = <strong>2,110,325 Pa &asymp; 20.83 atm</strong></span></p>
+                        <p><strong>c) Fuerza sobre la ventana:</strong></p>
+                        <p>A = &pi; &times; (0.15)&sup2; = 0.07069 m&sup2;</p>
+                        <p><span class="step-math">F = P &times; A = 2,110,325 &times; 0.07069 = <strong>149,170 N &asymp; 149.2 kN</strong></span></p>
+                        <p>Casi 15 toneladas de fuerza sobre una ventana de 30 cm! Por eso los submarinos necesitan materiales extremadamente resistentes.</p>
+                    </div>
+                </div>
+            </div>
+
+        </div>
+    </section>
+
+    <footer>
+        <div class="container">
+            <p style="margin-bottom:0.5rem; font-size:1rem; color:var(--text-muted);">Mod 08 &mdash; Matematicas y Representaciones del Sistema Natural!</p>
+            <p>Contenido educativo &middot; 16 temas &middot; Preparatoria</p>
+        </div>
+    </footer>
+
+    <script>
+        /* === Utilidades compartidas === */
+        function toggleSolution(btn) {
+            const solution = btn.nextElementSibling;
+            solution.classList.toggle('visible');
+            btn.textContent = solution.classList.contains('visible') ? 'Ocultar solucion \u25B2' : 'Ver solucion \u25BC';
+        }
+        const observer = new IntersectionObserver((entries) => {
+            entries.forEach(entry => { if (entry.isIntersecting) entry.target.classList.add('visible'); });
+        }, { threshold: 0.1 });
+        document.querySelectorAll('.fade-in').forEach(el => observer.observe(el));
+        const backBtn = document.getElementById('backToTop');
+        window.addEventListener('scroll', () => { backBtn.classList.toggle('show', window.scrollY > 400); });
+
+        /* === Simulador Canvas de Presion === */
+        const canvas = document.getElementById('pressureCanvas');
+        const ctx = canvas.getContext('2d');
+        const CW = 720, CH = 440;
+
+        let simForce = 500;
+        let simArea = 0.25;
+        let animDeform = 0;       // animated deformation depth
+        let animBlockY = 0;       // animated block push
+        let time = 0;
+
+        const forceSlider = document.getElementById('simForce');
+        const areaSlider  = document.getElementById('simArea');
+        const forceVal    = document.getElementById('simForceVal');
+        const areaVal     = document.getElementById('simAreaVal');
+        const resultDiv   = document.getElementById('simResult');
+
+        const SURFACE_Y = 270;      // top of surface
+        const SURFACE_H = 60;       // surface thickness
+
+        function updateLabels() {
+            simForce = parseFloat(forceSlider.value);
+            simArea  = parseFloat(areaSlider.value);
+            forceVal.textContent = simForce + ' N';
+            areaVal.textContent  = simArea.toFixed(2) + ' m\u00B2';
+            const p = simForce / simArea;
+            resultDiv.innerHTML = 'P = ' + simForce + ' / ' + simArea.toFixed(2) + ' = <strong>' + Math.round(p).toLocaleString() + ' Pa</strong>';
+        }
+        forceSlider.addEventListener('input', updateLabels);
+        areaSlider.addEventListener('input', updateLabels);
+
+        function lerp(a, b, t) { return a + (b - a) * t; }
+
+        function draw() {
+            time += 0.016;
+            const pressure = simForce / simArea;
+
+            /* Block dimensions from area */
+            const blockW = Math.max(40, Math.sqrt(simArea) * 260);
+            const blockH = blockW * 0.45;
+            const cx = CW / 2;
+
+            /* Target deformation & push */
+            const targetDeform = Math.min(35, pressure / 800);
+            const targetPush   = Math.min(20, pressure / 1500);
+            animDeform = lerp(animDeform, targetDeform, 0.1);
+            animBlockY = lerp(animBlockY, targetPush, 0.1);
+
+            const blockBottom = SURFACE_Y - 2 + animBlockY;
+            const blockTop    = blockBottom - blockH;
+
+            ctx.clearRect(0, 0, CW, CH);
+
+            /* === Background gradient === */
+            const bgGrad = ctx.createLinearGradient(0, 0, 0, CH);
+            bgGrad.addColorStop(0, '#0a0a1a');
+            bgGrad.addColorStop(1, '#12122a');
+            ctx.fillStyle = bgGrad;
+            ctx.fillRect(0, 0, CW, CH);
+
+            /* === Surface (deformable material) === */
+            ctx.fillStyle = '#2e2e50';
+            ctx.fillRect(60, SURFACE_Y, CW - 120, SURFACE_H);
+            /* Surface top edge */
+            ctx.strokeStyle = '#4a4a6a';
+            ctx.lineWidth = 2;
+            ctx.beginPath();
+            ctx.moveTo(60, SURFACE_Y);
+            ctx.lineTo(CW - 60, SURFACE_Y);
+            ctx.stroke();
+
+            /* === Deformation indent === */
+            if (animDeform > 0.5) {
+                const dLeft  = cx - blockW / 2;
+                const dRight = cx + blockW / 2;
+                /* Deformation shape (curved indent) */
+                ctx.fillStyle = '#1a1a36';
+                ctx.beginPath();
+                ctx.moveTo(dLeft, SURFACE_Y);
+                ctx.quadraticCurveTo(dLeft + blockW * 0.1, SURFACE_Y + animDeform, cx, SURFACE_Y + animDeform);
+                ctx.quadraticCurveTo(dRight - blockW * 0.1, SURFACE_Y + animDeform, dRight, SURFACE_Y);
+                ctx.closePath();
+                ctx.fill();
+
+                /* Stress lines radiating from indent */
+                ctx.strokeStyle = 'rgba(255,101,132,0.15)';
+                ctx.lineWidth = 1;
+                const lineCount = Math.min(12, Math.floor(pressure / 1500));
+                for (let i = 0; i < lineCount; i++) {
+                    const angle = (Math.PI * 0.15) + (Math.PI * 0.7) * (i / Math.max(1, lineCount - 1));
+                    const len = 15 + animDeform * 1.2;
+                    const sx = cx + Math.cos(angle) * blockW * 0.2 * (i % 2 === 0 ? 1 : -1);
+                    const sy = SURFACE_Y + animDeform * 0.7;
+                    ctx.beginPath();
+                    ctx.moveTo(sx, sy);
+                    ctx.lineTo(sx + Math.cos(angle + Math.PI / 2) * len, sy + Math.sin(angle + Math.PI / 2) * len);
+                    ctx.stroke();
+                }
+            }
+
+            /* === Block (3D-ish) === */
+            const off = blockH * 0.25;  // 3D offset
+            const bx = cx - blockW / 2;
+
+            /* Pressure-based color: blue(low) -> purple(mid) -> red(high) */
+            const hue = Math.min(1, pressure / 20000);
+            const r = Math.floor(80 + hue * 175);
+            const g = Math.floor(80 + (1 - hue) * 100);
+            const b = Math.floor(220 - hue * 120);
+            const blockColor = 'rgb(' + r + ',' + g + ',' + b + ')';
+            const topColor   = 'rgb(' + Math.min(255, r + 35) + ',' + Math.min(255, g + 35) + ',' + Math.min(255, b + 35) + ')';
+            const sideColor  = 'rgb(' + Math.max(0, r - 40) + ',' + Math.max(0, g - 40) + ',' + Math.max(0, b - 40) + ')';
+
+            /* Top face */
+            ctx.fillStyle = topColor;
+            ctx.beginPath();
+            ctx.moveTo(bx, blockTop);
+            ctx.lineTo(bx + off, blockTop - off);
+            ctx.lineTo(bx + blockW + off, blockTop - off);
+            ctx.lineTo(bx + blockW, blockTop);
+            ctx.closePath();
+            ctx.fill();
+            /* Right face */
+            ctx.fillStyle = sideColor;
+            ctx.beginPath();
+            ctx.moveTo(bx + blockW, blockTop);
+            ctx.lineTo(bx + blockW + off, blockTop - off);
+            ctx.lineTo(bx + blockW + off, blockBottom - off);
+            ctx.lineTo(bx + blockW, blockBottom);
+            ctx.closePath();
+            ctx.fill();
+            /* Front face */
+            ctx.fillStyle = blockColor;
+            ctx.fillRect(bx, blockTop, blockW, blockH);
+            /* Outline */
+            ctx.strokeStyle = 'rgba(255,255,255,0.12)';
+            ctx.lineWidth = 1.5;
+            ctx.strokeRect(bx, blockTop, blockW, blockH);
+
+            /* Area label on block */
+            ctx.fillStyle = 'rgba(255,255,255,0.85)';
+            ctx.font = 'bold 13px Inter, sans-serif';
+            ctx.textAlign = 'center';
+            ctx.fillText('A = ' + simArea.toFixed(2) + ' m\u00B2', cx, blockTop + blockH / 2 + 4);
+
+            /* === Force arrow (above block) === */
+            const arrowLen = Math.min(110, simForce / 12);
+            const arrowTop = blockTop - off - 8;
+            const arrowStart = arrowTop - arrowLen;
+            /* Shaft */
+            ctx.strokeStyle = '#FF6584';
+            ctx.lineWidth = 3;
+            ctx.beginPath();
+            ctx.moveTo(cx, arrowStart);
+            ctx.lineTo(cx, arrowTop);
+            ctx.stroke();
+            /* Head */
+            ctx.fillStyle = '#FF6584';
+            ctx.beginPath();
+            ctx.moveTo(cx, arrowTop + 2);
+            ctx.lineTo(cx - 9, arrowTop - 12);
+            ctx.lineTo(cx + 9, arrowTop - 12);
+            ctx.closePath();
+            ctx.fill();
+            /* Force label */
+            ctx.fillStyle = '#FF6584';
+            ctx.font = 'bold 14px Inter, sans-serif';
+            ctx.textAlign = 'center';
+            ctx.fillText('F = ' + simForce + ' N', cx, arrowStart - 10);
+
+            /* === Pressure value display (bottom) === */
+            let qual, qualColor;
+            if (pressure < 2000)       { qual = 'BAJA'; qualColor = '#00C9A7'; }
+            else if (pressure < 10000) { qual = 'MODERADA'; qualColor = '#FFD600'; }
+            else                       { qual = 'ALTA'; qualColor = '#FF6584'; }
+
+            /* Background pill */
+            const pillW = 340;
+            const pillH = 34;
+            const pillX = cx - pillW / 2;
+            const pillY = SURFACE_Y + SURFACE_H + 24;
+            ctx.fillStyle = 'rgba(255,255,255,0.05)';
+            ctx.beginPath();
+            ctx.roundRect(pillX, pillY, pillW, pillH, 12);
+            ctx.fill();
+
+            ctx.fillStyle = qualColor;
+            ctx.font = 'bold 15px Inter, sans-serif';
+            ctx.textAlign = 'center';
+            ctx.fillText('P = ' + Math.round(pressure).toLocaleString() + ' Pa  \u2014  Presion ' + qual, cx, pillY + 22);
+
+            /* === Comparison bar (visual pressure meter) === */
+            const barX = cx - 150;
+            const barY = pillY + pillH + 16;
+            const barW = 300;
+            const barH = 12;
+            const fillFrac = Math.min(1, pressure / 50000);
+
+            /* Bar background */
+            ctx.fillStyle = '#1a1a36';
+            ctx.beginPath();
+            ctx.roundRect(barX, barY, barW, barH, 6);
+            ctx.fill();
+            /* Bar fill gradient */
+            const barGrad = ctx.createLinearGradient(barX, 0, barX + barW, 0);
+            barGrad.addColorStop(0, '#00C9A7');
+            barGrad.addColorStop(0.4, '#FFD600');
+            barGrad.addColorStop(1, '#FF6584');
+            ctx.fillStyle = barGrad;
+            ctx.beginPath();
+            ctx.roundRect(barX, barY, barW * fillFrac, barH, 6);
+            ctx.fill();
+            /* Bar labels */
+            ctx.fillStyle = '#666688';
+            ctx.font = '10px Inter, sans-serif';
+            ctx.textAlign = 'left';
+            ctx.fillText('0', barX, barY + barH + 14);
+            ctx.textAlign = 'right';
+            ctx.fillText('50,000 Pa', barX + barW, barY + barH + 14);
+            /* Indicator needle */
+            const needleX = barX + barW * fillFrac;
+            ctx.fillStyle = '#fff';
+            ctx.beginPath();
+            ctx.moveTo(needleX, barY - 2);
+            ctx.lineTo(needleX - 4, barY - 8);
+            ctx.lineTo(needleX + 4, barY - 8);
+            ctx.closePath();
+            ctx.fill();
+
+            /* === Width dimension line (shows area visually) === */
+            const dimY = blockBottom + 8;
+            ctx.strokeStyle = 'rgba(255,255,255,0.2)';
+            ctx.lineWidth = 1;
+            ctx.setLineDash([3, 3]);
+            ctx.beginPath();
+            ctx.moveTo(bx, dimY);
+            ctx.lineTo(bx + blockW, dimY);
+            ctx.stroke();
+            ctx.setLineDash([]);
+            /* Ticks */
+            ctx.beginPath();
+            ctx.moveTo(bx, dimY - 4); ctx.lineTo(bx, dimY + 4);
+            ctx.moveTo(bx + blockW, dimY - 4); ctx.lineTo(bx + blockW, dimY + 4);
+            ctx.stroke();
+
+            /* === Animated pressure particles inside indent === */
+            if (animDeform > 2) {
+                const pCount = Math.min(20, Math.floor(pressure / 2000));
+                for (let i = 0; i < pCount; i++) {
+                    const px = cx - blockW * 0.4 + Math.random() * blockW * 0.8;
+                    const py = SURFACE_Y + 2 + Math.random() * (animDeform - 2);
+                    const pr = 1.5 + Math.random() * 1.5;
+                    const pa = 0.2 + Math.random() * 0.3;
+                    ctx.fillStyle = 'rgba(255,101,132,' + pa + ')';
+                    ctx.beginPath();
+                    ctx.arc(px, py, pr, 0, Math.PI * 2);
+                    ctx.fill();
+                }
+            }
+
+            requestAnimationFrame(draw);
+        }
+
+        draw();
+    </script>
+</body>
+</html>

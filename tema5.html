@@ -1,0 +1,623 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Tema 05 - Principio de Arquimedes | Mod 08</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+
+    <nav class="topic-nav">
+        <a href="index.html" class="back-link">&#9664; Volver al indice</a>
+        <span class="topic-nav-title">Tema 05 &mdash; Principio de Arquimedes</span>
+    </nav>
+
+    <a href="#top" class="back-to-top" id="backToTop">&#9650;</a>
+
+    <section class="tema tema-page" id="top">
+        <div class="container">
+            <div class="tema-header fade-in">
+                <div class="tema-number odd">Tema 05 &mdash; Mecanica de Fluidos</div>
+                <h2>Principio de Arquimedes</h2>
+                <p class="intro">El Principio de Arquimedes nos explica por que algunos objetos flotan y otros se hunden. Fue descubierto por Arquimedes de Siracusa hace mas de 2,000 años y es fundamental para entender el comportamiento de los cuerpos sumergidos en fluidos.</p>
+            </div>
+
+            <div class="content-block fade-in">
+                <h3><span class="icon" style="background:rgba(108,99,255,0.15);color:var(--primary-light);">&#128218;</span> Que dice el Principio de Arquimedes?</h3>
+                <div class="info-box theory">
+                    <div class="box-title">Enunciado</div>
+                    <p><em>"Todo cuerpo sumergido total o parcialmente en un fluido recibe una fuerza de empuje hacia arriba (fuerza de flotacion) igual al peso del fluido desalojado."</em></p>
+                </div>
+                <p><strong>En palabras simples:</strong> Cuando metes un objeto en agua (o cualquier liquido), el agua lo empuja hacia arriba. Esa fuerza hacia arriba es exactamente igual al peso del agua que el objeto "desplaza" o mueve de su lugar.</p>
+                <h4>La formula</h4>
+                <div class="formula">
+                    E = &rho;<sub>fluido</sub> &times; V<sub>sumergido</sub> &times; g
+                </div>
+                <p>Donde:</p>
+                <ul>
+                    <li><strong>E</strong> = Fuerza de empuje o flotacion (N)</li>
+                    <li><strong>&rho;<sub>fluido</sub></strong> = Densidad del fluido (kg/m&sup3;). Para el agua: 1,000 kg/m&sup3;</li>
+                    <li><strong>V<sub>sumergido</sub></strong> = Volumen del objeto sumergido (m&sup3;)</li>
+                    <li><strong>g</strong> = Aceleracion de la gravedad = 9.8 m/s&sup2;</li>
+                </ul>
+            </div>
+
+            <div class="content-block fade-in">
+                <h3><span class="icon" style="background:rgba(0,201,167,0.15);color:var(--accent);">&#9878;</span> Flota o se hunde?</h3>
+                <p>La clave para saber si un objeto flota o se hunde es comparar su <strong>densidad</strong> con la del fluido:</p>
+                <div class="info-box theory">
+                    <div class="box-title">Regla basica</div>
+                    <ul>
+                        <li><strong>&rho;<sub>objeto</sub> &lt; &rho;<sub>fluido</sub></strong> &rarr; El objeto <strong>FLOTA</strong>.</li>
+                        <li><strong>&rho;<sub>objeto</sub> = &rho;<sub>fluido</sub></strong> &rarr; El objeto queda <strong>en equilibrio</strong> (ni sube ni baja).</li>
+                        <li><strong>&rho;<sub>objeto</sub> &gt; &rho;<sub>fluido</sub></strong> &rarr; El objeto <strong>SE HUNDE</strong>.</li>
+                    </ul>
+                </div>
+                <h4>Tabla de densidades comunes</h4>
+                <div style="overflow-x:auto; margin:1rem 0;">
+                    <table style="width:100%; border-collapse:collapse; background:var(--bg-secondary); border-radius:12px; overflow:hidden;">
+                        <thead>
+                            <tr style="background:var(--primary); color:#fff;">
+                                <th style="padding:0.75rem 1rem; text-align:left;">Material</th>
+                                <th style="padding:0.75rem 1rem; text-align:center;">Densidad (kg/m&sup3;)</th>
+                                <th style="padding:0.75rem 1rem; text-align:center;">Flota en agua?</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <tr style="border-bottom:1px solid var(--border);"><td style="padding:0.75rem 1rem;">Corcho</td><td style="text-align:center;">240</td><td style="text-align:center;">Si &#10003;</td></tr>
+                            <tr style="border-bottom:1px solid var(--border);"><td style="padding:0.75rem 1rem;">Madera (pino)</td><td style="text-align:center;">500</td><td style="text-align:center;">Si &#10003;</td></tr>
+                            <tr style="border-bottom:1px solid var(--border);"><td style="padding:0.75rem 1rem;">Aceite</td><td style="text-align:center;">920</td><td style="text-align:center;">Si &#10003;</td></tr>
+                            <tr style="border-bottom:1px solid var(--border);"><td style="padding:0.75rem 1rem;">Hielo</td><td style="text-align:center;">917</td><td style="text-align:center;">Si &#10003;</td></tr>
+                            <tr style="border-bottom:1px solid var(--border); font-weight:bold; background:rgba(0,201,167,0.1);"><td style="padding:0.75rem 1rem;">Agua</td><td style="text-align:center;">1,000</td><td style="text-align:center;">&mdash;</td></tr>
+                            <tr style="border-bottom:1px solid var(--border);"><td style="padding:0.75rem 1rem;">Aluminio</td><td style="text-align:center;">2,700</td><td style="text-align:center;">No &#10007;</td></tr>
+                            <tr style="border-bottom:1px solid var(--border);"><td style="padding:0.75rem 1rem;">Hierro</td><td style="text-align:center;">7,874</td><td style="text-align:center;">No &#10007;</td></tr>
+                            <tr><td style="padding:0.75rem 1rem;">Oro</td><td style="text-align:center;">19,300</td><td style="text-align:center;">No &#10007;</td></tr>
+                        </tbody>
+                    </table>
+                </div>
+                <div class="info-box warning">
+                    <div class="box-title">Dato curioso</div>
+                    <p>Un barco de acero flota aunque el acero es mas denso que el agua. Por que? Porque la <strong>forma</strong> del barco crea un gran volumen (con aire adentro), haciendo que la densidad <em>promedio</em> del barco sea menor que la del agua.</p>
+                </div>
+            </div>
+
+            <div class="content-block fade-in">
+                <h3><span class="icon" style="background:rgba(255,101,132,0.15);color:var(--secondary);">&#128270;</span> Ejemplo resuelto detallado</h3>
+                <div class="info-box example">
+                    <div class="box-title">Ejemplo 1: Fuerza de empuje</div>
+                    <p><strong>Un cubo de madera de 0.002 m&sup3; de volumen se sumerge completamente en agua. Cual es la fuerza de empuje que recibe?</strong></p>
+                    <div class="steps">
+                        <div class="step">
+                            <div class="step-num">1</div>
+                            <div class="step-content"><p>Datos: &rho; = 1,000 kg/m&sup3;, V = 0.002 m&sup3;, g = 9.8 m/s&sup2;</p></div>
+                        </div>
+                        <div class="step">
+                            <div class="step-num">2</div>
+                            <div class="step-content">
+                                <p>Aplicamos la formula:</p>
+                                <p class="math">E = &rho; &times; V &times; g</p>
+                            </div>
+                        </div>
+                        <div class="step">
+                            <div class="step-num">3</div>
+                            <div class="step-content">
+                                <p>Sustituimos:</p>
+                                <p class="math">E = 1000 &times; 0.002 &times; 9.8 = <strong>19.6 N</strong></p>
+                            </div>
+                        </div>
+                    </div>
+                    <p>La fuerza de empuje es de <strong>19.6 N</strong> (hacia arriba).</p>
+                </div>
+
+                <div class="info-box example" style="margin-top:1.5rem;">
+                    <div class="box-title">Ejemplo 2: Peso aparente</div>
+                    <p><strong>Una esfera de metal pesa 50 N en el aire. Sumergida en agua, su volumen desaloja 0.003 m&sup3; de agua. Cuanto "pesa" dentro del agua?</strong></p>
+                    <div class="steps">
+                        <div class="step">
+                            <div class="step-num">1</div>
+                            <div class="step-content"><p>Calculamos el empuje: E = 1000 &times; 0.003 &times; 9.8 = 29.4 N</p></div>
+                        </div>
+                        <div class="step">
+                            <div class="step-num">2</div>
+                            <div class="step-content"><p>Peso aparente = Peso real - Empuje = 50 - 29.4 = <strong>20.6 N</strong></p></div>
+                        </div>
+                    </div>
+                    <p>Dentro del agua, la esfera "pesa" solo 20.6 N. Por eso sientes las cosas mas ligeras cuando estan sumergidas.</p>
+                </div>
+            </div>
+
+            <div class="content-block fade-in">
+                <h3><span class="icon" style="background:rgba(255,214,0,0.15);color:var(--warning);">&#127758;</span> Aplicaciones en la vida real</h3>
+                <ul>
+                    <li><strong>Barcos y submarinos:</strong> Los barcos flotan gracias a su forma. Los submarinos controlan su flotabilidad llenando o vaciando tanques de agua.</li>
+                    <li><strong>Chalecos salvavidas:</strong> Estan hechos de materiales con densidad muy baja para aumentar tu flotabilidad.</li>
+                    <li><strong>Globos aerostaticos:</strong> El aire caliente es menos denso que el frio, asi que el globo "flota" en la atmosfera.</li>
+                    <li><strong>Peces:</strong> Tienen una vejiga natatoria que llenan o vacian de gas para subir o bajar en el agua.</li>
+                    <li><strong>Densimetros:</strong> Instrumentos que miden la densidad de liquidos basandose en cuanto se hunden.</li>
+                </ul>
+            </div>
+
+            <!-- ===== SIMULADOR ===== -->
+            <div class="content-block fade-in">
+                <h3><span class="icon" style="background:rgba(108,99,255,0.15);color:var(--primary-light);">&#127918;</span> Simulador: Flotacion y Empuje</h3>
+                <p>Elige un material y observa si flota o se hunde. Ajusta la densidad del fluido para experimentar con distintos liquidos. Las flechas muestran las fuerzas de peso (roja) y empuje (verde).</p>
+                <div class="sim-wrapper">
+                    <div class="sim-controls">
+                        <label>
+                            Material del objeto:
+                            <select id="selMaterial" style="padding:0.4rem 0.6rem;border-radius:8px;border:1px solid var(--border);background:var(--bg-secondary);color:var(--text);font-size:0.95rem;">
+                                <option value="240" data-name="Corcho" data-color="#c8a44e">Corcho (240 kg/m&sup3;)</option>
+                                <option value="500" data-name="Madera" data-color="#a0724e">Madera (500 kg/m&sup3;)</option>
+                                <option value="917" data-name="Hielo" data-color="#b0d4f1">Hielo (917 kg/m&sup3;)</option>
+                                <option value="1000" data-name="Plastico" data-color="#e06080">Plastico (1,000 kg/m&sup3;)</option>
+                                <option value="2700" data-name="Aluminio" data-color="#aaaacc" selected>Aluminio (2,700 kg/m&sup3;)</option>
+                                <option value="7874" data-name="Hierro" data-color="#777790">Hierro (7,874 kg/m&sup3;)</option>
+                                <option value="19300" data-name="Oro" data-color="#ffd700">Oro (19,300 kg/m&sup3;)</option>
+                            </select>
+                        </label>
+                        <label style="margin-top:0.5rem;">
+                            Densidad del fluido (&rho;):
+                            <input type="range" id="sliderFluid" min="500" max="13600" step="100" value="1000">
+                            <span id="valFluid">1,000 kg/m&sup3; (Agua)</span>
+                        </label>
+                        <label style="margin-top:0.5rem;">
+                            Volumen del objeto:
+                            <input type="range" id="sliderVol" min="0.001" max="0.02" step="0.001" value="0.008">
+                            <span id="valVol">0.008 m&sup3;</span>
+                        </label>
+                        <button id="btnIniciar" style="margin-top:0.75rem;padding:0.6rem 2rem;border:none;border-radius:10px;background:var(--primary);color:#fff;font-size:1rem;font-weight:600;cursor:pointer;transition:background 0.2s,transform 0.15s;" onmouseover="this.style.background='#5a52e0'" onmouseout="this.style.background='var(--primary)'">&#9654; Iniciar</button>
+                    </div>
+                    <div class="sim-canvas-wrap">
+                        <canvas id="archCanvas" width="720" height="440" style="width:100%;border-radius:12px;background:#0F0E17;"></canvas>
+                    </div>
+                    <div class="sim-result" id="simResult">
+                        Peso = 211.7 N &nbsp;|&nbsp; Empuje = 78.4 N &nbsp;|&nbsp; <strong>Se hunde</strong>
+                    </div>
+                </div>
+            </div>
+
+            <div class="exercises-section fade-in">
+                <h3><span class="icon" style="background:rgba(255,101,132,0.15);color:var(--secondary);">&#9998;</span> Ejercicios - Principio de Arquimedes</h3>
+
+                <div class="exercise-item">
+                    <div class="exercise-header">
+                        <span class="exercise-label">Ejercicio 1</span>
+                        <span class="difficulty easy">Facil</span>
+                    </div>
+                    <p>Un objeto de 0.005 m&sup3; se sumerge completamente en agua. Calcula la fuerza de empuje.</p>
+                    <button class="solution-toggle" onclick="toggleSolution(this)">Ver solucion &#9660;</button>
+                    <div class="solution">
+                        <p><span class="step-math">E = &rho; &times; V &times; g = 1000 &times; 0.005 &times; 9.8 = <strong>49 N</strong></span></p>
+                    </div>
+                </div>
+
+                <div class="exercise-item">
+                    <div class="exercise-header">
+                        <span class="exercise-label">Ejercicio 2</span>
+                        <span class="difficulty medium">Medio</span>
+                    </div>
+                    <p>Un bloque de plastico tiene una densidad de 800 kg/m&sup3; y un volumen de 0.01 m&sup3;. Flotara en agua? Si flota, que porcentaje de su volumen queda sumergido?</p>
+                    <button class="solution-toggle" onclick="toggleSolution(this)">Ver solucion &#9660;</button>
+                    <div class="solution">
+                        <p>Como &rho;<sub>plastico</sub> (800) &lt; &rho;<sub>agua</sub> (1000), <strong>si flota</strong>.</p>
+                        <p>Fraccion sumergida = &rho;<sub>objeto</sub> / &rho;<sub>fluido</sub></p>
+                        <p><span class="step-math">Fraccion = 800 / 1000 = 0.8 = <strong>80%</strong> sumergido</span></p>
+                        <p>El 80% del bloque esta bajo el agua y el 20% sobre la superficie.</p>
+                    </div>
+                </div>
+
+                <div class="exercise-item">
+                    <div class="exercise-header">
+                        <span class="exercise-label">Ejercicio 3</span>
+                        <span class="difficulty hard">Dificil</span>
+                    </div>
+                    <p>Una esfera de aluminio (densidad 2,700 kg/m&sup3;) tiene un radio de 5 cm. Calcula: a) su peso real, b) la fuerza de empuje en agua, c) su peso aparente dentro del agua. (Vol. esfera = 4/3 &times; &pi; &times; r&sup3;)</p>
+                    <button class="solution-toggle" onclick="toggleSolution(this)">Ver solucion &#9660;</button>
+                    <div class="solution">
+                        <p><strong>a) Volumen y peso real:</strong></p>
+                        <p><span class="step-math">V = (4/3) &times; &pi; &times; (0.05)&sup3; = (4/3) &times; &pi; &times; 0.000125 = 0.0005236 m&sup3;</span></p>
+                        <p><span class="step-math">Peso = &rho; &times; V &times; g = 2700 &times; 0.0005236 &times; 9.8 = <strong>13.85 N</strong></span></p>
+                        <p><strong>b) Fuerza de empuje:</strong></p>
+                        <p><span class="step-math">E = 1000 &times; 0.0005236 &times; 9.8 = <strong>5.13 N</strong></span></p>
+                        <p><strong>c) Peso aparente:</strong></p>
+                        <p><span class="step-math">P<sub>ap</sub> = 13.85 - 5.13 = <strong>8.72 N</strong></span></p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <footer>
+        <div class="container">
+            <p style="margin-bottom:0.5rem; font-size:1rem; color:var(--text-muted);">Mod 08 &mdash; Matematicas y Representaciones del Sistema Natural!</p>
+            <p>Contenido educativo &middot; 16 temas &middot; Preparatoria</p>
+        </div>
+    </footer>
+
+    <script>
+        function toggleSolution(btn) {
+            const solution = btn.nextElementSibling;
+            solution.classList.toggle('visible');
+            btn.textContent = solution.classList.contains('visible') ? 'Ocultar solucion \u25B2' : 'Ver solucion \u25BC';
+        }
+        const observer = new IntersectionObserver((entries) => {
+            entries.forEach(entry => { if (entry.isIntersecting) entry.target.classList.add('visible'); });
+        }, { threshold: 0.1 });
+        document.querySelectorAll('.fade-in').forEach(el => observer.observe(el));
+        const backBtn = document.getElementById('backToTop');
+        window.addEventListener('scroll', () => { backBtn.classList.toggle('show', window.scrollY > 400); });
+
+        /* ===== Simulador Principio de Arquimedes ===== */
+        const canvas = document.getElementById('archCanvas');
+        const ctx = canvas.getContext('2d');
+        const CW = 720, CH = 440;
+
+        const selMat    = document.getElementById('selMaterial');
+        const sliderFl  = document.getElementById('sliderFluid');
+        const sliderVol = document.getElementById('sliderVol');
+        const valFluid  = document.getElementById('valFluid');
+        const valVol    = document.getElementById('valVol');
+        const simRes    = document.getElementById('simResult');
+
+        const G = 9.8;
+        const WATER_TOP = 190;          // water surface y
+        const WATER_BOT = 380;          // tank bottom y
+        const TANK_LEFT = 160;
+        const TANK_RIGHT = 560;
+        const TANK_W = TANK_RIGHT - TANK_LEFT;
+
+        /* Animation state */
+        let objY = 80;                  // current object center y
+        let targetY = 300;              // where it should settle
+        let velY = 0;
+        let time = 0;
+        let bubbles = [];
+        let started = false;            // waiting for Iniciar button
+
+        const btnIniciar = document.getElementById('btnIniciar');
+        btnIniciar.addEventListener('click', () => {
+            if (!started) {
+                started = true;
+                btnIniciar.textContent = '\u21BB Reiniciar';
+            } else {
+                resetSim();
+            }
+        });
+
+        function resetSim() {
+            started = false;
+            objY = 80;
+            velY = 0;
+            bubbles = [];
+            btnIniciar.textContent = '\u25B6 Iniciar';
+        }
+
+        function fluidName(d) {
+            if (d <= 800)  return 'Aceite';
+            if (d <= 1100) return 'Agua';
+            if (d <= 1300) return 'Agua salada';
+            if (d <= 3500) return 'Glicerina';
+            return 'Mercurio';
+        }
+
+        function getFluidColor(d) {
+            if (d <= 800)  return { r:180, g:160, b:60,  a:0.35 };
+            if (d <= 1100) return { r:68,  g:136, b:255, a:0.30 };
+            if (d <= 1300) return { r:40,  g:160, b:200, a:0.35 };
+            if (d <= 3500) return { r:120, g:100, b:200, a:0.35 };
+            return { r:180, g:180, b:190, a:0.55 };
+        }
+
+        function physics() {
+            const rhoObj  = parseFloat(selMat.value);
+            const rhoFl   = parseFloat(sliderFl.value);
+            const vol     = parseFloat(sliderVol.value);
+            const mass    = rhoObj * vol;
+            const weight  = mass * G;
+
+            /* Object dimensions (cube visual) */
+            const side = Math.cbrt(vol) * 900;  // px scale
+            const halfS = side / 2;
+
+            /* Equilibrium position */
+            if (rhoObj < rhoFl) {
+                // Floats: fraction submerged = rhoObj/rhoFl
+                const frac = rhoObj / rhoFl;
+                targetY = WATER_TOP - halfS + frac * side;
+            } else if (rhoObj === rhoFl) {
+                // Neutral: hovers mid-water
+                targetY = (WATER_TOP + WATER_BOT) / 2;
+            } else {
+                // Sinks to bottom
+                targetY = WATER_BOT - halfS - 4;
+            }
+
+            /* Buoyancy: volume actually submerged */
+            const objTop = objY - halfS;
+            const objBot = objY + halfS;
+            let subTop = Math.max(objTop, WATER_TOP);
+            let subBot = Math.min(objBot, WATER_BOT);
+            let subFrac = 0;
+            if (subBot > subTop) {
+                subFrac = (subBot - subTop) / side;
+            }
+            const volSub  = vol * Math.min(1, Math.max(0, subFrac));
+            const empuje  = rhoFl * volSub * G;
+
+            /* Status */
+            let status;
+            if (rhoObj < rhoFl)      status = 'FLOTA';
+            else if (rhoObj > rhoFl) status = 'SE HUNDE';
+            else                     status = 'EQUILIBRIO';
+
+            return { rhoObj, rhoFl, vol, mass, weight, empuje, volSub, side, halfS, status, subFrac };
+        }
+
+        function draw() {
+            time += 0.016;
+            const p = physics();
+
+            /* Spring-like animation towards target */
+            if (started) {
+                const diff = targetY - objY;
+                velY += diff * 0.04;              // spring
+                velY *= 0.88;                     // damping
+                objY += velY;
+            } else {
+                objY = 80;
+                velY = 0;
+            }
+
+            /* Clamp inside tank */
+            objY = Math.max(30 + p.halfS, Math.min(WATER_BOT - p.halfS - 4, objY));
+
+            ctx.clearRect(0, 0, CW, CH);
+
+            /* === Sky / background === */
+            const skyGrad = ctx.createLinearGradient(0, 0, 0, WATER_TOP);
+            skyGrad.addColorStop(0, '#0a0a1a');
+            skyGrad.addColorStop(1, '#12122a');
+            ctx.fillStyle = skyGrad;
+            ctx.fillRect(0, 0, CW, WATER_TOP);
+
+            /* === Tank walls === */
+            ctx.strokeStyle = '#4a4a6a';
+            ctx.lineWidth = 3;
+            ctx.beginPath();
+            ctx.moveTo(TANK_LEFT, 40);
+            ctx.lineTo(TANK_LEFT, WATER_BOT);
+            ctx.lineTo(TANK_RIGHT, WATER_BOT);
+            ctx.lineTo(TANK_RIGHT, 40);
+            ctx.stroke();
+
+            /* === Fluid === */
+            const fc = getFluidColor(p.rhoFl);
+            ctx.fillStyle = 'rgba(' + fc.r + ',' + fc.g + ',' + fc.b + ',' + fc.a + ')';
+            ctx.fillRect(TANK_LEFT + 2, WATER_TOP, TANK_W - 4, WATER_BOT - WATER_TOP - 2);
+
+            /* Water surface wave */
+            ctx.strokeStyle = 'rgba(' + fc.r + ',' + fc.g + ',' + fc.b + ',0.6)';
+            ctx.lineWidth = 2;
+            ctx.beginPath();
+            for (let x = TANK_LEFT + 2; x < TANK_RIGHT - 2; x += 2) {
+                const wave = Math.sin(x * 0.03 + time * 2) * 2.5;
+                if (x === TANK_LEFT + 2) ctx.moveTo(x, WATER_TOP + wave);
+                else ctx.lineTo(x, WATER_TOP + wave);
+            }
+            ctx.stroke();
+
+            /* === Bubbles (when sinking) === */
+            if (p.status === 'SE HUNDE' && Math.abs(velY) > 0.3) {
+                bubbles.push({
+                    x: objY > WATER_TOP ? (TANK_LEFT + TANK_W * 0.3 + Math.random() * TANK_W * 0.4) : 0,
+                    y: Math.min(objY + p.halfS, WATER_BOT - 5),
+                    r: 2 + Math.random() * 3,
+                    life: 60 + Math.random() * 40
+                });
+            }
+            const aliveBubbles = [];
+            for (const b of bubbles) {
+                b.y -= 0.8 + Math.random() * 0.4;
+                b.x += Math.sin(time * 4 + b.r) * 0.3;
+                b.life--;
+                if (b.life > 0 && b.y > WATER_TOP) {
+                    ctx.beginPath();
+                    ctx.arc(b.x, b.y, b.r, 0, Math.PI * 2);
+                    ctx.strokeStyle = 'rgba(255,255,255,' + (b.life / 100 * 0.4) + ')';
+                    ctx.lineWidth = 1;
+                    ctx.stroke();
+                    aliveBubbles.push(b);
+                }
+            }
+            bubbles = aliveBubbles;
+            if (bubbles.length > 80) bubbles.splice(0, 20);
+
+            /* === Object (cube) === */
+            const opt = selMat.options[selMat.selectedIndex];
+            const objColor = opt.dataset.color;
+            const objName  = opt.dataset.name;
+            const ox = CW / 2 - p.halfS;
+            const oy = objY - p.halfS;
+
+            /* 3D-ish cube */
+            const off = p.side * 0.18;
+            // Top face
+            ctx.fillStyle = lighten(objColor, 30);
+            ctx.beginPath();
+            ctx.moveTo(ox, oy);
+            ctx.lineTo(ox + off, oy - off);
+            ctx.lineTo(ox + p.side + off, oy - off);
+            ctx.lineTo(ox + p.side, oy);
+            ctx.closePath();
+            ctx.fill();
+            // Right face
+            ctx.fillStyle = darken(objColor, 30);
+            ctx.beginPath();
+            ctx.moveTo(ox + p.side, oy);
+            ctx.lineTo(ox + p.side + off, oy - off);
+            ctx.lineTo(ox + p.side + off, oy + p.side - off);
+            ctx.lineTo(ox + p.side, oy + p.side);
+            ctx.closePath();
+            ctx.fill();
+            // Front face
+            ctx.fillStyle = objColor;
+            ctx.fillRect(ox, oy, p.side, p.side);
+            // Outline
+            ctx.strokeStyle = 'rgba(255,255,255,0.15)';
+            ctx.lineWidth = 1.5;
+            ctx.strokeRect(ox, oy, p.side, p.side);
+
+            /* Object label */
+            ctx.fillStyle = '#fff';
+            ctx.font = 'bold 13px Inter, sans-serif';
+            ctx.textAlign = 'center';
+            ctx.fillText(objName, CW / 2, objY + 2);
+            ctx.font = '11px Inter, sans-serif';
+            ctx.fillText(p.rhoObj.toLocaleString() + ' kg/m\u00B3', CW / 2, objY + 16);
+
+            /* === Water-line clip on object (submerged tint) === */
+            if (objY + p.halfS > WATER_TOP && objY - p.halfS < WATER_BOT) {
+                ctx.save();
+                ctx.globalAlpha = 0.18;
+                ctx.fillStyle = 'rgba(' + fc.r + ',' + fc.g + ',' + fc.b + ',1)';
+                const clipTop = Math.max(oy, WATER_TOP);
+                const clipBot = Math.min(oy + p.side, WATER_BOT);
+                ctx.fillRect(ox, clipTop, p.side, clipBot - clipTop);
+                ctx.restore();
+            }
+
+            /* === Force arrows === */
+            const arrowX = CW / 2 + p.halfS + 30;
+
+            // Weight arrow (down, red)
+            const wLen = Math.min(120, p.weight / 20);
+            if (wLen > 5) {
+                drawArrow(ctx, arrowX, objY - 5, arrowX, objY + wLen, '#FF6584', 2.5);
+                ctx.fillStyle = '#FF6584';
+                ctx.font = 'bold 12px Inter, sans-serif';
+                ctx.textAlign = 'left';
+                ctx.fillText('W = ' + p.weight.toFixed(1) + ' N', arrowX + 10, objY + wLen / 2 + 4);
+            }
+
+            // Buoyancy arrow (up, green)
+            const eLen = Math.min(120, p.empuje / 20);
+            if (eLen > 5) {
+                const eBase = objY + 5;
+                drawArrow(ctx, arrowX - 60 - p.halfS, eBase, arrowX - 60 - p.halfS, eBase - eLen, '#00C9A7', 2.5);
+                ctx.fillStyle = '#00C9A7';
+                ctx.font = 'bold 12px Inter, sans-serif';
+                ctx.textAlign = 'right';
+                ctx.fillText('E = ' + p.empuje.toFixed(1) + ' N', arrowX - 70 - p.halfS, eBase - eLen / 2 + 4);
+            }
+
+            /* === Water surface label === */
+            ctx.fillStyle = 'rgba(255,255,255,0.25)';
+            ctx.font = '11px Inter, sans-serif';
+            ctx.textAlign = 'left';
+            ctx.fillText('\u2014 Superficie', TANK_RIGHT + 8, WATER_TOP + 4);
+
+            /* === Status badge === */
+            let badgeColor;
+            if (!started) {
+                badgeColor = '#aaaacc';
+                ctx.fillStyle = badgeColor;
+                ctx.font = 'bold 16px Inter, sans-serif';
+                ctx.textAlign = 'center';
+                ctx.fillText('Presiona \"Iniciar\" para soltar el objeto', CW / 2, 28);
+            } else {
+                if (p.status === 'FLOTA')       badgeColor = '#00C9A7';
+                else if (p.status === 'SE HUNDE') badgeColor = '#FF6584';
+                else                             badgeColor = '#FFD600';
+                ctx.fillStyle = badgeColor;
+                ctx.font = 'bold 16px Inter, sans-serif';
+                ctx.textAlign = 'center';
+                ctx.fillText(p.status, CW / 2, 28);
+            }
+
+            /* Fluid name label */
+            ctx.fillStyle = 'rgba(' + fc.r + ',' + fc.g + ',' + fc.b + ',0.7)';
+            ctx.font = '12px Inter, sans-serif';
+            ctx.textAlign = 'right';
+            ctx.fillText(fluidName(p.rhoFl) + ' (' + p.rhoFl.toLocaleString() + ' kg/m\u00B3)', TANK_RIGHT - 8, WATER_TOP + 20);
+
+            /* === Depth markers === */
+            ctx.strokeStyle = 'rgba(255,255,255,0.08)';
+            ctx.lineWidth = 1;
+            for (let dy = WATER_TOP + 40; dy < WATER_BOT; dy += 40) {
+                ctx.beginPath();
+                ctx.moveTo(TANK_LEFT + 6, dy);
+                ctx.lineTo(TANK_LEFT + 20, dy);
+                ctx.stroke();
+            }
+
+            /* === Bottom label === */
+            ctx.fillStyle = '#3a3a5c';
+            ctx.fillRect(TANK_LEFT + 2, WATER_BOT - 2, TANK_W - 4, 20);
+
+            /* Update result div */
+            if (!started) {
+                simRes.innerHTML = 'Peso = ' + p.weight.toFixed(1) + ' N &nbsp;|&nbsp; Empuje = ? &nbsp;|&nbsp; <strong style="color:#aaaacc">Esperando...</strong>';
+            } else {
+                simRes.innerHTML =
+                    'Peso = ' + p.weight.toFixed(1) + ' N &nbsp;|&nbsp; ' +
+                    'Empuje = ' + p.empuje.toFixed(1) + ' N &nbsp;|&nbsp; ' +
+                    '<strong style="color:' + badgeColor + '">' + p.status + '</strong>' +
+                    (p.status === 'FLOTA' ? ' &nbsp;(' + (p.subFrac * 100).toFixed(0) + '% sumergido)' : '');
+            }
+
+            requestAnimationFrame(draw);
+        }
+
+        function drawArrow(c, x1, y1, x2, y2, color, lw) {
+            const angle = Math.atan2(y2 - y1, x2 - x1);
+            const hl = 10;
+            c.strokeStyle = color;
+            c.lineWidth = lw;
+            c.beginPath();
+            c.moveTo(x1, y1);
+            c.lineTo(x2, y2);
+            c.stroke();
+            c.fillStyle = color;
+            c.beginPath();
+            c.moveTo(x2, y2);
+            c.lineTo(x2 - hl * Math.cos(angle - 0.4), y2 - hl * Math.sin(angle - 0.4));
+            c.lineTo(x2 - hl * Math.cos(angle + 0.4), y2 - hl * Math.sin(angle + 0.4));
+            c.closePath();
+            c.fill();
+        }
+
+        function lighten(hex, amt) {
+            let r = parseInt(hex.slice(1,3),16), g = parseInt(hex.slice(3,5),16), b = parseInt(hex.slice(5,7),16);
+            r = Math.min(255, r + amt); g = Math.min(255, g + amt); b = Math.min(255, b + amt);
+            return '#' + [r,g,b].map(v => v.toString(16).padStart(2,'0')).join('');
+        }
+        function darken(hex, amt) {
+            let r = parseInt(hex.slice(1,3),16), g = parseInt(hex.slice(3,5),16), b = parseInt(hex.slice(5,7),16);
+            r = Math.max(0, r - amt); g = Math.max(0, g - amt); b = Math.max(0, b - amt);
+            return '#' + [r,g,b].map(v => v.toString(16).padStart(2,'0')).join('');
+        }
+
+        function updateLabels() {
+            const rhoFl = parseFloat(sliderFl.value);
+            valFluid.textContent = rhoFl.toLocaleString() + ' kg/m\u00B3 (' + fluidName(rhoFl) + ')';
+            valVol.textContent = parseFloat(sliderVol.value).toFixed(3) + ' m\u00B3';
+        }
+
+        selMat.addEventListener('change', () => {
+            updateLabels();
+            resetSim();
+        });
+        sliderFl.addEventListener('input', () => {
+            updateLabels();
+            resetSim();
+        });
+        sliderVol.addEventListener('input', () => {
+            valVol.textContent = parseFloat(sliderVol.value).toFixed(3) + ' m\u00B3';
+            resetSim();
+        });
+
+        draw();
+    </script>
+</body>
+</html>

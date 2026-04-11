@@ -1,0 +1,279 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Tema 02 - Clasificacion de Angulos | Mod 08</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+
+    <nav class="topic-nav">
+        <a href="index.html" class="back-link">&#9664; Volver al indice</a>
+        <span class="topic-nav-title">Tema 02 &mdash; Clasificacion de Angulos</span>
+    </nav>
+
+    <a href="#top" class="back-to-top" id="backToTop">&#9650;</a>
+
+    <section class="tema tema-page" id="top">
+        <div class="container">
+            <div class="tema-header fade-in">
+                <div class="tema-number even">Tema 02 &mdash; Geometria</div>
+                <h2>Clasificacion de Angulos</h2>
+                <p class="intro">Un angulo se forma cuando dos lineas (llamadas lados o rayos) se encuentran en un punto comun llamado vertice. Los angulos estan en todas partes: en las esquinas de tu cuaderno, al abrir una puerta, o en la trayectoria de una pelota.</p>
+            </div>
+
+            <div class="content-block fade-in">
+                <h3><span class="icon" style="background:rgba(108,99,255,0.15);color:var(--primary-light);">&#128218;</span> Que es un angulo?</h3>
+                <p>Un <strong>angulo</strong> es la abertura formada por dos rayos que comparten un punto de inicio (vertice). Se mide en <strong>grados (&#176;)</strong>, donde una vuelta completa equivale a 360&#176;.</p>
+                <div class="info-box theory">
+                    <div class="box-title">Para recordar</div>
+                    <p>Piensa en un angulo como la abertura de una puerta. Cuando la puerta esta cerrada es 0&#176;, cuando esta medio abierta son 90&#176;, cuando esta totalmente abierta contra la pared son 180&#176;, y si pudiera girar completamente serian 360&#176;.</p>
+                </div>
+            </div>
+
+            <div class="content-block fade-in">
+                <h3><span class="icon" style="background:rgba(0,201,167,0.15);color:var(--accent);">&#128208;</span> Tipos de angulos</h3>
+                <div class="angles-grid">
+                    <div class="angle-card">
+                        <canvas id="angleAcute" width="140" height="120"></canvas>
+                        <h4>Agudo</h4>
+                        <p>Menor a 90&#176;<br>Ejemplo: 45&#176;</p>
+                    </div>
+                    <div class="angle-card">
+                        <canvas id="angleRight" width="140" height="120"></canvas>
+                        <h4>Recto</h4>
+                        <p>Exactamente 90&#176;<br>Esquina de un cuaderno</p>
+                    </div>
+                    <div class="angle-card">
+                        <canvas id="angleObtuse" width="140" height="120"></canvas>
+                        <h4>Obtuso</h4>
+                        <p>Mayor a 90&#176; y menor a 180&#176;<br>Ejemplo: 120&#176;</p>
+                    </div>
+                    <div class="angle-card">
+                        <canvas id="angleStraight" width="140" height="120"></canvas>
+                        <h4>Llano</h4>
+                        <p>Exactamente 180&#176;<br>Una linea recta</p>
+                    </div>
+                    <div class="angle-card">
+                        <canvas id="angleReflex" width="140" height="120"></canvas>
+                        <h4>Reflejo / Concavo</h4>
+                        <p>Mayor a 180&#176; y menor a 360&#176;<br>Ejemplo: 270&#176;</p>
+                    </div>
+                    <div class="angle-card">
+                        <canvas id="angleFull" width="140" height="120"></canvas>
+                        <h4>Completo / Perigonal</h4>
+                        <p>Exactamente 360&#176;<br>Una vuelta completa</p>
+                    </div>
+                </div>
+            </div>
+
+            <div class="content-block fade-in">
+                <h3><span class="icon" style="background:rgba(255,214,0,0.15);color:var(--warning);">&#128203;</span> Tabla resumen</h3>
+                <div class="table-wrapper">
+                    <table>
+                        <thead>
+                            <tr><th>Tipo</th><th>Rango</th><th>Ejemplo en la vida real</th></tr>
+                        </thead>
+                        <tbody>
+                            <tr><td><strong>Agudo</strong></td><td>0&#176; &lt; &alpha; &lt; 90&#176;</td><td>Punta de una rebanada de pizza</td></tr>
+                            <tr><td><strong>Recto</strong></td><td>&alpha; = 90&#176;</td><td>Esquina de una hoja de papel</td></tr>
+                            <tr><td><strong>Obtuso</strong></td><td>90&#176; &lt; &alpha; &lt; 180&#176;</td><td>Un abanico parcialmente abierto</td></tr>
+                            <tr><td><strong>Llano</strong></td><td>&alpha; = 180&#176;</td><td>Una regla totalmente extendida</td></tr>
+                            <tr><td><strong>Reflejo</strong></td><td>180&#176; &lt; &alpha; &lt; 360&#176;</td><td>La parte exterior de un angulo agudo</td></tr>
+                            <tr><td><strong>Completo</strong></td><td>&alpha; = 360&#176;</td><td>La aguja del reloj dando una vuelta</td></tr>
+                        </tbody>
+                    </table>
+                </div>
+            </div>
+
+            <div class="content-block fade-in">
+                <h3><span class="icon" style="background:rgba(108,99,255,0.15);color:var(--primary-light);">&#128279;</span> Angulos complementarios y suplementarios</h3>
+                <div class="info-box theory">
+                    <div class="box-title">Definiciones</div>
+                    <p><strong>Angulos complementarios:</strong> Dos angulos cuya suma es 90&#176;.<br>
+                    Ejemplo: 30&#176; + 60&#176; = 90&#176; &rarr; son complementarios.</p>
+                    <p style="margin-top:0.8rem;"><strong>Angulos suplementarios:</strong> Dos angulos cuya suma es 180&#176;.<br>
+                    Ejemplo: 110&#176; + 70&#176; = 180&#176; &rarr; son suplementarios.</p>
+                </div>
+                <div class="formula-group">
+                    <div class="formula">&alpha; + &beta; = 90&#176; (complementarios)</div>
+                    <div class="formula">&alpha; + &beta; = 180&#176; (suplementarios)</div>
+                </div>
+            </div>
+
+            <div class="exercises-section fade-in">
+                <h3><span class="icon" style="background:rgba(255,101,132,0.15);color:var(--secondary);">&#9998;</span> Ejercicios - Angulos</h3>
+
+                <div class="exercise-item">
+                    <div class="exercise-header">
+                        <span class="exercise-label">Ejercicio 1</span>
+                        <span class="difficulty easy">Facil</span>
+                    </div>
+                    <p>Clasifica los siguientes angulos: 35&#176;, 90&#176;, 155&#176;, 180&#176;, 200&#176;, 360&#176;</p>
+                    <button class="solution-toggle" onclick="toggleSolution(this)">Ver solucion &#9660;</button>
+                    <div class="solution">
+                        <p>35&#176; &rarr; <strong>Agudo</strong> (menor a 90&#176;)</p>
+                        <p>90&#176; &rarr; <strong>Recto</strong> (exactamente 90&#176;)</p>
+                        <p>155&#176; &rarr; <strong>Obtuso</strong> (entre 90&#176; y 180&#176;)</p>
+                        <p>180&#176; &rarr; <strong>Llano</strong> (exactamente 180&#176;)</p>
+                        <p>200&#176; &rarr; <strong>Reflejo</strong> (entre 180&#176; y 360&#176;)</p>
+                        <p>360&#176; &rarr; <strong>Completo</strong> (exactamente 360&#176;)</p>
+                    </div>
+                </div>
+
+                <div class="exercise-item">
+                    <div class="exercise-header">
+                        <span class="exercise-label">Ejercicio 2</span>
+                        <span class="difficulty medium">Medio</span>
+                    </div>
+                    <p>Si un angulo mide 53&#176;, cual es su complementario y cual es su suplementario?</p>
+                    <button class="solution-toggle" onclick="toggleSolution(this)">Ver solucion &#9660;</button>
+                    <div class="solution">
+                        <p><strong>Complementario:</strong> 90&#176; &minus; 53&#176; = <strong>37&#176;</strong></p>
+                        <p><strong>Suplementario:</strong> 180&#176; &minus; 53&#176; = <strong>127&#176;</strong></p>
+                    </div>
+                </div>
+
+                <div class="exercise-item">
+                    <div class="exercise-header">
+                        <span class="exercise-label">Ejercicio 3</span>
+                        <span class="difficulty hard">Dificil</span>
+                    </div>
+                    <p>Dos angulos son suplementarios. Uno es el triple del otro. Cuanto mide cada angulo?</p>
+                    <button class="solution-toggle" onclick="toggleSolution(this)">Ver solucion &#9660;</button>
+                    <div class="solution">
+                        <p>Llamemos <strong>x</strong> al angulo menor. El otro mide <strong>3x</strong>.</p>
+                        <p><span class="step-math">x + 3x = 180&#176;</span></p>
+                        <p><span class="step-math">4x = 180&#176;</span></p>
+                        <p><span class="step-math">x = 45&#176;</span></p>
+                        <p>El angulo menor mide <strong>45&#176;</strong> y el mayor mide <strong>3(45) = 135&#176;</strong>.</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <footer>
+        <div class="container">
+            <p style="margin-bottom:0.5rem; font-size:1rem; color:var(--text-muted);">Mod 08 &mdash; Matematicas y Representaciones del Sistema Natural!</p>
+            <p>Contenido educativo &middot; 16 temas &middot; Preparatoria</p>
+        </div>
+    </footer>
+
+    <script>
+        function toggleSolution(btn) {
+            const solution = btn.nextElementSibling;
+            solution.classList.toggle('visible');
+            btn.textContent = solution.classList.contains('visible') ? 'Ocultar solucion \u25B2' : 'Ver solucion \u25BC';
+        }
+
+        const observer = new IntersectionObserver((entries) => {
+            entries.forEach(entry => { if (entry.isIntersecting) entry.target.classList.add('visible'); });
+        }, { threshold: 0.1 });
+        document.querySelectorAll('.fade-in').forEach(el => observer.observe(el));
+
+        const backBtn = document.getElementById('backToTop');
+        window.addEventListener('scroll', () => { backBtn.classList.toggle('show', window.scrollY > 400); });
+
+        // ===== Dibujar angulos =====
+        function drawAngle(canvasId, angleDeg, color) {
+            const canvas = document.getElementById(canvasId);
+            if (!canvas) return;
+            const ctx = canvas.getContext('2d');
+            const W = canvas.width, H = canvas.height;
+            const ox = 30, oy = H - 25, len = 90;
+            const rad = angleDeg * Math.PI / 180;
+            ctx.clearRect(0, 0, W, H);
+
+            const arcR = 30;
+            ctx.beginPath(); ctx.arc(ox, oy, arcR, -rad, 0);
+            ctx.strokeStyle = color; ctx.lineWidth = 2; ctx.stroke();
+
+            ctx.fillStyle = color;
+            ctx.font = 'bold 12px JetBrains Mono, monospace';
+            ctx.textAlign = 'center';
+            const labelRad = -rad / 2;
+            ctx.fillText(angleDeg + '\u00B0', ox + (arcR + 18) * Math.cos(labelRad), oy + (arcR + 18) * Math.sin(labelRad));
+
+            ctx.beginPath(); ctx.moveTo(ox, oy); ctx.lineTo(ox + len, oy);
+            ctx.strokeStyle = '#A7A9BE'; ctx.lineWidth = 2.5; ctx.stroke();
+
+            ctx.beginPath(); ctx.moveTo(ox, oy);
+            ctx.lineTo(ox + len * Math.cos(-rad), oy + len * Math.sin(-rad));
+            ctx.strokeStyle = color; ctx.lineWidth = 2.5; ctx.stroke();
+
+            ctx.beginPath(); ctx.arc(ox, oy, 3, 0, Math.PI * 2);
+            ctx.fillStyle = '#FFFFFE'; ctx.fill();
+
+            if (angleDeg === 90) {
+                ctx.strokeStyle = color; ctx.lineWidth = 1.5;
+                ctx.strokeRect(ox, oy - 12, 12, 12);
+            }
+        }
+
+        drawAngle('angleAcute', 45, '#6C63FF');
+        drawAngle('angleRight', 90, '#00C9A7');
+        drawAngle('angleObtuse', 120, '#FF6584');
+
+        // Angulo llano
+        (function() {
+            const canvas = document.getElementById('angleStraight');
+            if (!canvas) return;
+            const ctx = canvas.getContext('2d');
+            const W = canvas.width, H = canvas.height, oy = H - 25;
+            ctx.clearRect(0, 0, W, H);
+            ctx.beginPath(); ctx.moveTo(10, oy); ctx.lineTo(W - 10, oy);
+            ctx.strokeStyle = '#FFD600'; ctx.lineWidth = 2.5; ctx.stroke();
+            ctx.beginPath(); ctx.arc(W / 2, oy, 3, 0, Math.PI * 2);
+            ctx.fillStyle = '#FFFFFE'; ctx.fill();
+            ctx.beginPath(); ctx.arc(W / 2, oy, 25, Math.PI, 0);
+            ctx.strokeStyle = '#FFD600'; ctx.lineWidth = 2; ctx.stroke();
+            ctx.fillStyle = '#FFD600'; ctx.font = 'bold 12px JetBrains Mono, monospace';
+            ctx.textAlign = 'center'; ctx.fillText('180\u00B0', W / 2, oy - 32);
+        })();
+
+        // Angulo reflejo
+        (function() {
+            const canvas = document.getElementById('angleReflex');
+            if (!canvas) return;
+            const ctx = canvas.getContext('2d');
+            const W = canvas.width, H = canvas.height;
+            const ox = 40, oy = H / 2, len = 60, color = '#8B85FF';
+            ctx.clearRect(0, 0, W, H);
+            ctx.beginPath(); ctx.moveTo(ox, oy); ctx.lineTo(ox + len, oy);
+            ctx.strokeStyle = '#A7A9BE'; ctx.lineWidth = 2.5; ctx.stroke();
+            ctx.beginPath(); ctx.moveTo(ox, oy); ctx.lineTo(ox, oy - len);
+            ctx.strokeStyle = color; ctx.lineWidth = 2.5; ctx.stroke();
+            ctx.beginPath(); ctx.arc(ox, oy, 22, -Math.PI / 2, 0, false);
+            ctx.strokeStyle = 'rgba(139,133,255,0.3)'; ctx.lineWidth = 2; ctx.stroke();
+            ctx.beginPath(); ctx.arc(ox, oy, 22, 0, Math.PI * 1.5, false);
+            ctx.strokeStyle = color; ctx.lineWidth = 2; ctx.stroke();
+            ctx.beginPath(); ctx.arc(ox, oy, 3, 0, Math.PI * 2);
+            ctx.fillStyle = '#FFFFFE'; ctx.fill();
+            ctx.fillStyle = color; ctx.font = 'bold 11px JetBrains Mono, monospace';
+            ctx.textAlign = 'center'; ctx.fillText('270\u00B0', ox + 50, oy + 30);
+        })();
+
+        // Angulo completo
+        (function() {
+            const canvas = document.getElementById('angleFull');
+            if (!canvas) return;
+            const ctx = canvas.getContext('2d');
+            const W = canvas.width, H = canvas.height;
+            const ox = W / 2, oy = H / 2 + 10, color = '#00E676';
+            ctx.clearRect(0, 0, W, H);
+            ctx.beginPath(); ctx.arc(ox, oy, 35, 0, Math.PI * 2);
+            ctx.strokeStyle = color; ctx.lineWidth = 2.5; ctx.stroke();
+            ctx.beginPath(); ctx.moveTo(ox, oy); ctx.lineTo(ox + 35, oy);
+            ctx.strokeStyle = '#A7A9BE'; ctx.lineWidth = 2; ctx.stroke();
+            ctx.beginPath(); ctx.moveTo(ox + 35, oy - 2); ctx.lineTo(ox + 42, oy); ctx.lineTo(ox + 35, oy + 2);
+            ctx.fillStyle = color; ctx.fill();
+            ctx.beginPath(); ctx.arc(ox, oy, 3, 0, Math.PI * 2);
+            ctx.fillStyle = '#FFFFFE'; ctx.fill();
+            ctx.fillStyle = color; ctx.font = 'bold 12px JetBrains Mono, monospace';
+            ctx.textAlign = 'center'; ctx.fillText('360\u00B0', ox, oy - 45);
+        })();
+    </script>
+</body>
+</html>
