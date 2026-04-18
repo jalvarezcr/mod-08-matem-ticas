@@ -1,0 +1,651 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Tema 08 - Presion Hidrostatica | Mod 08</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+
+    <nav class="topic-nav">
+        <a href="index.html" class="back-link">&#9664; Volver al indice</a>
+        <span class="topic-nav-title">Tema 08 &mdash; Presion Hidrostatica</span>
+    </nav>
+
+    <a href="#top" class="back-to-top" id="backToTop">&#9650;</a>
+
+    <section class="tema tema-page" id="top">
+        <div class="container">
+            <div class="tema-header fade-in">
+                <div class="tema-number">Tema 08 &mdash; Mecanica de Fluidos</div>
+                <h2>Presion Hidrostatica</h2>
+                <p class="intro">Cuando un liquido esta en reposo, ejerce presion sobre cualquier superficie en contacto con el. Esta presion aumenta con la profundidad y es la razon por la que los buzos necesitan equipo especial, las presas son mas gruesas en la base, y las ballenas tienen cuerpos diseñados para resistir enormes fuerzas.</p>
+            </div>
+
+            <!-- ===== CONCEPTO ===== -->
+            <div class="content-block fade-in">
+                <h3><span class="icon" style="background:rgba(108,99,255,0.15);color:var(--primary-light);">&#128218;</span> Que es la presion hidrostatica?</h3>
+                <div class="info-box theory">
+                    <div class="box-title">Definicion</div>
+                    <p><em>La presion hidrostatica es la presion que ejerce un fluido en reposo sobre un punto de su interior, debida unicamente al peso de la columna de liquido por encima de ese punto.</em></p>
+                </div>
+                <p>La palabra "hidrostatica" viene del griego: <strong>hydro</strong> (agua) y <strong>statikos</strong> (que esta en reposo). Es decir, estudia los fluidos quietos.</p>
+                <h4>La formula fundamental</h4>
+                <div class="formula">
+                    P = &rho; &times; g &times; h
+                </div>
+                <p>Donde:</p>
+                <ul>
+                    <li><strong>&rho;</strong> (rho) = Densidad del fluido (kg/m&sup3;)</li>
+                    <li><strong>g</strong> = Aceleracion gravitacional (9.8 m/s&sup2; en la Tierra)</li>
+                    <li><strong>h</strong> = Profundidad desde la superficie libre del liquido (m)</li>
+                    <li><strong>P</strong> = Presion hidrostatica (Pascal, Pa)</li>
+                </ul>
+                <div class="info-box warning">
+                    <div class="box-title">Presion absoluta vs hidrostatica</div>
+                    <p>La formula P = &rho;gh da solo la presion <strong>debida al liquido</strong>. Si quieres la presion total (absoluta), debes sumar la presion atmosferica que actua sobre la superficie del liquido:</p>
+                    <div class="formula" style="font-size:1.1rem; padding:1rem 1.5rem;">
+                        P<sub>absoluta</sub> = P<sub>atm</sub> + &rho; &times; g &times; h
+                    </div>
+                    <p>Donde P<sub>atm</sub> &asymp; 101,325 Pa al nivel del mar.</p>
+                </div>
+            </div>
+
+            <!-- ===== PRINCIPIOS CLAVE ===== -->
+            <div class="content-block fade-in">
+                <h3><span class="icon" style="background:rgba(0,201,167,0.15);color:var(--accent);">&#128161;</span> Principios fundamentales</h3>
+
+                <h4>1. La presion depende solo de la profundidad</h4>
+                <div class="info-box theory">
+                    <div class="box-title">Principio de la presion independiente de la forma</div>
+                    <p>La presion hidrostatica en un punto de un fluido <strong>no depende de la forma del recipiente</strong>, sino unicamente de la profundidad <strong>h</strong> y la densidad <strong>&rho;</strong>. Un punto a 10 m de profundidad tiene la misma presion ya sea que este en el oceano, en un lago o en un tubo delgado.</p>
+                </div>
+
+                <h4>2. La presion actua en todas las direcciones</h4>
+                <p>Un fluido en reposo ejerce la misma presion en <strong>todas las direcciones</strong> sobre cualquier superficie que este en contacto con el (principio de Pascal). Si el agua ejerce 50,000 Pa sobre el piso de un recipiente, tambien ejerce 50,000 Pa lateralmente sobre las paredes a esa profundidad.</p>
+
+                <h4>3. Las superficies libres estan siempre al mismo nivel</h4>
+                <div class="info-box example">
+                    <div class="box-title">Vasos comunicantes</div>
+                    <p>En recipientes conectados que contienen el mismo liquido, la superficie libre siempre queda al mismo nivel, sin importar la forma de los recipientes. Esto se debe a que la presion en el fondo de cada recipiente debe ser la misma.</p>
+                </div>
+
+                <h4>Densidades de fluidos comunes</h4>
+                <ul>
+                    <li><strong>Agua pura:</strong> 1,000 kg/m&sup3;</li>
+                    <li><strong>Agua de mar:</strong> 1,025 kg/m&sup3;</li>
+                    <li><strong>Mercurio:</strong> 13,600 kg/m&sup3;</li>
+                    <li><strong>Aceite de oliva:</strong> 900 kg/m&sup3;</li>
+                    <li><strong>Gasolina:</strong> 720 kg/m&sup3;</li>
+                </ul>
+                <p>El mercurio es tan denso que una columna de solo <strong>76 cm</strong> genera la misma presion que toda la atmosfera terrestre (por eso se uso en los primeros barometros).</p>
+            </div>
+
+            <!-- ===== APLICACIONES ===== -->
+            <div class="content-block fade-in">
+                <h3><span class="icon" style="background:rgba(255,214,0,0.15);color:var(--warning);">&#9878;</span> Aplicaciones en la vida real</h3>
+
+                <h4>Represas</h4>
+                <p>Las represas son mas gruesas en la base porque la presion del agua aumenta con la profundidad. La parte inferior soporta mucha mas fuerza que la parte superior.</p>
+
+                <h4>Buzos y submarinos</h4>
+                <p>Cada 10 metros de profundidad en el agua, la presion aumenta aproximadamente 1 atmosfera (101,325 Pa). A 100 m de profundidad, un buzo soporta unas 11 atm de presion total. Los trajes de buceo y los cascos de los submarinos deben ser extremadamente resistentes.</p>
+
+                <div class="info-box example">
+                    <div class="box-title">El limite humano sin equipo</div>
+                    <p>Los apneistas (buzos sin equipo) pueden llegar hasta unos 200-300 m en condiciones extremas. A esas profundidades, la presion es de 21-31 atm, comprimiendo los pulmones a una fraccion minima de su volumen normal.</p>
+                </div>
+
+                <h4>Sistemas de agua potable</h4>
+                <p>Las torres de agua usan la presion hidrostatica: al estar elevadas, crean presion suficiente para que el agua llegue a los hogares sin necesidad de bomba continua. A mayor altura de la torre, mayor presion en las tuberias.</p>
+
+                <h4>Barometros de mercurio</h4>
+                <p>Torricelli invento el barometro usando el principio hidrostatico: la columna de mercurio sube hasta que la presion hidrostatica equilibra la presion atmosferica. 1 atm &asymp; 760 mmHg (milimetros de mercurio).</p>
+            </div>
+
+            <!-- ===== EJEMPLOS RESUELTOS ===== -->
+            <div class="content-block fade-in">
+                <h3><span class="icon" style="background:rgba(255,101,132,0.15);color:var(--secondary);">&#128270;</span> Ejemplos resueltos</h3>
+
+                <div class="info-box example">
+                    <div class="box-title">Ejemplo 1: Presion en una piscina</div>
+                    <p><strong>Calcula la presion hidrostatica en el fondo de una piscina de 3 metros de profundidad. Densidad del agua = 1,000 kg/m&sup3;.</strong></p>
+                    <div class="steps">
+                        <div class="step">
+                            <div class="step-num">1</div>
+                            <div class="step-content"><p>Datos: &rho; = 1,000 kg/m&sup3;, g = 9.8 m/s&sup2;, h = 3 m</p></div>
+                        </div>
+                        <div class="step">
+                            <div class="step-num">2</div>
+                            <div class="step-content">
+                                <p class="math">P = &rho; &times; g &times; h = 1000 &times; 9.8 &times; 3</p>
+                                <p class="math">P = <strong>29,400 Pa</strong></p>
+                            </div>
+                        </div>
+                        <div class="step">
+                            <div class="step-num">3</div>
+                            <div class="step-content">
+                                <p>La presion total (incluyendo atmosferica): 29,400 + 101,325 = <strong>130,725 Pa &asymp; 1.29 atm</strong></p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="info-box example" style="margin-top:1.5rem;">
+                    <div class="box-title">Ejemplo 2: Buzo a gran profundidad</div>
+                    <p><strong>Un buzo desciende a 50 m en el mar (agua de mar: &rho; = 1,025 kg/m&sup3;). Calcula la presion hidrostatica y la presion absoluta.</strong></p>
+                    <div class="steps">
+                        <div class="step">
+                            <div class="step-num">1</div>
+                            <div class="step-content"><p>Datos: &rho; = 1,025 kg/m&sup3;, g = 9.8 m/s&sup2;, h = 50 m</p></div>
+                        </div>
+                        <div class="step">
+                            <div class="step-num">2</div>
+                            <div class="step-content">
+                                <p class="math">P<sub>hidro</sub> = 1025 &times; 9.8 &times; 50 = <strong>502,250 Pa &asymp; 4.96 atm</strong></p>
+                            </div>
+                        </div>
+                        <div class="step">
+                            <div class="step-num">3</div>
+                            <div class="step-content">
+                                <p class="math">P<sub>absoluta</sub> = 101,325 + 502,250 = <strong>603,575 Pa &asymp; 5.96 atm</strong></p>
+                            </div>
+                        </div>
+                    </div>
+                    <p>El buzo soporta casi 6 veces la presion en la superficie!</p>
+                </div>
+
+                <div class="info-box example" style="margin-top:1.5rem;">
+                    <div class="box-title">Ejemplo 3: Fuerza sobre la pared de una represa</div>
+                    <p><strong>La base de una represa esta a 20 m de profundidad. La compuerta de la base mide 4 m &times; 3 m. Calcula la fuerza hidrostatica sobre esa compuerta. (&rho; = 1,000 kg/m&sup3;)</strong></p>
+                    <div class="steps">
+                        <div class="step">
+                            <div class="step-num">1</div>
+                            <div class="step-content"><p>Presion en la base: P = 1000 &times; 9.8 &times; 20 = 196,000 Pa</p></div>
+                        </div>
+                        <div class="step">
+                            <div class="step-num">2</div>
+                            <div class="step-content"><p>Area de la compuerta: A = 4 &times; 3 = 12 m&sup2;</p></div>
+                        </div>
+                        <div class="step">
+                            <div class="step-num">3</div>
+                            <div class="step-content">
+                                <p class="math">F = P &times; A = 196,000 &times; 12 = <strong>2,352,000 N &asymp; 2,352 kN</strong></p>
+                            </div>
+                        </div>
+                    </div>
+                    <p>Mas de <strong>235 toneladas</strong> de fuerza sobre una sola compuerta. Por eso las presas son estructuras masivas de concreto y acero.</p>
+                </div>
+            </div>
+
+            <!-- ===== SIMULADOR CANVAS ===== -->
+            <div class="content-block fade-in">
+                <h3><span class="icon" style="background:rgba(108,99,255,0.15);color:var(--primary-light);">&#127918;</span> Simulador interactivo</h3>
+                <p>Ajusta la profundidad y el tipo de liquido para visualizar como cambia la presion hidrostatica. El gradiente de color muestra la presion: azul claro (baja) a rojo intenso (alta).</p>
+                <div class="sim-wrapper">
+                    <div class="sim-controls">
+                        <label>
+                            Profundidad (h):
+                            <input type="range" id="simDepth" min="1" max="100" step="1" value="20">
+                            <span id="simDepthVal">20 m</span>
+                        </label>
+                        <label style="margin-top:0.5rem;">
+                            Fluido:
+                            <select id="simFluid" style="background:#1a1a36;color:#fff;border:1px solid rgba(255,255,255,0.15);border-radius:6px;padding:4px 8px;font-size:0.95rem;cursor:pointer;">
+                                <option value="1000">Agua pura (1,000 kg/m&sup3;)</option>
+                                <option value="1025">Agua de mar (1,025 kg/m&sup3;)</option>
+                                <option value="13600">Mercurio (13,600 kg/m&sup3;)</option>
+                                <option value="900">Aceite (900 kg/m&sup3;)</option>
+                                <option value="720">Gasolina (720 kg/m&sup3;)</option>
+                            </select>
+                        </label>
+                    </div>
+                    <div class="sim-canvas-wrap">
+                        <canvas id="hydroCanvas" width="720" height="460" style="width:100%;border-radius:12px;background:#0F0E17;"></canvas>
+                    </div>
+                    <div class="sim-result" id="simResult">
+                        P = 1000 &times; 9.8 &times; 20 = <strong>196,000 Pa</strong>
+                    </div>
+                </div>
+            </div>
+
+            <!-- ===== EJERCICIOS ===== -->
+            <div class="exercises-section fade-in">
+                <h3><span class="icon" style="background:rgba(255,101,132,0.15);color:var(--secondary);">&#9998;</span> Ejercicios - Presion Hidrostatica</h3>
+
+                <div class="exercise-item">
+                    <div class="exercise-header">
+                        <span class="exercise-label">Ejercicio 1</span>
+                        <span class="difficulty easy">Facil</span>
+                    </div>
+                    <p>Calcula la presion hidrostatica a 5 metros de profundidad en un lago de agua dulce (&rho; = 1,000 kg/m&sup3;).</p>
+                    <button class="solution-toggle" onclick="toggleSolution(this)">Ver solucion &#9660;</button>
+                    <div class="solution">
+                        <p><span class="step-math">P = &rho; &times; g &times; h = 1000 &times; 9.8 &times; 5 = <strong>49,000 Pa</strong></span></p>
+                        <p>Aproximadamente 0.48 atm solo por el agua.</p>
+                    </div>
+                </div>
+
+                <div class="exercise-item">
+                    <div class="exercise-header">
+                        <span class="exercise-label">Ejercicio 2</span>
+                        <span class="difficulty easy">Facil</span>
+                    </div>
+                    <p>Un tanque de aceite (&rho; = 900 kg/m&sup3;) tiene 8 metros de altura. Calcula la presion en el fondo.</p>
+                    <button class="solution-toggle" onclick="toggleSolution(this)">Ver solucion &#9660;</button>
+                    <div class="solution">
+                        <p><span class="step-math">P = 900 &times; 9.8 &times; 8 = <strong>70,560 Pa</strong></span></p>
+                    </div>
+                </div>
+
+                <div class="exercise-item">
+                    <div class="exercise-header">
+                        <span class="exercise-label">Ejercicio 3</span>
+                        <span class="difficulty medium">Medio</span>
+                    </div>
+                    <p>A que profundidad en el mar (&rho; = 1,025 kg/m&sup3;) la presion hidrostatica iguala a la presion atmosferica (101,325 Pa)?</p>
+                    <button class="solution-toggle" onclick="toggleSolution(this)">Ver solucion &#9660;</button>
+                    <div class="solution">
+                        <p>Despejamos h de P = &rho;gh:</p>
+                        <p><span class="step-math">h = P / (&rho; &times; g) = 101,325 / (1025 &times; 9.8)</span></p>
+                        <p><span class="step-math">h = 101,325 / 10,045 = <strong>&asymp; 10.09 m</strong></span></p>
+                        <p>Cada ~10 metros bajo el agua, la presion aumenta aproximadamente 1 atm.</p>
+                    </div>
+                </div>
+
+                <div class="exercise-item">
+                    <div class="exercise-header">
+                        <span class="exercise-label">Ejercicio 4</span>
+                        <span class="difficulty medium">Medio</span>
+                    </div>
+                    <p>Un buzo esta a 15 m de profundidad en el mar (&rho; = 1,025 kg/m&sup3;). Calcula la fuerza que el agua ejerce sobre el visor circular de su mascara (diametro = 10 cm). Usa presion absoluta.</p>
+                    <button class="solution-toggle" onclick="toggleSolution(this)">Ver solucion &#9660;</button>
+                    <div class="solution">
+                        <p>Presion hidrostatica: P<sub>h</sub> = 1025 &times; 9.8 &times; 15 = 150,675 Pa</p>
+                        <p>Presion absoluta: P = 101,325 + 150,675 = <strong>252,000 Pa</strong></p>
+                        <p>Area del visor: A = &pi; &times; (0.05)&sup2; = 0.00785 m&sup2;</p>
+                        <p><span class="step-math">F = 252,000 &times; 0.00785 = <strong>&asymp; 1,978 N</strong></span></p>
+                        <p>El agua empuja el visor con casi 200 kg de fuerza!</p>
+                    </div>
+                </div>
+
+                <div class="exercise-item">
+                    <div class="exercise-header">
+                        <span class="exercise-label">Ejercicio 5</span>
+                        <span class="difficulty hard">Dificil</span>
+                    </div>
+                    <p>Una represa almacena agua a 40 m de profundidad. La base tiene una compuerta rectangular de 6 m &times; 4 m. Calcula: a) la presion hidrostatica en la base, b) la presion absoluta, c) la fuerza total sobre la compuerta.</p>
+                    <button class="solution-toggle" onclick="toggleSolution(this)">Ver solucion &#9660;</button>
+                    <div class="solution">
+                        <p><strong>a) Presion hidrostatica:</strong></p>
+                        <p><span class="step-math">P<sub>h</sub> = 1000 &times; 9.8 &times; 40 = <strong>392,000 Pa</strong></span></p>
+                        <p><strong>b) Presion absoluta:</strong></p>
+                        <p><span class="step-math">P<sub>abs</sub> = 101,325 + 392,000 = <strong>493,325 Pa &asymp; 4.87 atm</strong></span></p>
+                        <p><strong>c) Fuerza sobre la compuerta:</strong></p>
+                        <p>A = 6 &times; 4 = 24 m&sup2;</p>
+                        <p><span class="step-math">F = 493,325 &times; 24 = <strong>11,839,800 N &asymp; 11,840 kN</strong></span></p>
+                        <p>Mas de <strong>1,200 toneladas</strong> de fuerza sobre la compuerta!</p>
+                    </div>
+                </div>
+            </div>
+
+        </div>
+    </section>
+
+    <footer>
+        <div class="container">
+            <p style="margin-bottom:0.5rem; font-size:1rem; color:var(--text-muted);">Mod 08 &mdash; Matematicas y Representaciones del Sistema Natural!</p>
+            <p>Contenido educativo &middot; 16 temas &middot; Preparatoria</p>
+        </div>
+    </footer>
+
+    <script>
+        /* === Utilidades compartidas === */
+        function toggleSolution(btn) {
+            const solution = btn.nextElementSibling;
+            solution.classList.toggle('visible');
+            btn.textContent = solution.classList.contains('visible') ? 'Ocultar solucion \u25B2' : 'Ver solucion \u25BC';
+        }
+        const observer = new IntersectionObserver((entries) => {
+            entries.forEach(entry => { if (entry.isIntersecting) entry.target.classList.add('visible'); });
+        }, { threshold: 0.1 });
+        document.querySelectorAll('.fade-in').forEach(el => observer.observe(el));
+        const backBtn = document.getElementById('backToTop');
+        window.addEventListener('scroll', () => { backBtn.classList.toggle('show', window.scrollY > 400); });
+
+        /* ============================================================
+           SIMULADOR HIDROSTÁTICO — canvas
+        ============================================================ */
+        const canvas = document.getElementById('hydroCanvas');
+        const ctx    = canvas.getContext('2d');
+        const CW = 720, CH = 460;
+
+        let simH    = 20;
+        let simRho  = 1000;
+        let time    = 0;
+
+        // Animated camera/diver y position
+        let animDiverY  = 0.5;  // 0..1 fraction of water height
+        let targetDiverY = 0.5;
+        // Wave offset
+        let waveOffset = 0;
+
+        const depthSlider = document.getElementById('simDepth');
+        const fluidSel    = document.getElementById('simFluid');
+        const depthVal    = document.getElementById('simDepthVal');
+        const resultDiv   = document.getElementById('simResult');
+
+        function updateLabels() {
+            simH   = parseFloat(depthSlider.value);
+            simRho = parseFloat(fluidSel.value);
+            depthVal.textContent = simH + ' m';
+            const p = simRho * 9.8 * simH;
+            const pAbs = p + 101325;
+            resultDiv.innerHTML =
+                'P<sub>hidro</sub> = ' + simRho.toLocaleString() + ' &times; 9.8 &times; ' + simH +
+                ' = <strong>' + Math.round(p).toLocaleString() + ' Pa</strong>' +
+                ' &nbsp;|&nbsp; P<sub>abs</sub> = <strong>' + Math.round(pAbs).toLocaleString() + ' Pa</strong>';
+            targetDiverY = Math.min(0.93, simH / 100);
+        }
+        depthSlider.addEventListener('input', updateLabels);
+        fluidSel.addEventListener('change', updateLabels);
+
+        function lerp(a, b, t) { return a + (b - a) * t; }
+
+        // Fluid color based on density
+        function fluidColor(rho, alpha) {
+            if (rho >= 13000) return `rgba(160,80,80,${alpha})`;   // mercury – reddish
+            if (rho >= 1020)  return `rgba(30,100,200,${alpha})`;  // seawater – deep blue
+            if (rho <= 750)   return `rgba(220,180,60,${alpha})`;  // gasoline – yellow
+            if (rho <= 910)   return `rgba(180,160,40,${alpha})`;  // oil – golden
+            return `rgba(40,130,230,${alpha})`;                    // fresh water – blue
+        }
+
+        function draw() {
+            time += 0.016;
+            waveOffset += 1.5;
+            animDiverY = lerp(animDiverY, targetDiverY, 0.05);
+
+            ctx.clearRect(0, 0, CW, CH);
+
+            // Background
+            const bgGrad = ctx.createLinearGradient(0, 0, 0, CH);
+            bgGrad.addColorStop(0, '#0a0a1a');
+            bgGrad.addColorStop(1, '#12122a');
+            ctx.fillStyle = bgGrad;
+            ctx.fillRect(0, 0, CW, CH);
+
+            /* --- Layout constants --- */
+            const tankLeft  = 90;
+            const tankRight = CW - 90;
+            const tankW     = tankRight - tankLeft;
+            const tankTop   = 60;
+            const tankBot   = CH - 70;
+            const tankH     = tankBot - tankTop;
+            const wallT     = 8;
+
+            /* --- Pressure: maps depth 0..100 -> color gradient --- */
+            const maxDepth = 100;
+
+            /* --- Draw fluid (gradient depth pressure) --- */
+            // Surface wave Y
+            const surfaceY = tankTop + wallT;
+            const fluidH   = tankH - wallT * 2;
+            const fluidBot = tankBot - wallT;
+
+            // Fluid gradient (pressure color: light top => dark/red bottom)
+            const fluidGrad = ctx.createLinearGradient(0, surfaceY, 0, fluidBot);
+            if (simRho >= 13000) {
+                fluidGrad.addColorStop(0, 'rgba(200,120,100,0.55)');
+                fluidGrad.addColorStop(1, 'rgba(100,20,20,0.90)');
+            } else if (simRho <= 750) {
+                fluidGrad.addColorStop(0, 'rgba(240,210,80,0.40)');
+                fluidGrad.addColorStop(1, 'rgba(180,130,20,0.75)');
+            } else if (simRho <= 910) {
+                fluidGrad.addColorStop(0, 'rgba(200,175,55,0.45)');
+                fluidGrad.addColorStop(1, 'rgba(140,100,10,0.80)');
+            } else if (simRho >= 1020) {
+                fluidGrad.addColorStop(0, 'rgba(20,80,200,0.50)');
+                fluidGrad.addColorStop(1, 'rgba(10,20,120,0.90)');
+            } else {
+                fluidGrad.addColorStop(0, 'rgba(40,130,230,0.45)');
+                fluidGrad.addColorStop(1, 'rgba(10,40,150,0.90)');
+            }
+            ctx.fillStyle = fluidGrad;
+            ctx.fillRect(tankLeft + wallT, surfaceY, tankW - wallT * 2, fluidH);
+
+            /* --- Pressure horizontal lines (isobars) --- */
+            const numLines = 10;
+            for (let i = 1; i <= numLines; i++) {
+                const fy   = surfaceY + (fluidH * i / numLines);
+                const frac = i / numLines;
+                const pressure = simRho * 9.8 * (simH * frac);
+                // Color: cyan -> yellow -> red
+                const r = Math.floor(frac > 0.5 ? 255 : frac * 2 * 255);
+                const g = Math.floor(frac < 0.5 ? 200 : (1 - frac) * 2 * 200);
+                const bVal = Math.floor((1 - frac) * 200);
+                ctx.strokeStyle = `rgba(${r},${g},${bVal},0.25)`;
+                ctx.lineWidth = 1;
+                ctx.setLineDash([6, 5]);
+                ctx.beginPath();
+                ctx.moveTo(tankLeft + wallT, fy);
+                ctx.lineTo(tankRight - wallT, fy);
+                ctx.stroke();
+                ctx.setLineDash([]);
+
+                // Pressure label on right side
+                if (i % 2 === 0) {
+                    ctx.fillStyle = `rgba(${r},${g},${bVal},0.7)`;
+                    ctx.font = '10px Inter, sans-serif';
+                    ctx.textAlign = 'left';
+                    const labelP = Math.round(pressure / 1000);
+                    ctx.fillText(labelP + ' kPa', tankRight - wallT + 5, fy + 4);
+                }
+            }
+
+            /* --- Animated wave at surface --- */
+            ctx.save();
+            ctx.beginPath();
+            ctx.rect(tankLeft + wallT, tankTop, tankW - wallT * 2, CH);
+            ctx.clip();
+            ctx.fillStyle = 'rgba(180,220,255,0.12)';
+            ctx.beginPath();
+            const waveAmp = 4;
+            ctx.moveTo(tankLeft + wallT, surfaceY);
+            for (let x = tankLeft + wallT; x <= tankRight - wallT; x += 3) {
+                const wx = x - tankLeft - wallT;
+                const wy = surfaceY + Math.sin((wx / 50) + waveOffset * 0.04) * waveAmp;
+                ctx.lineTo(x, wy);
+            }
+            ctx.lineTo(tankRight - wallT, fluidBot);
+            ctx.lineTo(tankLeft + wallT, fluidBot);
+            ctx.closePath();
+            ctx.fill();
+            ctx.restore();
+
+            /* --- Tank walls (glass look) --- */
+            // Left wall
+            const wallGrad = ctx.createLinearGradient(tankLeft, 0, tankLeft + wallT * 3, 0);
+            wallGrad.addColorStop(0, '#2a2a4a');
+            wallGrad.addColorStop(0.5, '#3a3a66');
+            wallGrad.addColorStop(1, 'rgba(100,100,180,0.3)');
+            ctx.fillStyle = wallGrad;
+            ctx.fillRect(tankLeft, tankTop, wallT, tankH);
+            // Right wall
+            const wallGradR = ctx.createLinearGradient(tankRight - wallT * 3, 0, tankRight, 0);
+            wallGradR.addColorStop(0, 'rgba(100,100,180,0.3)');
+            wallGradR.addColorStop(0.5, '#3a3a66');
+            wallGradR.addColorStop(1, '#2a2a4a');
+            ctx.fillStyle = wallGradR;
+            ctx.fillRect(tankRight - wallT, tankTop, wallT, tankH);
+            // Bottom
+            ctx.fillStyle = '#2a2a4a';
+            ctx.fillRect(tankLeft, tankBot - wallT, tankW, wallT);
+            // Top frame
+            ctx.fillStyle = '#2a2a4a';
+            ctx.fillRect(tankLeft, tankTop, tankW, wallT);
+
+            /* --- Diver (buzo) --- */
+            const diverX  = tankLeft + tankW * 0.35;
+            const diverY  = surfaceY + fluidH * animDiverY;
+
+            // Bubbles above diver
+            const bubbleCount = 4;
+            for (let b = 0; b < bubbleCount; b++) {
+                const bFrac = ((time * 0.6 + b * 0.8) % 3) / 3;
+                const bx = diverX - 8 + Math.sin(time * 2 + b) * 6;
+                const by = diverY - 18 - bFrac * 60;
+                if (by > surfaceY) {
+                    ctx.strokeStyle = 'rgba(180,220,255,0.5)';
+                    ctx.lineWidth = 1;
+                    ctx.beginPath();
+                    ctx.arc(bx, by, 3 - bFrac * 2, 0, Math.PI * 2);
+                    ctx.stroke();
+                }
+            }
+
+            // Diver body (simplified)
+            ctx.fillStyle = '#1a1a36';
+            ctx.beginPath();
+            ctx.ellipse(diverX, diverY, 16, 20, 0, 0, Math.PI * 2);
+            ctx.fill();
+            // Tank
+            ctx.fillStyle = '#888';
+            ctx.fillRect(diverX + 10, diverY - 14, 8, 18);
+            // Mask
+            ctx.fillStyle = 'rgba(100,200,255,0.55)';
+            ctx.beginPath();
+            ctx.ellipse(diverX - 2, diverY - 12, 9, 7, -0.2, 0, Math.PI * 2);
+            ctx.fill();
+            ctx.strokeStyle = '#555';
+            ctx.lineWidth = 1.5;
+            ctx.stroke();
+            // Fins
+            ctx.fillStyle = '#FF6584';
+            ctx.beginPath();
+            ctx.ellipse(diverX - 10, diverY + 22, 14, 5, -0.3, 0, Math.PI * 2);
+            ctx.fill();
+            ctx.beginPath();
+            ctx.ellipse(diverX + 4, diverY + 22, 14, 5, 0.3, 0, Math.PI * 2);
+            ctx.fill();
+
+            /* --- Depth arrow and label --- */
+            const arrowX  = tankLeft + tankW * 0.72;
+            const pressY  = surfaceY + fluidH * animDiverY;
+
+            // Vertical lines showing depth
+            ctx.strokeStyle = 'rgba(255,220,80,0.6)';
+            ctx.lineWidth   = 2;
+            ctx.setLineDash([4, 4]);
+            ctx.beginPath();
+            ctx.moveTo(arrowX, surfaceY + 2);
+            ctx.lineTo(arrowX, pressY);
+            ctx.stroke();
+            ctx.setLineDash([]);
+
+            // Arrow down
+            ctx.fillStyle = '#FFD600';
+            ctx.beginPath();
+            ctx.moveTo(arrowX, pressY);
+            ctx.lineTo(arrowX - 6, pressY - 10);
+            ctx.lineTo(arrowX + 6, pressY - 10);
+            ctx.closePath();
+            ctx.fill();
+            // Arrow up (at surface)
+            ctx.beginPath();
+            ctx.moveTo(arrowX, surfaceY + 2);
+            ctx.lineTo(arrowX - 6, surfaceY + 12);
+            ctx.lineTo(arrowX + 6, surfaceY + 12);
+            ctx.closePath();
+            ctx.fill();
+
+            // Depth text
+            const depthLabel = Math.round(simH * animDiverY / targetDiverY * 10) / 10;
+            ctx.fillStyle = '#FFD600';
+            ctx.font = 'bold 13px Inter, sans-serif';
+            ctx.textAlign = 'left';
+            ctx.fillText('h = ' + simH + ' m', arrowX + 14, (surfaceY + pressY) / 2 + 5);
+
+            /* --- Pressure readout pill --- */
+            const p    = simRho * 9.8 * simH;
+            const pAbs = p + 101325;
+            const atm  = (pAbs / 101325).toFixed(2);
+
+            const frac     = Math.min(1, p / (simRho * 9.8 * 100));
+            const rCol = Math.floor(frac > 0.5 ? 255 : frac * 2 * 255);
+            const gCol = Math.floor(frac < 0.5 ? 200 : (1 - frac) * 2 * 200);
+
+            const pillW = 440;
+            const pillH = 38;
+            const pillX = CW / 2 - pillW / 2;
+            const pillY = tankBot + 8;
+
+            ctx.fillStyle = 'rgba(255,255,255,0.06)';
+            ctx.beginPath();
+            ctx.roundRect(pillX, pillY, pillW, pillH, 12);
+            ctx.fill();
+
+            ctx.fillStyle = `rgb(${rCol},${gCol},80)`;
+            ctx.font = 'bold 14px Inter, sans-serif';
+            ctx.textAlign = 'center';
+            ctx.fillText(
+                'P\u2095 = ' + Math.round(p).toLocaleString() + ' Pa   |   P\u2090\u2099\u209B = ' +
+                Math.round(pAbs).toLocaleString() + ' Pa  (' + atm + ' atm)',
+                CW / 2, pillY + 24
+            );
+
+            /* --- Pressure bar at right of canvas --- */
+            const barX  = tankRight + 24;
+            const barY  = tankTop;
+            const barH2 = tankH;
+            const barW2 = 14;
+
+            const barGrad = ctx.createLinearGradient(0, barY, 0, barY + barH2);
+            barGrad.addColorStop(0, '#00C9A7');
+            barGrad.addColorStop(0.4, '#FFD600');
+            barGrad.addColorStop(1, '#FF6584');
+
+            // bg
+            ctx.fillStyle = 'rgba(255,255,255,0.05)';
+            ctx.beginPath();
+            ctx.roundRect(barX, barY, barW2, barH2, 6);
+            ctx.fill();
+            // fill
+            const fillH = barH2 * Math.min(1, simH / maxDepth);
+            ctx.fillStyle = barGrad;
+            ctx.beginPath();
+            ctx.roundRect(barX, barY + barH2 - fillH, barW2, fillH, 6);
+            ctx.fill();
+            // label
+            ctx.fillStyle = '#aaa';
+            ctx.font = '9px Inter, sans-serif';
+            ctx.textAlign = 'center';
+            ctx.fillText('Prof.', barX + barW2 / 2, barY - 5);
+
+            /* --- Depth scale on left of tank --- */
+            const scaleX = tankLeft - 14;
+            ctx.fillStyle = 'rgba(255,255,255,0.35)';
+            ctx.font = '9px Inter, sans-serif';
+            ctx.textAlign = 'right';
+            for (let i = 0; i <= 5; i++) {
+                const sy  = surfaceY + fluidH * (i / 5);
+                const dep = Math.round(simH * i / 5);
+                ctx.fillText(dep + 'm', scaleX - 2, sy + 3);
+                ctx.strokeStyle = 'rgba(255,255,255,0.1)';
+                ctx.lineWidth = 0.5;
+                ctx.beginPath();
+                ctx.moveTo(scaleX + 2, sy);
+                ctx.lineTo(tankLeft + wallT, sy);
+                ctx.stroke();
+            }
+            ctx.fillText('0m', scaleX - 2, surfaceY + 3);
+
+            requestAnimationFrame(draw);
+        }
+
+        updateLabels();
+        draw();
+    </script>
+</body>
+</html>

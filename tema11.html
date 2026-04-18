@@ -1,0 +1,609 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Tema 11 - Tipos de Flujos y Bernoulli | Mod 08</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+
+    <nav class="topic-nav">
+        <a href="index.html" class="back-link">&#9664; Volver al indice</a>
+        <span class="topic-nav-title">Tema 11 &mdash; Tipos de Flujos y Bernoulli</span>
+    </nav>
+
+    <a href="#top" class="back-to-top" id="backToTop">&#9650;</a>
+
+    <section class="tema tema-page" id="top">
+        <div class="container">
+            <div class="tema-header fade-in">
+                <div class="tema-number odd">Tema 11 &mdash; Mecanica de Fluidos</div>
+                <h2>Tipos de Flujos y Teorema de Bernoulli</h2>
+                <p class="intro">No todos los fluidos fluyen igual. A veces las particulas se mueven ordenadamente en capas paralelas; otras veces se mezclan en un caos de remolinos. El teorema de Bernoulli revela una conexion profunda entre la velocidad y la presion de un fluido, explicando por que los aviones vuelan, como funcionan los atomizadores y por que las pelotas curvan en el aire.</p>
+            </div>
+
+            <!-- ===== TIPOS DE FLUJO ===== -->
+            <div class="content-block fade-in">
+                <h3><span class="icon" style="background:rgba(108,99,255,0.15);color:var(--primary-light);">&#128218;</span> Flujo laminar vs flujo turbulento</h3>
+                <div class="info-box theory">
+                    <div class="box-title">Flujo Laminar</div>
+                    <p>Las particulas del fluido se mueven en <strong>capas paralelas ordenadas</strong>, sin mezclarse entre si. Es suave, predecible y eficiente. Ocurre a velocidades bajas y en fluidos viscosos.</p>
+                </div>
+                <div class="info-box warning" style="margin-top:1rem;">
+                    <div class="box-title">Flujo Turbulento</div>
+                    <p>Las particulas se mueven de forma caotica, formando <strong>remolinos y torbellinos</strong>. Ocurre a velocidades altas, en tuberias anchas o con fluidos poco viscosos. Hay mayor disipacion de energia.</p>
+                </div>
+
+                <h4>Numero de Reynolds: el criterio de transicion</h4>
+                <p>Osborne Reynolds descubrio en 1883 que la transicion entre flujo laminar y turbulento depende de un numero adimensional:</p>
+                <div class="formula">
+                    Re = (&rho; &times; v &times; D) / &mu;
+                </div>
+                <ul>
+                    <li><strong>&rho;</strong> = Densidad del fluido (kg/m&sup3;)</li>
+                    <li><strong>v</strong> = Velocidad del fluido (m/s)</li>
+                    <li><strong>D</strong> = Diametro caracteristico (m)</li>
+                    <li><strong>&mu;</strong> = Viscosidad dinamica (Pa&middot;s)</li>
+                </ul>
+                <div class="info-box theory">
+                    <div class="box-title">Interpretacion del numero de Reynolds</div>
+                    <ul>
+                        <li><strong>Re &lt; 2,300:</strong> Flujo laminar (fuerzas viscosas dominan)</li>
+                        <li><strong>2,300 &lt; Re &lt; 4,000:</strong> Zona de transicion (inestable)</li>
+                        <li><strong>Re &gt; 4,000:</strong> Flujo turbulento (fuerzas inerciales dominan)</li>
+                    </ul>
+                </div>
+                <div class="info-box example">
+                    <div class="box-title">Ejemplos de numeros de Reynolds</div>
+                    <ul>
+                        <li><strong>Miel en un frasco:</strong> Re &lt; 1 (muy viscosa, muy laminar)</li>
+                        <li><strong>Sangre en capilares:</strong> Re &asymp; 1&ndash;10 (laminar, ideal para intercambio)</li>
+                        <li><strong>Agua en tuberia domestica:</strong> Re &asymp; 10,000 (turbulento)</li>
+                        <li><strong>Avion comercial:</strong> Re &asymp; 10&sup7; (muy turbulento alrededor del ala)</li>
+                    </ul>
+                </div>
+            </div>
+
+            <!-- ===== BERNOULLI ===== -->
+            <div class="content-block fade-in">
+                <h3><span class="icon" style="background:rgba(0,201,167,0.15);color:var(--accent);">&#128161;</span> Teorema de Bernoulli</h3>
+                <p>Daniel Bernoulli (1738) demostro que para un fluido ideal (incompresible, sin viscosidad, flujo laminar), la energia total por unidad de volumen se conserva a lo largo de una linea de flujo:</p>
+                <div class="formula">
+                    P + &frac12;&rho;v&sup2; + &rho;gh = constante
+                </div>
+                <ul>
+                    <li><strong>P</strong> = Presion estatica (Pa)</li>
+                    <li><strong>&frac12;&rho;v&sup2;</strong> = Presion dinamica (energia cinetica por volumen)</li>
+                    <li><strong>&rho;gh</strong> = Presion hidrostatica (energia potencial por volumen)</li>
+                </ul>
+
+                <div class="info-box theory">
+                    <div class="box-title">Interpretacion fisica</div>
+                    <p>Bernoulli es la <strong>conservacion de energia</strong> para fluidos. Cuando la velocidad aumenta (presion dinamica sube), la presion estatica debe bajar para que la suma permanezca constante. <em>Mayor velocidad = menor presion</em>.</p>
+                </div>
+
+                <h4>Forma comparativa entre dos puntos</h4>
+                <div class="formula">
+                    P&#8321; + &frac12;&rho;v&#8321;&sup2; + &rho;gh&#8321; = P&#8322; + &frac12;&rho;v&#8322;&sup2; + &rho;gh&#8322;
+                </div>
+
+                <div class="steps">
+                    <div class="step">
+                        <div class="step-num">1</div>
+                        <div class="step-content"><p>Si v&#8322; &gt; v&#8321; (la velocidad aumenta en la seccion 2)...</p></div>
+                    </div>
+                    <div class="step">
+                        <div class="step-num">2</div>
+                        <div class="step-content"><p>... entonces &frac12;&rho;v&#8322;&sup2; &gt; &frac12;&rho;v&#8321;&sup2; (la presion dinamica aumenta)...</p></div>
+                    </div>
+                    <div class="step">
+                        <div class="step-num">3</div>
+                        <div class="step-content"><p>... por lo tanto P&#8322; &lt; P&#8321; (la presion estatica disminuye para compensar).</p></div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- ===== APLICACIONES ===== -->
+            <div class="content-block fade-in">
+                <h3><span class="icon" style="background:rgba(255,214,0,0.15);color:var(--warning);">&#9878;</span> Aplicaciones del teorema de Bernoulli</h3>
+
+                <h4>1. Alas de avion (sustentacion aerodinamica)</h4>
+                <p>El perfil del ala esta disenado para que el aire fluya mas rapido por la parte superior (mayor curvatura) que por la inferior. Por Bernoulli, la presion es menor arriba que abajo, generando una fuerza neta hacia arriba: la <strong>sustentacion</strong>.</p>
+
+                <h4>2. Efecto Venturi</h4>
+                <div class="info-box example">
+                    <div class="box-title">El tubo Venturi</div>
+                    <p>Un tubo que se estrecha acelera el fluido (ecuacion de continuidad) y baja la presion (Bernoulli). Esta caida de presion se usa para medir caudales en tuberias industriales, en carburadores de autos antiguos, y en inyectores medicos.</p>
+                </div>
+
+                <h4>3. Atomizadores y pulverizadores</h4>
+                <p>Un chorro de aire a alta velocidad sobre un tubo vertical crea zona de baja presion en el extremo superior. El liquido del recipiente es "jalado" hacia arriba por la diferencia de presion y atomizado por el flujo de aire.</p>
+
+                <h4>4. Efecto Magnus: curvas en el beisbol</h4>
+                <p>Una pelota con efecto (spin) arrastra el aire de un lado mas rapido que del otro. El lado rapido tiene menor presion (Bernoulli), y la pelota se desvia hacia ese lado: asi los lanzadores hacen curvar la pelota.</p>
+
+                <h4>5. Carburadores y venturis en motores</h4>
+                <p>En el carburador, el aire acelera en una zona estrecha, la presion cae, y eso aspira la gasolina del deposito. Combustible y aire se mezclan automaticamente sin bomba.</p>
+            </div>
+
+            <!-- ===== EJEMPLOS RESUELTOS ===== -->
+            <div class="content-block fade-in">
+                <h3><span class="icon" style="background:rgba(255,101,132,0.15);color:var(--secondary);">&#128270;</span> Ejemplos resueltos</h3>
+
+                <div class="info-box example">
+                    <div class="box-title">Ejemplo 1: Tubo Venturi horizontal</div>
+                    <p><strong>Agua (&rho; = 1000 kg/m&sup3;) fluye por una tuberia horizontal. En la seccion 1: A&#8321; = 0.04 m&sup2;, v&#8321; = 2 m/s, P&#8321; = 150,000 Pa. La seccion 2 tiene A&#8322; = 0.01 m&sup2;. Encuentra P&#8322;.</strong></p>
+                    <div class="steps">
+                        <div class="step">
+                            <div class="step-num">1</div>
+                            <div class="step-content">
+                                <p>Usando la ecuacion de continuidad: v&#8322; = A&#8321;v&#8321;/A&#8322; = (0.04 &times; 2)/0.01 = <strong>8 m/s</strong></p>
+                            </div>
+                        </div>
+                        <div class="step">
+                            <div class="step-num">2</div>
+                            <div class="step-content">
+                                <p>Bernoulli (horizontal, h&#8321; = h&#8322;):</p>
+                                <p class="math">P&#8322; = P&#8321; + &frac12;&rho;(v&#8321;&sup2; - v&#8322;&sup2;)</p>
+                                <p class="math">P&#8322; = 150,000 + &frac12;(1000)(4 - 64)</p>
+                                <p class="math">P&#8322; = 150,000 - 30,000 = <strong>120,000 Pa</strong></p>
+                            </div>
+                        </div>
+                    </div>
+                    <p>La presion baja 30,000 Pa al cuadruplicar la velocidad. &iexcl;Eso es casi un tercio de atmosfera de diferencia!</p>
+                </div>
+
+                <div class="info-box example" style="margin-top:1.5rem;">
+                    <div class="box-title">Ejemplo 2: Numero de Reynolds en tuberia</div>
+                    <p><strong>Agua a 20&deg;C (&rho; = 998 kg/m&sup3;, &mu; = 0.001 Pa&middot;s) fluye a 0.5 m/s en una tuberia de 3 cm de diametro. &iquest;El flujo es laminar o turbulento?</strong></p>
+                    <div class="steps">
+                        <div class="step">
+                            <div class="step-num">1</div>
+                            <div class="step-content">
+                                <p class="math">Re = (&rho;vD)/&mu; = (998 &times; 0.5 &times; 0.03) / 0.001</p>
+                            </div>
+                        </div>
+                        <div class="step">
+                            <div class="step-num">2</div>
+                            <div class="step-content">
+                                <p class="math">Re = 14.97 / 0.001 = <strong>14,970</strong></p>
+                            </div>
+                        </div>
+                        <div class="step">
+                            <div class="step-num">3</div>
+                            <div class="step-content"><p>Re = 14,970 &gt; 4,000 &rarr; Flujo <strong>turbulento</strong>.</p></div>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="info-box example" style="margin-top:1.5rem;">
+                    <div class="box-title">Ejemplo 3: Tanque con orificio (Torricelli)</div>
+                    <p><strong>Un tanque de agua tiene un orificio a h = 1.8 m por debajo de la superficie libre. &iquest;Con que velocidad sale el agua? (Aplicacion de Bernoulli con P&#8321; = P&#8322; = P<sub>atm</sub> y v&#8321; &asymp; 0)</strong></p>
+                    <div class="steps">
+                        <div class="step">
+                            <div class="step-num">1</div>
+                            <div class="step-content">
+                                <p>Bernoulli entre superficie (punto 1) y orificio (punto 2):</p>
+                                <p class="math">P<sub>atm</sub> + 0 + &rho;gh = P<sub>atm</sub> + &frac12;&rho;v&#8322;&sup2; + 0</p>
+                            </div>
+                        </div>
+                        <div class="step">
+                            <div class="step-num">2</div>
+                            <div class="step-content">
+                                <p class="math">v&#8322; = &radic;(2gh) = &radic;(2 &times; 9.8 &times; 1.8) = &radic;35.28 = <strong>5.94 m/s</strong></p>
+                            </div>
+                        </div>
+                    </div>
+                    <p>Este resultado se conoce como <strong>teorema de Torricelli</strong>: la velocidad de salida es la misma que si la particula hubiera caido libremente desde la altura h.</p>
+                </div>
+            </div>
+
+            <!-- ===== SIMULADOR CANVAS ===== -->
+            <div class="content-block fade-in">
+                <h3><span class="icon" style="background:rgba(108,99,255,0.15);color:var(--primary-light);">&#127918;</span> Simulador interactivo &mdash; Tubo Venturi</h3>
+                <p>Observa como cambia la presion a lo largo del tubo Venturi. El color indica presion: azul = alta presion, rojo/naranja = baja presion. El manometro muestra la diferencia de presion.</p>
+                <div class="sim-wrapper">
+                    <div class="sim-controls">
+                        <label>
+                            Velocidad entrada v&#8321; (m/s):
+                            <input type="range" id="simV1b" min="1" max="20" step="0.5" value="4">
+                            <span id="simV1bVal">4.0 m/s</span>
+                        </label>
+                        <label style="margin-top:0.5rem;">
+                            Densidad &rho; (kg/m&sup3;):
+                            <select id="simRho">
+                                <option value="1000" selected>Agua (1000)</option>
+                                <option value="800">Aceite (800)</option>
+                                <option value="1025">Agua de mar (1025)</option>
+                                <option value="13600">Mercurio (13600)</option>
+                            </select>
+                        </label>
+                    </div>
+                    <div class="sim-canvas-wrap">
+                        <canvas id="bernoulliCanvas" width="720" height="460" style="width:100%;border-radius:12px;background:#0F0E17;"></canvas>
+                    </div>
+                    <div class="sim-result" id="simResultB">
+                        P&#8321; = 150,000 Pa &nbsp;|&nbsp; P&#8322; = 120,000 Pa &nbsp;|&nbsp; &Delta;P = 30,000 Pa
+                    </div>
+                </div>
+            </div>
+
+            <!-- ===== EJERCICIOS ===== -->
+            <div class="exercises-section fade-in">
+                <h3><span class="icon" style="background:rgba(255,101,132,0.15);color:var(--secondary);">&#9998;</span> Ejercicios &mdash; Flujos y Bernoulli</h3>
+
+                <div class="exercise-item">
+                    <div class="exercise-header">
+                        <span class="exercise-label">Ejercicio 1</span>
+                        <span class="difficulty easy">Facil</span>
+                    </div>
+                    <p>Calcula el numero de Reynolds para aceite (&rho; = 900 kg/m&sup3;, &mu; = 0.1 Pa&middot;s) fluyendo a 0.2 m/s en una tuberia de 5 cm de diametro. &iquest;Es laminar o turbulento?</p>
+                    <button class="solution-toggle" onclick="toggleSolution(this)">Ver solucion &#9660;</button>
+                    <div class="solution">
+                        <p><span class="step-math">Re = (900 &times; 0.2 &times; 0.05) / 0.1 = 9 / 0.1 = <strong>90</strong></span></p>
+                        <p>Re = 90 &lt;&lt; 2,300 &rarr; Flujo <strong>laminar</strong>. El aceite viscoso favorece el flujo laminar.</p>
+                    </div>
+                </div>
+
+                <div class="exercise-item">
+                    <div class="exercise-header">
+                        <span class="exercise-label">Ejercicio 2</span>
+                        <span class="difficulty easy">Facil</span>
+                    </div>
+                    <p>En un tubo horizontal, agua fluye a v&#8321; = 3 m/s con P&#8321; = 200,000 Pa. El tubo se estrecha y la velocidad aumenta a v&#8322; = 9 m/s. Calcula P&#8322;. (&rho; agua = 1000 kg/m&sup3;)</p>
+                    <button class="solution-toggle" onclick="toggleSolution(this)">Ver solucion &#9660;</button>
+                    <div class="solution">
+                        <p><span class="step-math">P&#8322; = P&#8321; + &frac12;&rho;(v&#8321;&sup2; - v&#8322;&sup2;) = 200,000 + 500(9 - 81) = 200,000 - 36,000 = <strong>164,000 Pa</strong></span></p>
+                    </div>
+                </div>
+
+                <div class="exercise-item">
+                    <div class="exercise-header">
+                        <span class="exercise-label">Ejercicio 3</span>
+                        <span class="difficulty medium">Medio</span>
+                    </div>
+                    <p>Un tanque abierto tiene un orificio a 3.2 m de profundidad bajo la superficie. Calcula: a) la velocidad de salida del agua, b) el caudal si el orificio es circular con radio 2 cm.</p>
+                    <button class="solution-toggle" onclick="toggleSolution(this)">Ver solucion &#9660;</button>
+                    <div class="solution">
+                        <p><strong>a) Velocidad (Torricelli):</strong></p>
+                        <p><span class="step-math">v = &radic;(2 &times; 9.8 &times; 3.2) = &radic;62.72 = <strong>7.92 m/s</strong></span></p>
+                        <p><strong>b) Caudal:</strong></p>
+                        <p>A = &pi; &times; 0.02&sup2; = 0.001257 m&sup2;</p>
+                        <p><span class="step-math">Q = A &times; v = 0.001257 &times; 7.92 = <strong>0.00996 m&sup3;/s &asymp; 9.96 L/s</strong></span></p>
+                    </div>
+                </div>
+
+                <div class="exercise-item">
+                    <div class="exercise-header">
+                        <span class="exercise-label">Ejercicio 4</span>
+                        <span class="difficulty medium">Medio</span>
+                    </div>
+                    <p>El ala de un avion tiene 40 m&sup2; de area. El aire (&rho; = 1.225 kg/m&sup3;) fluye a v&#8321; = 80 m/s por debajo del ala y a v&#8322; = 95 m/s por arriba. Calcula la fuerza de sustentacion total.</p>
+                    <button class="solution-toggle" onclick="toggleSolution(this)">Ver solucion &#9660;</button>
+                    <div class="solution">
+                        <p><span class="step-math">&Delta;P = &frac12;&rho;(v&#8322;&sup2; - v&#8321;&sup2;) = &frac12;(1.225)(9025 - 6400) = 0.6125 &times; 2625 = 1,608 Pa</span></p>
+                        <p><span class="step-math">F = &Delta;P &times; A = 1,608 &times; 40 = <strong>64,312 N &asymp; 64.3 kN</strong></span></p>
+                        <p>Suficiente para sostener unos 6,560 kg. Los aviones reales usan angulos de ataque y geometria mas compleja, pero el principio es el mismo.</p>
+                    </div>
+                </div>
+
+                <div class="exercise-item">
+                    <div class="exercise-header">
+                        <span class="exercise-label">Ejercicio 5</span>
+                        <span class="difficulty hard">Dificil</span>
+                    </div>
+                    <p>Una tuberia inclinada: en el punto 1 (abajo): d&#8321; = 10 cm, v&#8321; = 2 m/s, P&#8321; = 180,000 Pa, h&#8321; = 0 m. En el punto 2 (arriba): d&#8322; = 6 cm, h&#8322; = 3 m. Calcula v&#8322; y P&#8322;. (&rho; = 1000 kg/m&sup3;)</p>
+                    <button class="solution-toggle" onclick="toggleSolution(this)">Ver solucion &#9660;</button>
+                    <div class="solution">
+                        <p><strong>Paso 1 &mdash; Continuidad para hallar v&#8322;:</strong></p>
+                        <p>A&#8321; = &pi;(0.05)&sup2; = 0.007854 m&sup2; &nbsp; A&#8322; = &pi;(0.03)&sup2; = 0.002827 m&sup2;</p>
+                        <p><span class="step-math">v&#8322; = (A&#8321;/A&#8322;) &times; v&#8321; = (0.007854/0.002827) &times; 2 = 2.778 &times; 2 = <strong>5.56 m/s</strong></span></p>
+                        <p><strong>Paso 2 &mdash; Bernoulli para hallar P&#8322;:</strong></p>
+                        <p><span class="step-math">P&#8322; = P&#8321; + &frac12;&rho;(v&#8321;&sup2; - v&#8322;&sup2;) + &rho;g(h&#8321; - h&#8322;)</span></p>
+                        <p><span class="step-math">P&#8322; = 180,000 + 500(4 - 30.9) + 1000(9.8)(0 - 3)</span></p>
+                        <p><span class="step-math">P&#8322; = 180,000 - 13,450 - 29,400 = <strong>137,150 Pa &asymp; 137.2 kPa</strong></span></p>
+                    </div>
+                </div>
+
+            </div>
+
+        </div>
+    </section>
+
+    <footer>
+        <div class="container">
+            <p style="margin-bottom:0.5rem; font-size:1rem; color:var(--text-muted);">Mod 08 &mdash; Matematicas y Representaciones del Sistema Natural!</p>
+            <p>Contenido educativo &middot; 16 temas &middot; Preparatoria</p>
+        </div>
+    </footer>
+
+    <script>
+        /* === Utilidades compartidas === */
+        function toggleSolution(btn) {
+            const solution = btn.nextElementSibling;
+            solution.classList.toggle('visible');
+            btn.textContent = solution.classList.contains('visible') ? 'Ocultar solucion \u25B2' : 'Ver solucion \u25BC';
+        }
+        const observer = new IntersectionObserver((entries) => {
+            entries.forEach(entry => { if (entry.isIntersecting) entry.target.classList.add('visible'); });
+        }, { threshold: 0.1 });
+        document.querySelectorAll('.fade-in').forEach(el => observer.observe(el));
+        const backBtn = document.getElementById('backToTop');
+        window.addEventListener('scroll', () => { backBtn.classList.toggle('show', window.scrollY > 400); });
+
+        /* === Simulador Canvas Bernoulli / Venturi === */
+        const canvas = document.getElementById('bernoulliCanvas');
+        const ctx = canvas.getContext('2d');
+        const CW = 720, CH = 460;
+
+        let simV1 = 4.0;
+        let simRho = 1000;
+        let time = 0;
+
+        const sliderV1 = document.getElementById('simV1b');
+        const labelV1  = document.getElementById('simV1bVal');
+        const selectRho = document.getElementById('simRho');
+        const resultDiv = document.getElementById('simResultB');
+
+        // Pipe geometry (Venturi: wide - narrow - wide)
+        const PIPE_CY = 195;
+        const H1 = 120;   // wide section height
+        const H2 = 46;    // narrow section height
+        const X0 = 50, X1 = 200, X2 = 320, X3 = 450, X4 = 600, X5 = 670;
+
+        function pipeTopY(px) {
+            if (px <= X1) return PIPE_CY - H1 / 2;
+            if (px >= X2 && px <= X3) return PIPE_CY - H2 / 2;
+            if (px >= X4) return PIPE_CY - H1 / 2;
+            if (px < X2) { const f = (px - X1) / (X2 - X1); return PIPE_CY - lerp(H1, H2, f) / 2; }
+            const f = (px - X3) / (X4 - X3);
+            return PIPE_CY - lerp(H2, H1, f) / 2;
+        }
+        function pipeBotY(px) {
+            if (px <= X1) return PIPE_CY + H1 / 2;
+            if (px >= X2 && px <= X3) return PIPE_CY + H2 / 2;
+            if (px >= X4) return PIPE_CY + H1 / 2;
+            if (px < X2) { const f = (px - X1) / (X2 - X1); return PIPE_CY + lerp(H1, H2, f) / 2; }
+            const f = (px - X3) / (X4 - X3);
+            return PIPE_CY + lerp(H2, H1, f) / 2;
+        }
+        function localH(px) { return pipeBotY(px) - pipeTopY(px); }
+
+        function lerp(a, b, t) { return a + (b - a) * t; }
+
+        // Areas proportional to H (2D cross-section stands in for 3D)
+        const A1_ref = H1 * H1;   // reference area proportional
+        const A2_ref = H2 * H2;
+
+        function getV2(v1) { return v1 * (A1_ref / A2_ref); }
+
+        // Pressure-to-color mapping
+        function pressureColor(p, pMin, pMax) {
+            const t = Math.max(0, Math.min(1, (p - pMin) / (pMax - pMin)));
+            // High pressure = blue, low = orange/red
+            let r, g, b;
+            if (t > 0.5) {
+                const s = (t - 0.5) / 0.5;
+                r = Math.floor(lerp(0, 60, s));
+                g = Math.floor(lerp(180, 120, s));
+                b = Math.floor(lerp(255, 220, s));
+            } else {
+                const s = t / 0.5;
+                r = Math.floor(lerp(255, 0, s));
+                g = Math.floor(lerp(80, 180, s));
+                b = Math.floor(lerp(0, 255, s));
+            }
+            return { r, g, b, str: 'rgb(' + r + ',' + g + ',' + b + ')' };
+        }
+
+        function updateControls() {
+            simV1  = parseFloat(sliderV1.value);
+            simRho = parseFloat(selectRho.value);
+            labelV1.textContent = simV1.toFixed(1) + ' m/s';
+            const v2 = getV2(simV1);
+            const P1 = 200000;
+            const P2 = P1 + 0.5 * simRho * (simV1 * simV1 - v2 * v2);
+            const dP = P1 - P2;
+            resultDiv.innerHTML =
+                'P\u2081\u00A0=\u00A0' + Math.round(P1 / 1000).toFixed(1) + '\u00A0kPa' +
+                '\u00A0\u00A0|\u00A0\u00A0' +
+                'P\u2082\u00A0=\u00A0' + Math.max(0, Math.round(P2 / 1000)).toFixed(1) + '\u00A0kPa' +
+                '\u00A0\u00A0|\u00A0\u00A0' +
+                '\u0394P\u00A0=\u00A0<strong>' + Math.round(Math.abs(dP) / 1000).toFixed(1) + '\u00A0kPa</strong>';
+        }
+        sliderV1.addEventListener('input', updateControls);
+        selectRho.addEventListener('change', updateControls);
+
+        /* Particle system */
+        const NP = 90;
+        const particles = [];
+        for (let i = 0; i < NP; i++) {
+            particles.push({ x: X0 + Math.random() * (X5 - X0), t: 0.1 + Math.random() * 0.8 });
+        }
+
+        function localVelocity(px, v1) {
+            const h = localH(px);
+            return v1 * (H1 / h);
+        }
+
+        function draw() {
+            time += 0.016;
+            const v1  = simV1;
+            const v2  = getV2(v1);
+            const rho = simRho;
+            const P1  = 200000;
+            const P2  = P1 + 0.5 * rho * (v1 * v1 - v2 * v2);
+            const P3  = P1; // symmetric exit
+            const pMin = Math.min(P1, P2, P3) * 0.98;
+            const pMax = Math.max(P1, P2, P3) * 1.02;
+
+            ctx.clearRect(0, 0, CW, CH);
+
+            /* Background */
+            const bg = ctx.createLinearGradient(0, 0, 0, CH);
+            bg.addColorStop(0, '#0a0a1a');
+            bg.addColorStop(1, '#12122a');
+            ctx.fillStyle = bg;
+            ctx.fillRect(0, 0, CW, CH);
+
+            /* === Pipe interior fill with pressure color === */
+            const segments = 200;
+            for (let i = 0; i < segments; i++) {
+                const px = X0 + (X5 - X0) * (i / segments);
+                const pxn = X0 + (X5 - X0) * ((i + 1) / segments);
+                // Interpolate pressure based on position
+                let localP;
+                if (px <= X1) localP = P1;
+                else if (px >= X4) localP = P3;
+                else if (px >= X2 && px <= X3) localP = P2;
+                else if (px < X2) { const f = (px - X1) / (X2 - X1); localP = lerp(P1, P2, f); }
+                else { const f = (px - X3) / (X4 - X3); localP = lerp(P2, P3, f); }
+
+                const col = pressureColor(localP, pMin, pMax);
+                ctx.fillStyle = 'rgba(' + col.r + ',' + col.g + ',' + col.b + ',0.35)';
+                ctx.beginPath();
+                ctx.moveTo(px, pipeTopY(px));
+                ctx.lineTo(pxn, pipeTopY(pxn));
+                ctx.lineTo(pxn, pipeBotY(pxn));
+                ctx.lineTo(px, pipeBotY(px));
+                ctx.closePath();
+                ctx.fill();
+            }
+
+            /* Pipe walls */
+            ctx.strokeStyle = '#4a4a80';
+            ctx.lineWidth = 2.5;
+            ctx.beginPath();
+            ctx.moveTo(X0, pipeTopY(X0));
+            for (let px = X0; px <= X5; px += 3) ctx.lineTo(px, pipeTopY(px));
+            ctx.stroke();
+            ctx.beginPath();
+            ctx.moveTo(X0, pipeBotY(X0));
+            for (let px = X0; px <= X5; px += 3) ctx.lineTo(px, pipeBotY(px));
+            ctx.stroke();
+            // End caps
+            ctx.beginPath();
+            ctx.moveTo(X0, pipeTopY(X0)); ctx.lineTo(X0, pipeBotY(X0));
+            ctx.moveTo(X5, pipeTopY(X5)); ctx.lineTo(X5, pipeBotY(X5));
+            ctx.stroke();
+
+            /* === Animate particles === */
+            for (let i = 0; i < particles.length; i++) {
+                const p = particles[i];
+                const lv = localVelocity(Math.max(X0, Math.min(X5 - 1, p.x)), v1);
+                p.x += lv * 14 * 0.016;
+                if (p.x > X5 + 10) { p.x = X0 - Math.random() * 30; p.t = 0.1 + Math.random() * 0.8; }
+
+                const topY = pipeTopY(p.x);
+                const botY = pipeBotY(p.x);
+                const py = topY + p.t * (botY - topY);
+
+                // Color particle by speed
+                const speedFrac = Math.min(1, lv / (v2 * 1.1));
+                let r, g, b;
+                if (speedFrac < 0.5) {
+                    const s = speedFrac / 0.5;
+                    r = Math.floor(lerp(80, 255, s)); g = Math.floor(lerp(200, 200, s)); b = Math.floor(lerp(255, 0, s));
+                } else {
+                    const s = (speedFrac - 0.5) / 0.5;
+                    r = 255; g = Math.floor(lerp(200, 60, s)); b = 0;
+                }
+                ctx.beginPath();
+                ctx.arc(p.x, py, 3, 0, Math.PI * 2);
+                ctx.fillStyle = 'rgb(' + r + ',' + g + ',' + b + ')';
+                ctx.fill();
+            }
+
+            /* === Manometer tubes === */
+            const manoX1 = (X0 + X1) / 2 + 10;
+            const manoX2 = (X2 + X3) / 2;
+            const manoBaseY = PIPE_CY + H1 / 2 + 10;
+            const manoH = 100;
+
+            function drawManometer(mx, pressure, refP, label, colStr) {
+                const attachY = pipeBotY(mx);
+                const tubH = 80;
+                // Tube
+                ctx.strokeStyle = '#4a4a80';
+                ctx.lineWidth = 1.5;
+                ctx.beginPath();
+                ctx.moveTo(mx, attachY);
+                ctx.lineTo(mx, attachY + tubH);
+                ctx.stroke();
+                // Horizontal connector at bottom
+                ctx.beginPath();
+                ctx.moveTo(mx - 14, attachY + tubH);
+                ctx.lineTo(mx + 14, attachY + tubH);
+                ctx.stroke();
+                // Vertical scale marks
+                ctx.strokeStyle = '#333360';
+                ctx.lineWidth = 1;
+                for (let i = 0; i <= 4; i++) {
+                    const ly = attachY + 10 + i * 15;
+                    ctx.beginPath();
+                    ctx.moveTo(mx - 6, ly); ctx.lineTo(mx + 6, ly);
+                    ctx.stroke();
+                }
+                // Fluid column (height proportional to pressure)
+                const fluidH = Math.max(2, (pressure / refP) * 55);
+                const col = pressureColor(pressure, pMin, pMax);
+                ctx.fillStyle = col.str + 'bb';
+                ctx.beginPath();
+                ctx.roundRect(mx - 10, attachY + tubH - fluidH, 20, fluidH, [0, 0, 4, 4]);
+                ctx.fill();
+                // Label
+                ctx.fillStyle = 'rgba(255,255,255,0.7)';
+                ctx.font = '11px Inter, sans-serif';
+                ctx.textAlign = 'center';
+                ctx.fillText(label, mx, attachY + tubH + 16);
+                ctx.fillStyle = col.str;
+                ctx.font = 'bold 12px Inter, sans-serif';
+                ctx.fillText((pressure / 1000).toFixed(1) + ' kPa', mx, attachY + tubH + 30);
+            }
+
+            drawManometer(manoX1, P1, P1, 'P\u2081', '#6C63FF');
+            drawManometer(manoX2, Math.max(10000, P2), P1, 'P\u2082', '#FF6584');
+            drawManometer((X4 + X5) / 2 - 10, P3, P1, 'P\u2083', '#6C63FF');
+
+            /* === Labels on pipe === */
+            ctx.fillStyle = 'rgba(255,255,255,0.6)';
+            ctx.font = '12px Inter, sans-serif';
+            ctx.textAlign = 'center';
+            ctx.fillText('v\u2081 = ' + v1.toFixed(1) + ' m/s', (X0 + X1) / 2, pipeTopY((X0 + X1) / 2) - 10);
+            ctx.fillText('v\u2082 = ' + v2.toFixed(1) + ' m/s', (X2 + X3) / 2, pipeTopY((X2 + X3) / 2) - 10);
+            ctx.fillText('v\u2083 = ' + v1.toFixed(1) + ' m/s', (X4 + X5) / 2, pipeTopY((X4 + X5) / 2) - 10);
+
+            /* === Info panel === */
+            const panelY = CH - 68;
+            ctx.fillStyle = 'rgba(255,255,255,0.04)';
+            ctx.beginPath();
+            ctx.roundRect(50, panelY, CW - 100, 54, 10);
+            ctx.fill();
+
+            ctx.font = 'bold 13px Inter, sans-serif';
+            ctx.textAlign = 'center';
+            ctx.fillStyle = '#00C9A7';
+            ctx.fillText(
+                'P + \u00BD\u03C1v\u00B2 = constante  \u2014  \u03C1 = ' + simRho + ' kg/m\u00B3',
+                CW / 2, panelY + 18
+            );
+
+            const dP = P1 - Math.max(0, P2);
+            ctx.font = '12px Inter, sans-serif';
+            ctx.fillStyle = 'rgba(255,255,255,0.5)';
+            ctx.fillText(
+                '\u0394P = P\u2081 - P\u2082 = ' + (dP / 1000).toFixed(2) + ' kPa' +
+                '\u2003\u2003v\u2082/v\u2081 = ' + (v2 / v1).toFixed(1) + 'x' +
+                (P2 < 0 ? '  \u26A0 Presion negativa: cavitacion!' : ''),
+                CW / 2, panelY + 40
+            );
+
+            requestAnimationFrame(draw);
+        }
+
+        updateControls();
+        draw();
+    </script>
+</body>
+</html>

@@ -1,0 +1,708 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Tema 09 - Densidad | Mod 08</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+
+    <nav class="topic-nav">
+        <a href="index.html" class="back-link">&#9664; Volver al indice</a>
+        <span class="topic-nav-title">Tema 09 &mdash; Densidad</span>
+    </nav>
+
+    <a href="#top" class="back-to-top" id="backToTop">&#9650;</a>
+
+    <section class="tema tema-page" id="top">
+        <div class="container">
+            <div class="tema-header fade-in">
+                <div class="tema-number odd">Tema 09 &mdash; Propiedades de la Materia</div>
+                <h2>Densidad</h2>
+                <p class="intro">La densidad explica por que el aceite flota sobre el agua, por que el hierro se hunde y la madera flota, y por que los globos de helio suben. Es una de las propiedades mas fundamentales de la materia y conecta directamente con la presion hidrostatica, el principio de Arquimedes y los fluidos en general.</p>
+            </div>
+
+            <!-- ===== CONCEPTO ===== -->
+            <div class="content-block fade-in">
+                <h3><span class="icon" style="background:rgba(108,99,255,0.15);color:var(--primary-light);">&#128218;</span> Que es la densidad?</h3>
+                <div class="info-box theory">
+                    <div class="box-title">Definicion</div>
+                    <p><em>La densidad es la cantidad de masa contenida en una unidad de volumen.</em> Indica que tan "compacta" o "apretada" esta la materia en un objeto o sustancia.</p>
+                </div>
+                <h4>La formula</h4>
+                <div class="formula">
+                    &rho; = m / V
+                </div>
+                <p>Donde:</p>
+                <ul>
+                    <li><strong>&rho;</strong> (rho) = Densidad (kg/m&sup3; o g/cm&sup3;)</li>
+                    <li><strong>m</strong> = Masa (kg o g)</li>
+                    <li><strong>V</strong> = Volumen (m&sup3; o cm&sup3;)</li>
+                </ul>
+                <div class="info-box warning">
+                    <div class="box-title">Unidades y conversiones</div>
+                    <p>La unidad del SI es kg/m&sup3;, pero en la practica suele usarse g/cm&sup3;:</p>
+                    <ul>
+                        <li><strong>1 g/cm&sup3; = 1,000 kg/m&sup3;</strong></li>
+                        <li>El agua tiene &rho; = 1 g/cm&sup3; = 1,000 kg/m&sup3;</li>
+                    </ul>
+                    <p>Esto hace que sea facil comparar: cualquier sustancia con densidad &gt;1 g/cm&sup3; se hunde en el agua, y la que tiene &lt;1 g/cm&sup3; flota.</p>
+                </div>
+            </div>
+
+            <!-- ===== IDEA CLAVE ===== -->
+            <div class="content-block fade-in">
+                <h3><span class="icon" style="background:rgba(0,201,167,0.15);color:var(--accent);">&#128161;</span> Ideas clave sobre la densidad</h3>
+
+                <h4>Densidad no es masa ni volumen</h4>
+                <p>Un elefante tiene mas masa que una pelota de plomo del mismo tamaño, pero la pelota de plomo es mucho mas densa. La densidad es una <strong>propiedad intensiva</strong>: no cambia si tienes mucho o poco de una sustancia. Un litro de agua tiene la misma densidad que un oceano de agua.</p>
+
+                <h4>Flotacion: la regla simple</h4>
+                <div class="info-box theory">
+                    <div class="box-title">Regla de flotacion por densidades</div>
+                    <ul>
+                        <li>Si <strong>&rho;<sub>objeto</sub> &lt; &rho;<sub>fluido</sub></strong> &rarr; el objeto <strong>FLOTA</strong></li>
+                        <li>Si <strong>&rho;<sub>objeto</sub> = &rho;<sub>fluido</sub></strong> &rarr; el objeto queda en <strong>EQUILIBRIO</strong> suspendido</li>
+                        <li>Si <strong>&rho;<sub>objeto</sub> &gt; &rho;<sub>fluido</sub></strong> &rarr; el objeto se <strong>HUNDE</strong></li>
+                    </ul>
+                </div>
+
+                <h4>Densidades de materiales comunes</h4>
+                <div class="info-box example">
+                    <div class="box-title">Tabla de densidades aproximadas</div>
+                    <ul>
+                        <li><strong>Helio (gas):</strong> 0.000164 g/cm&sup3;</li>
+                        <li><strong>Madera de balsa:</strong> 0.12 g/cm&sup3;</li>
+                        <li><strong>Aceite:</strong> 0.90 g/cm&sup3;</li>
+                        <li><strong>Agua pura:</strong> 1.00 g/cm&sup3;</li>
+                        <li><strong>Agua de mar:</strong> 1.025 g/cm&sup3;</li>
+                        <li><strong>Concreto:</strong> 2.3 g/cm&sup3;</li>
+                        <li><strong>Aluminio:</strong> 2.7 g/cm&sup3;</li>
+                        <li><strong>Hierro:</strong> 7.87 g/cm&sup3;</li>
+                        <li><strong>Plomo:</strong> 11.3 g/cm&sup3;</li>
+                        <li><strong>Oro:</strong> 19.3 g/cm&sup3;</li>
+                        <li><strong>Mercurio (liquido):</strong> 13.6 g/cm&sup3;</li>
+                    </ul>
+                </div>
+
+                <h4>Densidad y temperatura</h4>
+                <p>La densidad cambia con la temperatura. Al calentar una sustancia, sus moleculas se mueven mas rapido y se separan, <strong>aumentando el volumen</strong> con la misma masa, por lo que la densidad <strong>disminuye</strong>. Esto explica:</p>
+                <ul>
+                    <li>Por que el aire caliente sube (globos aereostaticos, chimeneas)</li>
+                    <li>Por que el agua caliente sube en una olla hervida</li>
+                    <li>Por que el hielo flota: el agua al congelarse expande su volumen (~9%), haciendose menos densa que el agua liquida</li>
+                </ul>
+
+                <div class="info-box example">
+                    <div class="box-title">El curioso caso del hielo</div>
+                    <p>El agua es una de las pocas sustancias donde el solido es <strong>menos denso</strong> que el liquido. El hielo tiene &rho; &asymp; 0.917 g/cm&sup3;, mientras el agua liquida tiene 1.0 g/cm&sup3;. Por eso el hielo flota. Si el hielo se hundiera, los oceanos se congelarian desde el fondo y la vida acuatica seria imposible en climas frios.</p>
+                </div>
+            </div>
+
+            <!-- ===== APLICACIONES ===== -->
+            <div class="content-block fade-in">
+                <h3><span class="icon" style="background:rgba(255,214,0,0.15);color:var(--warning);">&#9878;</span> Aplicaciones de la densidad</h3>
+
+                <h4>Barcos de acero que flotan</h4>
+                <p>El acero tiene una densidad de ~7.8 g/cm&sup3;, mucho mayor que el agua. Pero un barco flota porque no es un bloque solido de acero: es una <strong>estructura hueca</strong> que encierra aire. La densidad <em>promedio</em> del barco (acero + aire + todo lo que lleva) resulta menor que el agua.</p>
+
+                <h4>Submarinos</h4>
+                <p>Los submarinos usan <strong>tanques de lastre</strong>: para hundirse los llenan de agua (aumentando la densidad promedio), y para subir los vacian con aire comprimido (disminuyendo la densidad promedio). Controlan exactamente su profundidad ajustando su densidad.</p>
+
+                <h4>Globos de helio y aire caliente</h4>
+                <p>El helio tiene &rho; &asymp; 0.164 kg/m&sup3;, mucho menor que el aire (&rho; &asymp; 1.225 kg/m&sup3;). La diferencia de densidades genera empuje hacia arriba (principio de Arquimedes). Lo mismo ocurre con los globos de aire caliente.</p>
+
+                <h4>Identificacion de materiales</h4>
+                <p>Medir la densidad es una forma clasica de identificar materiales. Si tienes un objeto amarillo y su densidad es 19.3 g/cm&sup3;, es oro. Si es 8.9 g/cm&sup3;, es bronce (aleacion de cobre y estano).</p>
+            </div>
+
+            <!-- ===== EJEMPLOS RESUELTOS ===== -->
+            <div class="content-block fade-in">
+                <h3><span class="icon" style="background:rgba(255,101,132,0.15);color:var(--secondary);">&#128270;</span> Ejemplos resueltos</h3>
+
+                <div class="info-box example">
+                    <div class="box-title">Ejemplo 1: Calculo directo de densidad</div>
+                    <p><strong>Un bloque metalico tiene una masa de 540 g y un volumen de 20 cm&sup3;. Cual es su densidad? De que material podria ser?</strong></p>
+                    <div class="steps">
+                        <div class="step">
+                            <div class="step-num">1</div>
+                            <div class="step-content"><p>Datos: m = 540 g, V = 20 cm&sup3;</p></div>
+                        </div>
+                        <div class="step">
+                            <div class="step-num">2</div>
+                            <div class="step-content">
+                                <p class="math">&rho; = m / V = 540 / 20 = <strong>27 g/cm&sup3;</strong></p>
+                            </div>
+                        </div>
+                        <div class="step">
+                            <div class="step-num">3</div>
+                            <div class="step-content">
+                                <p>27 g/cm&sup3; es muy alto... solo el osmio (22.5) y el iridio (22.6) se acercan. Posiblemente el dato sea incorrecto, o el material es una aleacion muy densa. <em>Verificar mediciones!</em></p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="info-box example" style="margin-top:1.5rem;">
+                    <div class="box-title">Ejemplo 2: Calculo de masa a partir de densidad</div>
+                    <p><strong>Una pecera tiene dimensiones de 60 cm &times; 30 cm &times; 35 cm y esta llena de agua (&rho; = 1.0 g/cm&sup3;). Cual es la masa del agua?</strong></p>
+                    <div class="steps">
+                        <div class="step">
+                            <div class="step-num">1</div>
+                            <div class="step-content"><p>V = 60 &times; 30 &times; 35 = 63,000 cm&sup3;</p></div>
+                        </div>
+                        <div class="step">
+                            <div class="step-num">2</div>
+                            <div class="step-content">
+                                <p>De &rho; = m/V despejamos: m = &rho; &times; V</p>
+                                <p class="math">m = 1.0 &times; 63,000 = <strong>63,000 g = 63 kg</strong></p>
+                            </div>
+                        </div>
+                    </div>
+                    <p>63 litros de agua, que equivalen exactamente a 63 kg (ya que 1 litro de agua = 1 kg).</p>
+                </div>
+
+                <div class="info-box example" style="margin-top:1.5rem;">
+                    <div class="box-title">Ejemplo 3: Flotacion por densidad</div>
+                    <p><strong>Un cubo de madera de pino (&rho; = 0.55 g/cm&sup3;) de 10 cm de lado se coloca en agua. Que porcentaje del cubo queda sumergido?</strong></p>
+                    <div class="steps">
+                        <div class="step">
+                            <div class="step-num">1</div>
+                            <div class="step-content">
+                                <p>El porcentaje sumergido cuando un objeto flota es igual a la razon de densidades:</p>
+                                <p class="math">% sumergido = (&rho;<sub>objeto</sub> / &rho;<sub>fluido</sub>) &times; 100</p>
+                            </div>
+                        </div>
+                        <div class="step">
+                            <div class="step-num">2</div>
+                            <div class="step-content">
+                                <p class="math">% sumergido = (0.55 / 1.0) &times; 100 = <strong>55%</strong></p>
+                            </div>
+                        </div>
+                    </div>
+                    <p>El 55% del cubo esta bajo el agua. El 45% sobresale. Por eso los icebergs con &rho; &asymp; 0.917 tienen el 91.7% sumergido: la punta del iceberg es solo el 8.3%!</p>
+                </div>
+            </div>
+
+            <!-- ===== SIMULADOR CANVAS ===== -->
+            <div class="content-block fade-in">
+                <h3><span class="icon" style="background:rgba(108,99,255,0.15);color:var(--primary-light);">&#127918;</span> Simulador interactivo</h3>
+                <p>Elige la densidad del objeto y del fluido. Observa si el objeto flota, se hunde o queda suspendido, y que fraccion queda sumergida.</p>
+                <div class="sim-wrapper">
+                    <div class="sim-controls">
+                        <label>
+                            Densidad del objeto (&rho;<sub>obj</sub>):
+                            <input type="range" id="simObjRho" min="0.1" max="15" step="0.05" value="0.8">
+                            <span id="simObjRhoVal">0.80 g/cm&sup3;</span>
+                        </label>
+                        <label style="margin-top:0.5rem;">
+                            Fluido:
+                            <select id="simFluid9" style="background:#1a1a36;color:#fff;border:1px solid rgba(255,255,255,0.15);border-radius:6px;padding:4px 8px;font-size:0.95rem;cursor:pointer;">
+                                <option value="1.0">Agua pura (1.00 g/cm&sup3;)</option>
+                                <option value="1.025">Agua de mar (1.025 g/cm&sup3;)</option>
+                                <option value="13.6">Mercurio (13.6 g/cm&sup3;)</option>
+                                <option value="0.9">Aceite (0.90 g/cm&sup3;)</option>
+                                <option value="0.72">Gasolina (0.72 g/cm&sup3;)</option>
+                            </select>
+                        </label>
+                        <label style="margin-top:0.5rem;">
+                            Forma del objeto:
+                            <select id="simShape" style="background:#1a1a36;color:#fff;border:1px solid rgba(255,255,255,0.15);border-radius:6px;padding:4px 8px;font-size:0.95rem;cursor:pointer;">
+                                <option value="cube">Cubo</option>
+                                <option value="sphere">Esfera</option>
+                                <option value="cylinder">Cilindro</option>
+                            </select>
+                        </label>
+                    </div>
+                    <div class="sim-canvas-wrap">
+                        <canvas id="densCanvas" width="720" height="420" style="width:100%;border-radius:12px;background:#0F0E17;"></canvas>
+                    </div>
+                    <div class="sim-result" id="simResult9">
+                        El objeto flota con <strong>80%</strong> sumergido.
+                    </div>
+                </div>
+            </div>
+
+            <!-- ===== EJERCICIOS ===== -->
+            <div class="exercises-section fade-in">
+                <h3><span class="icon" style="background:rgba(255,101,132,0.15);color:var(--secondary);">&#9998;</span> Ejercicios - Densidad</h3>
+
+                <div class="exercise-item">
+                    <div class="exercise-header">
+                        <span class="exercise-label">Ejercicio 1</span>
+                        <span class="difficulty easy">Facil</span>
+                    </div>
+                    <p>Una bola de aluminio tiene una masa de 135 g y un volumen de 50 cm&sup3;. Calcula su densidad.</p>
+                    <button class="solution-toggle" onclick="toggleSolution(this)">Ver solucion &#9660;</button>
+                    <div class="solution">
+                        <p><span class="step-math">&rho; = m / V = 135 / 50 = <strong>2.7 g/cm&sup3;</strong></span></p>
+                        <p>Coincide con la densidad del aluminio. Verificado!</p>
+                    </div>
+                </div>
+
+                <div class="exercise-item">
+                    <div class="exercise-header">
+                        <span class="exercise-label">Ejercicio 2</span>
+                        <span class="difficulty easy">Facil</span>
+                    </div>
+                    <p>Tienes 5 litros de gasolina (&rho; = 720 kg/m&sup3;). Cuantos kilogramos pesa?</p>
+                    <button class="solution-toggle" onclick="toggleSolution(this)">Ver solucion &#9660;</button>
+                    <div class="solution">
+                        <p>Convierte: 5 litros = 0.005 m&sup3;</p>
+                        <p>De &rho; = m/V: m = &rho; &times; V</p>
+                        <p><span class="step-math">m = 720 &times; 0.005 = <strong>3.6 kg</strong></span></p>
+                    </div>
+                </div>
+
+                <div class="exercise-item">
+                    <div class="exercise-header">
+                        <span class="exercise-label">Ejercicio 3</span>
+                        <span class="difficulty medium">Medio</span>
+                    </div>
+                    <p>Un iceberg tiene una densidad de 0.917 g/cm&sup3; y flota en agua de mar (&rho; = 1.025 g/cm&sup3;). Que porcentaje del iceberg esta sumergido bajo el agua?</p>
+                    <button class="solution-toggle" onclick="toggleSolution(this)">Ver solucion &#9660;</button>
+                    <div class="solution">
+                        <p>% sumergido = (&rho;<sub>obj</sub> / &rho;<sub>fluido</sub>) &times; 100</p>
+                        <p><span class="step-math">= (0.917 / 1.025) &times; 100 = <strong>89.5%</strong></span></p>
+                        <p>Solo el 10.5% del iceberg sobresale del agua. Esto es lo que significa "la punta del iceberg".</p>
+                    </div>
+                </div>
+
+                <div class="exercise-item">
+                    <div class="exercise-header">
+                        <span class="exercise-label">Ejercicio 4</span>
+                        <span class="difficulty medium">Medio</span>
+                    </div>
+                    <p>Un objeto de madera con densidad 0.65 g/cm&sup3; y masa de 520 g flota en aceite (&rho; = 0.90 g/cm&sup3;). a) Calcula el volumen del objeto. b) El objeto, <em>flota o se hunde</em> en el aceite?</p>
+                    <button class="solution-toggle" onclick="toggleSolution(this)">Ver solucion &#9660;</button>
+                    <div class="solution">
+                        <p><strong>a) Volumen:</strong></p>
+                        <p><span class="step-math">V = m / &rho; = 520 / 0.65 = <strong>800 cm&sup3;</strong></span></p>
+                        <p><strong>b) Flotacion:</strong></p>
+                        <p>&rho;<sub>madera</sub> = 0.65 &lt; &rho;<sub>aceite</sub> = 0.90, por lo que la madera <strong>FLOTA</strong> en el aceite.</p>
+                        <p>Porción sumergida: (0.65 / 0.90) &times; 100 = <strong>72.2%</strong></p>
+                    </div>
+                </div>
+
+                <div class="exercise-item">
+                    <div class="exercise-header">
+                        <span class="exercise-label">Ejercicio 5</span>
+                        <span class="difficulty hard">Dificil</span>
+                    </div>
+                    <p>Un objeto de densidad desconocida se pesa en el aire: 780 g. Luego se sumerge completamente en agua y el dinamometro marca 480 g. Calcula: a) el empuje (fuerza de Arquimedes), b) el volumen del objeto, c) su densidad.</p>
+                    <button class="solution-toggle" onclick="toggleSolution(this)">Ver solucion &#9660;</button>
+                    <div class="solution">
+                        <p><strong>a) Empuje:</strong></p>
+                        <p><span class="step-math">E = P<sub>aire</sub> - P<sub>agua</sub> = 780 - 480 = <strong>300 g-fuerza = 2.94 N</strong></span></p>
+                        <p><strong>b) Volumen (por Arquimedes: empuje = &rho;<sub>agua</sub> &times; g &times; V):</strong></p>
+                        <p>E = &rho;<sub>agua</sub> &times; V &times; g &rArr; 0.300 kg = 1000 kg/m&sup3; &times; V &times; 9.8 m/s&sup2;</p>
+                        <p><span class="step-math">V = 0.300 / (1000 &times; 9.8) = 3.06 &times; 10&sup2;&sup3; m&sup3; = <strong>306 cm&sup3;</strong></span></p>
+                        <p><strong>c) Densidad:</strong></p>
+                        <p><span class="step-math">&rho; = m / V = 780 / 306 = <strong>2.55 g/cm&sup3;</strong></span></p>
+                        <p>Podria ser vidrio (2.5 g/cm&sup3;) o algun mineral.</p>
+                    </div>
+                </div>
+            </div>
+
+        </div>
+    </section>
+
+    <footer>
+        <div class="container">
+            <p style="margin-bottom:0.5rem; font-size:1rem; color:var(--text-muted);">Mod 08 &mdash; Matematicas y Representaciones del Sistema Natural!</p>
+            <p>Contenido educativo &middot; 16 temas &middot; Preparatoria</p>
+        </div>
+    </footer>
+
+    <script>
+        /* === Utilidades compartidas === */
+        function toggleSolution(btn) {
+            const solution = btn.nextElementSibling;
+            solution.classList.toggle('visible');
+            btn.textContent = solution.classList.contains('visible') ? 'Ocultar solucion \u25B2' : 'Ver solucion \u25BC';
+        }
+        const observer = new IntersectionObserver((entries) => {
+            entries.forEach(entry => { if (entry.isIntersecting) entry.target.classList.add('visible'); });
+        }, { threshold: 0.1 });
+        document.querySelectorAll('.fade-in').forEach(el => observer.observe(el));
+        const backBtn = document.getElementById('backToTop');
+        window.addEventListener('scroll', () => { backBtn.classList.toggle('show', window.scrollY > 400); });
+
+        /* ============================================================
+           SIMULADOR DE DENSIDAD Y FLOTACION — canvas
+        ============================================================ */
+        const canvas = document.getElementById('densCanvas');
+        const ctx    = canvas.getContext('2d');
+        const CW = 720, CH = 420;
+
+        let objRho    = 0.8;
+        let fluidRho  = 1.0;
+        let shape     = 'cube';
+        let time      = 0;
+
+        // Animated object center Y in pixels (avoids formula-switch mid-animation)
+        let animObjCY   = 0;    // set after constants are defined
+        let targetObjCY = 0;
+        let waveOff     = 0;
+        let bobAmp      = 0;
+
+        const objSlider = document.getElementById('simObjRho');
+        const fluidSel9 = document.getElementById('simFluid9');
+        const shapeSel  = document.getElementById('simShape');
+        const objVal    = document.getElementById('simObjRhoVal');
+        const res9      = document.getElementById('simResult9');
+
+        function computeState() {
+            objRho   = parseFloat(objSlider.value);
+            fluidRho = parseFloat(fluidSel9.value);
+            shape    = shapeSel.value;
+            objVal.textContent = objRho.toFixed(2) + ' g/cm\u00B3';
+
+            const ratio = objRho / fluidRho;
+            if (ratio < 1) {
+                const pct = Math.round(ratio * 100);
+                res9.innerHTML = '\u03C1<sub>obj</sub> &lt; \u03C1<sub>fluido</sub> &rarr; El objeto <strong>FLOTA</strong> con el <strong>' + pct + '%</strong> sumergido.';
+                // Center Y so that (ratio * OBJ_SIZE) of the object is below FLUID_TOP
+                targetObjCY = FLUID_TOP + ratio * OBJ_SIZE - OBJ_SIZE * 0.5;
+                bobAmp = 3;
+            } else if (ratio === 1) {
+                res9.innerHTML = '\u03C1<sub>obj</sub> = \u03C1<sub>fluido</sub> &rarr; El objeto queda <strong>SUSPENDIDO</strong> en equilibrio.';
+                // Fully submerged, centered in fluid
+                targetObjCY = FLUID_TOP + FLUID_H * 0.5;
+                bobAmp = 0.5;
+            } else {
+                res9.innerHTML = '\u03C1<sub>obj</sub> &gt; \u03C1<sub>fluido</sub> &rarr; El objeto <strong>SE HUNDE</strong>. La densidad es ' + objRho.toFixed(2) + ' g/cm\u00B3 vs ' + fluidRho + ' g/cm\u00B3 del fluido.';
+                // Resting on the bottom
+                targetObjCY = FLUID_BOT - OBJ_SIZE * 0.6;
+                bobAmp = 0;
+            }
+        }
+        objSlider.addEventListener('input', computeState);
+        fluidSel9.addEventListener('change', computeState);
+        shapeSel.addEventListener('change', computeState);
+
+        function lerp(a, b, t) { return a + (b - a) * t; }
+
+        /* Object color based on density */
+        function objColor(rho) {
+            if (rho < 0.3)  return { fill: '#8BC34A', stroke: '#558B2F' }; // very light - green
+            if (rho < 0.7)  return { fill: '#C8A96A', stroke: '#8D6E3F' }; // wood - brown
+            if (rho < 1.0)  return { fill: '#90CAF9', stroke: '#42A5F5' }; // lighter than water - light blue
+            if (rho < 3.0)  return { fill: '#B0BEC5', stroke: '#607D8B' }; // mid - grey
+            if (rho < 8.0)  return { fill: '#78909C', stroke: '#455A64' }; // iron-ish
+            if (rho < 12.0) return { fill: '#5D4037', stroke: '#3E2723' }; // lead - dark
+            return { fill: '#FDD835', stroke: '#F9A825' };                 // gold / mercury
+        }
+
+        /* Fluid color */
+        function fluidTopColor(rho) {
+            if (rho >= 13) return 'rgba(200,120,100,0.85)';
+            if (rho >= 1.02) return 'rgba(30,80,180,0.80)';
+            if (rho <= 0.73) return 'rgba(230,200,60,0.75)';
+            if (rho <= 0.92) return 'rgba(200,170,40,0.80)';
+            return 'rgba(40,130,230,0.80)';
+        }
+        function fluidBotColor(rho) {
+            if (rho >= 13) return 'rgba(80,20,20,0.97)';
+            if (rho >= 1.02) return 'rgba(10,20,100,0.97)';
+            if (rho <= 0.73) return 'rgba(160,120,10,0.95)';
+            if (rho <= 0.92) return 'rgba(120,90,5,0.95)';
+            return 'rgba(10,40,150,0.97)';
+        }
+
+        function drawShape(cx, cy, size, col) {
+            ctx.fillStyle = col.fill;
+            ctx.strokeStyle = col.stroke;
+            ctx.lineWidth = 2;
+            if (shape === 'cube') {
+                const off = size * 0.25;
+                // top face
+                const tl = { fill: lighten(col.fill, 30), stroke: col.stroke };
+                ctx.fillStyle = tl.fill;
+                ctx.beginPath();
+                ctx.moveTo(cx - size / 2, cy - size / 2);
+                ctx.lineTo(cx - size / 2 + off, cy - size / 2 - off);
+                ctx.lineTo(cx + size / 2 + off, cy - size / 2 - off);
+                ctx.lineTo(cx + size / 2, cy - size / 2);
+                ctx.closePath();
+                ctx.fill();
+                ctx.stroke();
+                // right face
+                ctx.fillStyle = darken(col.fill, 25);
+                ctx.beginPath();
+                ctx.moveTo(cx + size / 2, cy - size / 2);
+                ctx.lineTo(cx + size / 2 + off, cy - size / 2 - off);
+                ctx.lineTo(cx + size / 2 + off, cy + size / 2 - off);
+                ctx.lineTo(cx + size / 2, cy + size / 2);
+                ctx.closePath();
+                ctx.fill();
+                ctx.stroke();
+                // front face
+                ctx.fillStyle = col.fill;
+                ctx.fillRect(cx - size / 2, cy - size / 2, size, size);
+                ctx.strokeRect(cx - size / 2, cy - size / 2, size, size);
+            } else if (shape === 'sphere') {
+                const grad = ctx.createRadialGradient(cx - size * 0.15, cy - size * 0.15, size * 0.05, cx, cy, size * 0.6);
+                grad.addColorStop(0, lighten(col.fill, 40));
+                grad.addColorStop(1, darken(col.fill, 20));
+                ctx.fillStyle = grad;
+                ctx.beginPath();
+                ctx.arc(cx, cy, size * 0.55, 0, Math.PI * 2);
+                ctx.fill();
+                ctx.strokeStyle = col.stroke;
+                ctx.stroke();
+            } else if (shape === 'cylinder') {
+                const rx = size * 0.4;
+                const ry = size * 0.15;
+                const h  = size * 0.85;
+                // body
+                ctx.fillStyle = col.fill;
+                ctx.fillRect(cx - rx, cy - h / 2, rx * 2, h);
+                ctx.strokeRect(cx - rx, cy - h / 2, rx * 2, h);
+                // top ellipse
+                ctx.fillStyle = lighten(col.fill, 25);
+                ctx.beginPath();
+                ctx.ellipse(cx, cy - h / 2, rx, ry, 0, 0, Math.PI * 2);
+                ctx.fill();
+                ctx.stroke();
+                // bottom ellipse
+                ctx.fillStyle = darken(col.fill, 15);
+                ctx.beginPath();
+                ctx.ellipse(cx, cy + h / 2, rx, ry, 0, 0, Math.PI * 2);
+                ctx.fill();
+                ctx.stroke();
+            }
+        }
+
+        function lighten(hex, amt) {
+            const r = parseInt(hex.slice(1, 3), 16);
+            const g = parseInt(hex.slice(3, 5), 16);
+            const b = parseInt(hex.slice(5, 7), 16);
+            return `rgb(${Math.min(255, r + amt)},${Math.min(255, g + amt)},${Math.min(255, b + amt)})`;
+        }
+        function darken(hex, amt) {
+            const r = parseInt(hex.slice(1, 3), 16);
+            const g = parseInt(hex.slice(3, 5), 16);
+            const b = parseInt(hex.slice(5, 7), 16);
+            return `rgb(${Math.max(0, r - amt)},${Math.max(0, g - amt)},${Math.max(0, b - amt)})`;
+        }
+
+        const OBJ_SIZE  = 70;  // object half-reference size
+        const TANK_L    = 80;
+        const TANK_R    = CW - 80;
+        const TANK_TOP  = 50;
+        const TANK_BOT  = CH - 50;
+        const TANK_W    = TANK_R - TANK_L;
+        const TANK_H    = TANK_BOT - TANK_TOP;
+        const WALL_T    = 8;
+        const FLUID_TOP = TANK_TOP + WALL_T;
+        const FLUID_BOT = TANK_BOT - WALL_T;
+        const FLUID_H   = FLUID_BOT - FLUID_TOP;
+
+        // Initialize pixel-based Y to a floating position at mid density
+        animObjCY   = FLUID_TOP + 0.8 * OBJ_SIZE - OBJ_SIZE * 0.5;
+        targetObjCY = animObjCY;
+
+        function draw() {
+            time += 0.016;
+            waveOff += 1.2;
+            animObjCY = lerp(animObjCY, targetObjCY, 0.04);
+
+            ctx.clearRect(0, 0, CW, CH);
+
+            // BG
+            const bg = ctx.createLinearGradient(0, 0, 0, CH);
+            bg.addColorStop(0, '#0a0a1a'); bg.addColorStop(1, '#12122a');
+            ctx.fillStyle = bg; ctx.fillRect(0, 0, CW, CH);
+
+            /* --- Fluid --- */
+            const flG = ctx.createLinearGradient(0, FLUID_TOP, 0, FLUID_BOT);
+            flG.addColorStop(0, fluidTopColor(fluidRho));
+            flG.addColorStop(1, fluidBotColor(fluidRho));
+            ctx.fillStyle = flG;
+            ctx.fillRect(TANK_L + WALL_T, FLUID_TOP, TANK_W - WALL_T * 2, FLUID_H);
+
+            /* --- Subtle wave on fluid surface --- */
+            ctx.save();
+            ctx.beginPath();
+            ctx.rect(TANK_L + WALL_T, TANK_TOP, TANK_W - WALL_T * 2, TANK_H);
+            ctx.clip();
+            ctx.fillStyle = 'rgba(180,220,255,0.10)';
+            ctx.beginPath();
+            ctx.moveTo(TANK_L + WALL_T, FLUID_TOP);
+            for (let x = TANK_L + WALL_T; x <= TANK_R - WALL_T; x += 4) {
+                const wy = FLUID_TOP + Math.sin((x - TANK_L) / 40 + waveOff * 0.03) * 3;
+                ctx.lineTo(x, wy);
+            }
+            ctx.lineTo(TANK_R - WALL_T, FLUID_BOT);
+            ctx.lineTo(TANK_L + WALL_T, FLUID_BOT);
+            ctx.closePath();
+            ctx.fill();
+            ctx.restore();
+
+            /* --- Object position --- */
+            const cx    = TANK_L + TANK_W / 2;
+            const ratio = objRho / fluidRho;
+            const sunk  = ratio >= 1;
+
+            // objCY comes directly from animObjCY (pixels), which lerps continuously
+            // between all states — no formula switch that would cause a jump
+            const bob   = Math.sin(time * 1.8) * bobAmp;
+            const objCY = animObjCY + bob;
+
+            /* --- Draw object (clipped parts above/below water) --- */
+            const col = objColor(objRho);
+
+            // Draw below water (full object, water clips top part visually)
+            ctx.save();
+            // Clip to fluid region to draw submerged part
+            ctx.beginPath();
+            ctx.rect(TANK_L + WALL_T, FLUID_TOP, TANK_W - WALL_T * 2, FLUID_H);
+            ctx.clip();
+            // Dimmed version for submerged part
+            ctx.globalAlpha = 0.85;
+            drawShape(cx, objCY, OBJ_SIZE, col);
+            ctx.restore();
+
+            // Draw above water
+            ctx.save();
+            ctx.beginPath();
+            ctx.rect(TANK_L + WALL_T, TANK_TOP, TANK_W - WALL_T * 2, FLUID_TOP - TANK_TOP);
+            ctx.clip();
+            drawShape(cx, objCY, OBJ_SIZE, col);
+            ctx.restore();
+
+            /* --- Density label on object --- */
+            ctx.save();
+            ctx.fillStyle = 'rgba(0,0,0,0.55)';
+            ctx.font = 'bold 12px Inter, sans-serif';
+            ctx.textAlign = 'center';
+            ctx.fillText('\u03C1 = ' + objRho.toFixed(2), cx, objCY + 5);
+            ctx.restore();
+
+            /* --- Waterline indicator --- */
+            ctx.save();
+            ctx.strokeStyle = 'rgba(255,255,255,0.35)';
+            ctx.lineWidth = 1;
+            ctx.setLineDash([6, 4]);
+            ctx.beginPath();
+            ctx.moveTo(TANK_L + WALL_T, FLUID_TOP);
+            ctx.lineTo(TANK_R - WALL_T, FLUID_TOP);
+            ctx.stroke();
+            ctx.setLineDash([]);
+            ctx.fillStyle = 'rgba(255,255,255,0.5)';
+            ctx.font = '11px Inter, sans-serif';
+            ctx.textAlign = 'left';
+            ctx.fillText('Superficie  \u03C1<sub>f</sub> = ' + fluidRho + ' g/cm\u00B3', TANK_R - WALL_T + 6, FLUID_TOP + 4);
+            ctx.restore();
+
+            /* --- Arrows: weight down & buoyancy up --- */
+            const arrowX = cx + OBJ_SIZE * 0.7;
+            if (!sunk || ratio < 1.5) {
+                // Buoyancy arrow (up) – green
+                const buoyLen = Math.min(80, (1 / Math.max(0.01, ratio)) * 50);
+                ctx.strokeStyle = '#00C9A7';
+                ctx.lineWidth = 3;
+                ctx.beginPath();
+                ctx.moveTo(arrowX, objCY);
+                ctx.lineTo(arrowX, objCY - buoyLen);
+                ctx.stroke();
+                ctx.fillStyle = '#00C9A7';
+                ctx.beginPath();
+                ctx.moveTo(arrowX, objCY - buoyLen);
+                ctx.lineTo(arrowX - 6, objCY - buoyLen + 10);
+                ctx.lineTo(arrowX + 6, objCY - buoyLen + 10);
+                ctx.closePath();
+                ctx.fill();
+                ctx.font = '11px Inter, sans-serif';
+                ctx.textAlign = 'left';
+                ctx.fillStyle = '#00C9A7';
+                ctx.fillText('Empuje', arrowX + 8, objCY - buoyLen + 5);
+            }
+
+            // Weight arrow (down) – pink
+            const wLen = Math.min(80, ratio * 35);
+            ctx.strokeStyle = '#FF6584';
+            ctx.lineWidth = 3;
+            ctx.beginPath();
+            ctx.moveTo(arrowX, objCY);
+            ctx.lineTo(arrowX, objCY + wLen);
+            ctx.stroke();
+            ctx.fillStyle = '#FF6584';
+            ctx.beginPath();
+            ctx.moveTo(arrowX, objCY + wLen);
+            ctx.lineTo(arrowX - 6, objCY + wLen - 10);
+            ctx.lineTo(arrowX + 6, objCY + wLen - 10);
+            ctx.closePath();
+            ctx.fill();
+            ctx.font = '11px Inter, sans-serif';
+            ctx.textAlign = 'left';
+            ctx.fillStyle = '#FF6584';
+            ctx.fillText('Peso', arrowX + 8, objCY + wLen + 4);
+
+            /* --- Tank walls --- */
+            ctx.fillStyle = '#2a2a4a';
+            ctx.fillRect(TANK_L, TANK_TOP, WALL_T, TANK_H);
+            ctx.fillRect(TANK_R - WALL_T, TANK_TOP, WALL_T, TANK_H);
+            ctx.fillRect(TANK_L, TANK_BOT - WALL_T, TANK_W, WALL_T);
+            ctx.fillRect(TANK_L, TANK_TOP, TANK_W, WALL_T);
+            // Glass sheen
+            ctx.fillStyle = 'rgba(100,100,200,0.12)';
+            ctx.fillRect(TANK_L, TANK_TOP, WALL_T, TANK_H);
+            ctx.fillRect(TANK_R - WALL_T, TANK_TOP, WALL_T, TANK_H);
+
+            /* --- Status pill --- */
+            const rr = objRho / fluidRho;
+            let status, statusColor;
+            if (rr < 0.98)       { status = 'FLOTA'; statusColor = '#00C9A7'; }
+            else if (rr <= 1.02) { status = 'EQUILIBRIO'; statusColor = '#FFD600'; }
+            else                 { status = 'SE HUNDE'; statusColor = '#FF6584'; }
+
+            const pillW = 400;
+            const pillH = 36;
+            const pillX = CW / 2 - pillW / 2;
+            const pillY = TANK_BOT + 6;
+            ctx.fillStyle = 'rgba(255,255,255,0.05)';
+            ctx.beginPath();
+            ctx.roundRect(pillX, pillY, pillW, pillH, 12);
+            ctx.fill();
+            ctx.fillStyle = statusColor;
+            ctx.font = 'bold 14px Inter, sans-serif';
+            ctx.textAlign = 'center';
+            ctx.fillText(
+                '\u03C1\u2092\u2099\u2C7C = ' + objRho.toFixed(2) +
+                '  vs  \u03C1\u2094 = ' + fluidRho +
+                ' g/cm\u00B3  \u2014  ' + status,
+                CW / 2, pillY + 23
+            );
+
+            /* --- Submersion bar (left of tank) --- */
+            const barX  = TANK_L - 30;
+            const barGH = FLUID_H;
+            const barFH = Math.min(barGH, barGH * Math.min(1, rr));
+            ctx.fillStyle = 'rgba(255,255,255,0.05)';
+            ctx.beginPath();
+            ctx.roundRect(barX, FLUID_TOP, 12, barGH, 6);
+            ctx.fill();
+            const bGrad = ctx.createLinearGradient(0, FLUID_TOP, 0, FLUID_TOP + barGH);
+            bGrad.addColorStop(0, '#00C9A7');
+            bGrad.addColorStop(0.5, '#FFD600');
+            bGrad.addColorStop(1, '#FF6584');
+            ctx.fillStyle = bGrad;
+            ctx.beginPath();
+            ctx.roundRect(barX, FLUID_TOP + barGH - barFH, 12, barFH, 6);
+            ctx.fill();
+            ctx.fillStyle = '#666';
+            ctx.font = '9px Inter, sans-serif';
+            ctx.textAlign = 'center';
+            ctx.fillText('%', barX + 6, FLUID_TOP - 6);
+
+            requestAnimationFrame(draw);
+        }
+
+        computeState();
+        draw();
+    </script>
+</body>
+</html>

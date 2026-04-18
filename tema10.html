@@ -1,0 +1,586 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Tema 10 - Ecuacion de Continuidad | Mod 08</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+
+    <nav class="topic-nav">
+        <a href="index.html" class="back-link">&#9664; Volver al indice</a>
+        <span class="topic-nav-title">Tema 10 &mdash; Ecuacion de Continuidad</span>
+    </nav>
+
+    <a href="#top" class="back-to-top" id="backToTop">&#9650;</a>
+
+    <section class="tema tema-page" id="top">
+        <div class="container">
+            <div class="tema-header fade-in">
+                <div class="tema-number odd">Tema 10 &mdash; Mecanica de Fluidos</div>
+                <h2>Ecuacion de Continuidad</h2>
+                <p class="intro">Cuando un fluido incompresible fluye por una tuberia que cambia de seccion, su velocidad cambia para que la cantidad de fluido que pasa por cualquier punto por segundo sea siempre la misma. Este principio, conocido como ecuacion de continuidad, explica por que el agua sale disparada cuando tapas parcialmente una manguera con el pulgar.</p>
+            </div>
+
+            <!-- ===== CONCEPTO DE CAUDAL ===== -->
+            <div class="content-block fade-in">
+                <h3><span class="icon" style="background:rgba(108,99,255,0.15);color:var(--primary-light);">&#128218;</span> Caudal: la cantidad de fluido que fluye</h3>
+                <div class="info-box theory">
+                    <div class="box-title">Definicion de Caudal</div>
+                    <p><em>El caudal (Q) es el volumen de fluido que pasa por una seccion transversal por unidad de tiempo.</em></p>
+                </div>
+                <h4>La formula del caudal</h4>
+                <div class="formula">
+                    Q = A &times; v
+                </div>
+                <ul>
+                    <li><strong>Q</strong> = Caudal (m&sup3;/s)</li>
+                    <li><strong>A</strong> = Area de la seccion transversal del tubo (m&sup2;)</li>
+                    <li><strong>v</strong> = Velocidad del fluido (m/s)</li>
+                </ul>
+                <div class="info-box warning">
+                    <div class="box-title">Fluido incompresible</div>
+                    <p>Un <strong>fluido incompresible</strong> es aquel cuya densidad no cambia con la presion. Los liquidos (como el agua) se comportan como incompresibles en la mayoria de situaciones practicas. Los gases son compresibles, pero a velocidades bajas tambien se pueden tratar como incompresibles.</p>
+                </div>
+            </div>
+
+            <!-- ===== ECUACION DE CONTINUIDAD ===== -->
+            <div class="content-block fade-in">
+                <h3><span class="icon" style="background:rgba(0,201,167,0.15);color:var(--accent);">&#128161;</span> La Ecuacion de Continuidad</h3>
+                <p>Si el fluido es incompresible, no puede acumularse en ningun punto de la tuberia: todo el fluido que entra por un extremo debe salir por el otro. Por lo tanto, el caudal Q es constante a lo largo de toda la tuberia:</p>
+                <div class="formula">
+                    A&#8321; &times; v&#8321; = A&#8322; &times; v&#8322; = Q = constante
+                </div>
+                <p>Donde los subindices 1 y 2 indican dos secciones distintas del tubo.</p>
+
+                <h4>Derivacion desde la conservacion de masa</h4>
+                <div class="steps">
+                    <div class="step">
+                        <div class="step-num">1</div>
+                        <div class="step-content">
+                            <p>En un tiempo &Delta;t, el fluido avanza una distancia &Delta;x = v &times; &Delta;t en la seccion 1.</p>
+                        </div>
+                    </div>
+                    <div class="step">
+                        <div class="step-num">2</div>
+                        <div class="step-content">
+                            <p>El volumen que entra por la seccion 1 es: &Delta;V&#8321; = A&#8321; &times; v&#8321; &times; &Delta;t</p>
+                        </div>
+                    </div>
+                    <div class="step">
+                        <div class="step-num">3</div>
+                        <div class="step-content">
+                            <p>El volumen que sale por la seccion 2 es: &Delta;V&#8322; = A&#8322; &times; v&#8322; &times; &Delta;t</p>
+                        </div>
+                    </div>
+                    <div class="step">
+                        <div class="step-num">4</div>
+                        <div class="step-content">
+                            <p>Como el fluido es incompresible: &Delta;V&#8321; = &Delta;V&#8322;, lo que da <strong>A&#8321;v&#8321; = A&#8322;v&#8322;</strong>.</p>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="info-box theory">
+                    <div class="box-title">Conclusion intuitiva</div>
+                    <p>Si el tubo se estrecha (A disminuye), la velocidad <strong>debe aumentar</strong> para que el mismo caudal pase por la seccion mas pequena. Si el tubo se ensancha, la velocidad <strong>disminuye</strong>.</p>
+                </div>
+            </div>
+
+            <!-- ===== APLICACIONES ===== -->
+            <div class="content-block fade-in">
+                <h3><span class="icon" style="background:rgba(255,214,0,0.15);color:var(--warning);">&#9878;</span> Aplicaciones en la vida real</h3>
+
+                <h4>1. El truco del pulgar con la manguera</h4>
+                <p>Cuando tapas parcialmente la manguera con el pulgar, reduces el area A de la salida. Para mantener el mismo caudal, la velocidad v aumenta y el agua sale disparada a mayor distancia.</p>
+
+                <h4>2. Rios que se estrechan</h4>
+                <p>Un rio fluye lentamente en zonas anchas, pero cuando el cauce se estrecha entre rocas o canyones, la corriente se vuelve rapida y turbulenta. Mismo principio: mismo caudal, menor area, mayor velocidad.</p>
+
+                <h4>3. Sistema cardiovascular</h4>
+                <div class="info-box example">
+                    <div class="box-title">Aorta vs capilares</div>
+                    <p>La aorta tiene diametro ~2.5 cm y la sangre fluye a ~0.33 m/s. Los millones de capilares tienen diametro ~8 &mu;m cada uno, pero en conjunto su area total es enorme, por lo que la sangre fluye muy lentamente (~0.0007 m/s). Esto es ideal: permite el intercambio de oxigeno y nutrientes con las celulas.</p>
+                </div>
+
+                <h4>4. Toberas y boquillas</h4>
+                <p>En motores de cohetes, turbinas y mangeras de incendios, las toberas reducen el area para acelerar el fluido y generar mayor impulso o alcance.</p>
+            </div>
+
+            <!-- ===== EJEMPLOS RESUELTOS ===== -->
+            <div class="content-block fade-in">
+                <h3><span class="icon" style="background:rgba(255,101,132,0.15);color:var(--secondary);">&#128270;</span> Ejemplos resueltos</h3>
+
+                <div class="info-box example">
+                    <div class="box-title">Ejemplo 1: Manguera con boquilla</div>
+                    <p><strong>Una manguera de 5 cm de diametro (A&#8321; = 0.00196 m&sup2;) lleva agua a 2 m/s. La boquilla reduce el diametro a 1.5 cm (A&#8322; = 0.000177 m&sup2;). &iquest;Cual es la velocidad de salida?</strong></p>
+                    <div class="steps">
+                        <div class="step">
+                            <div class="step-num">1</div>
+                            <div class="step-content"><p>Calculamos el caudal: Q = A&#8321; &times; v&#8321; = 0.00196 &times; 2 = <strong>0.00392 m&sup3;/s</strong></p></div>
+                        </div>
+                        <div class="step">
+                            <div class="step-num">2</div>
+                            <div class="step-content">
+                                <p>Aplicamos la ecuacion de continuidad:</p>
+                                <p class="math">v&#8322; = Q / A&#8322; = 0.00392 / 0.000177 = <strong>22.1 m/s</strong></p>
+                            </div>
+                        </div>
+                        <div class="step">
+                            <div class="step-num">3</div>
+                            <div class="step-content"><p>La velocidad se multiplica por 11: al reducir el diametro a menos de un tercio, la velocidad se dispara.</p></div>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="info-box example" style="margin-top:1.5rem;">
+                    <div class="box-title">Ejemplo 2: Tuberia que bifurca</div>
+                    <p><strong>Una tuberia de A = 0.1 m&sup2; con v = 4 m/s se divide en dos tuberias iguales. &iquest;Cual es la velocidad en cada rama si cada una tiene A = 0.08 m&sup2;?</strong></p>
+                    <div class="steps">
+                        <div class="step">
+                            <div class="step-num">1</div>
+                            <div class="step-content"><p>Caudal total: Q = 0.1 &times; 4 = 0.4 m&sup3;/s</p></div>
+                        </div>
+                        <div class="step">
+                            <div class="step-num">2</div>
+                            <div class="step-content"><p>Cada rama recibe la mitad: Q&#8321; = Q&#8322; = 0.2 m&sup3;/s</p></div>
+                        </div>
+                        <div class="step">
+                            <div class="step-num">3</div>
+                            <div class="step-content">
+                                <p class="math">v&#8322; = Q&#8322; / A&#8322; = 0.2 / 0.08 = <strong>2.5 m/s</strong></p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="info-box example" style="margin-top:1.5rem;">
+                    <div class="box-title">Ejemplo 3: Aorta y capilares</div>
+                    <p><strong>La aorta tiene A&#8321; = 4.9 &times; 10&#8315;&sup2; m&sup2; y la sangre fluye a v&#8321; = 0.33 m/s. Si el area total de los capilares es A&#8322; = 0.6 m&sup2;, &iquest;a que velocidad circula la sangre en los capilares?</strong></p>
+                    <div class="steps">
+                        <div class="step">
+                            <div class="step-num">1</div>
+                            <div class="step-content"><p>Q = A&#8321; &times; v&#8321; = 4.9 &times; 10&#8315;&sup2; &times; 0.33 = 0.01617 m&sup3;/s &asymp; 16.2 L/s</p></div>
+                        </div>
+                        <div class="step">
+                            <div class="step-num">2</div>
+                            <div class="step-content">
+                                <p class="math">v&#8322; = Q / A&#8322; = 0.01617 / 0.6 &asymp; <strong>0.027 m/s = 2.7 cm/s</strong></p>
+                            </div>
+                        </div>
+                    </div>
+                    <p>La sangre va 12 veces mas lenta en los capilares que en la aorta. &iexcl;Perfecto para el intercambio de nutrientes!</p>
+                </div>
+            </div>
+
+            <!-- ===== SIMULADOR CANVAS ===== -->
+            <div class="content-block fade-in">
+                <h3><span class="icon" style="background:rgba(108,99,255,0.15);color:var(--primary-light);">&#127918;</span> Simulador interactivo &mdash; Flujo en tuberia</h3>
+                <p>Ajusta el area y la velocidad en la entrada. Observa como cambia la velocidad en la seccion estrecha para conservar el caudal.</p>
+                <div class="sim-wrapper">
+                    <div class="sim-controls">
+                        <label>
+                            Area entrada A&#8321; (m&sup2;):
+                            <input type="range" id="simA1" min="0.2" max="2.0" step="0.05" value="1.2">
+                            <span id="simA1Val">1.20 m&sup2;</span>
+                        </label>
+                        <label style="margin-top:0.5rem;">
+                            Velocidad v&#8321; (m/s):
+                            <input type="range" id="simV1" min="0.5" max="10" step="0.5" value="2">
+                            <span id="simV1Val">2.0 m/s</span>
+                        </label>
+                        <label style="margin-top:0.5rem;">
+                            Area salida A&#8322; (m&sup2;):
+                            <input type="range" id="simA2" min="0.1" max="1.8" step="0.05" value="0.5">
+                            <span id="simA2Val">0.50 m&sup2;</span>
+                        </label>
+                    </div>
+                    <div class="sim-canvas-wrap">
+                        <canvas id="continuityCanvas" width="720" height="440" style="width:100%;border-radius:12px;background:#0F0E17;"></canvas>
+                    </div>
+                    <div class="sim-result" id="simResult">
+                        Q = 1.20 &times; 2.0 = <strong>2.40 m&sup3;/s</strong> &nbsp;|&nbsp; v&#8322; = <strong>4.80 m/s</strong>
+                    </div>
+                </div>
+            </div>
+
+            <!-- ===== EJERCICIOS ===== -->
+            <div class="exercises-section fade-in">
+                <h3><span class="icon" style="background:rgba(255,101,132,0.15);color:var(--secondary);">&#9998;</span> Ejercicios &mdash; Ecuacion de Continuidad</h3>
+
+                <div class="exercise-item">
+                    <div class="exercise-header">
+                        <span class="exercise-label">Ejercicio 1</span>
+                        <span class="difficulty easy">Facil</span>
+                    </div>
+                    <p>Una tuberia de diametro 10 cm lleva agua a 3 m/s. Calcula el caudal Q. (Recuerda: A = &pi;r&sup2;)</p>
+                    <button class="solution-toggle" onclick="toggleSolution(this)">Ver solucion &#9660;</button>
+                    <div class="solution">
+                        <p>r = 0.05 m &rarr; A = &pi; &times; 0.05&sup2; = 0.00785 m&sup2;</p>
+                        <p><span class="step-math">Q = A &times; v = 0.00785 &times; 3 = <strong>0.02356 m&sup3;/s &asymp; 23.6 L/s</strong></span></p>
+                    </div>
+                </div>
+
+                <div class="exercise-item">
+                    <div class="exercise-header">
+                        <span class="exercise-label">Ejercicio 2</span>
+                        <span class="difficulty easy">Facil</span>
+                    </div>
+                    <p>Una tuberia de A&#8321; = 0.08 m&sup2; y v&#8321; = 5 m/s se estrecha hasta A&#8322; = 0.02 m&sup2;. &iquest;Cual es la velocidad v&#8322;?</p>
+                    <button class="solution-toggle" onclick="toggleSolution(this)">Ver solucion &#9660;</button>
+                    <div class="solution">
+                        <p><span class="step-math">A&#8321;v&#8321; = A&#8322;v&#8322; &rarr; v&#8322; = (A&#8321; &times; v&#8321;) / A&#8322; = (0.08 &times; 5) / 0.02 = <strong>20 m/s</strong></span></p>
+                        <p>Al reducir el area a la cuarta parte, la velocidad se cuadruplica.</p>
+                    </div>
+                </div>
+
+                <div class="exercise-item">
+                    <div class="exercise-header">
+                        <span class="exercise-label">Ejercicio 3</span>
+                        <span class="difficulty medium">Medio</span>
+                    </div>
+                    <p>Un rio tiene 40 m de ancho y 2 m de profundidad con velocidad de 1.5 m/s. El rio se estrecha hasta 15 m de ancho y 1.5 m de profundidad. &iquest;Cual sera la velocidad en la parte estrecha?</p>
+                    <button class="solution-toggle" onclick="toggleSolution(this)">Ver solucion &#9660;</button>
+                    <div class="solution">
+                        <p>A&#8321; = 40 &times; 2 = 80 m&sup2; &nbsp; A&#8322; = 15 &times; 1.5 = 22.5 m&sup2;</p>
+                        <p><span class="step-math">v&#8322; = (A&#8321; &times; v&#8321;) / A&#8322; = (80 &times; 1.5) / 22.5 = <strong>5.33 m/s</strong></span></p>
+                    </div>
+                </div>
+
+                <div class="exercise-item">
+                    <div class="exercise-header">
+                        <span class="exercise-label">Ejercicio 4</span>
+                        <span class="difficulty medium">Medio</span>
+                    </div>
+                    <p>El corazon bombea sangre a un caudal de 5 L/min (aproximadamente 8.33 &times; 10&#8315;&sup2; L/s). Si la aorta tiene un diametro de 2.5 cm, &iquest;cual es la velocidad media de la sangre en la aorta?</p>
+                    <button class="solution-toggle" onclick="toggleSolution(this)">Ver solucion &#9660;</button>
+                    <div class="solution">
+                        <p>Q = 5 L/min = 5/60 L/s = 8.33 &times; 10&#8315;&sup2; L/s = 8.33 &times; 10&#8315;&sup5; m&sup3;/s</p>
+                        <p>A = &pi; &times; (0.0125)&sup2; = 4.91 &times; 10&#8315;&sup4; m&sup2;</p>
+                        <p><span class="step-math">v = Q / A = 8.33 &times; 10&#8315;&sup5; / 4.91 &times; 10&#8315;&sup4; = <strong>0.17 m/s &asymp; 17 cm/s</strong></span></p>
+                    </div>
+                </div>
+
+                <div class="exercise-item">
+                    <div class="exercise-header">
+                        <span class="exercise-label">Ejercicio 5</span>
+                        <span class="difficulty hard">Dificil</span>
+                    </div>
+                    <p>Una tuberia de diametro d&#8321; = 20 cm conduce agua a v&#8321; = 2 m/s. La tuberia se divide en 4 tuberias iguales. Si en cada rama la velocidad debe ser v&#8322; = 6 m/s, &iquest;cual debe ser el diametro de cada rama?</p>
+                    <button class="solution-toggle" onclick="toggleSolution(this)">Ver solucion &#9660;</button>
+                    <div class="solution">
+                        <p><strong>Paso 1:</strong> Caudal total: Q = A&#8321; &times; v&#8321; = &pi;(0.10)&sup2; &times; 2 = 0.06283 m&sup3;/s</p>
+                        <p><strong>Paso 2:</strong> Caudal por rama: Q&#8322; = 0.06283 / 4 = 0.01571 m&sup3;/s</p>
+                        <p><strong>Paso 3:</strong> A&#8322; = Q&#8322; / v&#8322; = 0.01571 / 6 = 0.002618 m&sup2;</p>
+                        <p><strong>Paso 4:</strong> &pi;r&sup2; = 0.002618 &rarr; r = 0.02887 m</p>
+                        <p><span class="step-math">d&#8322; = 2r = <strong>0.0577 m &asymp; 5.77 cm</strong></span></p>
+                    </div>
+                </div>
+
+            </div>
+
+        </div>
+    </section>
+
+    <footer>
+        <div class="container">
+            <p style="margin-bottom:0.5rem; font-size:1rem; color:var(--text-muted);">Mod 08 &mdash; Matematicas y Representaciones del Sistema Natural!</p>
+            <p>Contenido educativo &middot; 16 temas &middot; Preparatoria</p>
+        </div>
+    </footer>
+
+    <script>
+        /* === Utilidades compartidas === */
+        function toggleSolution(btn) {
+            const solution = btn.nextElementSibling;
+            solution.classList.toggle('visible');
+            btn.textContent = solution.classList.contains('visible') ? 'Ocultar solucion \u25B2' : 'Ver solucion \u25BC';
+        }
+        const observer = new IntersectionObserver((entries) => {
+            entries.forEach(entry => { if (entry.isIntersecting) entry.target.classList.add('visible'); });
+        }, { threshold: 0.1 });
+        document.querySelectorAll('.fade-in').forEach(el => observer.observe(el));
+        const backBtn = document.getElementById('backToTop');
+        window.addEventListener('scroll', () => { backBtn.classList.toggle('show', window.scrollY > 400); });
+
+        /* === Simulador Canvas Ecuacion de Continuidad === */
+        const canvas = document.getElementById('continuityCanvas');
+        const ctx = canvas.getContext('2d');
+        const CW = 720, CH = 440;
+
+        let simA1 = 1.2, simV1 = 2.0, simA2 = 0.5;
+        let time = 0;
+
+        const sliderA1  = document.getElementById('simA1');
+        const sliderV1  = document.getElementById('simV1');
+        const sliderA2  = document.getElementById('simA2');
+        const labelA1   = document.getElementById('simA1Val');
+        const labelV1   = document.getElementById('simV1Val');
+        const labelA2   = document.getElementById('simA2Val');
+        const resultDiv = document.getElementById('simResult');
+
+        function updateControls() {
+            simA1 = parseFloat(sliderA1.value);
+            simV1 = parseFloat(sliderV1.value);
+            simA2 = parseFloat(sliderA2.value);
+            // Clamp A2 so it never exceeds A1
+            if (simA2 >= simA1) { simA2 = simA1 * 0.95; sliderA2.value = simA2.toFixed(2); }
+            labelA1.textContent = simA1.toFixed(2) + ' m\u00B2';
+            labelV1.textContent = simV1.toFixed(1) + ' m/s';
+            labelA2.textContent = simA2.toFixed(2) + ' m\u00B2';
+            const Q  = simA1 * simV1;
+            const v2 = Q / simA2;
+            resultDiv.innerHTML = 'Q\u00A0=\u00A0' + simA1.toFixed(2) + '\u00A0\u00D7\u00A0' + simV1.toFixed(1) +
+                '\u00A0=\u00A0<strong>' + Q.toFixed(3) + '\u00A0m\u00B3/s</strong>' +
+                '\u00A0\u00A0|\u00A0\u00A0v\u2082\u00A0=\u00A0<strong>' + v2.toFixed(2) + '\u00A0m/s</strong>';
+        }
+        sliderA1.addEventListener('input', updateControls);
+        sliderV1.addEventListener('input', updateControls);
+        sliderA2.addEventListener('input', updateControls);
+
+        function lerp(a, b, t) { return a + (b - a) * t; }
+
+        /* Particle system */
+        const NPARTICLES = 80;
+        const particles = [];
+        for (let i = 0; i < NPARTICLES; i++) {
+            particles.push({
+                x: Math.random() * CW,
+                t: Math.random(),   // transverse position 0-1
+                section: Math.random() < 0.5 ? 'left' : 'right'
+            });
+        }
+
+        function getPipeGeometry(a1, a2) {
+            // Map areas to pixel heights (pipe cross-section height)
+            const maxH = 160;
+            const minH = 22;
+            const h1 = minH + (a1 / 2.0) * (maxH - minH);
+            const h2 = minH + (a2 / 2.0) * (maxH - minH);
+
+            const cy = CH / 2 - 10;  // pipe center y
+
+            // Pipe x segments
+            const x0 = 60;           // start of left wide section
+            const x1 = 280;          // start of taper
+            const x2 = 420;          // end of taper
+            const x3 = CW - 60;      // end of right narrow section
+
+            return { h1, h2, cy, x0, x1, x2, x3 };
+        }
+
+        /* Speed-to-color (blue=slow, teal=medium, red=fast) */
+        function speedColor(v, vMax, alpha) {
+            const t = Math.min(1, v / vMax);
+            // blue -> teal -> yellow -> red
+            let r, g, b;
+            if (t < 0.33) {
+                const s = t / 0.33;
+                r = Math.floor(lerp(80, 0, s));
+                g = Math.floor(lerp(120, 201, s));
+                b = Math.floor(lerp(255, 167, s));
+            } else if (t < 0.66) {
+                const s = (t - 0.33) / 0.33;
+                r = Math.floor(lerp(0, 255, s));
+                g = Math.floor(lerp(201, 214, s));
+                b = Math.floor(lerp(167, 0, s));
+            } else {
+                const s = (t - 0.66) / 0.34;
+                r = Math.floor(lerp(255, 255, s));
+                g = Math.floor(lerp(214, 60, s));
+                b = 0;
+            }
+            return alpha !== undefined
+                ? 'rgba(' + r + ',' + g + ',' + b + ',' + alpha + ')'
+                : 'rgb(' + r + ',' + g + ',' + b + ')';
+        }
+
+        function draw() {
+            time += 0.016;
+            const Q  = simA1 * simV1;
+            const v2 = Q / simA2;
+            const vMax = Math.max(simV1, v2, 1);
+
+            const g = getPipeGeometry(simA1, simA2);
+
+            ctx.clearRect(0, 0, CW, CH);
+
+            /* Background */
+            const bg = ctx.createLinearGradient(0, 0, 0, CH);
+            bg.addColorStop(0, '#0a0a1a');
+            bg.addColorStop(1, '#12122a');
+            ctx.fillStyle = bg;
+            ctx.fillRect(0, 0, CW, CH);
+
+            /* === Draw pipe walls === */
+            function pipeTopY(px) {
+                if (px <= g.x1) return g.cy - g.h1 / 2;
+                if (px >= g.x2) return g.cy - g.h2 / 2;
+                const frac = (px - g.x1) / (g.x2 - g.x1);
+                return g.cy - lerp(g.h1, g.h2, frac) / 2;
+            }
+            function pipeBotY(px) {
+                if (px <= g.x1) return g.cy + g.h1 / 2;
+                if (px >= g.x2) return g.cy + g.h2 / 2;
+                const frac = (px - g.x1) / (g.x2 - g.x1);
+                return g.cy + lerp(g.h1, g.h2, frac) / 2;
+            }
+
+            /* Pipe interior gradient based on speed */
+            // Fill left section
+            ctx.beginPath();
+            ctx.moveTo(g.x0, pipeTopY(g.x0));
+            ctx.lineTo(g.x1, pipeTopY(g.x1));
+            ctx.lineTo(g.x1, pipeBotY(g.x1));
+            ctx.lineTo(g.x0, pipeBotY(g.x0));
+            ctx.closePath();
+            ctx.fillStyle = speedColor(simV1, vMax, 0.25);
+            ctx.fill();
+
+            // Fill taper
+            ctx.beginPath();
+            ctx.moveTo(g.x1, pipeTopY(g.x1));
+            ctx.lineTo(g.x2, pipeTopY(g.x2));
+            ctx.lineTo(g.x2, pipeBotY(g.x2));
+            ctx.lineTo(g.x1, pipeBotY(g.x1));
+            ctx.closePath();
+            const tapeGrad = ctx.createLinearGradient(g.x1, 0, g.x2, 0);
+            tapeGrad.addColorStop(0, speedColor(simV1, vMax, 0.25));
+            tapeGrad.addColorStop(1, speedColor(v2, vMax, 0.25));
+            ctx.fillStyle = tapeGrad;
+            ctx.fill();
+
+            // Fill right section
+            ctx.beginPath();
+            ctx.moveTo(g.x2, pipeTopY(g.x2));
+            ctx.lineTo(g.x3, pipeTopY(g.x3));
+            ctx.lineTo(g.x3, pipeBotY(g.x3));
+            ctx.lineTo(g.x2, pipeBotY(g.x2));
+            ctx.closePath();
+            ctx.fillStyle = speedColor(v2, vMax, 0.25);
+            ctx.fill();
+
+            // Pipe walls (outline)
+            ctx.strokeStyle = '#4a4a80';
+            ctx.lineWidth = 2.5;
+            // Top wall
+            ctx.beginPath();
+            ctx.moveTo(g.x0, pipeTopY(g.x0));
+            for (let px = g.x0; px <= g.x3; px += 4) {
+                ctx.lineTo(px, pipeTopY(px));
+            }
+            ctx.stroke();
+            // Bottom wall
+            ctx.beginPath();
+            ctx.moveTo(g.x0, pipeBotY(g.x0));
+            for (let px = g.x0; px <= g.x3; px += 4) {
+                ctx.lineTo(px, pipeBotY(px));
+            }
+            ctx.stroke();
+            // End caps
+            ctx.beginPath();
+            ctx.moveTo(g.x0, pipeTopY(g.x0)); ctx.lineTo(g.x0, pipeBotY(g.x0));
+            ctx.moveTo(g.x3, pipeTopY(g.x3)); ctx.lineTo(g.x3, pipeBotY(g.x3));
+            ctx.stroke();
+
+            /* === Animate particles === */
+            for (let i = 0; i < particles.length; i++) {
+                const p = particles[i];
+                // Determine x-zone and local velocity
+                let localV;
+                if (p.x < g.x1) localV = simV1;
+                else if (p.x > g.x2) localV = v2;
+                else {
+                    const frac = (p.x - g.x1) / (g.x2 - g.x1);
+                    localV = lerp(simV1, v2, frac);
+                }
+                // Move particle
+                const speed_px = localV * 18; // scale: 1 m/s = 18 px/s
+                p.x += speed_px * 0.016;
+
+                // Constrain t (transverse position) inside pipe
+                const topY = pipeTopY(p.x);
+                const botY = pipeBotY(p.x);
+                const pipeH = botY - topY;
+                const py = topY + p.t * pipeH;
+
+                // Reset if out of right edge
+                if (p.x > g.x3 + 10) {
+                    p.x = g.x0 - Math.random() * 30;
+                    p.t = 0.1 + Math.random() * 0.8;
+                }
+
+                // Draw dot
+                const col = speedColor(localV, vMax);
+                ctx.beginPath();
+                ctx.arc(p.x, py, 3.5, 0, Math.PI * 2);
+                ctx.fillStyle = col;
+                ctx.fill();
+            }
+
+            /* === Velocity arrows === */
+            function drawArrow(fromX, toX, y, v, color) {
+                const len = Math.min(90, v * 10);
+                const ax = (fromX + toX) / 2;
+                const ay = y - 28;
+                ctx.strokeStyle = color;
+                ctx.lineWidth = 2;
+                ctx.beginPath();
+                ctx.moveTo(ax - len / 2, ay);
+                ctx.lineTo(ax + len / 2, ay);
+                ctx.stroke();
+                // arrowhead
+                ctx.fillStyle = color;
+                ctx.beginPath();
+                ctx.moveTo(ax + len / 2 + 2, ay);
+                ctx.lineTo(ax + len / 2 - 8, ay - 6);
+                ctx.lineTo(ax + len / 2 - 8, ay + 6);
+                ctx.closePath();
+                ctx.fill();
+                // label
+                ctx.fillStyle = color;
+                ctx.font = 'bold 13px Inter, sans-serif';
+                ctx.textAlign = 'center';
+                ctx.fillText('v = ' + v.toFixed(1) + ' m/s', ax, ay - 12);
+            }
+
+            drawArrow(g.x0, g.x1, pipeTopY((g.x0 + g.x1) / 2), simV1, speedColor(simV1, vMax));
+            drawArrow(g.x2, g.x3, pipeTopY((g.x2 + g.x3) / 2), v2, speedColor(v2, vMax));
+
+            /* === Area labels on pipe === */
+            ctx.fillStyle = 'rgba(255,255,255,0.70)';
+            ctx.font = '13px Inter, sans-serif';
+            ctx.textAlign = 'center';
+            ctx.fillText('A\u2081 = ' + simA1.toFixed(2) + ' m\u00B2', (g.x0 + g.x1) / 2, pipeBotY((g.x0 + g.x1) / 2) + 18);
+            ctx.fillText('A\u2082 = ' + simA2.toFixed(2) + ' m\u00B2', (g.x2 + g.x3) / 2, pipeBotY((g.x2 + g.x3) / 2) + 18);
+
+            /* === Info panel === */
+            const panelY = CH - 72;
+            ctx.fillStyle = 'rgba(255,255,255,0.04)';
+            ctx.beginPath();
+            ctx.roundRect(60, panelY, CW - 120, 52, 10);
+            ctx.fill();
+
+            ctx.font = 'bold 14px Inter, sans-serif';
+            ctx.textAlign = 'center';
+            ctx.fillStyle = '#00C9A7';
+            ctx.fillText('Q = A\u2081\u00D7v\u2081 = A\u2082\u00D7v\u2082 = ' + Q.toFixed(3) + ' m\u00B3/s', CW / 2, panelY + 20);
+
+            ctx.font = '13px Inter, sans-serif';
+            ctx.fillStyle = 'rgba(255,255,255,0.55)';
+            ctx.fillText(
+                'v\u2081 = ' + simV1.toFixed(1) + ' m/s\u2003\u2003' +
+                'v\u2082 = Q/A\u2082 = ' + v2.toFixed(2) + ' m/s\u2003\u2003' +
+                (v2 > simV1 ? '\u2191 Velocidad aumenta en zona estrecha' : '\u2193 Velocidad disminuye en zona ancha'),
+                CW / 2, panelY + 40
+            );
+
+            requestAnimationFrame(draw);
+        }
+
+        updateControls();
+        draw();
+    </script>
+</body>
+</html>
