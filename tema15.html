@@ -1,0 +1,638 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Tema 15 - Ley de Ohm | Mod 08</title>
+    <link rel="stylesheet" href="styles.css">
+    <script>
+        (function() {
+            try {
+                var t = localStorage.getItem('theme');
+                if (!t) {
+                    t = (window.matchMedia && window.matchMedia('(prefers-color-scheme: light)').matches) ? 'light' : 'dark';
+                }
+                document.documentElement.setAttribute('data-theme', t);
+            } catch (e) {
+                document.documentElement.setAttribute('data-theme', 'dark');
+            }
+        })();
+    </script>
+</head>
+<body>
+
+    <nav class="topic-nav">
+        <a href="index.html" class="back-link">&#9664; Volver al indice</a>
+        <span class="topic-nav-title">Tema 15 &mdash; Ley de Ohm</span>
+    </nav>
+
+    <button class="theme-toggle" id="themeToggle" type="button" aria-label="Cambiar entre modo claro y oscuro" title="Cambiar tema">
+        <svg class="icon-sun" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><circle cx="12" cy="12" r="4"/><path d="M12 2v2M12 20v2M4.93 4.93l1.41 1.41M17.66 17.66l1.41 1.41M2 12h2M20 12h2M4.93 19.07l1.41-1.41M17.66 6.34l1.41-1.41"/></svg>
+        <svg class="icon-moon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M21 12.79A9 9 0 1 1 11.21 3 7 7 0 0 0 21 12.79z"/></svg>
+    </button>
+
+    <a href="#top" class="back-to-top" id="backToTop">&#9650;</a>
+
+    <section class="tema tema-page" id="top">
+        <div class="container">
+            <div class="tema-header fade-in">
+                <div class="tema-number odd">Tema 15 &mdash; Electricidad</div>
+                <h2>Ley de Ohm</h2>
+                <p class="intro">Detras de cada bombillo, cargador, calefactor o circuito electronico hay una formula corta que rige el mundo electrico: <strong>V = I &middot; R</strong>. Descubierta por Georg Simon Ohm en 1827, esta relacion conecta tres cantidades fundamentales &mdash; voltaje, corriente y resistencia &mdash; y permite predecir como se comporta cualquier circuito.</p>
+            </div>
+
+            <!-- ===== CONCEPTOS BASICOS ===== -->
+            <div class="content-block fade-in">
+                <h3><span class="icon" style="background:rgba(255,214,0,0.15);color:var(--warning);">&#9889;</span> Conceptos fundamentales</h3>
+
+                <h4>Corriente electrica (I)</h4>
+                <p>Es el flujo neto de cargas a traves de la seccion transversal de un conductor:</p>
+                <div class="formula">
+                    I = q / t
+                </div>
+                <p>Se mide en <strong>amperes (A)</strong>: 1 A = 1 Coulomb por segundo. Por convencion, la corriente fluye del polo + al polo &minus; (aunque los electrones fisicamente se mueven en sentido contrario).</p>
+
+                <h4>Voltaje o diferencia de potencial (V)</h4>
+                <p>Es la "presion electrica" que empuja las cargas a moverse. Representa la energia que cada Coulomb gana o pierde al pasar de un punto a otro:</p>
+                <div class="formula">
+                    V = W / q
+                </div>
+                <p>Se mide en <strong>volts (V)</strong>: 1 V = 1 Joule por Coulomb. Las baterias estandar entregan 1.5 V, 9 V o 12 V; los enchufes domesticos: 110/220 V.</p>
+
+                <h4>Resistencia electrica (R)</h4>
+                <p>Es la oposicion al paso de la corriente. Cada material y cada componente la tiene en mayor o menor medida:</p>
+                <div class="formula">
+                    R = &rho; &middot; L / A
+                </div>
+                <ul>
+                    <li><strong>&rho;</strong> = resistividad del material (&Omega;&middot;m)</li>
+                    <li><strong>L</strong> = longitud del conductor (m)</li>
+                    <li><strong>A</strong> = area de seccion transversal (m&sup2;)</li>
+                </ul>
+                <p>Se mide en <strong>ohms (&Omega;)</strong>: 1 &Omega; = 1 V/A.</p>
+
+                <div class="info-box example">
+                    <div class="box-title">Resistividades tipicas (&Omega;&middot;m a 20&deg;C)</div>
+                    <ul>
+                        <li><strong>Plata:</strong> 1.59&times;10<sup>-8</sup> &nbsp; <strong>Cobre:</strong> 1.68&times;10<sup>-8</sup> &nbsp; <strong>Aluminio:</strong> 2.65&times;10<sup>-8</sup></li>
+                        <li><strong>Hierro:</strong> 9.71&times;10<sup>-8</sup> &nbsp; <strong>Tungsteno:</strong> 5.6&times;10<sup>-8</sup> &nbsp; <strong>Nicromo:</strong> 1.10&times;10<sup>-6</sup></li>
+                        <li><strong>Silicio puro:</strong> 2.5&times;10<sup>3</sup> (semiconductor)</li>
+                        <li><strong>Vidrio:</strong> 10<sup>10</sup>&ndash;10<sup>14</sup> &nbsp; <strong>Cuarzo:</strong> 7.5&times;10<sup>17</sup> (aislantes)</li>
+                    </ul>
+                </div>
+            </div>
+
+            <!-- ===== LEY DE OHM ===== -->
+            <div class="content-block fade-in">
+                <h3><span class="icon" style="background:rgba(108,99,255,0.15);color:var(--primary-light);">&#128218;</span> La ley de Ohm</h3>
+                <p>Ohm encontro experimentalmente que en muchos materiales conductores la corriente es proporcional al voltaje aplicado:</p>
+                <div class="formula">
+                    V = I &middot; R
+                </div>
+                <p>O sus formas equivalentes:</p>
+                <div class="formula-group">
+                    <div class="formula">I = V / R</div>
+                    <div class="formula">R = V / I</div>
+                </div>
+                <div class="info-box theory">
+                    <div class="box-title">Materiales ohmicos vs no ohmicos</div>
+                    <ul>
+                        <li><strong>Ohmicos:</strong> R es constante (no depende de V o I). La grafica V vs I es una recta. Ejemplos: metales a temperatura constante.</li>
+                        <li><strong>No ohmicos:</strong> R varia con V, I, T o luz. Ejemplos: diodos, bombillas incandescentes (su R aumenta con la temperatura), transistores, LDR.</li>
+                    </ul>
+                </div>
+            </div>
+
+            <!-- ===== POTENCIA ===== -->
+            <div class="content-block fade-in">
+                <h3><span class="icon" style="background:rgba(255,101,132,0.15);color:var(--secondary);">&#128268;</span> Potencia electrica</h3>
+                <p>La potencia es la energia transferida por unidad de tiempo. En un componente electrico se calcula con tres formulas equivalentes:</p>
+                <div class="formula">
+                    P = V &middot; I = I&sup2; &middot; R = V&sup2; / R
+                </div>
+                <p>La unidad es el <strong>watt (W) = 1 J/s</strong>. Las dos ultimas formulas se obtienen sustituyendo V = IR en P = VI.</p>
+                <div class="info-box example">
+                    <div class="box-title">Potencias domesticas tipicas</div>
+                    <ul>
+                        <li><strong>Foco LED:</strong> 5&ndash;15 W &nbsp; <strong>Foco incandescente:</strong> 40&ndash;100 W</li>
+                        <li><strong>Refrigerador:</strong> 150&ndash;500 W &nbsp; <strong>Microondas:</strong> 800&ndash;1500 W</li>
+                        <li><strong>Plancha:</strong> 1000&ndash;1800 W &nbsp; <strong>Calentador electrico:</strong> 1500&ndash;3000 W</li>
+                        <li><strong>Aire acondicionado:</strong> 800&ndash;3500 W &nbsp; <strong>Auto electrico (carga rapida):</strong> 50,000+ W</li>
+                    </ul>
+                </div>
+            </div>
+
+            <!-- ===== CIRCUITOS SERIE Y PARALELO ===== -->
+            <div class="content-block fade-in">
+                <h3><span class="icon" style="background:rgba(0,201,167,0.15);color:var(--accent);">&#128279;</span> Resistencias en serie y paralelo</h3>
+
+                <h4>Conexion en serie</h4>
+                <p>Los componentes se conectan uno tras otro: la misma corriente pasa por todos.</p>
+                <div class="formula">
+                    R<sub>eq</sub> = R&#8321; + R&#8322; + R&#8323; + ...
+                </div>
+                <ul>
+                    <li>Misma I por todas las resistencias.</li>
+                    <li>El voltaje se reparte proporcionalmente: V<sub>k</sub> = I &middot; R<sub>k</sub>.</li>
+                    <li>Si una se quema, todo el circuito se interrumpe (como las viejas series de luces navidenas).</li>
+                </ul>
+
+                <h4>Conexion en paralelo</h4>
+                <p>Los componentes comparten los mismos nodos: estan conectados en "ramas" independientes.</p>
+                <div class="formula">
+                    1/R<sub>eq</sub> = 1/R&#8321; + 1/R&#8322; + 1/R&#8323; + ...
+                </div>
+                <ul>
+                    <li>Mismo V a traves de todas las ramas.</li>
+                    <li>La corriente total se divide: I<sub>total</sub> = I&#8321; + I&#8322; + ...</li>
+                    <li>R<sub>eq</sub> siempre es <strong>menor</strong> que la menor resistencia individual.</li>
+                    <li>Si una rama se abre, las demas siguen funcionando (como los enchufes de tu casa).</li>
+                </ul>
+                <div class="info-box theory">
+                    <div class="box-title">Para 2 resistencias en paralelo</div>
+                    <p>Formula directa muy comoda:</p>
+                </div>
+                <div class="formula">
+                    R<sub>eq</sub> = R&#8321; &middot; R&#8322; / (R&#8321; + R&#8322;)
+                </div>
+            </div>
+
+            <!-- ===== EJEMPLOS RESUELTOS ===== -->
+            <div class="content-block fade-in">
+                <h3><span class="icon" style="background:rgba(255,101,132,0.15);color:var(--secondary);">&#128270;</span> Ejemplos resueltos</h3>
+
+                <div class="info-box example">
+                    <div class="box-title">Ejemplo 1: Corriente en un foco</div>
+                    <p><strong>Un foco de 60 W esta conectado a 120 V. Calcula la corriente y su resistencia.</strong></p>
+                    <div class="steps">
+                        <div class="step">
+                            <div class="step-num">1</div>
+                            <div class="step-content">
+                                <p class="math">I = P / V = 60 / 120 = <strong>0.5 A</strong></p>
+                            </div>
+                        </div>
+                        <div class="step">
+                            <div class="step-num">2</div>
+                            <div class="step-content">
+                                <p class="math">R = V / I = 120 / 0.5 = <strong>240 &Omega;</strong></p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="info-box example" style="margin-top:1.5rem;">
+                    <div class="box-title">Ejemplo 2: Tres resistencias en serie</div>
+                    <p><strong>R&#8321; = 10 &Omega;, R&#8322; = 20 &Omega;, R&#8323; = 30 &Omega; en serie, alimentadas por V = 12 V. Calcula la corriente, la caida de voltaje en cada una y la potencia total.</strong></p>
+                    <div class="steps">
+                        <div class="step">
+                            <div class="step-num">1</div>
+                            <div class="step-content">
+                                <p class="math">R<sub>eq</sub> = 10 + 20 + 30 = <strong>60 &Omega;</strong></p>
+                            </div>
+                        </div>
+                        <div class="step">
+                            <div class="step-num">2</div>
+                            <div class="step-content">
+                                <p class="math">I = V/R<sub>eq</sub> = 12/60 = <strong>0.2 A</strong></p>
+                            </div>
+                        </div>
+                        <div class="step">
+                            <div class="step-num">3</div>
+                            <div class="step-content">
+                                <p>Caidas: V&#8321; = 0.2&times;10 = <strong>2 V</strong>, V&#8322; = 0.2&times;20 = <strong>4 V</strong>, V&#8323; = 0.2&times;30 = <strong>6 V</strong></p>
+                                <p>Suma: 2+4+6 = 12 V ✓ (conservacion de energia)</p>
+                            </div>
+                        </div>
+                        <div class="step">
+                            <div class="step-num">4</div>
+                            <div class="step-content">
+                                <p class="math">P = VI = 12 &times; 0.2 = <strong>2.4 W</strong></p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="info-box example" style="margin-top:1.5rem;">
+                    <div class="box-title">Ejemplo 3: Dos resistencias en paralelo</div>
+                    <p><strong>R&#8321; = 4 &Omega; y R&#8322; = 6 &Omega; en paralelo, conectadas a V = 24 V. Encuentra R<sub>eq</sub>, la corriente por cada una y la corriente total.</strong></p>
+                    <div class="steps">
+                        <div class="step">
+                            <div class="step-num">1</div>
+                            <div class="step-content">
+                                <p class="math">R<sub>eq</sub> = (4 &times; 6) / (4 + 6) = 24/10 = <strong>2.4 &Omega;</strong></p>
+                            </div>
+                        </div>
+                        <div class="step">
+                            <div class="step-num">2</div>
+                            <div class="step-content">
+                                <p class="math">I&#8321; = V/R&#8321; = 24/4 = <strong>6 A</strong></p>
+                                <p class="math">I&#8322; = V/R&#8322; = 24/6 = <strong>4 A</strong></p>
+                            </div>
+                        </div>
+                        <div class="step">
+                            <div class="step-num">3</div>
+                            <div class="step-content">
+                                <p class="math">I<sub>total</sub> = I&#8321; + I&#8322; = 6 + 4 = <strong>10 A</strong></p>
+                                <p>Comprobacion: V/R<sub>eq</sub> = 24/2.4 = 10 A ✓</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="info-box example" style="margin-top:1.5rem;">
+                    <div class="box-title">Ejemplo 4: Resistencia de un cable</div>
+                    <p><strong>Calcula la resistencia de 50 m de cable de cobre (&rho; = 1.68&times;10<sup>-8</sup> &Omega;&middot;m) con seccion de 1.5 mm&sup2;.</strong></p>
+                    <div class="steps">
+                        <div class="step">
+                            <div class="step-num">1</div>
+                            <div class="step-content">
+                                <p>A = 1.5 mm&sup2; = 1.5&times;10<sup>-6</sup> m&sup2;</p>
+                            </div>
+                        </div>
+                        <div class="step">
+                            <div class="step-num">2</div>
+                            <div class="step-content">
+                                <p class="math">R = (1.68&times;10<sup>-8</sup>) &times; 50 / (1.5&times;10<sup>-6</sup>)</p>
+                                <p class="math">R = 8.4&times;10<sup>-7</sup> / 1.5&times;10<sup>-6</sup> = <strong>0.56 &Omega;</strong></p>
+                            </div>
+                        </div>
+                    </div>
+                    <p>Muy baja, por eso el cobre es excelente para cableado domestico. Por cada 10 A que pasen, solo perdemos 5.6 V (importante en instalaciones largas).</p>
+                </div>
+            </div>
+
+            <!-- ===== SIMULADOR CANVAS ===== -->
+            <div class="content-block fade-in">
+                <h3><span class="icon" style="background:rgba(108,99,255,0.15);color:var(--primary-light);">&#127918;</span> Simulador interactivo &mdash; Circuito V-I-R</h3>
+                <p>Circuito completo con bateria, resistencia y amperimetro. Ajusta V y R y observa la corriente resultante y el flujo de electrones (en sentido inverso al convencional).</p>
+                <div class="sim-wrapper">
+                    <div class="sim-controls">
+                        <div class="sim-control-group">
+                            <label>Voltaje V (volts):
+                                <input type="range" id="ohmV" min="1" max="48" step="0.5" value="12">
+                                <span class="sim-value" id="ohmVVal">12.0 V</span>
+                            </label>
+                        </div>
+                        <div class="sim-control-group">
+                            <label>Resistencia R (&Omega;):
+                                <input type="range" id="ohmR" min="1" max="200" step="1" value="20">
+                                <span class="sim-value" id="ohmRVal">20 &Omega;</span>
+                            </label>
+                        </div>
+                    </div>
+                    <div class="sim-canvas-wrap">
+                        <canvas id="ohmCanvas" width="720" height="420" style="width:100%;border-radius:12px;background:var(--bg);"></canvas>
+                    </div>
+                    <div class="sim-result" id="ohmResult">
+                        I = &mdash; A &nbsp;|&nbsp; P = &mdash; W
+                    </div>
+                </div>
+            </div>
+
+            <!-- ===== EJERCICIOS ===== -->
+            <div class="exercises-section fade-in">
+                <h3><span class="icon" style="background:rgba(255,101,132,0.15);color:var(--secondary);">&#9998;</span> Ejercicios &mdash; Ley de Ohm</h3>
+
+                <div class="exercise-item">
+                    <div class="exercise-header">
+                        <span class="exercise-label">Ejercicio 1</span>
+                        <span class="difficulty easy">Facil</span>
+                    </div>
+                    <p>Una bateria de 9 V se conecta a una resistencia de 36 &Omega;. &iquest;Cual es la corriente?</p>
+                    <button class="solution-toggle" onclick="toggleSolution(this)">Ver solucion &#9660;</button>
+                    <div class="solution">
+                        <p><span class="step-math">I = V/R = 9/36 = <strong>0.25 A = 250 mA</strong></span></p>
+                    </div>
+                </div>
+
+                <div class="exercise-item">
+                    <div class="exercise-header">
+                        <span class="exercise-label">Ejercicio 2</span>
+                        <span class="difficulty easy">Facil</span>
+                    </div>
+                    <p>Un calefactor consume 1500 W a 120 V. Calcula su resistencia y la corriente que pasa por el.</p>
+                    <button class="solution-toggle" onclick="toggleSolution(this)">Ver solucion &#9660;</button>
+                    <div class="solution">
+                        <p><span class="step-math">I = P/V = 1500/120 = <strong>12.5 A</strong></span></p>
+                        <p><span class="step-math">R = V/I = 120/12.5 = <strong>9.6 &Omega;</strong></span></p>
+                    </div>
+                </div>
+
+                <div class="exercise-item">
+                    <div class="exercise-header">
+                        <span class="exercise-label">Ejercicio 3</span>
+                        <span class="difficulty medium">Medio</span>
+                    </div>
+                    <p>Tres resistencias R&#8321; = 5 &Omega;, R&#8322; = 10 &Omega; y R&#8323; = 15 &Omega; estan en paralelo conectadas a 30 V. Calcula R<sub>eq</sub>, la corriente por cada una y la corriente total.</p>
+                    <button class="solution-toggle" onclick="toggleSolution(this)">Ver solucion &#9660;</button>
+                    <div class="solution">
+                        <p><span class="step-math">1/R<sub>eq</sub> = 1/5 + 1/10 + 1/15 = 6/30 + 3/30 + 2/30 = 11/30</span></p>
+                        <p><span class="step-math">R<sub>eq</sub> = 30/11 = <strong>2.73 &Omega;</strong></span></p>
+                        <p><span class="step-math">I&#8321; = 30/5 = 6 A &nbsp; I&#8322; = 30/10 = 3 A &nbsp; I&#8323; = 30/15 = 2 A</span></p>
+                        <p><span class="step-math">I<sub>total</sub> = 6 + 3 + 2 = <strong>11 A</strong></span></p>
+                    </div>
+                </div>
+
+                <div class="exercise-item">
+                    <div class="exercise-header">
+                        <span class="exercise-label">Ejercicio 4</span>
+                        <span class="difficulty medium">Medio</span>
+                    </div>
+                    <p>Una secadora de pelo de 1200 W esta conectada a 220 V durante 5 minutos. &iquest;Cuanta energia consume (en kWh y en J)?</p>
+                    <button class="solution-toggle" onclick="toggleSolution(this)">Ver solucion &#9660;</button>
+                    <div class="solution">
+                        <p><span class="step-math">E = P &times; t = 1200 &times; 300 = <strong>360,000 J = 360 kJ</strong></span></p>
+                        <p><span class="step-math">En kWh: E = 1.2 kW &times; (5/60) h = <strong>0.1 kWh</strong></span></p>
+                    </div>
+                </div>
+
+                <div class="exercise-item">
+                    <div class="exercise-header">
+                        <span class="exercise-label">Ejercicio 5</span>
+                        <span class="difficulty hard">Dificil</span>
+                    </div>
+                    <p>En el siguiente circuito, R&#8321; = 6 &Omega; esta en serie con un grupo en paralelo R&#8322; = 4 &Omega; y R&#8323; = 12 &Omega;. La bateria es de 18 V. Encuentra: a) R<sub>eq</sub>, b) corriente total, c) la corriente en R&#8323;.</p>
+                    <button class="solution-toggle" onclick="toggleSolution(this)">Ver solucion &#9660;</button>
+                    <div class="solution">
+                        <p><strong>a) Paralelo de R&#8322; y R&#8323;:</strong></p>
+                        <p><span class="step-math">R<sub>p</sub> = (4 &times; 12)/(4 + 12) = 48/16 = 3 &Omega;</span></p>
+                        <p><span class="step-math">R<sub>eq</sub> = R&#8321; + R<sub>p</sub> = 6 + 3 = <strong>9 &Omega;</strong></span></p>
+                        <p><strong>b) Corriente total:</strong></p>
+                        <p><span class="step-math">I = V/R<sub>eq</sub> = 18/9 = <strong>2 A</strong></span></p>
+                        <p><strong>c) Voltaje en el paralelo y corriente en R&#8323;:</strong></p>
+                        <p><span class="step-math">V<sub>p</sub> = I &middot; R<sub>p</sub> = 2 &times; 3 = 6 V</span></p>
+                        <p><span class="step-math">I&#8323; = V<sub>p</sub>/R&#8323; = 6/12 = <strong>0.5 A</strong></span></p>
+                    </div>
+                </div>
+
+            </div>
+
+        </div>
+    </section>
+
+    <footer>
+        <div class="container">
+            <p style="margin-bottom:0.5rem; font-size:1rem; color:var(--text-muted);">Mod 08 &mdash; Matematicas y Representaciones del Sistema Natural!</p>
+            <p>Contenido educativo &middot; 16 temas &middot; Preparatoria</p>
+        </div>
+    </footer>
+
+    <script>
+        function toggleSolution(btn) {
+            const solution = btn.nextElementSibling;
+            solution.classList.toggle('visible');
+            btn.textContent = solution.classList.contains('visible') ? 'Ocultar solucion ▲' : 'Ver solucion ▼';
+        }
+        const observer = new IntersectionObserver((entries) => {
+            entries.forEach(entry => { if (entry.isIntersecting) entry.target.classList.add('visible'); });
+        }, { threshold: 0.1 });
+        document.querySelectorAll('.fade-in').forEach(el => observer.observe(el));
+        const backBtn = document.getElementById('backToTop');
+        window.addEventListener('scroll', () => { backBtn.classList.toggle('show', window.scrollY > 400); });
+        const themeBtn = document.getElementById('themeToggle');
+        if (themeBtn) {
+            const syncThemeAria = () => {
+                const isLight = document.documentElement.getAttribute('data-theme') === 'light';
+                themeBtn.setAttribute('aria-pressed', isLight ? 'true' : 'false');
+                themeBtn.setAttribute('aria-label', isLight ? 'Cambiar a modo oscuro' : 'Cambiar a modo claro');
+            };
+            syncThemeAria();
+            themeBtn.addEventListener('click', () => {
+                const current = document.documentElement.getAttribute('data-theme') === 'light' ? 'light' : 'dark';
+                const next = current === 'light' ? 'dark' : 'light';
+                document.documentElement.setAttribute('data-theme', next);
+                try { localStorage.setItem('theme', next); } catch (e) {}
+                syncThemeAria();
+            });
+        }
+
+        /* === Simulador: Circuito Ohm === */
+        (function() {
+            const canvas = document.getElementById('ohmCanvas');
+            if (!canvas) return;
+            const ctx = canvas.getContext('2d');
+            const CW = canvas.width, CH = canvas.height;
+
+            const sV = document.getElementById('ohmV');
+            const sR = document.getElementById('ohmR');
+            const lV = document.getElementById('ohmVVal');
+            const lR = document.getElementById('ohmRVal');
+            const resultDiv = document.getElementById('ohmResult');
+
+            let V = 12, R = 20;
+            function sync() {
+                V = parseFloat(sV.value);
+                R = parseFloat(sR.value);
+                lV.textContent = V.toFixed(1) + ' V';
+                lR.textContent = R.toFixed(0) + ' Ω';
+            }
+            sV.addEventListener('input', sync);
+            sR.addEventListener('input', sync);
+
+            // Geometria del circuito (rectangulo)
+            const cx = CW / 2, cy = CH / 2;
+            const W = 540, H = 230;
+            const left = cx - W / 2, right = cx + W / 2;
+            const top = cy - H / 2, bottom = cy + H / 2;
+
+            // Bateria en el lado izquierdo (vertical)
+            const batX = left, batY = cy;
+            // Resistencia en el lado derecho (vertical, zigzag)
+            const resX = right, resY = cy;
+            // Amperimetro en el lado superior (centro)
+            const ampX = cx, ampY = top;
+
+            // Electrones
+            const NE = 24;
+            const electrons = [];
+            // Path total = perimetro
+            const pathLen = 2 * (W + H);
+            for (let i = 0; i < NE; i++) {
+                electrons.push({ s: (i / NE) * pathLen });
+            }
+
+            function pointOnLoop(s) {
+                // sentido: top-left -> top-right -> bottom-right -> bottom-left -> back to top-left
+                s = ((s % pathLen) + pathLen) % pathLen;
+                if (s < W)               return { x: left + s, y: top, dir: 0 };
+                s -= W;
+                if (s < H)               return { x: right, y: top + s, dir: 1 };
+                s -= H;
+                if (s < W)               return { x: right - s, y: bottom, dir: 2 };
+                s -= W;
+                                         return { x: left, y: bottom - s, dir: 3 };
+            }
+
+            let t = 0;
+
+            function palette() {
+                const light = document.documentElement.getAttribute('data-theme') === 'light';
+                return light ? {
+                    bg1: '#FFFFFF', bg2: '#EEF0F8',
+                    wire: '#3a3e54', gapFill: '#FFFFFF',
+                    text: '#0F0E17'
+                } : {
+                    bg1: '#0a0a1a', bg2: '#12122a',
+                    wire: '#c2cae0', gapFill: '#0a0a1a',
+                    text: '#ffffff'
+                };
+            }
+
+            function draw() {
+                t += 0.016;
+                const I = V / R;
+                const P = V * I;
+
+                const C = palette();
+
+                // Background
+                ctx.clearRect(0, 0, CW, CH);
+                const bg = ctx.createLinearGradient(0, 0, 0, CH);
+                bg.addColorStop(0, C.bg1);
+                bg.addColorStop(1, C.bg2);
+                ctx.fillStyle = bg;
+                ctx.fillRect(0, 0, CW, CH);
+
+                // Loop / wires
+                ctx.strokeStyle = C.wire;
+                ctx.lineWidth = 4;
+                ctx.lineCap = 'round';
+                ctx.beginPath();
+                ctx.rect(left, top, W, H);
+                ctx.stroke();
+
+                // Bateria (gap en lado izquierdo)
+                const gapY1 = cy - 22, gapY2 = cy + 22;
+                ctx.strokeStyle = C.gapFill;
+                ctx.lineWidth = 9;
+                ctx.beginPath();
+                ctx.moveTo(left, gapY1);
+                ctx.lineTo(left, gapY2);
+                ctx.stroke();
+                // Simbolo bateria
+                ctx.strokeStyle = '#7af0a0';
+                ctx.lineWidth = 3;
+                // Placa larga (+)
+                ctx.beginPath();
+                ctx.moveTo(left - 18, gapY1 + 6);
+                ctx.lineTo(left + 18, gapY1 + 6);
+                ctx.stroke();
+                // Placa corta (-)
+                ctx.beginPath();
+                ctx.moveTo(left - 10, gapY2 - 6);
+                ctx.lineTo(left + 10, gapY2 - 6);
+                ctx.stroke();
+                // + y - signos
+                ctx.fillStyle = '#7af0a0';
+                ctx.font = 'bold 14px sans-serif';
+                ctx.textAlign = 'left';
+                ctx.fillText('+', left - 30, gapY1 + 10);
+                ctx.fillText('−', left - 30, gapY2 - 2);
+                // Voltaje
+                ctx.font = 'bold 16px sans-serif';
+                ctx.fillStyle = C.text;
+                ctx.textAlign = 'right';
+                ctx.fillText(V.toFixed(1) + ' V', left - 28, cy + 6);
+
+                // Resistencia (gap en lado derecho, zigzag)
+                ctx.strokeStyle = C.gapFill;
+                ctx.lineWidth = 9;
+                ctx.beginPath();
+                ctx.moveTo(right, cy - 38);
+                ctx.lineTo(right, cy + 38);
+                ctx.stroke();
+                // Zigzag
+                ctx.strokeStyle = '#ff8a45';
+                ctx.lineWidth = 3;
+                ctx.beginPath();
+                let zx = right, zy = cy - 36;
+                ctx.moveTo(zx, zy);
+                for (let i = 0; i < 7; i++) {
+                    const off = (i % 2 === 0 ? 14 : -14);
+                    zy += 10;
+                    ctx.lineTo(zx + off, zy);
+                }
+                zy += 6;
+                ctx.lineTo(zx, zy);
+                ctx.stroke();
+                // R label
+                ctx.fillStyle = '#ffb070';
+                ctx.font = 'bold 16px sans-serif';
+                ctx.textAlign = 'left';
+                ctx.fillText('R = ' + R.toFixed(0) + ' Ω', right + 22, cy + 6);
+
+                // Amperimetro (lado superior, central)
+                ctx.fillStyle = C.gapFill;
+                ctx.beginPath();
+                ctx.arc(ampX, ampY, 26, 0, Math.PI * 2);
+                ctx.fill();
+                ctx.strokeStyle = '#3aa8d8';
+                ctx.lineWidth = 2.5;
+                ctx.stroke();
+                ctx.fillStyle = '#3aa8d8';
+                ctx.font = 'bold 16px sans-serif';
+                ctx.textAlign = 'center';
+                ctx.fillText('A', ampX, ampY + 6);
+                // Lectura
+                ctx.fillStyle = C.text;
+                ctx.font = 'bold 14px sans-serif';
+                ctx.fillText(I.toFixed(2) + ' A', ampX, ampY - 36);
+
+                // Electrones moviendose. Velocidad ~ I.
+                // Direccion convencional: + (placa larga) → sale del polo + por el cable superior.
+                // Aqui los electrones van en sentido contrario (anti-horario).
+                const speed = Math.min(200, 30 + I * 18);  // px/s
+                for (let i = 0; i < electrons.length; i++) {
+                    electrons[i].s -= speed * 0.016;
+                    const p = pointOnLoop(electrons[i].s);
+
+                    // No dibujar dentro de bateria o resistor
+                    const inBat = (Math.abs(p.x - left) < 4 && p.y > gapY1 && p.y < gapY2);
+                    const inRes = (Math.abs(p.x - right) < 4 && p.y > cy - 38 && p.y < cy + 38);
+                    if (inBat || inRes) continue;
+
+                    ctx.fillStyle = '#3aa8d8';
+                    ctx.beginPath();
+                    ctx.arc(p.x, p.y, 4.5, 0, Math.PI * 2);
+                    ctx.fill();
+                    // halo
+                    ctx.fillStyle = 'rgba(58,168,216,0.22)';
+                    ctx.beginPath();
+                    ctx.arc(p.x, p.y, 9, 0, Math.PI * 2);
+                    ctx.fill();
+                    // Simbolo -
+                    ctx.fillStyle = '#fff';
+                    ctx.font = 'bold 9px sans-serif';
+                    ctx.textAlign = 'center';
+                    ctx.fillText('−', p.x, p.y + 3);
+                }
+
+                // Flecha de corriente convencional (sentido horario, opuesta a electrones)
+                ctx.fillStyle = '#d89a00';
+                ctx.font = 'bold 14px sans-serif';
+                ctx.textAlign = 'center';
+                ctx.fillText('→ I (corriente convencional)', cx, top - 22);
+                ctx.fillStyle = '#3aa8d8';
+                ctx.font = '12px sans-serif';
+                ctx.fillText('← electrones (sentido real)', cx, bottom + 28);
+
+                // Titulo
+                ctx.fillStyle = C.text;
+                ctx.font = 'bold 16px sans-serif';
+                ctx.textAlign = 'center';
+                ctx.fillText('Circuito simple: V = I · R', cx, 30);
+
+                resultDiv.innerHTML =
+                    'I = <strong>' + I.toFixed(3) + ' A</strong>' +
+                    '  |  P = <strong>' + P.toFixed(2) + ' W</strong>' +
+                    '  |  V/R check: ' + V.toFixed(1) + '/' + R.toFixed(0) + ' = ' + I.toFixed(3) + ' A';
+
+                requestAnimationFrame(draw);
+            }
+
+            sync();
+            draw();
+        })();
+    </script>
+</body>
+</html>

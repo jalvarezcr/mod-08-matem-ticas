@@ -1,0 +1,627 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Tema 12 - Transferencia de Calor | Mod 08</title>
+    <link rel="stylesheet" href="styles.css">
+    <script>
+        // Aplica el tema antes de pintar para evitar parpadeo
+        (function() {
+            try {
+                var t = localStorage.getItem('theme');
+                if (!t) {
+                    t = (window.matchMedia && window.matchMedia('(prefers-color-scheme: light)').matches) ? 'light' : 'dark';
+                }
+                document.documentElement.setAttribute('data-theme', t);
+            } catch (e) {
+                document.documentElement.setAttribute('data-theme', 'dark');
+            }
+        })();
+    </script>
+</head>
+<body>
+
+    <nav class="topic-nav">
+        <a href="index.html" class="back-link">&#9664; Volver al indice</a>
+        <span class="topic-nav-title">Tema 12 &mdash; Transferencia de Calor</span>
+    </nav>
+
+    <!-- ===== THEME TOGGLE ===== -->
+    <button class="theme-toggle" id="themeToggle" type="button" aria-label="Cambiar entre modo claro y oscuro" title="Cambiar tema">
+        <svg class="icon-sun" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><circle cx="12" cy="12" r="4"/><path d="M12 2v2M12 20v2M4.93 4.93l1.41 1.41M17.66 17.66l1.41 1.41M2 12h2M20 12h2M4.93 19.07l1.41-1.41M17.66 6.34l1.41-1.41"/></svg>
+        <svg class="icon-moon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M21 12.79A9 9 0 1 1 11.21 3 7 7 0 0 0 21 12.79z"/></svg>
+    </button>
+
+    <a href="#top" class="back-to-top" id="backToTop">&#9650;</a>
+
+    <section class="tema tema-page" id="top">
+        <div class="container">
+            <div class="tema-header fade-in">
+                <div class="tema-number even">Tema 12 &mdash; Termodinamica</div>
+                <h2>Transferencia de Calor</h2>
+                <p class="intro">El calor es la energia que se mueve de un lugar a otro debido a una diferencia de temperatura. Siempre fluye de lo caliente hacia lo frio, jamas al reves de forma espontanea. Esta migracion de energia ocurre por tres mecanismos diferentes &mdash; conduccion, conveccion y radiacion &mdash; y entender cada uno nos permite disenar desde un termo para cafe hasta un panel solar o la calefaccion de una casa.</p>
+            </div>
+
+            <!-- ===== CONCEPTOS BASICOS ===== -->
+            <div class="content-block fade-in">
+                <h3><span class="icon" style="background:rgba(255,101,132,0.15);color:var(--secondary);">&#128293;</span> Calor vs Temperatura</h3>
+                <p>Aunque suelen confundirse, son conceptos distintos:</p>
+                <div class="info-box theory">
+                    <div class="box-title">Temperatura (T)</div>
+                    <p>Mide el <strong>nivel de agitacion molecular promedio</strong> de un cuerpo. Se mide en Kelvin (K), Celsius (&deg;C) o Fahrenheit (&deg;F). Es una propiedad <em>intensiva</em>: no depende del tamano del sistema.</p>
+                </div>
+                <div class="info-box example" style="margin-top:1rem;">
+                    <div class="box-title">Calor (Q)</div>
+                    <p>Es la <strong>energia en transito</strong> de un cuerpo a otro a causa de una diferencia de temperatura. Se mide en Joules (J) o calorias (cal). Es una propiedad <em>extensiva</em>: depende de la cantidad de materia.</p>
+                </div>
+                <div class="formula">
+                    1 cal = 4.184 J &nbsp;&nbsp;&nbsp; 1 kcal = 1000 cal = 4184 J
+                </div>
+                <h4>Calor sensible &mdash; cambio de temperatura</h4>
+                <p>Cuando un cuerpo absorbe o cede calor sin cambiar de estado, su temperatura varia:</p>
+                <div class="formula">
+                    Q = m &middot; c &middot; &Delta;T
+                </div>
+                <ul>
+                    <li><strong>m</strong> = Masa (kg)</li>
+                    <li><strong>c</strong> = Calor especifico del material (J/kg&middot;K)</li>
+                    <li><strong>&Delta;T</strong> = Cambio de temperatura (K o &deg;C)</li>
+                </ul>
+                <div class="info-box example">
+                    <div class="box-title">Calores especificos comunes</div>
+                    <ul>
+                        <li><strong>Agua liquida:</strong> c = 4186 J/(kg&middot;K) &mdash; muy alto, por eso modera el clima</li>
+                        <li><strong>Hielo:</strong> c = 2090 J/(kg&middot;K)</li>
+                        <li><strong>Aluminio:</strong> c = 900 J/(kg&middot;K)</li>
+                        <li><strong>Hierro:</strong> c = 450 J/(kg&middot;K)</li>
+                        <li><strong>Cobre:</strong> c = 385 J/(kg&middot;K)</li>
+                        <li><strong>Aire (a P constante):</strong> c = 1005 J/(kg&middot;K)</li>
+                    </ul>
+                </div>
+            </div>
+
+            <!-- ===== CONDUCCION ===== -->
+            <div class="content-block fade-in">
+                <h3><span class="icon" style="background:rgba(108,99,255,0.15);color:var(--primary-light);">&#9881;</span> 1. Conduccion &mdash; transmision por contacto</h3>
+                <p>El calor se transmite por <strong>vibraciones moleculares</strong> que pasan de un atomo al siguiente sin que haya transporte neto de materia. Es el mecanismo dominante en <strong>solidos</strong>, especialmente en metales, donde los electrones libres acarrean energia con eficiencia.</p>
+                <div class="info-box theory">
+                    <div class="box-title">Ley de Fourier (1822)</div>
+                    <p>La tasa de calor conducido a traves de una pared plana es:</p>
+                </div>
+                <div class="formula">
+                    Q / t = k &middot; A &middot; (T<sub>caliente</sub> &minus; T<sub>frio</sub>) / L
+                </div>
+                <ul>
+                    <li><strong>Q/t</strong> = Flujo de calor (W = J/s)</li>
+                    <li><strong>k</strong> = Conductividad termica (W/m&middot;K) &mdash; propiedad del material</li>
+                    <li><strong>A</strong> = Area perpendicular al flujo (m&sup2;)</li>
+                    <li><strong>L</strong> = Espesor de la pared (m)</li>
+                </ul>
+                <div class="info-box example">
+                    <div class="box-title">Conductividades termicas tipicas (W/m&middot;K)</div>
+                    <ul>
+                        <li><strong>Plata:</strong> 429 &nbsp; <strong>Cobre:</strong> 401 &nbsp; <strong>Aluminio:</strong> 237 (excelentes conductores)</li>
+                        <li><strong>Acero:</strong> 50 &nbsp; <strong>Vidrio:</strong> 0.8 &nbsp; <strong>Ladrillo:</strong> 0.7</li>
+                        <li><strong>Agua:</strong> 0.6 &nbsp; <strong>Madera:</strong> 0.15 &nbsp; <strong>Lana mineral:</strong> 0.04</li>
+                        <li><strong>Aire en reposo:</strong> 0.026 &nbsp; <strong>Vacio:</strong> ~0 (aislante perfecto)</li>
+                    </ul>
+                </div>
+                <h4>&iquest;Por que un metal "se siente" mas frio que la madera?</h4>
+                <p>A la misma temperatura ambiente, un metal te roba calor de la mano mucho mas rapido que la madera porque su k es ~3000 veces mayor. Tu termoreceptor cutaneo no mide temperatura: mide la <em>tasa</em> de transferencia de calor.</p>
+            </div>
+
+            <!-- ===== CONVECCION ===== -->
+            <div class="content-block fade-in">
+                <h3><span class="icon" style="background:rgba(0,201,167,0.15);color:var(--accent);">&#127788;</span> 2. Conveccion &mdash; transmision por movimiento de fluido</h3>
+                <p>Cuando un fluido (liquido o gas) se calienta, se expande, baja su densidad y <strong>asciende</strong>. El fluido frio, mas denso, baja para ocupar su lugar. Este ciclo crea <em>corrientes de conveccion</em> que transportan calor.</p>
+                <div class="info-box theory">
+                    <div class="box-title">Conveccion natural vs forzada</div>
+                    <ul>
+                        <li><strong>Natural:</strong> el movimiento del fluido se debe solo a diferencias de densidad (radiador, hervir agua, viento por calentamiento solar).</li>
+                        <li><strong>Forzada:</strong> una bomba o ventilador impulsa el fluido (calefaccion central, refrigerador de PC, secador de pelo).</li>
+                    </ul>
+                </div>
+                <h4>Ley de enfriamiento de Newton</h4>
+                <p>La tasa de calor por conveccion entre una superficie y un fluido es proporcional a la diferencia de temperatura:</p>
+                <div class="formula">
+                    Q / t = h &middot; A &middot; (T<sub>s</sub> &minus; T<sub>f</sub>)
+                </div>
+                <ul>
+                    <li><strong>h</strong> = Coeficiente de conveccion (W/m&sup2;&middot;K)</li>
+                    <li><strong>T<sub>s</sub></strong> = Temperatura de la superficie</li>
+                    <li><strong>T<sub>f</sub></strong> = Temperatura del fluido lejos de la superficie</li>
+                </ul>
+                <div class="info-box example">
+                    <div class="box-title">Valores tipicos de h (W/m&sup2;&middot;K)</div>
+                    <ul>
+                        <li><strong>Aire en conveccion natural:</strong> 5 &ndash; 25</li>
+                        <li><strong>Aire en conveccion forzada:</strong> 25 &ndash; 250</li>
+                        <li><strong>Agua en conveccion natural:</strong> 100 &ndash; 1000</li>
+                        <li><strong>Agua hirviendo:</strong> 2,500 &ndash; 25,000</li>
+                        <li><strong>Vapor condensandose:</strong> 5,000 &ndash; 100,000</li>
+                    </ul>
+                </div>
+            </div>
+
+            <!-- ===== RADIACION ===== -->
+            <div class="content-block fade-in">
+                <h3><span class="icon" style="background:rgba(255,214,0,0.15);color:var(--warning);">&#9728;</span> 3. Radiacion &mdash; transmision por ondas electromagneticas</h3>
+                <p>Todo cuerpo a temperatura T &gt; 0 K <strong>emite ondas electromagneticas</strong> (infrarrojas, visibles, ultravioletas...). A diferencia de la conduccion y conveccion, <em>la radiacion no necesita medio material</em>: viaja en el vacio.</p>
+                <div class="info-box theory">
+                    <div class="box-title">Ley de Stefan-Boltzmann</div>
+                    <p>La potencia radiada por un cuerpo es proporcional a la cuarta potencia de su temperatura absoluta:</p>
+                </div>
+                <div class="formula">
+                    Q / t = &epsilon; &middot; &sigma; &middot; A &middot; T<sup>4</sup>
+                </div>
+                <ul>
+                    <li><strong>&epsilon;</strong> = Emisividad (0 a 1, sin unidades). Cuerpo negro: &epsilon; = 1.</li>
+                    <li><strong>&sigma;</strong> = Constante de Stefan-Boltzmann = 5.67 &times; 10<sup>-8</sup> W/(m&sup2;&middot;K<sup>4</sup>)</li>
+                    <li><strong>T</strong> = Temperatura absoluta (K) &mdash; &iexcl;debe estar en Kelvin!</li>
+                </ul>
+                <div class="info-box warning">
+                    <div class="box-title">&iexcl;Cuidado con T<sup>4</sup>!</div>
+                    <p>Como la potencia depende de T a la cuarta, pequenos cambios de temperatura producen <strong>grandes</strong> cambios en la radiacion. Duplicar la temperatura (en K) significa multiplicar por 16 la radiacion emitida.</p>
+                </div>
+                <h4>Balance neto entre dos cuerpos</h4>
+                <p>Un cuerpo a temperatura T<sub>1</sub> en un ambiente a T<sub>2</sub> intercambia calor neto:</p>
+                <div class="formula">
+                    Q / t = &epsilon;&sigma;A (T<sub>1</sub><sup>4</sup> &minus; T<sub>2</sub><sup>4</sup>)
+                </div>
+                <div class="info-box example">
+                    <div class="box-title">Emisividades aproximadas</div>
+                    <ul>
+                        <li><strong>Cuerpo negro ideal:</strong> 1.00 &nbsp; <strong>Piel humana:</strong> 0.98</li>
+                        <li><strong>Madera:</strong> 0.90 &nbsp; <strong>Ladrillo:</strong> 0.93 &nbsp; <strong>Pintura blanca:</strong> 0.85</li>
+                        <li><strong>Acero oxidado:</strong> 0.80 &nbsp; <strong>Aluminio pulido:</strong> 0.05 (refleja mas de lo que emite)</li>
+                        <li><strong>Plata pulida:</strong> 0.02 &mdash; &iexcl;por eso se forran de plata los termos!</li>
+                    </ul>
+                </div>
+            </div>
+
+            <!-- ===== EJEMPLOS RESUELTOS ===== -->
+            <div class="content-block fade-in">
+                <h3><span class="icon" style="background:rgba(255,101,132,0.15);color:var(--secondary);">&#128270;</span> Ejemplos resueltos</h3>
+
+                <div class="info-box example">
+                    <div class="box-title">Ejemplo 1: Conduccion en una ventana</div>
+                    <p><strong>Una ventana de vidrio de 1.2 m &times; 1.5 m y 5 mm de espesor (k = 0.8 W/m&middot;K) tiene 20&deg;C en el interior y -2&deg;C en el exterior. &iquest;Cuanto calor se pierde por minuto?</strong></p>
+                    <div class="steps">
+                        <div class="step">
+                            <div class="step-num">1</div>
+                            <div class="step-content">
+                                <p>Datos: A = 1.2 &times; 1.5 = 1.8 m&sup2; &nbsp;&nbsp; L = 0.005 m &nbsp;&nbsp; &Delta;T = 22&deg;C = 22 K</p>
+                            </div>
+                        </div>
+                        <div class="step">
+                            <div class="step-num">2</div>
+                            <div class="step-content">
+                                <p class="math">Q/t = kA&Delta;T/L = (0.8 &times; 1.8 &times; 22) / 0.005</p>
+                                <p class="math">Q/t = 31.68 / 0.005 = <strong>6,336 W</strong></p>
+                            </div>
+                        </div>
+                        <div class="step">
+                            <div class="step-num">3</div>
+                            <div class="step-content">
+                                <p>Por minuto: Q = 6,336 &times; 60 = <strong>380,160 J = 380 kJ/min</strong></p>
+                            </div>
+                        </div>
+                    </div>
+                    <p>&iexcl;Equivalente a 6 estufas de 1000 W trabajando solo para compensar esa ventana! Por eso existen las ventanas de doble vidrio: el aire entre paneles tiene k 30 veces menor.</p>
+                </div>
+
+                <div class="info-box example" style="margin-top:1.5rem;">
+                    <div class="box-title">Ejemplo 2: Calor para hervir agua</div>
+                    <p><strong>&iquest;Cuanta energia se necesita para calentar 1.5 L de agua de 20&deg;C a 100&deg;C? (c<sub>agua</sub> = 4186 J/kg&middot;K, &rho; = 1000 kg/m&sup3;)</strong></p>
+                    <div class="steps">
+                        <div class="step">
+                            <div class="step-num">1</div>
+                            <div class="step-content">
+                                <p>Masa: m = &rho;V = 1000 &times; 0.0015 = <strong>1.5 kg</strong></p>
+                            </div>
+                        </div>
+                        <div class="step">
+                            <div class="step-num">2</div>
+                            <div class="step-content">
+                                <p class="math">Q = mc&Delta;T = 1.5 &times; 4186 &times; 80</p>
+                                <p class="math">Q = <strong>502,320 J &asymp; 502 kJ</strong></p>
+                            </div>
+                        </div>
+                        <div class="step">
+                            <div class="step-num">3</div>
+                            <div class="step-content">
+                                <p>Con una resistencia de 1500 W: t = Q/P = 502,320/1500 = <strong>335 s &asymp; 5.6 min</strong></p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="info-box example" style="margin-top:1.5rem;">
+                    <div class="box-title">Ejemplo 3: Radiacion del cuerpo humano</div>
+                    <p><strong>Una persona con piel a 33&deg;C (&epsilon; = 0.98) y area corporal de 1.7 m&sup2; esta en un cuarto a 20&deg;C. Calcula el calor neto emitido por radiacion.</strong></p>
+                    <div class="steps">
+                        <div class="step">
+                            <div class="step-num">1</div>
+                            <div class="step-content">
+                                <p>Conversion: T<sub>piel</sub> = 306 K, T<sub>amb</sub> = 293 K</p>
+                            </div>
+                        </div>
+                        <div class="step">
+                            <div class="step-num">2</div>
+                            <div class="step-content">
+                                <p class="math">Q/t = &epsilon;&sigma;A(T<sub>1</sub><sup>4</sup> &minus; T<sub>2</sub><sup>4</sup>)</p>
+                                <p class="math">= 0.98 &times; 5.67&times;10<sup>-8</sup> &times; 1.7 &times; (306<sup>4</sup> &minus; 293<sup>4</sup>)</p>
+                                <p class="math">= 9.44&times;10<sup>-8</sup> &times; (8.77&times;10<sup>9</sup> &minus; 7.37&times;10<sup>9</sup>)</p>
+                                <p class="math">= 9.44&times;10<sup>-8</sup> &times; 1.4&times;10<sup>9</sup> &asymp; <strong>132 W</strong></p>
+                            </div>
+                        </div>
+                    </div>
+                    <p>&iexcl;Estas radiando como una bombilla incandescente! Por eso una sala con muchas personas se calienta sola.</p>
+                </div>
+            </div>
+
+            <!-- ===== SIMULADOR CANVAS ===== -->
+            <div class="content-block fade-in">
+                <h3><span class="icon" style="background:rgba(108,99,255,0.15);color:var(--primary-light);">&#127918;</span> Simulador interactivo &mdash; Conduccion en una barra</h3>
+                <p>Observa como el calor se propaga por una barra desde el extremo caliente al frio. El color representa la temperatura local. Cambia el material para ver como su conductividad afecta la rapidez de propagacion.</p>
+                <div class="sim-wrapper">
+                    <div class="sim-controls">
+                        <div class="sim-control-group">
+                            <label>Temperatura caliente (&deg;C):
+                                <input type="range" id="simTh" min="50" max="500" step="10" value="250">
+                                <span class="sim-value" id="simThVal">250 &deg;C</span>
+                            </label>
+                        </div>
+                        <div class="sim-control-group">
+                            <label>Temperatura fria (&deg;C):
+                                <input type="range" id="simTc" min="-30" max="30" step="1" value="20">
+                                <span class="sim-value" id="simTcVal">20 &deg;C</span>
+                            </label>
+                        </div>
+                        <div class="sim-control-group">
+                            <label>Material:
+                                <select id="simMat">
+                                    <option value="401" data-name="Cobre">Cobre (k = 401)</option>
+                                    <option value="237" data-name="Aluminio">Aluminio (k = 237)</option>
+                                    <option value="50" data-name="Acero" selected>Acero (k = 50)</option>
+                                    <option value="0.8" data-name="Vidrio">Vidrio (k = 0.8)</option>
+                                    <option value="0.15" data-name="Madera">Madera (k = 0.15)</option>
+                                    <option value="0.04" data-name="Lana mineral">Lana mineral (k = 0.04)</option>
+                                </select>
+                            </label>
+                        </div>
+                    </div>
+                    <div class="sim-canvas-wrap">
+                        <canvas id="heatCanvas" width="720" height="380" style="width:100%;border-radius:12px;background:var(--bg);"></canvas>
+                    </div>
+                    <div class="sim-result" id="simHeatResult">
+                        Flujo = &mdash; W &nbsp;|&nbsp; Gradiente = &mdash;
+                    </div>
+                </div>
+            </div>
+
+            <!-- ===== EJERCICIOS ===== -->
+            <div class="exercises-section fade-in">
+                <h3><span class="icon" style="background:rgba(255,101,132,0.15);color:var(--secondary);">&#9998;</span> Ejercicios &mdash; Transferencia de Calor</h3>
+
+                <div class="exercise-item">
+                    <div class="exercise-header">
+                        <span class="exercise-label">Ejercicio 1</span>
+                        <span class="difficulty easy">Facil</span>
+                    </div>
+                    <p>Una pared de ladrillo (k = 0.7 W/m&middot;K) de 6 m&sup2; y 20 cm de espesor tiene 25&deg;C dentro y 5&deg;C fuera. Calcula el flujo de calor.</p>
+                    <button class="solution-toggle" onclick="toggleSolution(this)">Ver solucion &#9660;</button>
+                    <div class="solution">
+                        <p><span class="step-math">Q/t = (0.7 &times; 6 &times; 20) / 0.20 = 84 / 0.20 = <strong>420 W</strong></span></p>
+                    </div>
+                </div>
+
+                <div class="exercise-item">
+                    <div class="exercise-header">
+                        <span class="exercise-label">Ejercicio 2</span>
+                        <span class="difficulty easy">Facil</span>
+                    </div>
+                    <p>&iquest;Cuantas calorias se necesitan para subir 250 g de aluminio (c = 900 J/kg&middot;K) de 20&deg;C a 80&deg;C?</p>
+                    <button class="solution-toggle" onclick="toggleSolution(this)">Ver solucion &#9660;</button>
+                    <div class="solution">
+                        <p><span class="step-math">Q = mc&Delta;T = 0.25 &times; 900 &times; 60 = <strong>13,500 J</strong></span></p>
+                        <p><span class="step-math">En calorias: 13,500 / 4.184 &asymp; <strong>3,226 cal &asymp; 3.23 kcal</strong></span></p>
+                    </div>
+                </div>
+
+                <div class="exercise-item">
+                    <div class="exercise-header">
+                        <span class="exercise-label">Ejercicio 3</span>
+                        <span class="difficulty medium">Medio</span>
+                    </div>
+                    <p>Un radiador de 0.8 m&sup2; a 70&deg;C entrega calor al aire de un cuarto a 20&deg;C (h = 12 W/m&sup2;&middot;K en conveccion natural). &iquest;Que potencia entrega?</p>
+                    <button class="solution-toggle" onclick="toggleSolution(this)">Ver solucion &#9660;</button>
+                    <div class="solution">
+                        <p><span class="step-math">Q/t = hA&Delta;T = 12 &times; 0.8 &times; 50 = <strong>480 W</strong></span></p>
+                    </div>
+                </div>
+
+                <div class="exercise-item">
+                    <div class="exercise-header">
+                        <span class="exercise-label">Ejercicio 4</span>
+                        <span class="difficulty medium">Medio</span>
+                    </div>
+                    <p>El filamento de tungsteno de un foco (&epsilon; = 0.35, A = 0.6 cm&sup2;) opera a 2700 K. &iquest;Cuanta potencia radia?</p>
+                    <button class="solution-toggle" onclick="toggleSolution(this)">Ver solucion &#9660;</button>
+                    <div class="solution">
+                        <p>A = 6&times;10<sup>-5</sup> m&sup2;</p>
+                        <p><span class="step-math">Q/t = 0.35 &times; 5.67&times;10<sup>-8</sup> &times; 6&times;10<sup>-5</sup> &times; (2700)<sup>4</sup></span></p>
+                        <p><span class="step-math">= 0.35 &times; 5.67&times;10<sup>-8</sup> &times; 6&times;10<sup>-5</sup> &times; 5.31&times;10<sup>13</sup></span></p>
+                        <p><span class="step-math">&asymp; <strong>63.3 W</strong></span></p>
+                        <p>Por eso un foco incandescente "de 60 W" se siente caliente: casi toda esa potencia termina en radiacion infrarroja, no en luz visible.</p>
+                    </div>
+                </div>
+
+                <div class="exercise-item">
+                    <div class="exercise-header">
+                        <span class="exercise-label">Ejercicio 5</span>
+                        <span class="difficulty hard">Dificil</span>
+                    </div>
+                    <p>Una pared compuesta tiene dos capas en serie: ladrillo (k<sub>1</sub> = 0.7, L<sub>1</sub> = 15 cm) y aislante de lana (k<sub>2</sub> = 0.04, L<sub>2</sub> = 5 cm). El area es 10 m&sup2;. Si T<sub>interior</sub> = 22&deg;C y T<sub>exterior</sub> = -5&deg;C, calcula el flujo de calor y la temperatura en la interfaz entre capas.</p>
+                    <button class="solution-toggle" onclick="toggleSolution(this)">Ver solucion &#9660;</button>
+                    <div class="solution">
+                        <p><strong>Paso 1 &mdash; Resistencias termicas (R = L/kA):</strong></p>
+                        <p><span class="step-math">R<sub>1</sub> = 0.15 / (0.7 &times; 10) = 0.0214 K/W</span></p>
+                        <p><span class="step-math">R<sub>2</sub> = 0.05 / (0.04 &times; 10) = 0.125 K/W</span></p>
+                        <p><span class="step-math">R<sub>total</sub> = 0.0214 + 0.125 = 0.1464 K/W</span></p>
+                        <p><strong>Paso 2 &mdash; Flujo de calor:</strong></p>
+                        <p><span class="step-math">Q/t = &Delta;T / R<sub>total</sub> = 27 / 0.1464 = <strong>184.4 W</strong></span></p>
+                        <p><strong>Paso 3 &mdash; Temperatura en la interfaz:</strong></p>
+                        <p><span class="step-math">T<sub>int</sub> = T<sub>cal</sub> &minus; (Q/t)&middot;R<sub>1</sub> = 22 &minus; 184.4&times;0.0214 = 22 &minus; 3.95 = <strong>18.05&deg;C</strong></span></p>
+                        <p>El aislante delgado (5 cm) sostiene la mayor parte del salto de temperatura: 23&deg;C. La capa gruesa de ladrillo solo aporta 4&deg;C de aislamiento.</p>
+                    </div>
+                </div>
+
+            </div>
+
+        </div>
+    </section>
+
+    <footer>
+        <div class="container">
+            <p style="margin-bottom:0.5rem; font-size:1rem; color:var(--text-muted);">Mod 08 &mdash; Matematicas y Representaciones del Sistema Natural!</p>
+            <p>Contenido educativo &middot; 16 temas &middot; Preparatoria</p>
+        </div>
+    </footer>
+
+    <script>
+        /* === Utilidades compartidas === */
+        function toggleSolution(btn) {
+            const solution = btn.nextElementSibling;
+            solution.classList.toggle('visible');
+            btn.textContent = solution.classList.contains('visible') ? 'Ocultar solucion ▲' : 'Ver solucion ▼';
+        }
+        const observer = new IntersectionObserver((entries) => {
+            entries.forEach(entry => { if (entry.isIntersecting) entry.target.classList.add('visible'); });
+        }, { threshold: 0.1 });
+        document.querySelectorAll('.fade-in').forEach(el => observer.observe(el));
+        const backBtn = document.getElementById('backToTop');
+        window.addEventListener('scroll', () => { backBtn.classList.toggle('show', window.scrollY > 400); });
+        const themeBtn = document.getElementById('themeToggle');
+        if (themeBtn) {
+            const syncThemeAria = () => {
+                const isLight = document.documentElement.getAttribute('data-theme') === 'light';
+                themeBtn.setAttribute('aria-pressed', isLight ? 'true' : 'false');
+                themeBtn.setAttribute('aria-label', isLight ? 'Cambiar a modo oscuro' : 'Cambiar a modo claro');
+            };
+            syncThemeAria();
+            themeBtn.addEventListener('click', () => {
+                const current = document.documentElement.getAttribute('data-theme') === 'light' ? 'light' : 'dark';
+                const next = current === 'light' ? 'dark' : 'light';
+                document.documentElement.setAttribute('data-theme', next);
+                try { localStorage.setItem('theme', next); } catch (e) {}
+                syncThemeAria();
+            });
+        }
+
+        /* === Simulador: Conduccion en barra === */
+        (function() {
+            const canvas = document.getElementById('heatCanvas');
+            if (!canvas) return;
+            const ctx = canvas.getContext('2d');
+            const CW = canvas.width, CH = canvas.height;
+
+            const sliderTh = document.getElementById('simTh');
+            const sliderTc = document.getElementById('simTc');
+            const selMat   = document.getElementById('simMat');
+            const labTh = document.getElementById('simThVal');
+            const labTc = document.getElementById('simTcVal');
+            const resultDiv = document.getElementById('simHeatResult');
+
+            const N = 80;        // celdas a lo largo de la barra
+            const dx = 1 / N;    // longitud relativa
+            const T = new Float32Array(N);
+            const Tnext = new Float32Array(N);
+
+            // Geometria de la barra en canvas
+            const barX = 60, barY = 130, barW = CW - 120, barH = 90;
+
+            // Parametros fisicos (escalados para visualizacion)
+            // diffusividad ~ k / (rho*c). Usamos k directo escalado.
+            function diffusivity(k) {
+                // Mapeo log para que materiales muy distintos se vean
+                return 0.18 * Math.pow(k / 50, 0.55);
+            }
+
+            let Th = 250, Tc = 20, k = 50, matName = 'Acero';
+            let time = 0;
+
+            function syncControls() {
+                Th = parseFloat(sliderTh.value);
+                Tc = parseFloat(sliderTc.value);
+                k  = parseFloat(selMat.value);
+                matName = selMat.options[selMat.selectedIndex].dataset.name;
+                labTh.textContent = Th.toFixed(0) + ' °C';
+                labTc.textContent = Tc.toFixed(0) + ' °C';
+            }
+            sliderTh.addEventListener('input', syncControls);
+            sliderTc.addEventListener('input', syncControls);
+            selMat.addEventListener('change', syncControls);
+
+            // Inicializa con temperatura intermedia
+            function reset() {
+                for (let i = 0; i < N; i++) T[i] = Tc;
+                T[0] = Th;
+            }
+            reset();
+
+            // Mapeo temperatura -> color (azul frio -> rojo caliente)
+            function tempColor(t, lo, hi) {
+                const frac = Math.max(0, Math.min(1, (t - lo) / (hi - lo + 1e-6)));
+                // 5 paradas: azul -> cian -> verde -> amarillo -> rojo
+                const stops = [
+                    { p: 0.00, c: [30, 90, 220] },
+                    { p: 0.25, c: [0, 200, 220] },
+                    { p: 0.50, c: [50, 220, 80] },
+                    { p: 0.75, c: [255, 200, 40] },
+                    { p: 1.00, c: [240, 50, 30] },
+                ];
+                let i = 0;
+                while (i < stops.length - 1 && frac > stops[i + 1].p) i++;
+                const a = stops[i], b = stops[Math.min(i + 1, stops.length - 1)];
+                const local = (frac - a.p) / Math.max(0.001, (b.p - a.p));
+                const r = a.c[0] + (b.c[0] - a.c[0]) * local;
+                const g = a.c[1] + (b.c[1] - a.c[1]) * local;
+                const bl = a.c[2] + (b.c[2] - a.c[2]) * local;
+                return 'rgb(' + (r|0) + ',' + (g|0) + ',' + (bl|0) + ')';
+            }
+
+            function step() {
+                const alpha = diffusivity(k);
+                // CFL-safe dt
+                const dt = 0.4 * dx * dx / Math.max(0.001, alpha);
+                // Difusion 1D explicita
+                T[0] = Th;
+                T[N - 1] = Tc;
+                for (let i = 1; i < N - 1; i++) {
+                    Tnext[i] = T[i] + alpha * dt / (dx * dx) * (T[i + 1] - 2 * T[i] + T[i - 1]);
+                }
+                for (let i = 1; i < N - 1; i++) T[i] = Tnext[i];
+            }
+
+            function palette() {
+                const light = document.documentElement.getAttribute('data-theme') === 'light';
+                return light ? {
+                    bg1: '#FFFFFF', bg2: '#EEF0F8',
+                    wire: '#9094ad', text: '#0F0E17',
+                    textDim: 'rgba(15,14,23,0.55)',
+                    textMute: 'rgba(15,14,23,0.85)'
+                } : {
+                    bg1: '#0a0a1a', bg2: '#12122a',
+                    wire: '#4a4a80', text: '#ffffff',
+                    textDim: 'rgba(255,255,255,0.5)',
+                    textMute: 'rgba(255,255,255,0.85)'
+                };
+            }
+
+            function draw() {
+                time += 0.016;
+                // Avanza varios pasos por frame para acelerar
+                for (let s = 0; s < 4; s++) step();
+
+                const C = palette();
+
+                // Fondo
+                ctx.clearRect(0, 0, CW, CH);
+                const bg = ctx.createLinearGradient(0, 0, 0, CH);
+                bg.addColorStop(0, C.bg1);
+                bg.addColorStop(1, C.bg2);
+                ctx.fillStyle = bg;
+                ctx.fillRect(0, 0, CW, CH);
+
+                // Pintar barra
+                const cellW = barW / N;
+                const tLo = Math.min(Tc, Th) - 5;
+                const tHi = Math.max(Tc, Th) + 5;
+                for (let i = 0; i < N; i++) {
+                    ctx.fillStyle = tempColor(T[i], tLo, tHi);
+                    ctx.fillRect(barX + i * cellW, barY, cellW + 1, barH);
+                }
+                // Borde de barra
+                ctx.strokeStyle = C.wire;
+                ctx.lineWidth = 2;
+                ctx.strokeRect(barX, barY, barW, barH);
+
+                // Aletas calor/frio (simbolos)
+                ctx.fillStyle = '#ff5555';
+                ctx.beginPath();
+                ctx.roundRect(barX - 50, barY - 20, 50, barH + 40, [10, 0, 0, 10]);
+                ctx.fill();
+                ctx.fillStyle = '#5599ff';
+                ctx.beginPath();
+                ctx.roundRect(barX + barW, barY - 20, 50, barH + 40, [0, 10, 10, 0]);
+                ctx.fill();
+
+                // Labels temperatura (siempre blancos sobre las aletas de color)
+                ctx.fillStyle = '#fff';
+                ctx.font = 'bold 14px sans-serif';
+                ctx.textAlign = 'center';
+                ctx.fillText(Th.toFixed(0) + '°C', barX - 25, barY + barH / 2 + 5);
+                ctx.fillText(Tc.toFixed(0) + '°C', barX + barW + 25, barY + barH / 2 + 5);
+
+                // Curva de temperatura
+                ctx.strokeStyle = C.textMute;
+                ctx.lineWidth = 2;
+                ctx.beginPath();
+                const curveY0 = 280, curveY1 = 355;
+                for (let i = 0; i < N; i++) {
+                    const x = barX + i * cellW + cellW / 2;
+                    const frac = (T[i] - tLo) / (tHi - tLo + 1e-6);
+                    const y = curveY1 - frac * (curveY1 - curveY0);
+                    if (i === 0) ctx.moveTo(x, y); else ctx.lineTo(x, y);
+                }
+                ctx.stroke();
+
+                // Eje del grafico
+                ctx.strokeStyle = C.wire;
+                ctx.lineWidth = 1;
+                ctx.beginPath();
+                ctx.moveTo(barX, curveY1); ctx.lineTo(barX + barW, curveY1);
+                ctx.stroke();
+                ctx.fillStyle = C.textDim;
+                ctx.font = '11px sans-serif';
+                ctx.textAlign = 'left';
+                ctx.fillText('Perfil de temperatura T(x)', barX, curveY0 - 6);
+
+                // Titulo
+                ctx.fillStyle = C.text;
+                ctx.font = 'bold 16px sans-serif';
+                ctx.textAlign = 'center';
+                ctx.fillText('Barra de ' + matName + '   (k = ' + k + ' W/m·K)', CW / 2, 50);
+
+                // Flecha de flujo de calor
+                ctx.fillStyle = 'rgba(255,170,40,0.85)';
+                ctx.font = '13px sans-serif';
+                ctx.fillText('→ Flujo de calor Q', CW / 2, 90);
+
+                // Flujo estacionario teorico Q/t = kA*dT/L  (A relativa = 1, L relativa = 1)
+                const A_real = 0.01; // 1 cm^2 supuesta
+                const L_real = 0.30; // 30 cm
+                const dT = Th - Tc;
+                const Q = k * A_real * dT / L_real;
+                resultDiv.innerHTML =
+                    'Q/t (estacionario) = <strong>' + Q.toFixed(1) + ' W</strong>' +
+                    '  |  ' +
+                    'Gradiente dT/dx = <strong>' + (dT / L_real).toFixed(0) + ' K/m</strong>' +
+                    '  |  ' +
+                    'ΔT = <strong>' + dT.toFixed(0) + ' K</strong>';
+
+                requestAnimationFrame(draw);
+            }
+
+            syncControls();
+            reset();
+            draw();
+
+            // Reset cuando se cambia material o temperaturas
+            [sliderTh, sliderTc, selMat].forEach(el => el.addEventListener('change', reset));
+        })();
+    </script>
+</body>
+</html>

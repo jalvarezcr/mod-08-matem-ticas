@@ -1,0 +1,707 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Tema 14 - Ley de Coulomb | Mod 08</title>
+    <link rel="stylesheet" href="styles.css">
+    <script>
+        (function() {
+            try {
+                var t = localStorage.getItem('theme');
+                if (!t) {
+                    t = (window.matchMedia && window.matchMedia('(prefers-color-scheme: light)').matches) ? 'light' : 'dark';
+                }
+                document.documentElement.setAttribute('data-theme', t);
+            } catch (e) {
+                document.documentElement.setAttribute('data-theme', 'dark');
+            }
+        })();
+    </script>
+</head>
+<body>
+
+    <nav class="topic-nav">
+        <a href="index.html" class="back-link">&#9664; Volver al indice</a>
+        <span class="topic-nav-title">Tema 14 &mdash; Ley de Coulomb</span>
+    </nav>
+
+    <button class="theme-toggle" id="themeToggle" type="button" aria-label="Cambiar entre modo claro y oscuro" title="Cambiar tema">
+        <svg class="icon-sun" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><circle cx="12" cy="12" r="4"/><path d="M12 2v2M12 20v2M4.93 4.93l1.41 1.41M17.66 17.66l1.41 1.41M2 12h2M20 12h2M4.93 19.07l1.41-1.41M17.66 6.34l1.41-1.41"/></svg>
+        <svg class="icon-moon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M21 12.79A9 9 0 1 1 11.21 3 7 7 0 0 0 21 12.79z"/></svg>
+    </button>
+
+    <a href="#top" class="back-to-top" id="backToTop">&#9650;</a>
+
+    <section class="tema tema-page" id="top">
+        <div class="container">
+            <div class="tema-header fade-in">
+                <div class="tema-number even">Tema 14 &mdash; Electrostatica</div>
+                <h2>Ley de Coulomb</h2>
+                <p class="intro">&iquest;Por que se te ponen los cabellos de punta despues de frotar un globo? &iquest;Por que un papel salta hacia un boligrafo cargado? La <strong>fuerza electrica</strong> es una de las cuatro interacciones fundamentales del universo. Charles-Augustin de Coulomb, en 1785, midio con una balanza de torsion como dos cargas se atraen o repelen, y encontro una ley sorprendentemente similar a la gravitacion: la fuerza disminuye con el cuadrado de la distancia.</p>
+            </div>
+
+            <!-- ===== CARGA ELECTRICA ===== -->
+            <div class="content-block fade-in">
+                <h3><span class="icon" style="background:rgba(255,214,0,0.15);color:var(--warning);">&#9889;</span> La carga electrica</h3>
+                <p>La carga (q) es una propiedad fundamental de la materia. Solo existen dos tipos:</p>
+                <ul>
+                    <li><strong>Positiva (+):</strong> los protones la portan.</li>
+                    <li><strong>Negativa (&minus;):</strong> los electrones la portan.</li>
+                </ul>
+                <div class="info-box theory">
+                    <div class="box-title">Reglas fundamentales</div>
+                    <ul>
+                        <li><strong>Cargas iguales se repelen</strong>: + con +, &minus; con &minus;.</li>
+                        <li><strong>Cargas opuestas se atraen</strong>: + con &minus;.</li>
+                        <li><strong>La carga se conserva</strong>: en cualquier proceso, la carga total se mantiene constante.</li>
+                        <li><strong>La carga esta cuantizada</strong>: viene en multiplos enteros de la carga del electron.</li>
+                    </ul>
+                </div>
+                <h4>Carga elemental</h4>
+                <div class="formula">
+                    e = 1.602 &times; 10<sup>&minus;19</sup> C
+                </div>
+                <p>La unidad SI de carga es el <strong>Coulomb (C)</strong>. 1 C es una cantidad enorme: aproximadamente 6.24 &times; 10<sup>18</sup> electrones. Por eso, en electrostatica, manejamos micro- y nano-Coulombs:</p>
+                <ul>
+                    <li>1 mC = 10<sup>&minus;3</sup> C</li>
+                    <li>1 &mu;C = 10<sup>&minus;6</sup> C</li>
+                    <li>1 nC = 10<sup>&minus;9</sup> C</li>
+                </ul>
+            </div>
+
+            <!-- ===== LEY DE COULOMB ===== -->
+            <div class="content-block fade-in">
+                <h3><span class="icon" style="background:rgba(108,99,255,0.15);color:var(--primary-light);">&#128279;</span> La Ley de Coulomb</h3>
+                <p>Coulomb descubrio que la fuerza entre dos cargas puntuales separadas una distancia r es:</p>
+                <div class="formula">
+                    F = k &middot; |q&#8321; &middot; q&#8322;| / r&sup2;
+                </div>
+                <ul>
+                    <li><strong>F</strong> = Magnitud de la fuerza electrica (N)</li>
+                    <li><strong>q&#8321;, q&#8322;</strong> = Cargas (C)</li>
+                    <li><strong>r</strong> = Distancia entre cargas (m)</li>
+                    <li><strong>k</strong> = Constante de Coulomb = 8.99 &times; 10<sup>9</sup> N&middot;m&sup2;/C&sup2;</li>
+                </ul>
+                <p>La constante k tambien se escribe como k = 1/(4&pi;&epsilon;<sub>0</sub>), donde &epsilon;<sub>0</sub> = 8.854 &times; 10<sup>-12</sup> C&sup2;/(N&middot;m&sup2;) es la permitividad del vacio.</p>
+
+                <div class="info-box theory">
+                    <div class="box-title">Direccion y sentido</div>
+                    <p>La formula solo da la <strong>magnitud</strong>. El sentido se determina visualmente:</p>
+                    <ul>
+                        <li>Si q&#8321; y q&#8322; tienen el <strong>mismo signo</strong> &rarr; fuerza repulsiva (apunta hacia afuera).</li>
+                        <li>Si tienen <strong>signos opuestos</strong> &rarr; fuerza atractiva (apunta hacia la otra carga).</li>
+                    </ul>
+                    <p>Por la tercera ley de Newton, la fuerza sobre q&#8321; debida a q&#8322; es igual y opuesta a la fuerza sobre q&#8322; debida a q&#8321;.</p>
+                </div>
+
+                <h4>Comparacion con la gravitacion</h4>
+                <p>La forma matematica es identica a F = Gm&#8321;m&#8322;/r&sup2;, pero:</p>
+                <ul>
+                    <li>La fuerza electrica es <strong>~10<sup>36</sup> veces mas intensa</strong> que la gravitatoria entre dos electrones.</li>
+                    <li>La gravedad siempre atrae; la electrica atrae o repele segun los signos.</li>
+                    <li>A escala cosmica domina la gravedad porque la carga neta tiende a ser cero.</li>
+                </ul>
+            </div>
+
+            <!-- ===== CAMPO ELECTRICO ===== -->
+            <div class="content-block fade-in">
+                <h3><span class="icon" style="background:rgba(0,201,167,0.15);color:var(--accent);">&#127760;</span> Campo electrico</h3>
+                <p>Una carga modifica el espacio que la rodea creando un <strong>campo electrico E</strong>. Otra carga colocada en ese campo experimenta una fuerza F = qE.</p>
+                <div class="formula">
+                    E = F / q = k &middot; |Q| / r&sup2;
+                </div>
+                <ul>
+                    <li><strong>E</strong> = Campo electrico creado por Q en el punto a distancia r (N/C o V/m)</li>
+                </ul>
+                <div class="info-box example">
+                    <div class="box-title">Lineas de campo</div>
+                    <p>Salen de las cargas positivas y entran a las negativas. La densidad de lineas indica la intensidad del campo. Nunca se cruzan.</p>
+                </div>
+
+                <h4>Principio de superposicion</h4>
+                <p>Si hay varias cargas, la fuerza neta sobre una carga de prueba es la <strong>suma vectorial</strong> de todas las fuerzas individuales:</p>
+                <div class="formula">
+                    F<sub>neta</sub> = F<sub>1</sub> + F<sub>2</sub> + F<sub>3</sub> + ...
+                </div>
+                <p>Cada par de cargas interactua independientemente, y el resultado total es la suma vectorial.</p>
+            </div>
+
+            <!-- ===== APLICACIONES ===== -->
+            <div class="content-block fade-in">
+                <h3><span class="icon" style="background:rgba(255,214,0,0.15);color:var(--warning);">&#128302;</span> Aplicaciones de la electrostatica</h3>
+                <h4>1. Fotocopiadoras y laser</h4>
+                <p>Un tambor con carga electrostatica atrae el polvo de toner solo donde fue "descargado" por la luz reflejada del documento. Asi se imprime la imagen sobre papel.</p>
+                <h4>2. Precipitadores electrostaticos</h4>
+                <p>En chimeneas industriales, particulas de humo cargadas son atraidas por electrodos opuestos, reduciendo emisiones contaminantes hasta en 99%.</p>
+                <h4>3. Pintura electrostatica</h4>
+                <p>Las gotas de pintura cargadas son atraidas por el objeto puesto a tierra, reduciendo desperdicio y mejorando la cobertura uniforme.</p>
+                <h4>4. Pararrayos y descargas atmosfericas</h4>
+                <p>Una nube de tormenta puede acumular millones de coulombs. Cuando la diferencia de potencial supera ~3 MV/m (rigidez dielectrica del aire), el aire se ioniza y ocurre el rayo.</p>
+                <h4>5. Microelectronica</h4>
+                <p>Los transistores y memorias dependen del control preciso del flujo de cargas. Una descarga electrostatica de pocos kV destruye un chip moderno.</p>
+            </div>
+
+            <!-- ===== EJEMPLOS RESUELTOS ===== -->
+            <div class="content-block fade-in">
+                <h3><span class="icon" style="background:rgba(255,101,132,0.15);color:var(--secondary);">&#128270;</span> Ejemplos resueltos</h3>
+
+                <div class="info-box example">
+                    <div class="box-title">Ejemplo 1: Dos cargas en linea</div>
+                    <p><strong>q&#8321; = +3 &mu;C y q&#8322; = &minus;5 &mu;C estan separadas 20 cm en el aire. Calcula la fuerza entre ambas.</strong></p>
+                    <div class="steps">
+                        <div class="step">
+                            <div class="step-num">1</div>
+                            <div class="step-content">
+                                <p>Convertir: q&#8321; = 3&times;10<sup>-6</sup> C, q&#8322; = 5&times;10<sup>-6</sup> C, r = 0.20 m</p>
+                            </div>
+                        </div>
+                        <div class="step">
+                            <div class="step-num">2</div>
+                            <div class="step-content">
+                                <p class="math">F = (8.99&times;10<sup>9</sup>) &times; (3&times;10<sup>-6</sup>)(5&times;10<sup>-6</sup>) / (0.20)<sup>2</sup></p>
+                                <p class="math">F = 8.99&times;10<sup>9</sup> &times; 1.5&times;10<sup>-11</sup> / 0.04</p>
+                                <p class="math">F = 0.1349 / 0.04 = <strong>3.37 N</strong></p>
+                            </div>
+                        </div>
+                        <div class="step">
+                            <div class="step-num">3</div>
+                            <div class="step-content">
+                                <p>Signos opuestos &rarr; <strong>fuerza atractiva</strong>. Cada carga es jalada hacia la otra con 3.37 N.</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="info-box example" style="margin-top:1.5rem;">
+                    <div class="box-title">Ejemplo 2: Efecto de duplicar la distancia</div>
+                    <p><strong>Si la distancia entre dos cargas se duplica, &iquest;como cambia la fuerza?</strong></p>
+                    <div class="steps">
+                        <div class="step">
+                            <div class="step-num">1</div>
+                            <div class="step-content">
+                                <p class="math">F&#8322;/F&#8321; = (r&#8321;/r&#8322;)<sup>2</sup> = (1/2)<sup>2</sup> = <strong>1/4</strong></p>
+                            </div>
+                        </div>
+                    </div>
+                    <p>La fuerza se reduce a la cuarta parte. Esta es la <em>ley del inverso del cuadrado</em>.</p>
+                </div>
+
+                <div class="info-box example" style="margin-top:1.5rem;">
+                    <div class="box-title">Ejemplo 3: Tres cargas alineadas (superposicion)</div>
+                    <p><strong>Tres cargas estan colocadas asi: q<sub>A</sub> = +2 &mu;C en x=0, q<sub>B</sub> = -3 &mu;C en x=0.10 m, q<sub>C</sub> = +1 &mu;C en x=0.30 m. Calcula la fuerza neta sobre q<sub>C</sub>.</strong></p>
+                    <div class="steps">
+                        <div class="step">
+                            <div class="step-num">1</div>
+                            <div class="step-content">
+                                <p><strong>Fuerza de A sobre C</strong> (r = 0.30 m, mismo signo &rarr; repulsiva, hacia +x):</p>
+                                <p class="math">F<sub>AC</sub> = 8.99e9 &times; (2e-6)(1e-6) / 0.09 = <strong>+0.200 N</strong></p>
+                            </div>
+                        </div>
+                        <div class="step">
+                            <div class="step-num">2</div>
+                            <div class="step-content">
+                                <p><strong>Fuerza de B sobre C</strong> (r = 0.20 m, signos opuestos &rarr; atractiva, hacia -x):</p>
+                                <p class="math">F<sub>BC</sub> = 8.99e9 &times; (3e-6)(1e-6) / 0.04 = <strong>-0.674 N</strong></p>
+                            </div>
+                        </div>
+                        <div class="step">
+                            <div class="step-num">3</div>
+                            <div class="step-content">
+                                <p class="math">F<sub>neta</sub> = +0.200 - 0.674 = <strong>-0.474 N</strong></p>
+                                <p>El signo negativo significa que q<sub>C</sub> es jalada hacia el origen.</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- ===== SIMULADOR CANVAS ===== -->
+            <div class="content-block fade-in">
+                <h3><span class="icon" style="background:rgba(108,99,255,0.15);color:var(--primary-light);">&#127918;</span> Simulador interactivo &mdash; Interaccion de cargas</h3>
+                <p>Arrastra cualquiera de las dos cargas con el mouse o cambia su magnitud con los controles. Observa el campo electrico, las lineas de fuerza y la magnitud/sentido de la fuerza entre ellas.</p>
+                <div class="sim-wrapper">
+                    <div class="sim-controls">
+                        <div class="sim-control-group">
+                            <label>Carga q&#8321; (&mu;C):
+                                <input type="range" id="cQ1" min="-10" max="10" step="0.5" value="4">
+                                <span class="sim-value" id="cQ1Val">+4.0 &mu;C</span>
+                            </label>
+                        </div>
+                        <div class="sim-control-group">
+                            <label>Carga q&#8322; (&mu;C):
+                                <input type="range" id="cQ2" min="-10" max="10" step="0.5" value="-3">
+                                <span class="sim-value" id="cQ2Val">-3.0 &mu;C</span>
+                            </label>
+                        </div>
+                        <div class="sim-control-group">
+                            <label><input type="checkbox" id="cShowField" checked> Mostrar campo electrico</label>
+                            <label style="margin-top:0.4rem;display:block;"><input type="checkbox" id="cShowLines"> Lineas de fuerza</label>
+                        </div>
+                    </div>
+                    <div class="sim-canvas-wrap">
+                        <canvas id="coulombCanvas" width="720" height="440" style="width:100%;border-radius:12px;background:var(--bg);"></canvas>
+                    </div>
+                    <div class="sim-result" id="coulombResult">
+                        F = &mdash; N
+                    </div>
+                </div>
+            </div>
+
+            <!-- ===== EJERCICIOS ===== -->
+            <div class="exercises-section fade-in">
+                <h3><span class="icon" style="background:rgba(255,101,132,0.15);color:var(--secondary);">&#9998;</span> Ejercicios &mdash; Ley de Coulomb</h3>
+
+                <div class="exercise-item">
+                    <div class="exercise-header">
+                        <span class="exercise-label">Ejercicio 1</span>
+                        <span class="difficulty easy">Facil</span>
+                    </div>
+                    <p>Calcula la fuerza electrica entre dos cargas de +2 &mu;C y +6 &mu;C separadas 15 cm. &iquest;Atractiva o repulsiva?</p>
+                    <button class="solution-toggle" onclick="toggleSolution(this)">Ver solucion &#9660;</button>
+                    <div class="solution">
+                        <p><span class="step-math">F = 8.99&times;10<sup>9</sup> &times; (2&times;10<sup>-6</sup>)(6&times;10<sup>-6</sup>) / (0.15)<sup>2</sup></span></p>
+                        <p><span class="step-math">F = 8.99&times;10<sup>9</sup> &times; 1.2&times;10<sup>-11</sup> / 0.0225 = <strong>4.79 N</strong></span></p>
+                        <p>Ambos signos positivos &rarr; <strong>repulsiva</strong>.</p>
+                    </div>
+                </div>
+
+                <div class="exercise-item">
+                    <div class="exercise-header">
+                        <span class="exercise-label">Ejercicio 2</span>
+                        <span class="difficulty easy">Facil</span>
+                    </div>
+                    <p>Una carga puntual de 5 nC crea un campo electrico. &iquest;Cuanto vale E a 0.5 m de distancia?</p>
+                    <button class="solution-toggle" onclick="toggleSolution(this)">Ver solucion &#9660;</button>
+                    <div class="solution">
+                        <p><span class="step-math">E = kQ/r&sup2; = 8.99&times;10<sup>9</sup> &times; 5&times;10<sup>-9</sup> / 0.25 = <strong>179.8 N/C</strong></span></p>
+                    </div>
+                </div>
+
+                <div class="exercise-item">
+                    <div class="exercise-header">
+                        <span class="exercise-label">Ejercicio 3</span>
+                        <span class="difficulty medium">Medio</span>
+                    </div>
+                    <p>Dos cargas iguales q se atraen con una fuerza F a una distancia d. Si una de las cargas se triplica y la distancia se reduce a la mitad, &iquest;cual es la nueva fuerza en terminos de F?</p>
+                    <button class="solution-toggle" onclick="toggleSolution(this)">Ver solucion &#9660;</button>
+                    <div class="solution">
+                        <p><span class="step-math">F<sub>nueva</sub>/F = (q' &middot; q) / (q &middot; q) &times; (d/d')<sup>2</sup></span></p>
+                        <p><span class="step-math">= 3 &times; (2)<sup>2</sup> = 3 &times; 4 = <strong>12F</strong></span></p>
+                    </div>
+                </div>
+
+                <div class="exercise-item">
+                    <div class="exercise-header">
+                        <span class="exercise-label">Ejercicio 4</span>
+                        <span class="difficulty medium">Medio</span>
+                    </div>
+                    <p>Dos esferas conductoras identicas tienen cargas q&#8321; = +6 &mu;C y q&#8322; = &minus;2 &mu;C. Se ponen en contacto y luego se separan 0.1 m. &iquest;Que fuerza experimentan ahora?</p>
+                    <button class="solution-toggle" onclick="toggleSolution(this)">Ver solucion &#9660;</button>
+                    <div class="solution">
+                        <p>Al estar en contacto, la carga se reparte por igual:</p>
+                        <p><span class="step-math">q<sub>final</sub> = (q&#8321; + q&#8322;)/2 = (6 - 2)/2 = +2 &mu;C en cada una</span></p>
+                        <p><span class="step-math">F = 8.99&times;10<sup>9</sup> &times; (2&times;10<sup>-6</sup>)<sup>2</sup> / (0.1)<sup>2</sup></span></p>
+                        <p><span class="step-math">F = 8.99&times;10<sup>9</sup> &times; 4&times;10<sup>-12</sup> / 0.01 = <strong>3.60 N</strong> (repulsiva)</span></p>
+                    </div>
+                </div>
+
+                <div class="exercise-item">
+                    <div class="exercise-header">
+                        <span class="exercise-label">Ejercicio 5</span>
+                        <span class="difficulty hard">Dificil</span>
+                    </div>
+                    <p>En un triangulo equilatero de lado 0.20 m hay tres cargas: q<sub>A</sub> = +5 &mu;C en el vertice A, q<sub>B</sub> = +5 &mu;C en B y q<sub>C</sub> = -3 &mu;C en C. Calcula la magnitud y direccion de la fuerza neta sobre q<sub>C</sub>.</p>
+                    <button class="solution-toggle" onclick="toggleSolution(this)">Ver solucion &#9660;</button>
+                    <div class="solution">
+                        <p><strong>Paso 1 &mdash; Fuerza de cada carga positiva sobre C:</strong></p>
+                        <p><span class="step-math">|F| = 8.99e9 &times; (5e-6)(3e-6) / (0.20)<sup>2</sup> = 3.371 N</span></p>
+                        <p>Cada una atrae a C hacia si misma (cargas de signos opuestos).</p>
+                        <p><strong>Paso 2 &mdash; Suma vectorial:</strong></p>
+                        <p>Las dos fuerzas tienen la misma magnitud y forman entre si un angulo de 60&deg; (geometria del triangulo).</p>
+                        <p><span class="step-math">F<sub>neta</sub> = 2 &middot; F &middot; cos(30&deg;) = 2 &times; 3.371 &times; 0.866 = <strong>5.84 N</strong></span></p>
+                        <p><strong>Direccion:</strong> a lo largo de la mediatriz del lado AB, dirigida hacia AB.</p>
+                    </div>
+                </div>
+
+            </div>
+
+        </div>
+    </section>
+
+    <footer>
+        <div class="container">
+            <p style="margin-bottom:0.5rem; font-size:1rem; color:var(--text-muted);">Mod 08 &mdash; Matematicas y Representaciones del Sistema Natural!</p>
+            <p>Contenido educativo &middot; 16 temas &middot; Preparatoria</p>
+        </div>
+    </footer>
+
+    <script>
+        function toggleSolution(btn) {
+            const solution = btn.nextElementSibling;
+            solution.classList.toggle('visible');
+            btn.textContent = solution.classList.contains('visible') ? 'Ocultar solucion ▲' : 'Ver solucion ▼';
+        }
+        const observer = new IntersectionObserver((entries) => {
+            entries.forEach(entry => { if (entry.isIntersecting) entry.target.classList.add('visible'); });
+        }, { threshold: 0.1 });
+        document.querySelectorAll('.fade-in').forEach(el => observer.observe(el));
+        const backBtn = document.getElementById('backToTop');
+        window.addEventListener('scroll', () => { backBtn.classList.toggle('show', window.scrollY > 400); });
+        const themeBtn = document.getElementById('themeToggle');
+        if (themeBtn) {
+            const syncThemeAria = () => {
+                const isLight = document.documentElement.getAttribute('data-theme') === 'light';
+                themeBtn.setAttribute('aria-pressed', isLight ? 'true' : 'false');
+                themeBtn.setAttribute('aria-label', isLight ? 'Cambiar a modo oscuro' : 'Cambiar a modo claro');
+            };
+            syncThemeAria();
+            themeBtn.addEventListener('click', () => {
+                const current = document.documentElement.getAttribute('data-theme') === 'light' ? 'light' : 'dark';
+                const next = current === 'light' ? 'dark' : 'light';
+                document.documentElement.setAttribute('data-theme', next);
+                try { localStorage.setItem('theme', next); } catch (e) {}
+                syncThemeAria();
+            });
+        }
+
+        /* === Simulador: Ley de Coulomb === */
+        (function() {
+            const canvas = document.getElementById('coulombCanvas');
+            if (!canvas) return;
+            const ctx = canvas.getContext('2d');
+            const CW = canvas.width, CH = canvas.height;
+
+            const sQ1 = document.getElementById('cQ1');
+            const sQ2 = document.getElementById('cQ2');
+            const lQ1 = document.getElementById('cQ1Val');
+            const lQ2 = document.getElementById('cQ2Val');
+            const cbField = document.getElementById('cShowField');
+            const cbLines = document.getElementById('cShowLines');
+            const resultDiv = document.getElementById('coulombResult');
+
+            // Cargas: posicion en pixeles, magnitud en uC
+            const charges = [
+                { x: 220, y: 220, q: 4.0, r: 22 },
+                { x: 500, y: 220, q: -3.0, r: 22 }
+            ];
+
+            // ESCALA: 1 pixel = 1 mm = 0.001 m  (asi 200 px = 0.2 m)
+            const PX_PER_M = 1000;
+
+            function syncControls() {
+                charges[0].q = parseFloat(sQ1.value);
+                charges[1].q = parseFloat(sQ2.value);
+                lQ1.textContent = (charges[0].q >= 0 ? '+' : '') + charges[0].q.toFixed(1) + ' μC';
+                lQ2.textContent = (charges[1].q >= 0 ? '+' : '') + charges[1].q.toFixed(1) + ' μC';
+            }
+            sQ1.addEventListener('input', syncControls);
+            sQ2.addEventListener('input', syncControls);
+
+            // Drag
+            let dragIndex = -1, dragOffsetX = 0, dragOffsetY = 0;
+            function ptToCanvas(evt) {
+                const rect = canvas.getBoundingClientRect();
+                const sx = canvas.width / rect.width;
+                const sy = canvas.height / rect.height;
+                return {
+                    x: (evt.clientX - rect.left) * sx,
+                    y: (evt.clientY - rect.top) * sy
+                };
+            }
+            canvas.addEventListener('mousedown', (e) => {
+                const p = ptToCanvas(e);
+                for (let i = 0; i < charges.length; i++) {
+                    const dx = p.x - charges[i].x;
+                    const dy = p.y - charges[i].y;
+                    if (dx * dx + dy * dy < (charges[i].r + 10) * (charges[i].r + 10)) {
+                        dragIndex = i;
+                        dragOffsetX = dx;
+                        dragOffsetY = dy;
+                        break;
+                    }
+                }
+            });
+            canvas.addEventListener('mousemove', (e) => {
+                if (dragIndex < 0) return;
+                const p = ptToCanvas(e);
+                charges[dragIndex].x = Math.max(40, Math.min(CW - 40, p.x - dragOffsetX));
+                charges[dragIndex].y = Math.max(40, Math.min(CH - 40, p.y - dragOffsetY));
+            });
+            canvas.addEventListener('mouseup', () => { dragIndex = -1; });
+            canvas.addEventListener('mouseleave', () => { dragIndex = -1; });
+
+            // Soporte tactil
+            canvas.addEventListener('touchstart', (e) => {
+                if (e.touches.length === 0) return;
+                const t = e.touches[0];
+                const p = ptToCanvas({ clientX: t.clientX, clientY: t.clientY });
+                for (let i = 0; i < charges.length; i++) {
+                    const dx = p.x - charges[i].x;
+                    const dy = p.y - charges[i].y;
+                    if (dx * dx + dy * dy < (charges[i].r + 14) * (charges[i].r + 14)) {
+                        dragIndex = i;
+                        dragOffsetX = dx;
+                        dragOffsetY = dy;
+                        e.preventDefault();
+                        break;
+                    }
+                }
+            }, { passive: false });
+            canvas.addEventListener('touchmove', (e) => {
+                if (dragIndex < 0) return;
+                const t = e.touches[0];
+                const p = ptToCanvas({ clientX: t.clientX, clientY: t.clientY });
+                charges[dragIndex].x = Math.max(40, Math.min(CW - 40, p.x - dragOffsetX));
+                charges[dragIndex].y = Math.max(40, Math.min(CH - 40, p.y - dragOffsetY));
+                e.preventDefault();
+            }, { passive: false });
+            canvas.addEventListener('touchend', () => { dragIndex = -1; });
+
+            function chargeColor(q) {
+                if (q > 0) return { fill: '#ff5040', glow: 'rgba(255,80,64,0.4)', stroke: '#ffaa90' };
+                if (q < 0) return { fill: '#4080ff', glow: 'rgba(64,128,255,0.4)', stroke: '#90b0ff' };
+                return { fill: '#888', glow: 'rgba(150,150,150,0.3)', stroke: '#bbb' };
+            }
+
+            function fieldAt(px, py) {
+                let Ex = 0, Ey = 0;
+                for (const c of charges) {
+                    const dx = px - c.x;
+                    const dy = py - c.y;
+                    const r2 = dx * dx + dy * dy;
+                    if (r2 < 100) continue; // demasiado cerca: salta
+                    const r = Math.sqrt(r2);
+                    const r_m = r / PX_PER_M;
+                    const E = 8.99e9 * (c.q * 1e-6) / (r_m * r_m);
+                    Ex += E * dx / r;
+                    Ey += E * dy / r;
+                }
+                return { Ex, Ey };
+            }
+
+            function palette() {
+                const light = document.documentElement.getAttribute('data-theme') === 'light';
+                return light ? {
+                    bg1: '#FFFFFF', bg2: '#EEF0F8',
+                    grid: 'rgba(80,80,140,0.15)',
+                    text: '#0F0E17', textDim: 'rgba(15,14,23,0.55)',
+                    textHint: 'rgba(15,14,23,0.4)',
+                    lineBetween: 'rgba(15,14,23,0.28)',
+                    fieldLine: 'rgba(15,14,23,0.5)'
+                } : {
+                    bg1: '#0a0a1a', bg2: '#12122a',
+                    grid: 'rgba(80,80,140,0.25)',
+                    text: '#ffffff', textDim: 'rgba(255,255,255,0.65)',
+                    textHint: 'rgba(255,255,255,0.4)',
+                    lineBetween: 'rgba(255,255,255,0.25)',
+                    fieldLine: 'rgba(255,255,255,0.55)'
+                };
+            }
+
+            function draw() {
+                const C = palette();
+
+                // Background
+                ctx.clearRect(0, 0, CW, CH);
+                const bg = ctx.createLinearGradient(0, 0, 0, CH);
+                bg.addColorStop(0, C.bg1);
+                bg.addColorStop(1, C.bg2);
+                ctx.fillStyle = bg;
+                ctx.fillRect(0, 0, CW, CH);
+
+                // Grid
+                ctx.strokeStyle = C.grid;
+                ctx.lineWidth = 1;
+                for (let x = 0; x <= CW; x += 40) {
+                    ctx.beginPath(); ctx.moveTo(x, 0); ctx.lineTo(x, CH); ctx.stroke();
+                }
+                for (let y = 0; y <= CH; y += 40) {
+                    ctx.beginPath(); ctx.moveTo(0, y); ctx.lineTo(CW, y); ctx.stroke();
+                }
+
+                // Campo electrico (vectores)
+                if (cbField.checked) {
+                    const step = 36;
+                    for (let x = 30; x < CW; x += step) {
+                        for (let y = 30; y < CH; y += step) {
+                            const f = fieldAt(x, y);
+                            const mag = Math.hypot(f.Ex, f.Ey);
+                            if (mag < 1) continue;
+                            const norm = Math.min(14, Math.log10(mag + 1) * 4);
+                            const ux = f.Ex / mag, uy = f.Ey / mag;
+                            ctx.strokeStyle = 'rgba(0,201,167,0.6)';
+                            ctx.lineWidth = 1.2;
+                            ctx.beginPath();
+                            ctx.moveTo(x - ux * norm / 2, y - uy * norm / 2);
+                            ctx.lineTo(x + ux * norm / 2, y + uy * norm / 2);
+                            ctx.stroke();
+                            // Cabeza de flecha
+                            ctx.beginPath();
+                            ctx.moveTo(x + ux * norm / 2, y + uy * norm / 2);
+                            ctx.lineTo(x + ux * norm / 2 - ux * 4 - uy * 2.5, y + uy * norm / 2 - uy * 4 + ux * 2.5);
+                            ctx.lineTo(x + ux * norm / 2 - ux * 4 + uy * 2.5, y + uy * norm / 2 - uy * 4 - ux * 2.5);
+                            ctx.closePath();
+                            ctx.fillStyle = 'rgba(0,201,167,0.7)';
+                            ctx.fill();
+                        }
+                    }
+                }
+
+                // Lineas de fuerza
+                if (cbLines.checked) {
+                    ctx.strokeStyle = C.fieldLine;
+                    ctx.lineWidth = 1.4;
+                    const NLINES = 16;
+                    for (const start of charges) {
+                        if (start.q === 0) continue;
+                        const sign = start.q > 0 ? 1 : -1;
+                        for (let i = 0; i < NLINES; i++) {
+                            const ang = (i / NLINES) * Math.PI * 2;
+                            let px = start.x + Math.cos(ang) * (start.r + 5);
+                            let py = start.y + Math.sin(ang) * (start.r + 5);
+                            ctx.beginPath();
+                            ctx.moveTo(px, py);
+                            for (let s = 0; s < 200; s++) {
+                                const f = fieldAt(px, py);
+                                const mag = Math.hypot(f.Ex, f.Ey);
+                                if (mag < 0.5) break;
+                                const dx = f.Ex / mag, dy = f.Ey / mag;
+                                px += dx * sign * 3;
+                                py += dy * sign * 3;
+                                if (px < 0 || px > CW || py < 0 || py > CH) break;
+                                // termino cerca de otra carga
+                                let hit = false;
+                                for (const c2 of charges) {
+                                    if (c2 === start) continue;
+                                    const ddx = px - c2.x, ddy = py - c2.y;
+                                    if (ddx * ddx + ddy * ddy < (c2.r + 4) * (c2.r + 4)) { hit = true; break; }
+                                }
+                                ctx.lineTo(px, py);
+                                if (hit) break;
+                            }
+                            ctx.stroke();
+                        }
+                    }
+                }
+
+                // Linea entre cargas
+                const c1 = charges[0], c2 = charges[1];
+                const dx = c2.x - c1.x;
+                const dy = c2.y - c1.y;
+                const dist = Math.hypot(dx, dy);
+                const ux = dx / dist, uy = dy / dist;
+
+                ctx.strokeStyle = C.lineBetween;
+                ctx.setLineDash([4, 4]);
+                ctx.beginPath();
+                ctx.moveTo(c1.x, c1.y);
+                ctx.lineTo(c2.x, c2.y);
+                ctx.stroke();
+                ctx.setLineDash([]);
+
+                // Etiqueta de distancia
+                const midX = (c1.x + c2.x) / 2;
+                const midY = (c1.y + c2.y) / 2;
+                const r_m = dist / PX_PER_M;
+                ctx.fillStyle = C.textDim;
+                ctx.font = '12px sans-serif';
+                ctx.textAlign = 'center';
+                ctx.fillText('r = ' + (r_m * 100).toFixed(1) + ' cm', midX, midY - 8);
+
+                // Fuerza (signo + → repulsion, - → atraccion)
+                const q1 = c1.q * 1e-6, q2 = c2.q * 1e-6;
+                const F = 8.99e9 * q1 * q2 / (r_m * r_m);   // signada
+                const Fmag = Math.abs(F);
+                const attract = F < 0;
+
+                // Flechas de fuerza sobre cada carga
+                const arrowScale = Math.min(80, Math.log10(Fmag + 1) * 28);
+                function drawForceArrow(c, dirX, dirY) {
+                    const len = arrowScale;
+                    if (len < 4) return;
+                    const sx = c.x + dirX * (c.r + 4);
+                    const sy = c.y + dirY * (c.r + 4);
+                    const ex = sx + dirX * len;
+                    const ey = sy + dirY * len;
+                    ctx.strokeStyle = '#ffd040';
+                    ctx.lineWidth = 3;
+                    ctx.beginPath();
+                    ctx.moveTo(sx, sy); ctx.lineTo(ex, ey);
+                    ctx.stroke();
+                    // Punta
+                    const px = -dirY, py = dirX;
+                    ctx.fillStyle = '#ffd040';
+                    ctx.beginPath();
+                    ctx.moveTo(ex, ey);
+                    ctx.lineTo(ex - dirX * 10 + px * 5, ey - dirY * 10 + py * 5);
+                    ctx.lineTo(ex - dirX * 10 - px * 5, ey - dirY * 10 - py * 5);
+                    ctx.closePath();
+                    ctx.fill();
+                }
+                // Direccion sobre c1: si atrae, hacia c2 (ux,uy); si repele, hacia -ux,-uy
+                drawForceArrow(c1, attract ? ux : -ux, attract ? uy : -uy);
+                drawForceArrow(c2, attract ? -ux : ux, attract ? -uy : uy);
+
+                // Cargas con glow
+                for (const c of charges) {
+                    const cc = chargeColor(c.q);
+                    const intensity = Math.min(1, Math.abs(c.q) / 10);
+                    // Glow
+                    const grad = ctx.createRadialGradient(c.x, c.y, 2, c.x, c.y, 60 * (0.5 + intensity * 0.5));
+                    grad.addColorStop(0, cc.glow);
+                    grad.addColorStop(1, 'rgba(0,0,0,0)');
+                    ctx.fillStyle = grad;
+                    ctx.beginPath();
+                    ctx.arc(c.x, c.y, 60 * (0.5 + intensity * 0.5), 0, Math.PI * 2);
+                    ctx.fill();
+                    // Bola
+                    ctx.fillStyle = cc.fill;
+                    ctx.beginPath();
+                    ctx.arc(c.x, c.y, c.r, 0, Math.PI * 2);
+                    ctx.fill();
+                    ctx.strokeStyle = cc.stroke;
+                    ctx.lineWidth = 2;
+                    ctx.stroke();
+                    // Signo
+                    ctx.fillStyle = '#fff';
+                    ctx.font = 'bold 22px sans-serif';
+                    ctx.textAlign = 'center';
+                    ctx.fillText(c.q > 0 ? '+' : (c.q < 0 ? '−' : '·'), c.x, c.y + 8);
+                    // Etiqueta
+                    ctx.font = '12px sans-serif';
+                    ctx.fillStyle = C.text;
+                    ctx.fillText((c.q >= 0 ? '+' : '') + c.q.toFixed(1) + ' μC', c.x, c.y + c.r + 16);
+                }
+
+                // Resultados
+                let txt = 'F = ' + Fmag.toFixed(3) + ' N  ';
+                if (attract) {
+                    txt += '|  <span style="color:#ff8a90">Atractiva</span>';
+                } else if (F > 0) {
+                    txt += '|  <span style="color:#9bdfff">Repulsiva</span>';
+                } else {
+                    txt += '|  Nula';
+                }
+                txt += '  |  r = ' + (r_m * 100).toFixed(1) + ' cm';
+                // Tambien campo en el punto medio
+                const mid = fieldAt(midX, midY);
+                const Emag = Math.hypot(mid.Ex, mid.Ey);
+                txt += '  |  E en punto medio = ' + (Emag > 1000 ? (Emag / 1000).toFixed(2) + ' kN/C' : Emag.toFixed(1) + ' N/C');
+                resultDiv.innerHTML = txt;
+
+                // Instrucciones
+                ctx.fillStyle = C.textHint;
+                ctx.font = '11px sans-serif';
+                ctx.textAlign = 'left';
+                ctx.fillText('Arrastra las cargas con el mouse para moverlas', 10, CH - 8);
+
+                requestAnimationFrame(draw);
+            }
+
+            syncControls();
+            draw();
+        })();
+    </script>
+</body>
+</html>

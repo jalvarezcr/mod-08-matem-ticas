@@ -1,0 +1,719 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Tema 16 - Efecto Joule | Mod 08</title>
+    <link rel="stylesheet" href="styles.css">
+    <script>
+        (function() {
+            try {
+                var t = localStorage.getItem('theme');
+                if (!t) {
+                    t = (window.matchMedia && window.matchMedia('(prefers-color-scheme: light)').matches) ? 'light' : 'dark';
+                }
+                document.documentElement.setAttribute('data-theme', t);
+            } catch (e) {
+                document.documentElement.setAttribute('data-theme', 'dark');
+            }
+        })();
+    </script>
+</head>
+<body>
+
+    <nav class="topic-nav">
+        <a href="index.html" class="back-link">&#9664; Volver al indice</a>
+        <span class="topic-nav-title">Tema 16 &mdash; Efecto Joule</span>
+    </nav>
+
+    <button class="theme-toggle" id="themeToggle" type="button" aria-label="Cambiar entre modo claro y oscuro" title="Cambiar tema">
+        <svg class="icon-sun" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><circle cx="12" cy="12" r="4"/><path d="M12 2v2M12 20v2M4.93 4.93l1.41 1.41M17.66 17.66l1.41 1.41M2 12h2M20 12h2M4.93 19.07l1.41-1.41M17.66 6.34l1.41-1.41"/></svg>
+        <svg class="icon-moon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M21 12.79A9 9 0 1 1 11.21 3 7 7 0 0 0 21 12.79z"/></svg>
+    </button>
+
+    <a href="#top" class="back-to-top" id="backToTop">&#9650;</a>
+
+    <section class="tema tema-page" id="top">
+        <div class="container">
+            <div class="tema-header fade-in">
+                <div class="tema-number even">Tema 16 &mdash; Electricidad</div>
+                <h2>Efecto Joule</h2>
+                <p class="intro">Cuando una corriente electrica circula por un conductor, parte de su energia se transforma en calor. Este fenomeno se llama <strong>efecto Joule</strong> y es el principio detras de las planchas, calefactores, focos incandescentes, fusibles y &mdash; lamentablemente &mdash; tambien del sobrecalentamiento de cables. Descubrir su formula nos permite disenar tanto un secador de pelo como una red electrica eficiente.</p>
+            </div>
+
+            <!-- ===== EL FENOMENO ===== -->
+            <div class="content-block fade-in">
+                <h3><span class="icon" style="background:rgba(255,101,132,0.15);color:var(--secondary);">&#128293;</span> &iquest;Que ocurre dentro del conductor?</h3>
+                <p>Los electrones libres, al moverse por el metal bajo la influencia de un voltaje, <strong>chocan continuamente</strong> con la red de iones del material. En cada colision pierden algo de energia cinetica, que se transfiere a los iones como vibracion, es decir, como <em>calor</em>.</p>
+                <div class="info-box theory">
+                    <div class="box-title">Conservacion de energia</div>
+                    <p>La energia electrica que entrega la fuente (W = q&middot;V) se convierte integramente en calor en una resistencia pura. Esa es la idea del efecto Joule.</p>
+                </div>
+                <h4>Formula de Joule</h4>
+                <p>La <strong>potencia disipada</strong> en forma de calor por una resistencia es:</p>
+                <div class="formula">
+                    P = V &middot; I = I&sup2; &middot; R = V&sup2; / R
+                </div>
+                <p>Y el <strong>calor generado</strong> en un tiempo t:</p>
+                <div class="formula">
+                    Q = P &middot; t = I&sup2; &middot; R &middot; t
+                </div>
+                <ul>
+                    <li><strong>Q</strong> = Energia disipada como calor (J)</li>
+                    <li><strong>I</strong> = Corriente (A)</li>
+                    <li><strong>R</strong> = Resistencia (&Omega;)</li>
+                    <li><strong>t</strong> = Tiempo (s)</li>
+                </ul>
+                <div class="info-box warning">
+                    <div class="box-title">&iexcl;Cuidado con el I&sup2;!</div>
+                    <p>La potencia disipada crece con el <strong>cuadrado</strong> de la corriente. Duplicar I cuadruplica la disipacion. Triplicarla la multiplica por 9. Por eso las lineas de alta tension transmiten a miles de volts: para reducir I al maximo y minimizar perdidas en los cables.</p>
+                </div>
+            </div>
+
+            <!-- ===== EQUIVALENTE TERMICO ===== -->
+            <div class="content-block fade-in">
+                <h3><span class="icon" style="background:rgba(0,201,167,0.15);color:var(--accent);">&#127777;</span> Equivalente termico de Joule</h3>
+                <p>En 1843, James Prescott Joule demostro experimentalmente que <strong>la energia mecanica/electrica y el calor son la misma cosa</strong>. Su famoso experimento con paletas y peso cayendo midio:</p>
+                <div class="formula">
+                    1 cal = 4.184 J
+                </div>
+                <p>Por lo tanto, la masa de un material puede calentarse usando una resistencia:</p>
+                <div class="formula">
+                    I&sup2; &middot; R &middot; t = m &middot; c &middot; &Delta;T
+                </div>
+                <div class="info-box example">
+                    <div class="box-title">Eficiencia de un calefactor electrico</div>
+                    <p>Un calefactor electrico convierte casi el 100% de la energia electrica en calor (es un caso ideal del efecto Joule). Mucho mejor que una caldera de gas (~85%) en eficiencia local, aunque la energia electrica suele ser mas cara que la termica de combustible.</p>
+                </div>
+            </div>
+
+            <!-- ===== APLICACIONES ===== -->
+            <div class="content-block fade-in">
+                <h3><span class="icon" style="background:rgba(255,214,0,0.15);color:var(--warning);">&#128268;</span> Aplicaciones</h3>
+
+                <h4>1. Calefactores y planchas</h4>
+                <p>Usan resistencias de alta R (nicromo, kanthal) que se calientan al rojo. La energia electrica se transforma intencionalmente en calor.</p>
+
+                <h4>2. Focos incandescentes</h4>
+                <p>El filamento de tungsteno alcanza ~2700 K y emite radiacion termica visible. Solo el 5-10% es luz; el resto es calor desperdiciado. Por eso los LEDs los reemplazan.</p>
+
+                <h4>3. Fusibles y disyuntores</h4>
+                <p>Un fusible es una resistencia delgada que se funde si la corriente supera un valor. Aprovecha I&sup2;R para protegerse a si mismo: si I es muy grande, P es enorme y el fusible se evapora, abriendo el circuito.</p>
+
+                <h4>4. Termopares y sensores</h4>
+                <p>El opuesto del efecto Joule es el <em>efecto Seebeck</em>: una diferencia de temperatura produce voltaje. Lo usan los termopares para medir temperaturas.</p>
+
+                <h4>5. Soldadura por resistencia</h4>
+                <p>Dos piezas metalicas son presionadas; al pasar una corriente alta por unos pocos ciclos, la zona de contacto (alta R local) se funde y une las piezas. Muy usado en industria automotriz.</p>
+
+                <h4>6. Perdidas en lineas de transmision (lo malo del Joule)</h4>
+                <p>En cables largos, las perdidas Joule son inevitables. Para reducir P = I&sup2;R: o bien R baja (cables gruesos, materiales nobles), o bien I baja (transmitiendo a alto voltaje). La industria electrica usa <strong>cientos de miles de volts</strong> en lineas de transmision precisamente para minimizar estas perdidas.</p>
+            </div>
+
+            <!-- ===== EJEMPLOS RESUELTOS ===== -->
+            <div class="content-block fade-in">
+                <h3><span class="icon" style="background:rgba(255,101,132,0.15);color:var(--secondary);">&#128270;</span> Ejemplos resueltos</h3>
+
+                <div class="info-box example">
+                    <div class="box-title">Ejemplo 1: Plancha electrica</div>
+                    <p><strong>Una plancha trabaja a 120 V y consume 8 A. &iquest;Cuanta energia calorica genera en 10 minutos?</strong></p>
+                    <div class="steps">
+                        <div class="step">
+                            <div class="step-num">1</div>
+                            <div class="step-content">
+                                <p class="math">P = VI = 120 &times; 8 = <strong>960 W</strong></p>
+                            </div>
+                        </div>
+                        <div class="step">
+                            <div class="step-num">2</div>
+                            <div class="step-content">
+                                <p class="math">Q = P &times; t = 960 &times; 600 = <strong>576,000 J = 576 kJ</strong></p>
+                            </div>
+                        </div>
+                        <div class="step">
+                            <div class="step-num">3</div>
+                            <div class="step-content">
+                                <p>En kcal: 576,000 / 4184 &asymp; <strong>137.7 kcal</strong></p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="info-box example" style="margin-top:1.5rem;">
+                    <div class="box-title">Ejemplo 2: Calentar agua con resistencia</div>
+                    <p><strong>&iquest;Cuanto tarda una resistencia de 1500 W en calentar 1 L de agua de 20&deg;C a 100&deg;C? (c<sub>agua</sub> = 4186 J/kg&middot;K, considera 100% eficiencia)</strong></p>
+                    <div class="steps">
+                        <div class="step">
+                            <div class="step-num">1</div>
+                            <div class="step-content">
+                                <p>m = 1 kg, &Delta;T = 80 K</p>
+                            </div>
+                        </div>
+                        <div class="step">
+                            <div class="step-num">2</div>
+                            <div class="step-content">
+                                <p class="math">Q = mc&Delta;T = 1 &times; 4186 &times; 80 = <strong>334,880 J</strong></p>
+                            </div>
+                        </div>
+                        <div class="step">
+                            <div class="step-num">3</div>
+                            <div class="step-content">
+                                <p class="math">t = Q / P = 334,880 / 1500 = <strong>223 s &asymp; 3.7 min</strong></p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="info-box example" style="margin-top:1.5rem;">
+                    <div class="box-title">Ejemplo 3: Perdidas en cable</div>
+                    <p><strong>Un cable de 50 m con resistencia total 0.5 &Omega; transporta 30 A. &iquest;Cuanta potencia se pierde como calor?</strong></p>
+                    <div class="steps">
+                        <div class="step">
+                            <div class="step-num">1</div>
+                            <div class="step-content">
+                                <p class="math">P = I&sup2;R = (30)<sup>2</sup> &times; 0.5 = 900 &times; 0.5 = <strong>450 W</strong></p>
+                            </div>
+                        </div>
+                        <div class="step">
+                            <div class="step-num">2</div>
+                            <div class="step-content">
+                                <p>Si transmitieramos los mismos kW pero a 10x el voltaje (manteniendo P entregada), I caeria a la decima: I'=3 A</p>
+                                <p class="math">P' = 3<sup>2</sup> &times; 0.5 = <strong>4.5 W</strong> &mdash; perdidas reducidas 100x!</p>
+                            </div>
+                        </div>
+                    </div>
+                    <p>Asi es como las redes electricas transmiten a alta tension: minimizar perdidas Joule cuadraticas en I.</p>
+                </div>
+
+                <div class="info-box example" style="margin-top:1.5rem;">
+                    <div class="box-title">Ejemplo 4: Diseno de un fusible</div>
+                    <p><strong>Un fusible debe fundirse cuando I &ge; 10 A. Si se hace de cobre con A = 0.5 mm&sup2;, &iquest;cuanta potencia disipa por metro a esa corriente? (&rho;<sub>Cu</sub> = 1.68&times;10<sup>-8</sup> &Omega;&middot;m)</strong></p>
+                    <div class="steps">
+                        <div class="step">
+                            <div class="step-num">1</div>
+                            <div class="step-content">
+                                <p class="math">R/m = &rho;/A = 1.68&times;10<sup>-8</sup> / (5&times;10<sup>-7</sup>) = <strong>0.0336 &Omega;/m</strong></p>
+                            </div>
+                        </div>
+                        <div class="step">
+                            <div class="step-num">2</div>
+                            <div class="step-content">
+                                <p class="math">P/m = I&sup2;R/m = 100 &times; 0.0336 = <strong>3.36 W/m</strong></p>
+                            </div>
+                        </div>
+                    </div>
+                    <p>Para que el cobre se funda (~1085&deg;C) hay que concentrar mas energia en menos masa, por eso los fusibles son hilos muy delgados con baja inercia termica.</p>
+                </div>
+            </div>
+
+            <!-- ===== SIMULADOR CANVAS ===== -->
+            <div class="content-block fade-in">
+                <h3><span class="icon" style="background:rgba(108,99,255,0.15);color:var(--primary-light);">&#127918;</span> Simulador interactivo &mdash; Resistencia calentandose</h3>
+                <p>Una resistencia conectada a una bateria se calienta segun P = I&sup2;R. Ajusta el voltaje, la resistencia y observa: la corriente, la temperatura del filamento, su color al rojo y el calor acumulado en el tiempo.</p>
+                <div class="sim-wrapper">
+                    <div class="sim-controls">
+                        <div class="sim-control-group">
+                            <label>Voltaje V (volts):
+                                <input type="range" id="jV" min="0" max="48" step="0.5" value="12">
+                                <span class="sim-value" id="jVVal">12.0 V</span>
+                            </label>
+                        </div>
+                        <div class="sim-control-group">
+                            <label>Resistencia R (&Omega;):
+                                <input type="range" id="jR" min="1" max="50" step="0.5" value="6">
+                                <span class="sim-value" id="jRVal">6.0 &Omega;</span>
+                            </label>
+                        </div>
+                        <div class="sim-control-group">
+                            <label>Tipo:
+                                <select id="jType">
+                                    <option value="0.10" data-name="Calefactor (gran masa)">Calefactor (gran masa)</option>
+                                    <option value="0.018" data-name="Resistencia media" selected>Resistencia media</option>
+                                    <option value="0.005" data-name="Filamento (muy fino)">Filamento (muy fino)</option>
+                                </select>
+                            </label>
+                        </div>
+                    </div>
+                    <div class="sim-canvas-wrap">
+                        <canvas id="jouleCanvas" width="720" height="400" style="width:100%;border-radius:12px;background:var(--bg);"></canvas>
+                    </div>
+                    <div class="sim-result" id="jouleResult">
+                        I = &mdash; A &nbsp;|&nbsp; P = &mdash; W &nbsp;|&nbsp; T = &mdash; &deg;C
+                    </div>
+                </div>
+            </div>
+
+            <!-- ===== EJERCICIOS ===== -->
+            <div class="exercises-section fade-in">
+                <h3><span class="icon" style="background:rgba(255,101,132,0.15);color:var(--secondary);">&#9998;</span> Ejercicios &mdash; Efecto Joule</h3>
+
+                <div class="exercise-item">
+                    <div class="exercise-header">
+                        <span class="exercise-label">Ejercicio 1</span>
+                        <span class="difficulty easy">Facil</span>
+                    </div>
+                    <p>Una resistencia de 25 &Omega; tiene 5 A. &iquest;Cuanta potencia disipa y cuanta energia en 2 minutos?</p>
+                    <button class="solution-toggle" onclick="toggleSolution(this)">Ver solucion &#9660;</button>
+                    <div class="solution">
+                        <p><span class="step-math">P = I&sup2;R = 25 &times; 25 = <strong>625 W</strong></span></p>
+                        <p><span class="step-math">Q = P &times; t = 625 &times; 120 = <strong>75,000 J = 75 kJ</strong></span></p>
+                    </div>
+                </div>
+
+                <div class="exercise-item">
+                    <div class="exercise-header">
+                        <span class="exercise-label">Ejercicio 2</span>
+                        <span class="difficulty easy">Facil</span>
+                    </div>
+                    <p>Un foco incandescente de 60 W trabaja a 120 V. Si esta encendido 8 h al dia durante 30 dias, &iquest;cuanta energia consume (en kWh) y cuanto calor disipa al ambiente?</p>
+                    <button class="solution-toggle" onclick="toggleSolution(this)">Ver solucion &#9660;</button>
+                    <div class="solution">
+                        <p><span class="step-math">Horas totales = 8 &times; 30 = 240 h</span></p>
+                        <p><span class="step-math">E = P &times; t = 60 W &times; 240 h = 14,400 Wh = <strong>14.4 kWh</strong></span></p>
+                        <p>~90% de esa energia se vuelve calor (radiacion infrarroja + conveccion):</p>
+                        <p><span class="step-math">Q &asymp; 0.9 &times; 14.4 kWh = <strong>12.96 kWh = 46,656 kJ</strong></span></p>
+                    </div>
+                </div>
+
+                <div class="exercise-item">
+                    <div class="exercise-header">
+                        <span class="exercise-label">Ejercicio 3</span>
+                        <span class="difficulty medium">Medio</span>
+                    </div>
+                    <p>Una resistencia de 12 &Omega; se conecta a una bateria de 24 V para calentar 500 mL de agua. &iquest;Cuanto tiempo (s) se necesita para subir la temperatura del agua 30 K? (c<sub>agua</sub> = 4186 J/kg&middot;K, eficiencia 100%)</p>
+                    <button class="solution-toggle" onclick="toggleSolution(this)">Ver solucion &#9660;</button>
+                    <div class="solution">
+                        <p><span class="step-math">P = V&sup2;/R = 576/12 = <strong>48 W</strong></span></p>
+                        <p>Energia necesaria:</p>
+                        <p><span class="step-math">Q = mc&Delta;T = 0.5 &times; 4186 &times; 30 = <strong>62,790 J</strong></span></p>
+                        <p><span class="step-math">t = Q/P = 62,790 / 48 = <strong>1308 s &asymp; 21.8 min</strong></span></p>
+                    </div>
+                </div>
+
+                <div class="exercise-item">
+                    <div class="exercise-header">
+                        <span class="exercise-label">Ejercicio 4</span>
+                        <span class="difficulty medium">Medio</span>
+                    </div>
+                    <p>Una linea electrica con resistencia total 2 &Omega; transmite 50 kW de potencia a una fabrica. Compara las perdidas Joule cuando se transmite a 500 V vs a 5000 V.</p>
+                    <button class="solution-toggle" onclick="toggleSolution(this)">Ver solucion &#9660;</button>
+                    <div class="solution">
+                        <p><strong>A 500 V:</strong></p>
+                        <p><span class="step-math">I = P/V = 50,000/500 = 100 A</span></p>
+                        <p><span class="step-math">P<sub>perdida</sub> = I&sup2;R = 100<sup>2</sup> &times; 2 = <strong>20,000 W = 20 kW</strong> (40% perdidas!)</span></p>
+                        <p><strong>A 5000 V:</strong></p>
+                        <p><span class="step-math">I = 50,000/5,000 = 10 A</span></p>
+                        <p><span class="step-math">P<sub>perdida</sub> = 100 &times; 2 = <strong>200 W</strong> (0.4% perdidas)</span></p>
+                        <p>La transmision a alto voltaje reduce las perdidas en factor 100 (al multiplicar V por 10).</p>
+                    </div>
+                </div>
+
+                <div class="exercise-item">
+                    <div class="exercise-header">
+                        <span class="exercise-label">Ejercicio 5</span>
+                        <span class="difficulty hard">Dificil</span>
+                    </div>
+                    <p>Una resistencia de calefactor (m = 80 g, c = 460 J/kg&middot;K, R = 24 &Omega;) recibe 60 V durante 8 segundos. Asume que toda la potencia se queda en la resistencia (sin perdidas al ambiente). Calcula su temperatura final si parte de 25&deg;C. &iquest;Por que en la practica no llega tan alto?</p>
+                    <button class="solution-toggle" onclick="toggleSolution(this)">Ver solucion &#9660;</button>
+                    <div class="solution">
+                        <p><span class="step-math">P = V&sup2;/R = 3600/24 = <strong>150 W</strong></span></p>
+                        <p><span class="step-math">Q = Pt = 150 &times; 8 = <strong>1,200 J</strong></span></p>
+                        <p><span class="step-math">&Delta;T = Q/(mc) = 1200 / (0.08 &times; 460) = 1200 / 36.8 = <strong>32.6 K</strong></span></p>
+                        <p><span class="step-math">T<sub>final</sub> = 25 + 32.6 = <strong>57.6 &deg;C</strong></span></p>
+                        <p><strong>En la practica</strong>, parte del calor se disipa al ambiente por conveccion y radiacion (Tema 12). Eso reduce la temperatura final y eventualmente alcanza un equilibrio donde P<sub>generada</sub> = P<sub>perdida al ambiente</sub>.</p>
+                    </div>
+                </div>
+
+            </div>
+
+        </div>
+    </section>
+
+    <footer>
+        <div class="container">
+            <p style="margin-bottom:0.5rem; font-size:1rem; color:var(--text-muted);">Mod 08 &mdash; Matematicas y Representaciones del Sistema Natural!</p>
+            <p>Contenido educativo &middot; 16 temas &middot; Preparatoria</p>
+        </div>
+    </footer>
+
+    <script>
+        function toggleSolution(btn) {
+            const solution = btn.nextElementSibling;
+            solution.classList.toggle('visible');
+            btn.textContent = solution.classList.contains('visible') ? 'Ocultar solucion ▲' : 'Ver solucion ▼';
+        }
+        const observer = new IntersectionObserver((entries) => {
+            entries.forEach(entry => { if (entry.isIntersecting) entry.target.classList.add('visible'); });
+        }, { threshold: 0.1 });
+        document.querySelectorAll('.fade-in').forEach(el => observer.observe(el));
+        const backBtn = document.getElementById('backToTop');
+        window.addEventListener('scroll', () => { backBtn.classList.toggle('show', window.scrollY > 400); });
+        const themeBtn = document.getElementById('themeToggle');
+        if (themeBtn) {
+            const syncThemeAria = () => {
+                const isLight = document.documentElement.getAttribute('data-theme') === 'light';
+                themeBtn.setAttribute('aria-pressed', isLight ? 'true' : 'false');
+                themeBtn.setAttribute('aria-label', isLight ? 'Cambiar a modo oscuro' : 'Cambiar a modo claro');
+            };
+            syncThemeAria();
+            themeBtn.addEventListener('click', () => {
+                const current = document.documentElement.getAttribute('data-theme') === 'light' ? 'light' : 'dark';
+                const next = current === 'light' ? 'dark' : 'light';
+                document.documentElement.setAttribute('data-theme', next);
+                try { localStorage.setItem('theme', next); } catch (e) {}
+                syncThemeAria();
+            });
+        }
+
+        /* === Simulador: Efecto Joule (resistencia calentandose) === */
+        (function() {
+            const canvas = document.getElementById('jouleCanvas');
+            if (!canvas) return;
+            const ctx = canvas.getContext('2d');
+            const CW = canvas.width, CH = canvas.height;
+
+            const sV = document.getElementById('jV');
+            const sR = document.getElementById('jR');
+            const sType = document.getElementById('jType');
+            const lV = document.getElementById('jVVal');
+            const lR = document.getElementById('jRVal');
+            const resultDiv = document.getElementById('jouleResult');
+
+            let V = 12, R = 6;
+            // mc (capacidad termica) controla cuan rapido sube la temperatura
+            let mc = 0.018, typeName = 'Resistencia media';
+            // Coeficiente de enfriamiento al ambiente (h*A)
+            const hCoef = 0.45;
+            const Tamb = 25;
+            let T = Tamb;
+            let totalQ = 0;
+
+            function sync() {
+                V = parseFloat(sV.value);
+                R = parseFloat(sR.value);
+                mc = parseFloat(sType.value);
+                typeName = sType.options[sType.selectedIndex].dataset.name;
+                lV.textContent = V.toFixed(1) + ' V';
+                lR.textContent = R.toFixed(1) + ' Ω';
+            }
+            sV.addEventListener('input', sync);
+            sR.addEventListener('input', sync);
+            sType.addEventListener('change', sync);
+
+            // Convertir T a color (incandescencia)
+            function incColor(temp) {
+                if (temp < 60) {
+                    // gris oscuro
+                    const g = 60 + temp * 0.3;
+                    return 'rgb(' + (g | 0) + ',' + (g | 0) + ',' + ((g * 1.1) | 0) + ')';
+                }
+                if (temp < 300) {
+                    // gris -> rojo oscuro
+                    const t = (temp - 60) / 240;
+                    const r = 80 + t * 130;
+                    const g = 70 - t * 50;
+                    const b = 80 - t * 60;
+                    return 'rgb(' + (r | 0) + ',' + Math.max(0, g | 0) + ',' + Math.max(0, b | 0) + ')';
+                }
+                if (temp < 700) {
+                    // rojo oscuro -> rojo cereza -> rojo brillante
+                    const t = (temp - 300) / 400;
+                    const r = 210 + t * 45;
+                    const g = 20 + t * 60;
+                    const b = 20;
+                    return 'rgb(' + (r | 0) + ',' + (g | 0) + ',' + b + ')';
+                }
+                if (temp < 1100) {
+                    // rojo brillante -> naranja
+                    const t = (temp - 700) / 400;
+                    const r = 255;
+                    const g = 80 + t * 100;
+                    const b = 20 + t * 30;
+                    return 'rgb(' + r + ',' + (g | 0) + ',' + (b | 0) + ')';
+                }
+                if (temp < 1800) {
+                    // naranja -> amarillo
+                    const t = (temp - 1100) / 700;
+                    const r = 255;
+                    const g = 180 + t * 60;
+                    const b = 50 + t * 100;
+                    return 'rgb(' + r + ',' + (g | 0) + ',' + (b | 0) + ')';
+                }
+                // blanco-amarillo
+                return 'rgb(255,240,200)';
+            }
+
+            // Electrones moviendose en el cable
+            const NE = 18;
+            const electrons = [];
+            for (let i = 0; i < NE; i++) electrons.push({ s: i / NE });
+
+            const startX = 110, endX = CW - 110, midY = 180;
+            const wireGap = 220;  // gap del resistor
+
+            function loopPoint(s) {
+                // 0..1 alrededor del lazo
+                // arriba (izq→der), bajada derecha, abajo (der→izq), subida izquierda
+                s = ((s % 1) + 1) % 1;
+                if (s < 0.4) {
+                    // top: x crece
+                    const f = s / 0.4;
+                    return { x: startX + f * (endX - startX), y: midY };
+                }
+                if (s < 0.5) {
+                    // right down
+                    const f = (s - 0.4) / 0.1;
+                    return { x: endX, y: midY + f * 80 };
+                }
+                if (s < 0.9) {
+                    // bottom: x decrece
+                    const f = (s - 0.5) / 0.4;
+                    return { x: endX - f * (endX - startX), y: midY + 80 };
+                }
+                // left up
+                const f = (s - 0.9) / 0.1;
+                return { x: startX, y: midY + 80 - f * 80 };
+            }
+
+            // Energia acumulada vs tiempo - grafico
+            const history = []; // {t, T, P}
+            const HIST_MAX = 200;
+            let elapsed = 0;
+            let lastT = performance.now();
+
+            function palette() {
+                const light = document.documentElement.getAttribute('data-theme') === 'light';
+                return light ? {
+                    bg1: '#FFFFFF', bg2: '#EEF0F8',
+                    wire: '#3a3e54', gapFill: '#FFFFFF',
+                    text: '#0F0E17', textDim: 'rgba(15,14,23,0.55)',
+                    panel: 'rgba(15,14,23,0.04)',
+                    gridFaint: 'rgba(15,14,23,0.12)'
+                } : {
+                    bg1: '#0a0a1a', bg2: '#12122a',
+                    wire: '#c2cae0', gapFill: '#0a0a1a',
+                    text: '#ffffff', textDim: 'rgba(255,255,255,0.55)',
+                    panel: 'rgba(255,255,255,0.04)',
+                    gridFaint: 'rgba(255,255,255,0.10)'
+                };
+            }
+
+            function draw(now) {
+                const dt = Math.min(0.06, (now - lastT) / 1000);
+                lastT = now;
+                elapsed += dt;
+
+                const I = V / R;
+                const P = V * I;
+
+                // Balance termico: dT/dt = (P_in - hA*(T-Tamb)) / mc
+                const Pnet = P - hCoef * (T - Tamb);
+                T += Pnet / mc * dt;
+                if (T < Tamb) T = Tamb;
+                if (T > 3500) T = 3500;
+                totalQ += P * dt;
+
+                // History
+                if (history.length === 0 || elapsed - history[history.length - 1].t > 0.15) {
+                    history.push({ t: elapsed, T: T, P: P });
+                    if (history.length > HIST_MAX) history.shift();
+                }
+
+                const C = palette();
+
+                // Background
+                ctx.clearRect(0, 0, CW, CH);
+                const bg = ctx.createLinearGradient(0, 0, 0, CH);
+                bg.addColorStop(0, C.bg1);
+                bg.addColorStop(1, C.bg2);
+                ctx.fillStyle = bg;
+                ctx.fillRect(0, 0, CW, CH);
+
+                // Bateria a la izquierda
+                ctx.strokeStyle = C.wire;
+                ctx.lineWidth = 4;
+                ctx.lineCap = 'round';
+                // Marco
+                ctx.beginPath();
+                ctx.moveTo(startX, midY); ctx.lineTo(endX, midY);                  // top
+                ctx.lineTo(endX, midY + 80);                                       // right
+                ctx.lineTo(startX, midY + 80);                                     // bottom
+                ctx.lineTo(startX, midY);                                          // left
+                ctx.stroke();
+
+                // Bateria: gap en mitad izquierda inferior
+                ctx.strokeStyle = C.gapFill;
+                ctx.lineWidth = 10;
+                ctx.beginPath();
+                ctx.moveTo(startX, midY + 80 - 18);
+                ctx.lineTo(startX, midY + 80 + 18 - 80 + 80);
+                // simpler: redraw gap explicitly
+                ctx.stroke();
+
+                // dibujar bateria simbolo (placas) sobre el lado izquierdo
+                const batY = midY + 40;
+                ctx.fillStyle = C.gapFill;
+                ctx.fillRect(startX - 8, batY - 22, 16, 44);
+                ctx.strokeStyle = '#7af0a0';
+                ctx.lineWidth = 3;
+                ctx.beginPath();
+                ctx.moveTo(startX - 14, batY - 8); ctx.lineTo(startX + 14, batY - 8);
+                ctx.stroke();
+                ctx.beginPath();
+                ctx.moveTo(startX - 8, batY + 8); ctx.lineTo(startX + 8, batY + 8);
+                ctx.stroke();
+                ctx.fillStyle = '#7af0a0';
+                ctx.font = 'bold 13px sans-serif';
+                ctx.textAlign = 'left';
+                ctx.fillText('+', startX + 18, batY - 4);
+                ctx.fillText('−', startX + 18, batY + 14);
+                ctx.fillStyle = C.text;
+                ctx.font = 'bold 15px sans-serif';
+                ctx.textAlign = 'right';
+                ctx.fillText(V.toFixed(1) + ' V', startX - 12, batY + 5);
+
+                // Resistencia en el lado superior (centro)
+                const resX = CW / 2;
+                const resW = wireGap;
+                // Tapar wire central
+                ctx.strokeStyle = C.gapFill;
+                ctx.lineWidth = 10;
+                ctx.beginPath();
+                ctx.moveTo(resX - resW / 2, midY); ctx.lineTo(resX + resW / 2, midY);
+                ctx.stroke();
+
+                // Halo de calor (glow)
+                const colHot = incColor(T);
+                const glowAlpha = Math.min(0.6, Math.max(0.05, (T - 60) / 1500));
+                const grad = ctx.createRadialGradient(resX, midY, 10, resX, midY, 100);
+                grad.addColorStop(0, colHot.replace('rgb', 'rgba').replace(')', ',' + glowAlpha + ')'));
+                grad.addColorStop(1, 'rgba(0,0,0,0)');
+                ctx.fillStyle = grad;
+                ctx.fillRect(resX - 130, midY - 80, 260, 160);
+
+                // Filamento (zigzag)
+                ctx.strokeStyle = colHot;
+                ctx.lineWidth = 5;
+                ctx.lineCap = 'round';
+                ctx.beginPath();
+                ctx.moveTo(resX - resW / 2, midY);
+                const steps = 10;
+                for (let i = 1; i < steps; i++) {
+                    const x = resX - resW / 2 + (i / steps) * resW;
+                    const y = midY + ((i % 2 === 0) ? -18 : 18);
+                    ctx.lineTo(x, y);
+                }
+                ctx.lineTo(resX + resW / 2, midY);
+                ctx.stroke();
+
+                // Etiqueta
+                ctx.fillStyle = C.text;
+                ctx.font = 'bold 13px sans-serif';
+                ctx.textAlign = 'center';
+                ctx.fillText('R = ' + R.toFixed(1) + ' Ω', resX, midY - 36);
+                ctx.fillStyle = colHot;
+                ctx.font = 'bold 16px sans-serif';
+                ctx.fillText(T.toFixed(0) + ' °C', resX, midY + 50);
+
+                // Electrones (van anti-horario)
+                const speed = Math.min(0.6, 0.06 + I * 0.012);
+                for (let i = 0; i < electrons.length; i++) {
+                    electrons[i].s -= speed * dt;
+                    const p = loopPoint(electrons[i].s);
+                    // Saltarse si esta dentro de la resistencia o bateria
+                    const inRes = (p.y < midY + 6 && p.y > midY - 6 && p.x > resX - resW / 2 && p.x < resX + resW / 2);
+                    const inBat = (Math.abs(p.x - startX) < 6 && p.y > midY + 20 && p.y < midY + 60);
+                    if (inRes || inBat) continue;
+
+                    ctx.fillStyle = '#3aa8d8';
+                    ctx.beginPath();
+                    ctx.arc(p.x, p.y, 4, 0, Math.PI * 2);
+                    ctx.fill();
+                }
+
+                // Particulas de calor saliendo de la resistencia
+                if (T > 80) {
+                    for (let k = 0; k < 6; k++) {
+                        const ox = resX + (Math.random() - 0.5) * resW * 0.9;
+                        const oy = midY + (Math.random() - 0.5) * 4;
+                        const drift = Math.min(1, (T - 80) / 400);
+                        const dy = -drift * (10 + Math.random() * 25);
+                        ctx.fillStyle = 'rgba(255,180,80,' + (drift * 0.6) + ')';
+                        ctx.beginPath();
+                        ctx.arc(ox, oy + dy, 1.6, 0, Math.PI * 2);
+                        ctx.fill();
+                    }
+                }
+
+                // Grafico de temperatura abajo
+                const gX0 = 60, gY0 = CH - 90, gW = CW - 200, gH = 70;
+                ctx.fillStyle = C.panel;
+                ctx.fillRect(gX0, gY0, gW, gH);
+                ctx.strokeStyle = C.wire;
+                ctx.lineWidth = 1;
+                ctx.strokeRect(gX0, gY0, gW, gH);
+                ctx.fillStyle = C.textDim;
+                ctx.font = '11px sans-serif';
+                ctx.textAlign = 'left';
+                ctx.fillText('T(t)', gX0 + 6, gY0 + 14);
+
+                // Lineas de referencia
+                ctx.strokeStyle = C.gridFaint;
+                for (let i = 1; i < 4; i++) {
+                    const ly = gY0 + (i / 4) * gH;
+                    ctx.beginPath(); ctx.moveTo(gX0, ly); ctx.lineTo(gX0 + gW, ly); ctx.stroke();
+                }
+
+                // Trazar history
+                if (history.length > 1) {
+                    const tMin = history[0].t;
+                    const tMax = history[history.length - 1].t;
+                    const tSpan = Math.max(0.5, tMax - tMin);
+                    const Tmax = 2000;
+                    ctx.strokeStyle = '#ffb070';
+                    ctx.lineWidth = 2;
+                    ctx.beginPath();
+                    for (let i = 0; i < history.length; i++) {
+                        const h = history[i];
+                        const x = gX0 + ((h.t - tMin) / tSpan) * gW;
+                        const y = gY0 + gH - Math.min(1, h.T / Tmax) * gH;
+                        if (i === 0) ctx.moveTo(x, y); else ctx.lineTo(x, y);
+                    }
+                    ctx.stroke();
+                }
+                ctx.fillStyle = '#ffb070';
+                ctx.textAlign = 'right';
+                ctx.font = '11px sans-serif';
+                ctx.fillText('T actual: ' + T.toFixed(0) + ' °C', gX0 + gW - 6, gY0 + 14);
+
+                // Etiquetas
+                ctx.fillStyle = C.text;
+                ctx.font = 'bold 15px sans-serif';
+                ctx.textAlign = 'center';
+                ctx.fillText('P = I²R = V²/R   —   ' + typeName, CW / 2, 32);
+
+                // Resultados
+                resultDiv.innerHTML =
+                    'I = <strong>' + I.toFixed(2) + ' A</strong>' +
+                    '  |  P = <strong>' + P.toFixed(1) + ' W</strong>' +
+                    '  |  T = <strong>' + T.toFixed(0) + ' °C</strong>' +
+                    '  |  Q acumulada = <strong>' + (totalQ / 1000).toFixed(2) + ' kJ</strong>';
+
+                requestAnimationFrame(draw);
+            }
+
+            sync();
+            requestAnimationFrame(draw);
+
+            // Resetear T y Q al cambiar tipo/resistencia
+            function softReset() {
+                history.length = 0;
+                totalQ = 0;
+                elapsed = 0;
+                T = Tamb;
+            }
+            sType.addEventListener('change', softReset);
+        })();
+    </script>
+</body>
+</html>

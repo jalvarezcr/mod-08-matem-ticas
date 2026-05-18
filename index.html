@@ -5,8 +5,28 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Mod 08 - Matematicas y Representaciones del Sistema Natural!</title>
     <link rel="stylesheet" href="styles.css">
+    <script>
+        // Aplica el tema antes de pintar para evitar parpadeo
+        (function() {
+            try {
+                var t = localStorage.getItem('theme');
+                if (!t) {
+                    t = (window.matchMedia && window.matchMedia('(prefers-color-scheme: light)').matches) ? 'light' : 'dark';
+                }
+                document.documentElement.setAttribute('data-theme', t);
+            } catch (e) {
+                document.documentElement.setAttribute('data-theme', 'dark');
+            }
+        })();
+    </script>
 </head>
 <body>
+
+    <!-- ===== THEME TOGGLE ===== -->
+    <button class="theme-toggle" id="themeToggle" type="button" aria-label="Cambiar entre modo claro y oscuro" title="Cambiar tema">
+        <svg class="icon-sun" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><circle cx="12" cy="12" r="4"/><path d="M12 2v2M12 20v2M4.93 4.93l1.41 1.41M17.66 17.66l1.41 1.41M2 12h2M20 12h2M4.93 19.07l1.41-1.41M17.66 6.34l1.41-1.41"/></svg>
+        <svg class="icon-moon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M21 12.79A9 9 0 1 1 11.21 3 7 7 0 0 0 21 12.79z"/></svg>
+    </button>
 
     <!-- ===== BOTON VOLVER ARRIBA ===== -->
     <a href="#inicio" class="back-to-top" id="backToTop">&#9650;</a>
@@ -107,42 +127,83 @@
                         <div class="tag">Disponible</div>
                     </div>
                 </a>
-                <div class="topic-card coming-soon fade-in">
+                <a href="tema12.html" class="topic-card available fade-in">
                     <div class="topic-number">12</div>
                     <div class="topic-info">
                         <h3>Transferencia de Calor</h3>
-                        <div class="tag soon">Proximamente</div>
+                        <div class="tag">Disponible</div>
                     </div>
-                </div>
-                <div class="topic-card coming-soon fade-in">
+                </a>
+                <a href="tema13.html" class="topic-card available fade-in">
                     <div class="topic-number">13</div>
                     <div class="topic-info">
                         <h3>Ley de los Gases Ideales</h3>
-                        <div class="tag soon">Proximamente</div>
+                        <div class="tag">Disponible</div>
                     </div>
-                </div>
-                <div class="topic-card coming-soon fade-in">
+                </a>
+                <a href="tema14.html" class="topic-card available fade-in">
                     <div class="topic-number">14</div>
                     <div class="topic-info">
                         <h3>Ley de Coulomb</h3>
-                        <div class="tag soon">Proximamente</div>
+                        <div class="tag">Disponible</div>
                     </div>
-                </div>
-                <div class="topic-card coming-soon fade-in">
+                </a>
+                <a href="tema15.html" class="topic-card available fade-in">
                     <div class="topic-number">15</div>
                     <div class="topic-info">
                         <h3>Ley de Ohm</h3>
-                        <div class="tag soon">Proximamente</div>
+                        <div class="tag">Disponible</div>
                     </div>
-                </div>
-                <div class="topic-card coming-soon fade-in">
+                </a>
+                <a href="tema16.html" class="topic-card available fade-in">
                     <div class="topic-number">16</div>
                     <div class="topic-info">
                         <h3>Efecto Joule</h3>
-                        <div class="tag soon">Proximamente</div>
+                        <div class="tag">Disponible</div>
                     </div>
-                </div>
+                </a>
             </div>
+        </div>
+    </section>
+
+    <!-- ===== RETO INTEGRADOR ===== -->
+    <section class="practice-cta-section">
+        <div class="container">
+            <a href="practica.html" class="practice-cta fade-in">
+                <div class="practice-cta-content">
+                    <span class="practice-cta-badge">Reto Final</span>
+                    <h2>Practica Integradora</h2>
+                    <p>Elige uno de los 16 temas y conviertelo en una practica real: algo que se vea, se mueva o se mida. El reto no es construir algo grande, es demostrar que lo entendiste.</p>
+                    <span class="practice-cta-action">Ver instrucciones del reto &#10140;</span>
+                </div>
+                <div class="practice-cta-icon" aria-hidden="true">
+                    <svg viewBox="0 0 64 64" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round">
+                        <path d="M20 8h16l10 10v34a4 4 0 0 1-4 4H20a4 4 0 0 1-4-4V12a4 4 0 0 1 4-4z"/>
+                        <path d="M36 8v10h10"/>
+                        <path d="M24 32l5 5 11-11"/>
+                        <path d="M24 44h16"/>
+                    </svg>
+                </div>
+            </a>
+
+            <a href="final.html" class="essay-cta fade-in">
+                <div class="essay-cta-content">
+                    <span class="essay-cta-badge">Cierre del modulo</span>
+                    <h2>Despues del ultimo numero</h2>
+                    <p class="essay-cta-sub"><em>La leccion que no esta en ningun examen.</em></p>
+                    <p>Una reflexion final sobre los dieciseis temas. No para repasar formulas, sino para entender por que cada uno cambia, sin que te des cuenta, tu manera de pensar el mundo.</p>
+                    <span class="essay-cta-action">Leer la reflexion final &#10140;</span>
+                </div>
+                <div class="essay-cta-icon" aria-hidden="true">
+                    <svg viewBox="0 0 64 64" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                        <path d="M14 12h26a8 8 0 0 1 8 8v36"/>
+                        <path d="M14 12v40a4 4 0 0 0 4 4h30"/>
+                        <path d="M22 22h18"/>
+                        <path d="M22 30h18"/>
+                        <path d="M22 38h12"/>
+                    </svg>
+                </div>
+            </a>
         </div>
     </section>
 
@@ -172,6 +233,24 @@
         window.addEventListener('scroll', () => {
             backBtn.classList.toggle('show', window.scrollY > 600);
         });
+
+        // ===== Theme toggle =====
+        const themeBtn = document.getElementById('themeToggle');
+        if (themeBtn) {
+            const syncThemeAria = () => {
+                const isLight = document.documentElement.getAttribute('data-theme') === 'light';
+                themeBtn.setAttribute('aria-pressed', isLight ? 'true' : 'false');
+                themeBtn.setAttribute('aria-label', isLight ? 'Cambiar a modo oscuro' : 'Cambiar a modo claro');
+            };
+            syncThemeAria();
+            themeBtn.addEventListener('click', () => {
+                const current = document.documentElement.getAttribute('data-theme') === 'light' ? 'light' : 'dark';
+                const next = current === 'light' ? 'dark' : 'light';
+                document.documentElement.setAttribute('data-theme', next);
+                try { localStorage.setItem('theme', next); } catch (e) {}
+                syncThemeAria();
+            });
+        }
     </script>
 </body>
 </html>

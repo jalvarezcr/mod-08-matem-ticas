@@ -1,0 +1,592 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Tema 13 - Ley de los Gases Ideales | Mod 08</title>
+    <link rel="stylesheet" href="styles.css">
+    <script>
+        (function() {
+            try {
+                var t = localStorage.getItem('theme');
+                if (!t) {
+                    t = (window.matchMedia && window.matchMedia('(prefers-color-scheme: light)').matches) ? 'light' : 'dark';
+                }
+                document.documentElement.setAttribute('data-theme', t);
+            } catch (e) {
+                document.documentElement.setAttribute('data-theme', 'dark');
+            }
+        })();
+    </script>
+</head>
+<body>
+
+    <nav class="topic-nav">
+        <a href="index.html" class="back-link">&#9664; Volver al indice</a>
+        <span class="topic-nav-title">Tema 13 &mdash; Ley de los Gases Ideales</span>
+    </nav>
+
+    <button class="theme-toggle" id="themeToggle" type="button" aria-label="Cambiar entre modo claro y oscuro" title="Cambiar tema">
+        <svg class="icon-sun" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><circle cx="12" cy="12" r="4"/><path d="M12 2v2M12 20v2M4.93 4.93l1.41 1.41M17.66 17.66l1.41 1.41M2 12h2M20 12h2M4.93 19.07l1.41-1.41M17.66 6.34l1.41-1.41"/></svg>
+        <svg class="icon-moon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M21 12.79A9 9 0 1 1 11.21 3 7 7 0 0 0 21 12.79z"/></svg>
+    </button>
+
+    <a href="#top" class="back-to-top" id="backToTop">&#9650;</a>
+
+    <section class="tema tema-page" id="top">
+        <div class="container">
+            <div class="tema-header fade-in">
+                <div class="tema-number odd">Tema 13 &mdash; Termodinamica</div>
+                <h2>Ley de los Gases Ideales</h2>
+                <p class="intro">&iquest;Por que los neumaticos se hinchan al rodar mucho? &iquest;Por que el globo aerostatico sube cuando se enciende el quemador? &iquest;Por que una lata cerrada explota si la dejas al sol? Todas estas preguntas se contestan con una sola ecuacion sorprendentemente elegante: <strong>PV = nRT</strong>. La ley combinada de los gases ideales conecta presion, volumen, temperatura y cantidad de materia en una sola relacion universal.</p>
+            </div>
+
+            <!-- ===== VARIABLES DE ESTADO ===== -->
+            <div class="content-block fade-in">
+                <h3><span class="icon" style="background:rgba(108,99,255,0.15);color:var(--primary-light);">&#128218;</span> Las 4 variables de estado</h3>
+                <p>El estado de un gas en equilibrio queda descrito por:</p>
+                <ul>
+                    <li><strong>P</strong> &mdash; Presion (Pa o atm) &mdash; fuerza por unidad de area que el gas ejerce sobre las paredes.</li>
+                    <li><strong>V</strong> &mdash; Volumen (m&sup3; o L) &mdash; espacio que ocupa el gas.</li>
+                    <li><strong>T</strong> &mdash; Temperatura (K) &mdash; medida del movimiento molecular promedio. &iexcl;Siempre en Kelvin!</li>
+                    <li><strong>n</strong> &mdash; Cantidad de sustancia (mol) &mdash; numero de particulas / N<sub>A</sub>.</li>
+                </ul>
+                <div class="info-box theory">
+                    <div class="box-title">Conversiones utiles</div>
+                    <ul>
+                        <li>T(K) = T(&deg;C) + 273.15</li>
+                        <li>1 atm = 101,325 Pa = 760 mmHg</li>
+                        <li>1 L = 10<sup>-3</sup> m&sup3; = 1,000 cm&sup3;</li>
+                        <li>1 mol = 6.022 &times; 10<sup>23</sup> particulas (numero de Avogadro)</li>
+                        <li>Masa molar del aire &asymp; 29 g/mol</li>
+                    </ul>
+                </div>
+                <div class="info-box warning">
+                    <div class="box-title">Modelo del gas ideal</div>
+                    <p>Asume: particulas puntuales sin volumen, sin interaccion entre si excepto colisiones elasticas, y energia cinetica proporcional a T. Funciona muy bien para gases reales a <strong>bajas presiones y temperaturas no cercanas a la condensacion</strong>.</p>
+                </div>
+            </div>
+
+            <!-- ===== LEYES PARTICULARES ===== -->
+            <div class="content-block fade-in">
+                <h3><span class="icon" style="background:rgba(0,201,167,0.15);color:var(--accent);">&#9874;</span> Las 4 leyes historicas</h3>
+                <p>Antes de unificar todo en una sola ecuacion, los cientificos descubrieron las relaciones de a pares manteniendo dos variables constantes:</p>
+
+                <h4>Ley de Boyle (1662) &mdash; T y n constantes</h4>
+                <div class="formula">
+                    P &middot; V = constante &nbsp;&nbsp;&hArr;&nbsp;&nbsp; P&#8321;V&#8321; = P&#8322;V&#8322;
+                </div>
+                <p>A temperatura fija, la presion es inversamente proporcional al volumen. Si comprimes un gas a la mitad, su presion se duplica.</p>
+
+                <h4>Ley de Charles (1787) &mdash; P y n constantes</h4>
+                <div class="formula">
+                    V / T = constante &nbsp;&nbsp;&hArr;&nbsp;&nbsp; V&#8321;/T&#8321; = V&#8322;/T&#8322;
+                </div>
+                <p>A presion constante, el volumen es directamente proporcional a la temperatura absoluta. Por eso el globo aerostatico sube: aire calentado dentro ocupa mas volumen, baja densidad y flota.</p>
+
+                <h4>Ley de Gay-Lussac (1809) &mdash; V y n constantes</h4>
+                <div class="formula">
+                    P / T = constante &nbsp;&nbsp;&hArr;&nbsp;&nbsp; P&#8321;/T&#8321; = P&#8322;/T&#8322;
+                </div>
+                <p>A volumen fijo, la presion es directamente proporcional a la temperatura absoluta. Es la razon por la que una lata cerrada al sol puede reventar.</p>
+
+                <h4>Ley de Avogadro (1811) &mdash; P y T constantes</h4>
+                <div class="formula">
+                    V / n = constante
+                </div>
+                <p>A misma P y T, volumenes iguales contienen el mismo numero de moleculas. Cualquier gas a 0&deg;C y 1 atm ocupa <strong>22.4 L/mol</strong> (volumen molar normal).</p>
+            </div>
+
+            <!-- ===== LEY COMBINADA ===== -->
+            <div class="content-block fade-in">
+                <h3><span class="icon" style="background:rgba(255,214,0,0.15);color:var(--warning);">&#9881;</span> La ley combinada: PV = nRT</h3>
+                <p>Uniendo las 4 leyes en una sola expresion obtenemos la <strong>ecuacion de estado del gas ideal</strong>:</p>
+                <div class="formula">
+                    P &middot; V = n &middot; R &middot; T
+                </div>
+                <ul>
+                    <li><strong>R</strong> = Constante universal de los gases</li>
+                    <li>R = 8.314 J / (mol &middot; K) &nbsp; <em>(unidades SI)</em></li>
+                    <li>R = 0.0821 L &middot; atm / (mol &middot; K) &nbsp; <em>(unidades practicas)</em></li>
+                </ul>
+                <div class="info-box theory">
+                    <div class="box-title">Forma comparativa entre dos estados</div>
+                    <p>Para una misma cantidad de gas (n constante) que pasa de un estado 1 a otro estado 2:</p>
+                </div>
+                <div class="formula">
+                    P&#8321;V&#8321; / T&#8321; = P&#8322;V&#8322; / T&#8322;
+                </div>
+                <p>Esta version es muy comoda en problemas donde el gas cambia sus condiciones (calentamiento, compresion...).</p>
+
+                <h4>Teoria cinetica &mdash; el por que microscopico</h4>
+                <p>La presion es el resultado de billones de choques moleculares por segundo. La temperatura es proporcional a la energia cinetica promedio de cada particula:</p>
+                <div class="formula">
+                    &lt;E<sub>cin</sub>&gt; = (3/2) &middot; k<sub>B</sub> &middot; T
+                </div>
+                <p>donde k<sub>B</sub> = 1.38 &times; 10<sup>-23</sup> J/K es la constante de Boltzmann. Mas T &rArr; moleculas mas rapidas &rArr; choques mas fuertes y frecuentes &rArr; mayor P.</p>
+            </div>
+
+            <!-- ===== EJEMPLOS RESUELTOS ===== -->
+            <div class="content-block fade-in">
+                <h3><span class="icon" style="background:rgba(255,101,132,0.15);color:var(--secondary);">&#128270;</span> Ejemplos resueltos</h3>
+
+                <div class="info-box example">
+                    <div class="box-title">Ejemplo 1: Boyle &mdash; jeringa</div>
+                    <p><strong>Una jeringa contiene 30 mL de aire a 100 kPa. El embolo se hunde hasta dejar solo 12 mL. &iquest;A que presion queda el aire? (Temperatura constante)</strong></p>
+                    <div class="steps">
+                        <div class="step">
+                            <div class="step-num">1</div>
+                            <div class="step-content">
+                                <p class="math">P&#8321;V&#8321; = P&#8322;V&#8322; &rArr; 100 &times; 30 = P&#8322; &times; 12</p>
+                            </div>
+                        </div>
+                        <div class="step">
+                            <div class="step-num">2</div>
+                            <div class="step-content">
+                                <p class="math">P&#8322; = 3000 / 12 = <strong>250 kPa</strong></p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="info-box example" style="margin-top:1.5rem;">
+                    <div class="box-title">Ejemplo 2: Charles &mdash; globo aerostatico</div>
+                    <p><strong>Un globo contiene 500 m&sup3; de aire a 20&deg;C. Se calienta hasta 95&deg;C. &iquest;Cuanto se expande? (Presion atmosferica constante)</strong></p>
+                    <div class="steps">
+                        <div class="step">
+                            <div class="step-num">1</div>
+                            <div class="step-content">
+                                <p>Conversion a Kelvin: T&#8321; = 293 K, T&#8322; = 368 K</p>
+                            </div>
+                        </div>
+                        <div class="step">
+                            <div class="step-num">2</div>
+                            <div class="step-content">
+                                <p class="math">V&#8322; = V&#8321; &middot; T&#8322; / T&#8321; = 500 &times; 368 / 293 = <strong>628 m&sup3;</strong></p>
+                            </div>
+                        </div>
+                    </div>
+                    <p>Aumento de 128 m&sup3; (~25%). Esa expansion es lo que reduce la densidad del aire dentro del globo y genera la flotacion.</p>
+                </div>
+
+                <div class="info-box example" style="margin-top:1.5rem;">
+                    <div class="box-title">Ejemplo 3: PV = nRT &mdash; cilindro de gas</div>
+                    <p><strong>&iquest;Cuantos moles de oxigeno hay en un cilindro de 50 L a 200 atm y 25&deg;C?</strong></p>
+                    <div class="steps">
+                        <div class="step">
+                            <div class="step-num">1</div>
+                            <div class="step-content">
+                                <p>Usaremos R = 0.0821 L&middot;atm/(mol&middot;K), T = 298 K</p>
+                            </div>
+                        </div>
+                        <div class="step">
+                            <div class="step-num">2</div>
+                            <div class="step-content">
+                                <p class="math">n = PV / (RT) = (200 &times; 50) / (0.0821 &times; 298)</p>
+                                <p class="math">n = 10,000 / 24.47 = <strong>408.6 moles</strong></p>
+                            </div>
+                        </div>
+                        <div class="step">
+                            <div class="step-num">3</div>
+                            <div class="step-content">
+                                <p>Masa: m = n &times; M = 408.6 &times; 32 = <strong>13,075 g &asymp; 13 kg de O&#8322;</strong></p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="info-box example" style="margin-top:1.5rem;">
+                    <div class="box-title">Ejemplo 4: Gay-Lussac &mdash; lata al sol</div>
+                    <p><strong>Una lata de aerosol esta a 1.5 atm y 22&deg;C. Si la temperatura sube a 80&deg;C, &iquest;cual es la presion? &iquest;Es peligrosa?</strong></p>
+                    <div class="steps">
+                        <div class="step">
+                            <div class="step-num">1</div>
+                            <div class="step-content">
+                                <p>T&#8321; = 295 K, T&#8322; = 353 K</p>
+                            </div>
+                        </div>
+                        <div class="step">
+                            <div class="step-num">2</div>
+                            <div class="step-content">
+                                <p class="math">P&#8322; = P&#8321; &times; T&#8322;/T&#8321; = 1.5 &times; 353/295 = <strong>1.795 atm</strong></p>
+                            </div>
+                        </div>
+                    </div>
+                    <p>Aumento del ~20% de presion. La mayoria de aerosoles estan certificados hasta 50&deg;C. A 80&deg;C la deformacion de la lata es probable y a temperaturas mas altas puede explotar.</p>
+                </div>
+            </div>
+
+            <!-- ===== SIMULADOR CANVAS ===== -->
+            <div class="content-block fade-in">
+                <h3><span class="icon" style="background:rgba(108,99,255,0.15);color:var(--primary-light);">&#127918;</span> Simulador interactivo &mdash; Gas ideal</h3>
+                <p>Caja con particulas que rebotan elasticamente contra las paredes. Ajusta la temperatura (cambia la velocidad), el volumen (mueve el piston) y observa como cambia la presion en tiempo real.</p>
+                <div class="sim-wrapper">
+                    <div class="sim-controls">
+                        <div class="sim-control-group">
+                            <label>Temperatura (K):
+                                <input type="range" id="gasT" min="100" max="1200" step="10" value="300">
+                                <span class="sim-value" id="gasTVal">300 K</span>
+                            </label>
+                        </div>
+                        <div class="sim-control-group">
+                            <label>Volumen (L) / Piston:
+                                <input type="range" id="gasV" min="20" max="100" step="1" value="80">
+                                <span class="sim-value" id="gasVVal">80 L</span>
+                            </label>
+                        </div>
+                        <div class="sim-control-group">
+                            <label>Cantidad N de particulas:
+                                <input type="range" id="gasN" min="20" max="250" step="5" value="100">
+                                <span class="sim-value" id="gasNVal">100 part.</span>
+                            </label>
+                        </div>
+                    </div>
+                    <div class="sim-canvas-wrap">
+                        <canvas id="gasCanvas" width="720" height="380" style="width:100%;border-radius:12px;background:var(--bg);"></canvas>
+                    </div>
+                    <div class="sim-result" id="gasResult">
+                        P = &mdash; kPa &nbsp;|&nbsp; PV/nT = &mdash;
+                    </div>
+                </div>
+            </div>
+
+            <!-- ===== EJERCICIOS ===== -->
+            <div class="exercises-section fade-in">
+                <h3><span class="icon" style="background:rgba(255,101,132,0.15);color:var(--secondary);">&#9998;</span> Ejercicios &mdash; Gases Ideales</h3>
+
+                <div class="exercise-item">
+                    <div class="exercise-header">
+                        <span class="exercise-label">Ejercicio 1</span>
+                        <span class="difficulty easy">Facil</span>
+                    </div>
+                    <p>Un gas ocupa 4 L a 2 atm. &iquest;Que presion tendra si se comprime a 1 L (T constante)?</p>
+                    <button class="solution-toggle" onclick="toggleSolution(this)">Ver solucion &#9660;</button>
+                    <div class="solution">
+                        <p><span class="step-math">P&#8322; = P&#8321;V&#8321;/V&#8322; = 2 &times; 4 / 1 = <strong>8 atm</strong></span></p>
+                    </div>
+                </div>
+
+                <div class="exercise-item">
+                    <div class="exercise-header">
+                        <span class="exercise-label">Ejercicio 2</span>
+                        <span class="difficulty easy">Facil</span>
+                    </div>
+                    <p>Un gas a 27&deg;C ocupa 3 L. Se calienta a 327&deg;C manteniendo la presion. &iquest;Que volumen ocupa?</p>
+                    <button class="solution-toggle" onclick="toggleSolution(this)">Ver solucion &#9660;</button>
+                    <div class="solution">
+                        <p>T&#8321; = 300 K, T&#8322; = 600 K</p>
+                        <p><span class="step-math">V&#8322; = V&#8321; &times; T&#8322;/T&#8321; = 3 &times; 600/300 = <strong>6 L</strong></span></p>
+                    </div>
+                </div>
+
+                <div class="exercise-item">
+                    <div class="exercise-header">
+                        <span class="exercise-label">Ejercicio 3</span>
+                        <span class="difficulty medium">Medio</span>
+                    </div>
+                    <p>Calcula el numero de moles y la masa de aire (M = 29 g/mol) contenidos en una habitacion de 4 m &times; 5 m &times; 2.5 m a 22&deg;C y presion atmosferica (101,325 Pa).</p>
+                    <button class="solution-toggle" onclick="toggleSolution(this)">Ver solucion &#9660;</button>
+                    <div class="solution">
+                        <p>V = 4 &times; 5 &times; 2.5 = 50 m&sup3; &nbsp; T = 295 K</p>
+                        <p><span class="step-math">n = PV/(RT) = (101,325 &times; 50) / (8.314 &times; 295) = 5,066,250 / 2,453 = <strong>2,065 mol</strong></span></p>
+                        <p><span class="step-math">m = n &times; M = 2,065 &times; 0.029 = <strong>59.9 kg de aire</strong></span></p>
+                        <p>&iexcl;Una habitacion mediana contiene cerca de 60 kg de aire que normalmente ignoramos!</p>
+                    </div>
+                </div>
+
+                <div class="exercise-item">
+                    <div class="exercise-header">
+                        <span class="exercise-label">Ejercicio 4</span>
+                        <span class="difficulty medium">Medio</span>
+                    </div>
+                    <p>Un neumatico contiene aire a 220 kPa y 18&deg;C. Tras una hora de viaje, la temperatura sube a 47&deg;C. Si el volumen aumenta 4% por la expansion del caucho, &iquest;cual es la nueva presion?</p>
+                    <button class="solution-toggle" onclick="toggleSolution(this)">Ver solucion &#9660;</button>
+                    <div class="solution">
+                        <p>T&#8321; = 291 K, T&#8322; = 320 K, V&#8322; = 1.04&middot;V&#8321;</p>
+                        <p><span class="step-math">P&#8322; = P&#8321; &times; (V&#8321;/V&#8322;) &times; (T&#8322;/T&#8321;) = 220 &times; (1/1.04) &times; (320/291)</span></p>
+                        <p><span class="step-math">P&#8322; = 220 &times; 0.9615 &times; 1.0997 = <strong>232.7 kPa</strong></span></p>
+                        <p>Subida de unos 13 kPa. Es por eso que se recomienda medir la presion del neumatico en frio.</p>
+                    </div>
+                </div>
+
+                <div class="exercise-item">
+                    <div class="exercise-header">
+                        <span class="exercise-label">Ejercicio 5</span>
+                        <span class="difficulty hard">Dificil</span>
+                    </div>
+                    <p>Una burbuja sube desde el fondo de un lago de 25 m. En el fondo mide 4 mm de radio y el agua esta a 8&deg;C; en la superficie el agua esta a 22&deg;C y la presion es 101 kPa. Si la presion hidrostatica anade &rho;gh, &iquest;que radio tiene la burbuja en la superficie?</p>
+                    <button class="solution-toggle" onclick="toggleSolution(this)">Ver solucion &#9660;</button>
+                    <div class="solution">
+                        <p><strong>Paso 1 &mdash; Presiones:</strong></p>
+                        <p>P<sub>fondo</sub> = 101,000 + 1000 &times; 9.8 &times; 25 = 346,000 Pa</p>
+                        <p>P<sub>sup</sub> = 101,000 Pa</p>
+                        <p><strong>Paso 2 &mdash; Temperaturas:</strong></p>
+                        <p>T<sub>f</sub> = 281 K, T<sub>s</sub> = 295 K</p>
+                        <p><strong>Paso 3 &mdash; Ley combinada:</strong></p>
+                        <p><span class="step-math">V<sub>s</sub>/V<sub>f</sub> = (P<sub>f</sub>/P<sub>s</sub>) &times; (T<sub>s</sub>/T<sub>f</sub>) = (346/101) &times; (295/281) = 3.426 &times; 1.0498 = 3.597</span></p>
+                        <p><span class="step-math">r<sub>s</sub>/r<sub>f</sub> = (V<sub>s</sub>/V<sub>f</sub>)<sup>1/3</sup> = 3.597<sup>1/3</sup> = 1.532</span></p>
+                        <p><span class="step-math">r<sub>s</sub> = 1.532 &times; 4 = <strong>6.13 mm</strong></span></p>
+                        <p>La burbuja triplica su volumen mientras sube, lo cual la acelera (mayor empuje) y es por eso que un buzo nunca debe contener la respiracion al subir.</p>
+                    </div>
+                </div>
+
+            </div>
+
+        </div>
+    </section>
+
+    <footer>
+        <div class="container">
+            <p style="margin-bottom:0.5rem; font-size:1rem; color:var(--text-muted);">Mod 08 &mdash; Matematicas y Representaciones del Sistema Natural!</p>
+            <p>Contenido educativo &middot; 16 temas &middot; Preparatoria</p>
+        </div>
+    </footer>
+
+    <script>
+        function toggleSolution(btn) {
+            const solution = btn.nextElementSibling;
+            solution.classList.toggle('visible');
+            btn.textContent = solution.classList.contains('visible') ? 'Ocultar solucion ▲' : 'Ver solucion ▼';
+        }
+        const observer = new IntersectionObserver((entries) => {
+            entries.forEach(entry => { if (entry.isIntersecting) entry.target.classList.add('visible'); });
+        }, { threshold: 0.1 });
+        document.querySelectorAll('.fade-in').forEach(el => observer.observe(el));
+        const backBtn = document.getElementById('backToTop');
+        window.addEventListener('scroll', () => { backBtn.classList.toggle('show', window.scrollY > 400); });
+        const themeBtn = document.getElementById('themeToggle');
+        if (themeBtn) {
+            const syncThemeAria = () => {
+                const isLight = document.documentElement.getAttribute('data-theme') === 'light';
+                themeBtn.setAttribute('aria-pressed', isLight ? 'true' : 'false');
+                themeBtn.setAttribute('aria-label', isLight ? 'Cambiar a modo oscuro' : 'Cambiar a modo claro');
+            };
+            syncThemeAria();
+            themeBtn.addEventListener('click', () => {
+                const current = document.documentElement.getAttribute('data-theme') === 'light' ? 'light' : 'dark';
+                const next = current === 'light' ? 'dark' : 'light';
+                document.documentElement.setAttribute('data-theme', next);
+                try { localStorage.setItem('theme', next); } catch (e) {}
+                syncThemeAria();
+            });
+        }
+
+        /* === Simulador: Gas ideal con particulas === */
+        (function() {
+            const canvas = document.getElementById('gasCanvas');
+            if (!canvas) return;
+            const ctx = canvas.getContext('2d');
+            const CW = canvas.width, CH = canvas.height;
+
+            const sT = document.getElementById('gasT');
+            const sV = document.getElementById('gasV');
+            const sN = document.getElementById('gasN');
+            const lT = document.getElementById('gasTVal');
+            const lV = document.getElementById('gasVVal');
+            const lN = document.getElementById('gasNVal');
+            const resultDiv = document.getElementById('gasResult');
+
+            // Caja
+            const boxY = 60, boxH = 260;
+            const boxXmin = 40;
+            const boxXmax = CW - 40;
+            let pistonX = CW - 100;   // posicion del piston (derecha)
+
+            // Particulas
+            const MAX_N = 260;
+            const parts = [];
+            for (let i = 0; i < MAX_N; i++) {
+                parts.push({
+                    x: boxXmin + 20 + Math.random() * (pistonX - boxXmin - 40),
+                    y: boxY + 10 + Math.random() * (boxH - 20),
+                    vx: (Math.random() - 0.5) * 2,
+                    vy: (Math.random() - 0.5) * 2,
+                    r: 4
+                });
+            }
+
+            // Estado
+            let T = 300, Vol = 80, N = 100;
+            let momentumWindow = []; // para promediar fuerza/presion
+            let collisionsThisSecond = 0;
+            let lastSecondMark = 0;
+
+            function setSpeedsForT(newT) {
+                // v ~ sqrt(T). Reescalamos preservando direccion.
+                for (let i = 0; i < parts.length; i++) {
+                    const sp = Math.sqrt(parts[i].vx * parts[i].vx + parts[i].vy * parts[i].vy) || 0.01;
+                    const angle = Math.atan2(parts[i].vy, parts[i].vx);
+                    // velocidad rms objetivo
+                    const target = 0.6 * Math.sqrt(newT / 300) * (0.8 + Math.random() * 0.5);
+                    parts[i].vx = target * Math.cos(angle);
+                    parts[i].vy = target * Math.sin(angle);
+                }
+            }
+            setSpeedsForT(T);
+
+            function syncControls() {
+                const newT = parseFloat(sT.value);
+                Vol = parseFloat(sV.value);
+                N   = parseInt(sN.value);
+                lT.textContent = newT.toFixed(0) + ' K';
+                lV.textContent = Vol.toFixed(0) + ' L';
+                lN.textContent = N + ' part.';
+
+                if (Math.abs(newT - T) > 1) {
+                    setSpeedsForT(newT);
+                }
+                T = newT;
+
+                // Volumen controla la posicion del piston
+                pistonX = boxXmin + 60 + (Vol - 20) / 80 * (CW - 160 - boxXmin);
+            }
+            sT.addEventListener('input', syncControls);
+            sV.addEventListener('input', syncControls);
+            sN.addEventListener('input', syncControls);
+
+            function physics() {
+                const right = pistonX;
+                const left  = boxXmin;
+                const top   = boxY;
+                const bot   = boxY + boxH;
+
+                for (let i = 0; i < N; i++) {
+                    const p = parts[i];
+                    p.x += p.vx;
+                    p.y += p.vy;
+
+                    // Rebote en piston derecho (mide momento → presion)
+                    if (p.x + p.r > right) {
+                        p.x = right - p.r;
+                        const mom = 2 * Math.abs(p.vx);
+                        momentumWindow.push(mom);
+                        p.vx = -p.vx;
+                        collisionsThisSecond++;
+                    }
+                    if (p.x - p.r < left)  { p.x = left + p.r;  p.vx = -p.vx; }
+                    if (p.y + p.r > bot)   { p.y = bot - p.r;   p.vy = -p.vy; }
+                    if (p.y - p.r < top)   { p.y = top + p.r;   p.vy = -p.vy; }
+                }
+            }
+
+            function tempColor(speed) {
+                // velocidad → color (azul lento → rojo rapido)
+                const f = Math.min(1, speed / 3);
+                const r = Math.floor(60 + 195 * f);
+                const g = Math.floor(180 * (1 - f) + 100 * f);
+                const b = Math.floor(255 * (1 - f) + 30 * f);
+                return 'rgb(' + r + ',' + g + ',' + b + ')';
+            }
+
+            function palette() {
+                const light = document.documentElement.getAttribute('data-theme') === 'light';
+                return light ? {
+                    bg1: '#FFFFFF', bg2: '#EEF0F8',
+                    wire: '#9094ad', wireHi: '#5a5e7a',
+                    text: '#0F0E17', textDim: 'rgba(15,14,23,0.55)',
+                    pistonFill: 'rgba(120,124,150,0.7)', pistonStroke: '#5a5e7a',
+                    pistonHandle: '#7a7e94',
+                    pistonHint: 'rgba(15,14,23,0.6)'
+                } : {
+                    bg1: '#0a0a1a', bg2: '#12122a',
+                    wire: '#4a4a80', wireHi: '#c2cae0',
+                    text: '#ffffff', textDim: 'rgba(255,255,255,0.55)',
+                    pistonFill: 'rgba(136,136,170,0.7)', pistonStroke: '#aaa',
+                    pistonHandle: '#aaa',
+                    pistonHint: 'rgba(255,255,255,0.55)'
+                };
+            }
+
+            function draw() {
+                physics();
+
+                // Calcular presion promedio
+                const now = performance.now();
+                if (now - lastSecondMark > 500) {
+                    lastSecondMark = now;
+                    momentumWindow = momentumWindow.slice(-200);
+                }
+                let pressureRaw = 0;
+                const m = Math.min(momentumWindow.length, 100);
+                if (m > 0) {
+                    let sum = 0;
+                    for (let i = momentumWindow.length - m; i < momentumWindow.length; i++) {
+                        sum += momentumWindow[i];
+                    }
+                    pressureRaw = sum;
+                }
+                // Escala arbitraria a kPa
+                const P_kPa = (pressureRaw * 0.5) * (N / 100) / (Vol / 60);
+
+                const C = palette();
+
+                // Background
+                ctx.clearRect(0, 0, CW, CH);
+                const bg = ctx.createLinearGradient(0, 0, 0, CH);
+                bg.addColorStop(0, C.bg1);
+                bg.addColorStop(1, C.bg2);
+                ctx.fillStyle = bg;
+                ctx.fillRect(0, 0, CW, CH);
+
+                // Box outline
+                ctx.strokeStyle = C.wire;
+                ctx.lineWidth = 2;
+                ctx.strokeRect(boxXmin, boxY, pistonX - boxXmin, boxH);
+
+                // Piston (movible)
+                ctx.fillStyle = C.pistonFill;
+                ctx.fillRect(pistonX, boxY - 6, 10, boxH + 12);
+                ctx.strokeStyle = C.pistonStroke;
+                ctx.strokeRect(pistonX, boxY - 6, 10, boxH + 12);
+                // Manija piston
+                ctx.fillStyle = C.pistonHandle;
+                ctx.fillRect(pistonX + 10, boxY + boxH / 2 - 5, 40, 10);
+                // Flechas piston
+                ctx.fillStyle = C.pistonHint;
+                ctx.font = 'bold 14px sans-serif';
+                ctx.textAlign = 'left';
+                ctx.fillText('←   piston   →', pistonX + 15, boxY + boxH / 2 + 30);
+
+                // Particulas
+                for (let i = 0; i < N; i++) {
+                    const p = parts[i];
+                    const sp = Math.hypot(p.vx, p.vy);
+                    ctx.fillStyle = tempColor(sp);
+                    ctx.beginPath();
+                    ctx.arc(p.x, p.y, p.r, 0, Math.PI * 2);
+                    ctx.fill();
+                }
+
+                // Titulos
+                ctx.fillStyle = C.text;
+                ctx.font = 'bold 16px sans-serif';
+                ctx.textAlign = 'center';
+                ctx.fillText('Gas ideal en caja con piston', CW / 2, 32);
+
+                // Etiqueta de V
+                ctx.fillStyle = C.textDim;
+                ctx.font = '12px sans-serif';
+                ctx.fillText('V = ' + Vol + ' L', (boxXmin + pistonX) / 2, boxY + boxH + 20);
+
+                // Manometro/Resultados
+                // Equivalente teorico segun PV = nRT (con n proporcional a N)
+                const n_mol = N / 25;       // escala didactica
+                const R = 8.314;
+                const Vm3 = Vol * 1e-3;
+                const P_teorico = n_mol * R * T / Vm3 / 1000; // kPa
+
+                resultDiv.innerHTML =
+                    'P (medida) = <strong>' + P_kPa.toFixed(1) + ' kPa</strong>' +
+                    '  |  P (teorica PV=nRT) = <strong>' + P_teorico.toFixed(1) + ' kPa</strong>' +
+                    '  |  T = ' + T.toFixed(0) + ' K' +
+                    '  |  N = ' + N;
+
+                requestAnimationFrame(draw);
+            }
+
+            syncControls();
+            draw();
+        })();
+    </script>
+</body>
+</html>

@@ -1,0 +1,683 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Practica Integradora | Mod 08</title>
+    <link rel="stylesheet" href="styles.css">
+    <script>
+        (function() {
+            try {
+                var t = localStorage.getItem('theme');
+                if (!t) {
+                    t = (window.matchMedia && window.matchMedia('(prefers-color-scheme: light)').matches) ? 'light' : 'dark';
+                }
+                document.documentElement.setAttribute('data-theme', t);
+            } catch (e) {
+                document.documentElement.setAttribute('data-theme', 'dark');
+            }
+        })();
+    </script>
+    <style>
+        /* Estilos especificos para la practica integradora */
+        .challenge-hero {
+            padding: 6rem 2rem 4rem;
+            text-align: center;
+            position: relative;
+            overflow: hidden;
+        }
+        .challenge-hero::before {
+            content: '';
+            position: absolute; inset: 0;
+            background:
+                radial-gradient(circle at 30% 30%, rgba(255, 101, 132, 0.10), transparent 50%),
+                radial-gradient(circle at 70% 70%, rgba(108, 99, 255, 0.10), transparent 50%);
+            z-index: 0;
+        }
+        .challenge-hero > * { position: relative; z-index: 1; }
+        .challenge-badge {
+            display: inline-block;
+            padding: 0.4rem 1.2rem;
+            background: rgba(255, 101, 132, 0.15);
+            border: 1px solid rgba(255, 101, 132, 0.35);
+            border-radius: 50px;
+            font-size: 0.85rem;
+            font-weight: 600;
+            color: var(--secondary);
+            letter-spacing: 1px;
+            text-transform: uppercase;
+            margin-bottom: 1.5rem;
+        }
+        .challenge-hero h1 {
+            font-size: clamp(2rem, 5vw, 3.6rem);
+            font-weight: 900;
+            line-height: 1.1;
+            background: var(--gradient-1);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            background-clip: text;
+            margin-bottom: 1.5rem;
+            max-width: 900px;
+            margin-left: auto;
+            margin-right: auto;
+        }
+        .challenge-hero .lead {
+            font-size: 1.15rem;
+            color: var(--text-muted);
+            max-width: 760px;
+            margin: 0 auto;
+            line-height: 1.7;
+        }
+        .deliverables-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
+            gap: 1rem;
+            margin: 1.5rem 0;
+        }
+        .deliverable {
+            padding: 1.4rem;
+            background: var(--bg-card);
+            border: 1px solid var(--border);
+            border-radius: 14px;
+            position: relative;
+        }
+        .deliverable .num {
+            position: absolute;
+            top: -14px; left: 14px;
+            width: 32px; height: 32px;
+            border-radius: 10px;
+            background: var(--gradient-1);
+            color: #fff;
+            font-weight: 800;
+            display: inline-flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 0.95rem;
+        }
+        .deliverable h4 {
+            font-size: 1.05rem;
+            font-weight: 700;
+            color: var(--text);
+            margin: 0.3rem 0 0.6rem;
+        }
+        .deliverable p {
+            color: var(--text-muted);
+            font-size: 0.92rem;
+            line-height: 1.6;
+            margin: 0;
+        }
+        .rules-list {
+            display: grid;
+            grid-template-columns: 1fr;
+            gap: 0.6rem;
+            margin: 1rem 0;
+        }
+        .rule-item {
+            padding: 1rem 1.2rem;
+            background: var(--bg-card);
+            border-left: 4px solid var(--primary);
+            border-radius: 10px;
+            color: var(--text-muted);
+        }
+        .rule-item strong {
+            color: var(--text);
+            display: block;
+            margin-bottom: 0.2rem;
+        }
+        .process-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
+            gap: 1rem;
+            margin: 1.5rem 0;
+            counter-reset: process;
+        }
+        .process-card {
+            padding: 1.4rem;
+            background: var(--bg-card);
+            border: 1px solid var(--border);
+            border-radius: 14px;
+            position: relative;
+        }
+        .process-card .step-tag {
+            display: inline-block;
+            padding: 0.2rem 0.7rem;
+            background: rgba(0, 201, 167, 0.12);
+            color: var(--accent);
+            border-radius: 50px;
+            font-size: 0.7rem;
+            font-weight: 700;
+            text-transform: uppercase;
+            letter-spacing: 1px;
+            margin-bottom: 0.6rem;
+        }
+        .process-card h4 {
+            font-size: 1rem;
+            font-weight: 700;
+            color: var(--text);
+            margin: 0 0 0.5rem;
+        }
+        .process-card p {
+            color: var(--text-muted);
+            font-size: 0.9rem;
+            line-height: 1.6;
+            margin: 0;
+        }
+        .question-list {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+            gap: 0.6rem;
+            margin: 1rem 0;
+        }
+        .question-list .q {
+            padding: 0.9rem 1.1rem;
+            background: rgba(108, 99, 255, 0.06);
+            border: 1px solid rgba(108, 99, 255, 0.18);
+            border-radius: 10px;
+            color: var(--text-muted);
+            font-size: 0.92rem;
+            line-height: 1.5;
+        }
+        .rubric-table {
+            width: 100%;
+            border-collapse: collapse;
+            margin: 1rem 0;
+            border-radius: 12px;
+            overflow: hidden;
+            border: 1px solid var(--border);
+        }
+        .rubric-table thead {
+            background: var(--bg-card-alt);
+        }
+        .rubric-table th {
+            padding: 0.9rem 1rem;
+            text-align: left;
+            font-size: 0.78rem;
+            text-transform: uppercase;
+            letter-spacing: 1px;
+            color: var(--primary-light);
+            font-weight: 700;
+        }
+        .rubric-table td {
+            padding: 0.9rem 1rem;
+            border-bottom: 1px solid var(--border);
+            color: var(--text-muted);
+            font-size: 0.95rem;
+        }
+        .rubric-table tr:last-child td { border-bottom: none; }
+        .rubric-table .pct {
+            font-weight: 700;
+            color: var(--accent);
+            font-family: var(--font-mono);
+        }
+        .safety-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+            gap: 0.8rem;
+            margin: 1rem 0;
+        }
+        .safety-item {
+            padding: 1rem 1.2rem;
+            background: rgba(255, 214, 0, 0.06);
+            border: 1px solid rgba(255, 214, 0, 0.2);
+            border-radius: 12px;
+            color: var(--text-muted);
+            font-size: 0.9rem;
+            line-height: 1.5;
+        }
+        .topic-mini {
+            display: flex;
+            align-items: center;
+            gap: 0.7rem;
+            padding: 0.7rem 0.9rem;
+            background: var(--bg-card);
+            border: 1px solid var(--border);
+            border-radius: 10px;
+            text-decoration: none;
+            color: var(--text);
+            transition: all 0.25s;
+        }
+        .topic-mini:hover {
+            border-color: var(--primary);
+            transform: translateY(-1px);
+        }
+        .topic-mini .n {
+            min-width: 30px;
+            height: 30px;
+            border-radius: 8px;
+            background: rgba(108, 99, 255, 0.15);
+            color: var(--primary-light);
+            font-weight: 800;
+            font-size: 0.78rem;
+            display: inline-flex;
+            align-items: center;
+            justify-content: center;
+        }
+        .topic-mini span.name {
+            font-size: 0.88rem;
+            font-weight: 600;
+        }
+        .topics-mini-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fill, minmax(240px, 1fr));
+            gap: 0.5rem;
+            margin: 1rem 0;
+        }
+        .checklist {
+            background: var(--bg-card);
+            border: 1px solid var(--border);
+            border-radius: 14px;
+            padding: 1.4rem 1.6rem;
+            margin: 1rem 0;
+        }
+        .checklist-item {
+            display: flex;
+            align-items: flex-start;
+            gap: 0.7rem;
+            padding: 0.55rem 0;
+            cursor: pointer;
+            color: var(--text-muted);
+            line-height: 1.5;
+        }
+        .checklist-item input[type="checkbox"] {
+            margin-top: 0.25rem;
+            accent-color: var(--accent);
+            width: 16px; height: 16px;
+            cursor: pointer;
+            flex-shrink: 0;
+        }
+        .checklist-item.done {
+            color: var(--text-dim);
+            text-decoration: line-through;
+        }
+        .progress-bar {
+            margin-top: 1rem;
+            height: 8px;
+            background: var(--bg-card-alt);
+            border-radius: 50px;
+            overflow: hidden;
+        }
+        .progress-fill {
+            height: 100%;
+            background: var(--gradient-2);
+            width: 0%;
+            transition: width 0.4s ease;
+        }
+        .closing {
+            background: var(--bg-card);
+            border-left: 4px solid var(--accent);
+            border-radius: 14px;
+            padding: 1.5rem 1.8rem;
+            margin: 2rem 0;
+        }
+        .closing p {
+            color: var(--text-muted);
+            line-height: 1.7;
+            margin: 0 0 0.6rem;
+        }
+        .closing p:last-child { margin-bottom: 0; }
+        .closing strong { color: var(--text); }
+    </style>
+</head>
+<body>
+
+    <nav class="topic-nav">
+        <a href="index.html" class="back-link">&#9664; Volver al indice</a>
+        <span class="topic-nav-title">Practica Integradora</span>
+    </nav>
+
+    <button class="theme-toggle" id="themeToggle" type="button" aria-label="Cambiar entre modo claro y oscuro" title="Cambiar tema">
+        <svg class="icon-sun" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><circle cx="12" cy="12" r="4"/><path d="M12 2v2M12 20v2M4.93 4.93l1.41 1.41M17.66 17.66l1.41 1.41M2 12h2M20 12h2M4.93 19.07l1.41-1.41M17.66 6.34l1.41-1.41"/></svg>
+        <svg class="icon-moon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M21 12.79A9 9 0 1 1 11.21 3 7 7 0 0 0 21 12.79z"/></svg>
+    </button>
+
+    <a href="#top" class="back-to-top" id="backToTop">&#9650;</a>
+
+    <!-- ===== HERO DEL RETO ===== -->
+    <section class="challenge-hero" id="top">
+        <div class="challenge-badge">Reto Final</div>
+        <h1>Convierte un tema en algo que se pueda ver</h1>
+        <p class="lead">Has recorrido 16 temas. Ahora viene el aprendizaje real: tomar uno y volverlo realidad fisica. Algo que se mueva, que cambie, que se note. Algo que puedas tocar, mostrar y explicar.</p>
+    </section>
+
+    <!-- ===== CONTENIDO ===== -->
+    <section class="tema">
+        <div class="container">
+
+            <!-- ===== LA MISION ===== -->
+            <div class="content-block fade-in">
+                <h3><span class="icon" style="background:rgba(255,101,132,0.15);color:var(--secondary);">&#127919;</span> Tu mision</h3>
+                <p>Disena, construye y presenta una <strong>practica fisica</strong> que demuestre uno de los 16 temas del modulo. Lo importante no es que sea espectacular: lo importante es que <strong>el fenomeno fisico se vea ocurrir</strong> y que tu sepas explicarlo.</p>
+                <div class="info-box theory">
+                    <div class="box-title">Lo que se busca</div>
+                    <p>Que demuestres que entiendes un tema lo suficiente como para convertirlo en un experimento concreto, real y reproducible. Nada mas, nada menos.</p>
+                </div>
+            </div>
+
+            <!-- ===== ENTREGABLES ===== -->
+            <div class="content-block fade-in">
+                <h3><span class="icon" style="background:rgba(108,99,255,0.15);color:var(--primary-light);">&#128230;</span> Que tienes que entregar</h3>
+                <p>El dia de la entrega traes tres cosas:</p>
+                <div class="deliverables-grid">
+                    <div class="deliverable">
+                        <div class="num">1</div>
+                        <h4>El montaje fisico</h4>
+                        <p>El objeto, dispositivo o experimento construido por ti. Tiene que poder accionarse delante del grupo o estar grabado en video si no se puede transportar.</p>
+                    </div>
+                    <div class="deliverable">
+                        <div class="num">2</div>
+                        <h4>Una explicacion escrita corta</h4>
+                        <p>Maximo una pagina. Debe indicar: tema elegido, que se observa al activar el montaje, la formula que aplica con sus variables, y que cambia si modificas alguna magnitud.</p>
+                    </div>
+                    <div class="deliverable">
+                        <div class="num">3</div>
+                        <h4>Tu identificacion</h4>
+                        <p>Nombre, grupo, tema elegido. En la hoja de explicacion y, si es posible, tambien en el montaje.</p>
+                    </div>
+                </div>
+            </div>
+
+            <!-- ===== REGLAS ===== -->
+            <div class="content-block fade-in">
+                <h3><span class="icon" style="background:rgba(0,201,167,0.15);color:var(--accent);">&#128274;</span> Las reglas del reto</h3>
+                <div class="rules-list">
+                    <div class="rule-item">
+                        <strong>Un solo tema</strong>
+                        Eliges uno de los 16. No mezclas varios. La idea es profundizar, no abarcar.
+                    </div>
+                    <div class="rule-item">
+                        <strong>Solo lo que tengas a mano</strong>
+                        No se evalua cuanto costo, ni cuantos materiales usaste, ni que tan decorado esta. Una practica simple bien hecha vale lo mismo que una compleja.
+                    </div>
+                    <div class="rule-item">
+                        <strong>Tiene que funcionar</strong>
+                        Si funciona "a veces", no esta listo. Si necesitas tres intentos para que pase algo, no esta listo. Repite hasta que el efecto sea consistente.
+                    </div>
+                    <div class="rule-item">
+                        <strong>Tiene que ser segura</strong>
+                        Nada que pueda quemar, electrocutar, explotar, cortar o danar. Si tienes dudas sobre la seguridad de tu idea, consultala antes de construirla.
+                    </div>
+                    <div class="rule-item">
+                        <strong>Tiene que ser tuya</strong>
+                        La idea, el diseno y la construccion son obra tuya. No se vale comprar un kit ensamblado.
+                    </div>
+                    <div class="rule-item">
+                        <strong>Sin imitar lo visto en clase</strong>
+                        Los simuladores y figuras que aparecen en cada tema son referencia teorica. Tu practica debe ser algo distinto, tu version del fenomeno.
+                    </div>
+                </div>
+            </div>
+
+            <!-- ===== PROCESO ===== -->
+            <div class="content-block fade-in">
+                <h3><span class="icon" style="background:rgba(255,214,0,0.15);color:var(--warning);">&#128221;</span> Como vas a llegar a tu practica</h3>
+                <p>Sigue este orden. No empieces a construir antes del paso 5.</p>
+                <div class="process-grid">
+                    <div class="process-card">
+                        <div class="step-tag">Paso 1</div>
+                        <h4>Recorre los 16 temas</h4>
+                        <p>Abre cada uno. Leelos por encima. Busca cual te llama la atencion o cual entendiste mejor.</p>
+                    </div>
+                    <div class="process-card">
+                        <div class="step-tag">Paso 2</div>
+                        <h4>Elige uno</h4>
+                        <p>No lo pienses demasiado. El que mas curiosidad te genera es el correcto. Si dudas entre dos, elige el mas simple.</p>
+                    </div>
+                    <div class="process-card">
+                        <div class="step-tag">Paso 3</div>
+                        <h4>Identifica el fenomeno</h4>
+                        <p>Antes de pensar en materiales, define con tus palabras: que se ve, que se mueve, que cambia en ese tema.</p>
+                    </div>
+                    <div class="process-card">
+                        <div class="step-tag">Paso 4</div>
+                        <h4>Inventario casero</h4>
+                        <p>Camina por tu casa. Anota objetos disponibles. Cualquier cosa que ya tengas puede ser parte del montaje.</p>
+                    </div>
+                    <div class="process-card">
+                        <div class="step-tag">Paso 5</div>
+                        <h4>Dibujalo en papel</h4>
+                        <p>Boceto, no obra de arte. Si no puedes dibujar tu idea, todavia no esta clara. Vuelve al paso 3.</p>
+                    </div>
+                    <div class="process-card">
+                        <div class="step-tag">Paso 6</div>
+                        <h4>Construye</h4>
+                        <p>Empieza por la version mas simple posible. Despues mejoras si hace falta. No persigas la perfeccion en el primer intento.</p>
+                    </div>
+                    <div class="process-card">
+                        <div class="step-tag">Paso 7</div>
+                        <h4>Pruebalo</h4>
+                        <p>Acciona el montaje varias veces. Si no funciona, identifica que falla y arreglalo. Una practica que falla no demuestra fisica, demuestra suerte.</p>
+                    </div>
+                    <div class="process-card">
+                        <div class="step-tag">Paso 8</div>
+                        <h4>Documenta y escribe</h4>
+                        <p>Anota la formula aplicada, las variables, los valores. Toma una foto o video. Redacta tu explicacion en una pagina.</p>
+                    </div>
+                </div>
+            </div>
+
+            <!-- ===== PREGUNTAS PARA PENSAR ===== -->
+            <div class="content-block fade-in">
+                <h3><span class="icon" style="background:rgba(108,99,255,0.15);color:var(--primary-light);">&#10067;</span> Preguntas que debes responderte</h3>
+                <p>Antes de empezar a construir nada, sientate y contestate estas preguntas. Si no las puedes responder, todavia no estas listo para construir.</p>
+                <div class="question-list">
+                    <div class="q">&iquest;Cual de los 16 temas puedo realmente entender bien?</div>
+                    <div class="q">&iquest;Que cantidad fisica puedo medir o comparar en ese tema?</div>
+                    <div class="q">&iquest;Que objeto cotidiano tiene algo que ver con ese fenomeno?</div>
+                    <div class="q">&iquest;Como hago para que el efecto sea visible para alguien que mira de afuera?</div>
+                    <div class="q">&iquest;Que variable puedo modificar para que cambie el resultado?</div>
+                    <div class="q">&iquest;Si modifico esa variable, &iquest;que pasa? &iquest;Coincide con la formula?</div>
+                    <div class="q">&iquest;Puedo explicar lo que pasa sin recurrir a frases copiadas?</div>
+                    <div class="q">&iquest;Que pasaria si una pieza del montaje fallara? &iquest;Es seguro?</div>
+                </div>
+                <div class="info-box theory">
+                    <div class="box-title">Importante</div>
+                    <p>Si despues de pensar no encuentras como demostrar fisicamente el tema que elegiste, <strong>cambia de tema</strong>. No es derrota, es planeacion. Es preferible cambiar antes de gastar materiales que descubrir el problema a medio construir.</p>
+                </div>
+            </div>
+
+            <!-- ===== RUBRICA ===== -->
+            <div class="content-block fade-in">
+                <h3><span class="icon" style="background:rgba(0,201,167,0.15);color:var(--accent);">&#9878;</span> Como vas a ser evaluado</h3>
+                <p>La calificacion se reparte asi. Lee con atencion para saber donde poner el esfuerzo.</p>
+                <table class="rubric-table">
+                    <thead>
+                        <tr>
+                            <th>Criterio</th>
+                            <th>Peso</th>
+                            <th>Que se mira</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr>
+                            <td><strong>Identificacion del tema</strong></td>
+                            <td class="pct">15%</td>
+                            <td>Sabes claramente en cual de los 16 temas se basa tu practica y por que.</td>
+                        </tr>
+                        <tr>
+                            <td><strong>Funcionamiento</strong></td>
+                            <td class="pct">25%</td>
+                            <td>El montaje funciona, el fenomeno se ve, el resultado es consistente.</td>
+                        </tr>
+                        <tr>
+                            <td><strong>Aplicacion de la formula</strong></td>
+                            <td class="pct">25%</td>
+                            <td>Identificas la ecuacion correcta y la usas con los valores reales de tu montaje.</td>
+                        </tr>
+                        <tr>
+                            <td><strong>Explicacion</strong></td>
+                            <td class="pct">20%</td>
+                            <td>Lo cuentas con tus palabras. No lees, no recitas. Entiendes lo que dices.</td>
+                        </tr>
+                        <tr>
+                            <td><strong>Originalidad</strong></td>
+                            <td class="pct">10%</td>
+                            <td>No es un montaje copiado. Hay decisiones tuyas en el diseno.</td>
+                        </tr>
+                        <tr>
+                            <td><strong>Orden y seguridad</strong></td>
+                            <td class="pct">5%</td>
+                            <td>Todo entregado en orden, sin riesgos para ti ni para los demas.</td>
+                        </tr>
+                    </tbody>
+                </table>
+                <div class="info-box example">
+                    <div class="box-title">El criterio mas importante</div>
+                    <p>El 70% de la calificacion (Funcionamiento + Formula + Explicacion) se concentra en <strong>una sola cosa</strong>: que entiendas lo que estas mostrando. Lo demas es decoracion.</p>
+                </div>
+            </div>
+
+            <!-- ===== SEGURIDAD ===== -->
+            <div class="content-block fade-in">
+                <h3><span class="icon" style="background:rgba(255,214,0,0.15);color:var(--warning);">&#9888;</span> Reglas de seguridad obligatorias</h3>
+                <p>Antes de aprobar tu idea, revisala contra estos puntos. Cualquier practica que los incumpla queda descalificada.</p>
+                <div class="safety-grid">
+                    <div class="safety-item"><strong>Electricidad:</strong> solo pilas o baterias pequenas (1.5 V a 12 V). Nunca corriente domestica directa.</div>
+                    <div class="safety-item"><strong>Fuego:</strong> solo con adulto presente y agua o extintor cerca. Nunca en interiores sin ventilacion.</div>
+                    <div class="safety-item"><strong>Agua:</strong> prepara el espacio. Cubre superficies. Lleva trapos.</div>
+                    <div class="safety-item"><strong>Herramientas cortantes:</strong> pide ayuda de un adulto al cortar, perforar o pegar con calor.</div>
+                    <div class="safety-item"><strong>Quimicos:</strong> solo agua, sal, azucar, vinagre, jabon o aceite. Nada mas sin consultar antes.</div>
+                    <div class="safety-item"><strong>Objetos a presion:</strong> nada cerrado hermeticamente que pueda calentarse, expandirse o explotar.</div>
+                    <div class="safety-item"><strong>Altura y caidas:</strong> si algo cae, que no haga dano. Considera donde va a terminar.</div>
+                    <div class="safety-item"><strong>Manipulacion:</strong> piensa quien lo va a tocar. Bordes, alambres, piezas pequenas.</div>
+                </div>
+            </div>
+
+            <!-- ===== CHECKLIST INTERACTIVO ===== -->
+            <div class="content-block fade-in">
+                <h3><span class="icon" style="background:rgba(0,201,167,0.15);color:var(--accent);">&#9989;</span> Lista de control personal</h3>
+                <p>Marca cada paso conforme lo cumples. Tu progreso se guarda automaticamente en este navegador.</p>
+                <div class="checklist" id="practiceChecklist">
+                    <label class="checklist-item"><input type="checkbox" data-key="p1"> Revise los 16 temas y eligi uno.</label>
+                    <label class="checklist-item"><input type="checkbox" data-key="p2"> Defini con mis palabras el fenomeno que voy a demostrar.</label>
+                    <label class="checklist-item"><input type="checkbox" data-key="p3"> Encontre la formula que aplica a ese fenomeno.</label>
+                    <label class="checklist-item"><input type="checkbox" data-key="p4"> Hice inventario de materiales caseros disponibles.</label>
+                    <label class="checklist-item"><input type="checkbox" data-key="p5"> Dibuje el montaje en papel antes de construir.</label>
+                    <label class="checklist-item"><input type="checkbox" data-key="p6"> Revise mi idea contra las reglas de seguridad.</label>
+                    <label class="checklist-item"><input type="checkbox" data-key="p7"> Construi el montaje.</label>
+                    <label class="checklist-item"><input type="checkbox" data-key="p8"> Lo probe al menos tres veces y funciona consistentemente.</label>
+                    <label class="checklist-item"><input type="checkbox" data-key="p9"> Identifique una variable que puedo cambiar y observe el efecto.</label>
+                    <label class="checklist-item"><input type="checkbox" data-key="p10"> Aplique la formula con mis valores reales y los resultados son coherentes.</label>
+                    <label class="checklist-item"><input type="checkbox" data-key="p11"> Tome foto o video del experimento funcionando.</label>
+                    <label class="checklist-item"><input type="checkbox" data-key="p12"> Escribi mi explicacion en una pagina, con mis palabras.</label>
+                    <label class="checklist-item"><input type="checkbox" data-key="p13"> Puedo explicarlo en voz alta sin leer.</label>
+                    <label class="checklist-item"><input type="checkbox" data-key="p14"> Anote mi nombre, grupo y tema en el montaje y la explicacion.</label>
+                    <div class="progress-bar"><div class="progress-fill" id="progressFill"></div></div>
+                    <p style="text-align:center; margin-top:0.6rem; font-size:0.85rem; color:var(--text-dim);" id="progressText">0 de 14 completados</p>
+                </div>
+            </div>
+
+            <!-- ===== LOS 16 TEMAS DE DONDE ELEGIR ===== -->
+            <div class="content-block fade-in">
+                <h3><span class="icon" style="background:rgba(108,99,255,0.15);color:var(--primary-light);">&#128214;</span> Tu menu de eleccion: los 16 temas</h3>
+                <p>Cualquiera de estos puede ser la base de tu practica. Haz clic para repasar el tema completo.</p>
+                <div class="topics-mini-grid">
+                    <a href="tema1.html" class="topic-mini"><span class="n">01</span><span class="name">Plano Cartesiano</span></a>
+                    <a href="tema2.html" class="topic-mini"><span class="n">02</span><span class="name">Clasificacion de Angulos</span></a>
+                    <a href="tema3.html" class="topic-mini"><span class="n">03</span><span class="name">Leyes de Newton</span></a>
+                    <a href="tema4.html" class="topic-mini"><span class="n">04</span><span class="name">Principio de Pascal</span></a>
+                    <a href="tema5.html" class="topic-mini"><span class="n">05</span><span class="name">Principio de Arquimedes</span></a>
+                    <a href="tema6.html" class="topic-mini"><span class="n">06</span><span class="name">Teorema de Torricelli</span></a>
+                    <a href="tema7.html" class="topic-mini"><span class="n">07</span><span class="name">Presion</span></a>
+                    <a href="tema8.html" class="topic-mini"><span class="n">08</span><span class="name">Presion Hidrostatica</span></a>
+                    <a href="tema9.html" class="topic-mini"><span class="n">09</span><span class="name">Densidad</span></a>
+                    <a href="tema10.html" class="topic-mini"><span class="n">10</span><span class="name">Ecuacion de Continuidad</span></a>
+                    <a href="tema11.html" class="topic-mini"><span class="n">11</span><span class="name">Flujos y Bernoulli</span></a>
+                    <a href="tema12.html" class="topic-mini"><span class="n">12</span><span class="name">Transferencia de Calor</span></a>
+                    <a href="tema13.html" class="topic-mini"><span class="n">13</span><span class="name">Gases Ideales</span></a>
+                    <a href="tema14.html" class="topic-mini"><span class="n">14</span><span class="name">Ley de Coulomb</span></a>
+                    <a href="tema15.html" class="topic-mini"><span class="n">15</span><span class="name">Ley de Ohm</span></a>
+                    <a href="tema16.html" class="topic-mini"><span class="n">16</span><span class="name">Efecto Joule</span></a>
+                </div>
+            </div>
+
+            <!-- ===== CIERRE ===== -->
+            <div class="content-block fade-in">
+                <h3><span class="icon" style="background:rgba(255,101,132,0.15);color:var(--secondary);">&#128293;</span> Una ultima cosa</h3>
+                <div class="closing">
+                    <p><strong>No existe practica demasiado simple.</strong> La fisica no se mide por lo aparatoso que se ve, sino por lo bien que se explica lo que ocurre. Una practica con dos objetos basicos puede demostrar mas comprension que una con diez componentes.</p>
+                    <p><strong>El reto no es construir algo grande.</strong> El reto es haber entendido un tema lo suficiente como para volverlo realidad fisica. Esa diferencia es la que se evalua.</p>
+                    <p>Empieza pronto. No esperes al ultimo dia. Los mejores experimentos son los que se repiten varias veces hasta que salen bien.</p>
+                </div>
+            </div>
+
+        </div>
+    </section>
+
+    <footer>
+        <div class="container">
+            <p style="margin-bottom:0.5rem; font-size:1rem; color:var(--text-muted);">Mod 08 &mdash; Matematicas y Representaciones del Sistema Natural!</p>
+            <p>Practica Integradora &middot; Preparatoria</p>
+        </div>
+    </footer>
+
+    <script>
+        const observer = new IntersectionObserver((entries) => {
+            entries.forEach(entry => { if (entry.isIntersecting) entry.target.classList.add('visible'); });
+        }, { threshold: 0.1 });
+        document.querySelectorAll('.fade-in').forEach(el => observer.observe(el));
+        const backBtn = document.getElementById('backToTop');
+        window.addEventListener('scroll', () => { backBtn.classList.toggle('show', window.scrollY > 400); });
+        const themeBtn = document.getElementById('themeToggle');
+        if (themeBtn) {
+            const syncThemeAria = () => {
+                const isLight = document.documentElement.getAttribute('data-theme') === 'light';
+                themeBtn.setAttribute('aria-pressed', isLight ? 'true' : 'false');
+                themeBtn.setAttribute('aria-label', isLight ? 'Cambiar a modo oscuro' : 'Cambiar a modo claro');
+            };
+            syncThemeAria();
+            themeBtn.addEventListener('click', () => {
+                const current = document.documentElement.getAttribute('data-theme') === 'light' ? 'light' : 'dark';
+                const next = current === 'light' ? 'dark' : 'light';
+                document.documentElement.setAttribute('data-theme', next);
+                try { localStorage.setItem('theme', next); } catch (e) {}
+                syncThemeAria();
+            });
+        }
+
+        /* === Checklist persistente === */
+        (function() {
+            const STORAGE_KEY = 'practiceProgress_v1';
+            const checkboxes = document.querySelectorAll('#practiceChecklist input[type="checkbox"]');
+            const fill = document.getElementById('progressFill');
+            const txt  = document.getElementById('progressText');
+
+            function load() {
+                try {
+                    const raw = localStorage.getItem(STORAGE_KEY);
+                    if (!raw) return {};
+                    return JSON.parse(raw);
+                } catch (e) { return {}; }
+            }
+            function save(state) {
+                try { localStorage.setItem(STORAGE_KEY, JSON.stringify(state)); } catch (e) {}
+            }
+            function update() {
+                let done = 0;
+                checkboxes.forEach(cb => {
+                    if (cb.checked) {
+                        done++;
+                        cb.closest('.checklist-item').classList.add('done');
+                    } else {
+                        cb.closest('.checklist-item').classList.remove('done');
+                    }
+                });
+                const pct = (done / checkboxes.length) * 100;
+                fill.style.width = pct + '%';
+                txt.textContent = done + ' de ' + checkboxes.length + ' completados' + (done === checkboxes.length ? '  ¡listo para entregar!' : '');
+            }
+
+            const state = load();
+            checkboxes.forEach(cb => {
+                const k = cb.dataset.key;
+                if (state[k]) cb.checked = true;
+                cb.addEventListener('change', () => {
+                    state[k] = cb.checked;
+                    save(state);
+                    update();
+                });
+            });
+            update();
+        })();
+    </script>
+</body>
+</html>
